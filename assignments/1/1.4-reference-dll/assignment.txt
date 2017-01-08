@@ -1,0 +1,4 @@
+Create a new .Net Framework Console Solution.  
+Add the dll as a reference to the project.
+Create a new Synthesizer.  
+Call the SayHello method on the Synthesizer.

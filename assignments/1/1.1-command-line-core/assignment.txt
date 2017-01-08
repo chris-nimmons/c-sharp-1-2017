@@ -1,0 +1,4 @@
+Create a new console project using visual studio command line and dot net core.  
+Restore the project through the command line.  Make sure the project builds.  
+Git add the project files created through the command line.  Also git add the bin and obj folders and their contents.    
+Commit then push the project to github. 

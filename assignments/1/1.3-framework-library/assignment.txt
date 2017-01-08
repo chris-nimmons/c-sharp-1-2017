@@ -1,0 +1,3 @@
+Create a new .Net Framework Library Solution.  
+Build the solution.  Make sure to add the bin and obj folders.  
+Add, commit, and push to github.  

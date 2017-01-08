@@ -1,0 +1,4 @@
+Create a .Net Framework Console Solution from scratch.  
+Write the words "Hello World!" to the console.  
+Build the application.  Make sure it works.  
+Add, commit and push all files to github.  
