@@ -1,0 +1,7 @@
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Homework1_4\Homework1_4\bin\Debug\Homework1_4.exe.config
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Homework1_4\Homework1_4\bin\Debug\Homework1_4.exe
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Homework1_4\Homework1_4\bin\Debug\Homework1_4.pdb
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Homework1_4\Homework1_4\bin\Debug\Reference.dll
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Homework1_4\Homework1_4\obj\Debug\Homework1_4.csprojResolveAssemblyReference.cache
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Homework1_4\Homework1_4\obj\Debug\Homework1_4.exe
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Homework1_4\Homework1_4\obj\Debug\Homework1_4.pdb
