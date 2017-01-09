@@ -1,0 +1,7 @@
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Consoledll\Consoledll\bin\Debug\Consoledll.exe.config
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Consoledll\Consoledll\bin\Debug\Consoledll.exe
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Consoledll\Consoledll\bin\Debug\Consoledll.pdb
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Consoledll\Consoledll\bin\Debug\Reference.dll
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Consoledll\Consoledll\obj\Debug\Consoledll.csprojResolveAssemblyReference.cache
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Consoledll\Consoledll\obj\Debug\Consoledll.exe
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\Consoledll\Consoledll\obj\Debug\Consoledll.pdb
