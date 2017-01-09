@@ -1,0 +1,5 @@
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\Charleston\Charleston\obj\Debug\Charleston.csprojResolveAssemblyReference.cache
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\Charleston\Charleston\bin\Debug\Charleston.dll
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\Charleston\Charleston\bin\Debug\Charleston.pdb
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\Charleston\Charleston\obj\Debug\Charleston.dll
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\Charleston\Charleston\obj\Debug\Charleston.pdb
