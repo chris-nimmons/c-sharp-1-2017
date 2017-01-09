@@ -1,0 +1,5 @@
+\\mac\home\documents\visual studio 2015\Projects\Translator\Translator\bin\Debug\Translator.dll
+\\mac\home\documents\visual studio 2015\Projects\Translator\Translator\bin\Debug\Translator.pdb
+\\mac\home\documents\visual studio 2015\Projects\Translator\Translator\obj\Debug\Translator.csprojResolveAssemblyReference.cache
+\\mac\home\documents\visual studio 2015\Projects\Translator\Translator\obj\Debug\Translator.dll
+\\mac\home\documents\visual studio 2015\Projects\Translator\Translator\obj\Debug\Translator.pdb
