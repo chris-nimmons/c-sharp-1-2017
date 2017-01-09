@@ -6,6 +6,7 @@ using System.Text;
 namespace HW1._3
 {
     public class Class1
+
     {
     }
 }
