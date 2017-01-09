@@ -1,0 +1,6 @@
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\Assignment1_2\Assignment1_2\bin\Debug\Assignment1_2.exe.config
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\Assignment1_2\Assignment1_2\bin\Debug\Assignment1_2.exe
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\Assignment1_2\Assignment1_2\bin\Debug\Assignment1_2.pdb
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\Assignment1_2\Assignment1_2\obj\Debug\Assignment1_2.csprojResolveAssemblyReference.cache
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\Assignment1_2\Assignment1_2\obj\Debug\Assignment1_2.exe
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\Assignment1_2\Assignment1_2\obj\Debug\Assignment1_2.pdb
