@@ -12,7 +12,7 @@ namespace Application
         {
 
             Reference.Synthesizer synthesizer = new Reference.Synthesizer();
-            string output = synthesizer.SayHello();
+            synthesizer.SayHello();
         }
     }
 }
