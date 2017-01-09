@@ -1,0 +1,7 @@
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\1\1.4-reference-dll\OnePointFourReferenceDll\OnePointFourReferenceDll\bin\Debug\OnePointFourReferenceDll.exe.config
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\1\1.4-reference-dll\OnePointFourReferenceDll\OnePointFourReferenceDll\bin\Debug\OnePointFourReferenceDll.exe
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\1\1.4-reference-dll\OnePointFourReferenceDll\OnePointFourReferenceDll\bin\Debug\OnePointFourReferenceDll.pdb
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\1\1.4-reference-dll\OnePointFourReferenceDll\OnePointFourReferenceDll\bin\Debug\Reference.dll
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\1\1.4-reference-dll\OnePointFourReferenceDll\OnePointFourReferenceDll\obj\Debug\OnePointFourReferenceDll.csprojResolveAssemblyReference.cache
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\1\1.4-reference-dll\OnePointFourReferenceDll\OnePointFourReferenceDll\obj\Debug\OnePointFourReferenceDll.exe
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\1\1.4-reference-dll\OnePointFourReferenceDll\OnePointFourReferenceDll\obj\Debug\OnePointFourReferenceDll.pdb
