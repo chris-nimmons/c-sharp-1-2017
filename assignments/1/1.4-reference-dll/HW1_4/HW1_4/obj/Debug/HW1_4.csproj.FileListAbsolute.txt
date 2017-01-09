@@ -1,0 +1,7 @@
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\HW1_4\HW1_4\bin\Debug\HW1_4.exe.config
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\HW1_4\HW1_4\bin\Debug\HW1_4.exe
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\HW1_4\HW1_4\bin\Debug\HW1_4.pdb
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\HW1_4\HW1_4\bin\Debug\Reference.dll
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\HW1_4\HW1_4\obj\Debug\HW1_4.csprojResolveAssemblyReference.cache
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\HW1_4\HW1_4\obj\Debug\HW1_4.exe
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.4-reference-dll\HW1_4\HW1_4\obj\Debug\HW1_4.pdb
