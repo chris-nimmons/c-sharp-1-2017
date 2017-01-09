@@ -1,0 +1,5 @@
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\HW 1.02-dot-net-framework\HW 1.02-dot-net-framework\bin\Debug\HW 1.02-dot-net-framework.exe.config
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\HW 1.02-dot-net-framework\HW 1.02-dot-net-framework\bin\Debug\HW 1.02-dot-net-framework.exe
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\HW 1.02-dot-net-framework\HW 1.02-dot-net-framework\bin\Debug\HW 1.02-dot-net-framework.pdb
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\HW 1.02-dot-net-framework\HW 1.02-dot-net-framework\obj\Debug\HW 1.02-dot-net-framework.exe
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\1\1.2-dot-net-framework\HW 1.02-dot-net-framework\HW 1.02-dot-net-framework\obj\Debug\HW 1.02-dot-net-framework.pdb
