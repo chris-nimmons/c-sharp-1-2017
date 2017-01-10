@@ -12,7 +12,7 @@ namespace FoxTranslator
         {
             string foxSpeak = "wa pow ring ding tchoff pa joff ho hatee tchoffo dingeringeding";
             Translator translator = new FoxTranslator.Translator();
-            Console.WriteLine(translator.AlternativeTranslate(foxSpeak));
+            Console.WriteLine(translator.SwitchTranslate(foxSpeak));
             Console.ReadLine();
         }
     }

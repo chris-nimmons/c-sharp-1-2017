@@ -19,54 +19,7 @@ namespace FoxTranslator
                 { "like", "owe", "acorn", "and", "I", "me", "dont", "a", "squirrels", "you", "new" };
         }
 
-        public string SwitchTranslate(string foxSpeak)
-        {
-            string[] foxSpeakSplitted = foxSpeak.Split();
-            string humanSpeak = "";
-            foreach (string word in foxSpeakSplitted)
-            {
-                switch (word)
-                {
-                    case "tchoffo":
-                        humanSpeak += "like ";
-                        break;
-                    case "pow":
-                        humanSpeak += "owe ";
-                        break;
-                    case "pa":
-                        humanSpeak += "acorn ";
-                        break;
-                    case "joff":
-                        humanSpeak += "and ";
-                        break;
-                    case "ho":
-                        humanSpeak += "I ";
-                        break;
-                    case "ring":
-                        humanSpeak += "me ";
-                        break;
-                    case "hatee":
-                        humanSpeak += "dont ";
-                        break;
-                    case "ding":
-                        humanSpeak += "a ";
-                        break;
-                    case "dingeringeding":
-                        humanSpeak += "squirrels ";
-                        break;
-                    case "wa":
-                        humanSpeak += "you ";
-                        break;
-                    case "tchoff":
-                        humanSpeak += "new ";
-                        break;
-                }
-            }
-
-            return humanSpeak;
-        }
-
-        public string IfElseTranslate(string foxSpeak)
+        public string AlternativeTranslate(string foxSpeak)
         {
             string[] foxSpeakSplitted = foxSpeak.Split();
             string humanSpeak = "";
