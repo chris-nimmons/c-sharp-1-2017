@@ -1,0 +1,2 @@
+C:\Users\Kyle\Desktop\Decompiler\Decompiler\bin\Debug\Decompiler.exe.config
+C:\Users\Kyle\Desktop\Assignment 1\1.6_Decompiler\Decompiler\bin\Debug\Decompiler.exe.config

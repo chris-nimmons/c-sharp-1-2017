@@ -1,0 +1,7 @@
+C:\Users\Kyle\Desktop\ReferenceProgram\ReferenceProgram\bin\Debug\ReferenceProgram.exe.config
+C:\Users\Kyle\Desktop\ReferenceProgram\ReferenceProgram\bin\Debug\ReferenceProgram.exe
+C:\Users\Kyle\Desktop\ReferenceProgram\ReferenceProgram\bin\Debug\ReferenceProgram.pdb
+C:\Users\Kyle\Desktop\ReferenceProgram\ReferenceProgram\bin\Debug\Reference.dll
+C:\Users\Kyle\Desktop\ReferenceProgram\ReferenceProgram\obj\Debug\ReferenceProgram.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Desktop\ReferenceProgram\ReferenceProgram\obj\Debug\ReferenceProgram.exe
+C:\Users\Kyle\Desktop\ReferenceProgram\ReferenceProgram\obj\Debug\ReferenceProgram.pdb

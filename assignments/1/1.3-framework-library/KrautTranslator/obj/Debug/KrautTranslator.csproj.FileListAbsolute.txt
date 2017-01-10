@@ -1,0 +1,5 @@
+C:\Users\Kyle\Desktop\KrautTranslator\KrautTranslator\obj\Debug\KrautTranslator.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Desktop\KrautTranslator\KrautTranslator\bin\Debug\KrautTranslator.dll
+C:\Users\Kyle\Desktop\KrautTranslator\KrautTranslator\bin\Debug\KrautTranslator.pdb
+C:\Users\Kyle\Desktop\KrautTranslator\KrautTranslator\obj\Debug\KrautTranslator.dll
+C:\Users\Kyle\Desktop\KrautTranslator\KrautTranslator\obj\Debug\KrautTranslator.pdb

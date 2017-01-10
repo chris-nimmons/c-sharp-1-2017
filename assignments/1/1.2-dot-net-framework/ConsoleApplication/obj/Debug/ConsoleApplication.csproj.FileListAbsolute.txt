@@ -1,0 +1,2 @@
+C:\Users\Kyle\Desktop\ConsoleApplication\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
+C:\Users\Kyle\Desktop\c-sharp-1-2017\Assignment 1\ConsoleApplication\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
