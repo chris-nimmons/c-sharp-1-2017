@@ -1,0 +1,6 @@
+C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\obj\Debug\FoxTranslator.csprojResolveAssemblyReference.cache
+C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\bin\Debug\MainMethod.exe.config
+C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\bin\Debug\MainMethod.exe
+C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\bin\Debug\MainMethod.pdb
+C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\obj\Debug\MainMethod.exe
+C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\obj\Debug\MainMethod.pdb
