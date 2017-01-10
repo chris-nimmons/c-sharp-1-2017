@@ -19,47 +19,47 @@ namespace Fox_Translator
             {
                 if(word == "wa")
                 {
-                    Console.WriteLine("you");
+                    Console.Write("You ");
                 }
                 else if(word == "pow")
                 {
-                    Console.WriteLine("owe");
+                    Console.Write("owe ");
                 }
                 else if(word == "ring")
                 {
-                    Console.WriteLine("me");
+                    Console.Write("me ");
                 }
                 else if(word == "ding")
                 {
-                    Console.WriteLine("a");
+                    Console.Write("a ");
                 }
                 else if(word == "tchoff")
                 {
-                    Console.WriteLine("new");
+                    Console.Write("new ");
                 }
                 else if(word == "pa")
                 {
-                    Console.WriteLine("acorn");
+                    Console.Write("acorn ");
                 }
                 else if(word == "joff")
                 {
-                    Console.WriteLine("and");
+                    Console.Write("and ");
                 }
                 else if(word == "ho")
                 {
-                    Console.WriteLine("I");
+                    Console.Write("I ");
                 }
                 else if(word == "hatee")
                 {
-                    Console.WriteLine("dont");
+                    Console.Write("dont ");
                 }
                 else if(word == "tchoffo")
                 {
-                    Console.WriteLine("like");
+                    Console.Write("like ");
                 }
                 else if(word == "dingeringeding")
                 {
-                    Console.WriteLine("squirrels");
+                    Console.Write("squirrels.");
                 }
                
             }
