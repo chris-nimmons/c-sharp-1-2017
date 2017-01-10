@@ -1,0 +1,6 @@
+C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\bin\Debug\FoxTranslator.exe.config
+C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\obj\Debug\FoxTranslator.csprojResolveAssemblyReference.cache
+C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\bin\Debug\FoxTranslator.exe
+C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\bin\Debug\FoxTranslator.pdb
+C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\obj\Debug\FoxTranslator.exe
+C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\obj\Debug\FoxTranslator.pdb
