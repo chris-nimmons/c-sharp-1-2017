@@ -1,0 +1,9 @@
+\\Mac\Home\Desktop\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe.config
+\\Mac\Home\Desktop\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe
+\\Mac\Home\Desktop\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.pdb
+\\Mac\Home\Desktop\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.exe
+\\Mac\Home\Desktop\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.pdb
+C:\Users\colbyburke\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe.config
+C:\Users\colbyburke\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.exe
+C:\Users\colbyburke\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.pdb
