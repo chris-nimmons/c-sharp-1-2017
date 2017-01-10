@@ -4,3 +4,9 @@ C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\bin\Debug\MainMet
 C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\bin\Debug\MainMethod.pdb
 C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\obj\Debug\MainMethod.exe
 C:\Users\marcondag\Documents\TIY\misc\FoxTranslator\MainMethod\obj\Debug\MainMethod.pdb
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\2\2.0-fox-translator\FoxTranslator\MainMethod\bin\Debug\MainMethod.exe.config
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\2\2.0-fox-translator\FoxTranslator\MainMethod\obj\Debug\MainMethod.exe
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\2\2.0-fox-translator\FoxTranslator\MainMethod\obj\Debug\MainMethod.pdb
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\2\2.0-fox-translator\FoxTranslator\MainMethod\bin\Debug\MainMethod.exe
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\2\2.0-fox-translator\FoxTranslator\MainMethod\bin\Debug\MainMethod.pdb
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\2\2.0-fox-translator\FoxTranslator\MainMethod\obj\Debug\FoxTranslator.csprojResolveAssemblyReference.cache

@@ -26,7 +26,7 @@ namespace FoxTranslator
             //Iterate each word and find foxWords index
             //Replace humanSpeak index w/ humanword
             string[] foxSpeakSplitted = foxSpeak.Split();
-            string[] humanSpeak = new string[foxSpeak.Length];
+            string[] humanSpeak = new string[foxSpeakSplitted.Length];
             for (int sentenceIndex = 0; sentenceIndex < foxSpeakSplitted.Length; sentenceIndex++)
             {
                 for (int translatorIndex = 0; translatorIndex < foxWords.Length; translatorIndex++)
@@ -38,12 +38,14 @@ namespace FoxTranslator
                 }
             }
 
-            string translatedSentence = "";
+            //string translatedSentence = "";
 
-            foreach (string word in humanSpeak)
-            {
-                translatedSentence += word + " ";
-            }
+            //foreach (string word in humanSpeak)
+            //{
+            //    translatedSentence += word + " ";
+            //}
+            
+            string translatedSentence = string.Join(" ", humanSpeak);
 
             return translatedSentence;
         }

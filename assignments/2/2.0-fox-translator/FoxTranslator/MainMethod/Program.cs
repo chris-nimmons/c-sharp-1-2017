@@ -14,7 +14,7 @@ namespace FoxTranslator
             Console.WriteLine("I'm going to translate:\n{0}\nfrom foxspeak to human speak.", foxSpeak);
             Translator translator = new FoxTranslator.Translator();
             string humanSpeak = translator.Translate(foxSpeak);
-            Console.WriteLine(humanSpeak);
+            Console.WriteLine("\n" + humanSpeak);
             Console.ReadLine();
         }
     }
