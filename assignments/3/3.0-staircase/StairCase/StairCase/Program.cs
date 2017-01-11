@@ -39,5 +39,25 @@ namespace StairCase
                 Console.WriteLine();
             }
         }
+
+        static void PrintWithStairArrays(int totalSteps)
+        {
+            char[] currentStep = new char[totalSteps];
+
+            for (int i = 0; i < totalSteps; i++)
+            {
+                currentStep[i] = ' ';
+            }
+
+            for (int i = totalSteps - 1; i >= 0; i--)
+            {
+                currentStep[i] = 'x';
+                foreach (char character in currentStep)
+                {
+                    Console.Write(character);
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
