@@ -1,0 +1,6 @@
+c:\users\spencer\desktop\StairCase\StairCase\bin\Debug\StairCase.exe.config
+c:\users\spencer\desktop\StairCase\StairCase\bin\Debug\StairCase.exe
+c:\users\spencer\desktop\StairCase\StairCase\bin\Debug\StairCase.pdb
+c:\users\spencer\desktop\StairCase\StairCase\obj\Debug\StairCase.exe
+c:\users\spencer\desktop\StairCase\StairCase\obj\Debug\StairCase.pdb
+c:\users\spencer\desktop\StairCase\StairCase\obj\Debug\StairCase.csprojResolveAssemblyReference.cache
