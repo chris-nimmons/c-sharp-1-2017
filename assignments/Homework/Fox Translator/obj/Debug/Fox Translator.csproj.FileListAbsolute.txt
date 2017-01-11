@@ -1,0 +1,6 @@
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Fox Translator\bin\Debug\Fox Translator.exe.config
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Fox Translator\bin\Debug\Fox Translator.exe
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Fox Translator\bin\Debug\Fox Translator.pdb
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Fox Translator\obj\Debug\Fox Translator.csprojResolveAssemblyReference.cache
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Fox Translator\obj\Debug\Fox Translator.exe
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Fox Translator\obj\Debug\Fox Translator.pdb
