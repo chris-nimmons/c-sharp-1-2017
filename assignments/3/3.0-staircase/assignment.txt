@@ -1,0 +1,8 @@
+Build a stair case using for blocks.  
+
+     x
+    xx
+   xxx
+  xxxx
+ xxxxx
+xxxxxx
