@@ -1,0 +1,5 @@
+C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\FoxLibrary\bin\Debug\FoxLibrary.dll
+C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\FoxLibrary\bin\Debug\FoxLibrary.pdb
+C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\FoxLibrary\obj\Debug\Library.Fox.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\FoxLibrary\obj\Debug\FoxLibrary.dll
+C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\FoxLibrary\obj\Debug\FoxLibrary.pdb
