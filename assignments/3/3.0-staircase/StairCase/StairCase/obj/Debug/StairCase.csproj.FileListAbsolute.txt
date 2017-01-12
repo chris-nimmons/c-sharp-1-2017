@@ -1,0 +1,12 @@
+C:\Users\marcondag\Documents\TIY\misc\StairCase\StairCase\bin\Debug\StairCase.exe.config
+C:\Users\marcondag\Documents\TIY\misc\StairCase\StairCase\bin\Debug\StairCase.exe
+C:\Users\marcondag\Documents\TIY\misc\StairCase\StairCase\bin\Debug\StairCase.pdb
+C:\Users\marcondag\Documents\TIY\misc\StairCase\StairCase\obj\Debug\StairCase.csprojResolveAssemblyReference.cache
+C:\Users\marcondag\Documents\TIY\misc\StairCase\StairCase\obj\Debug\StairCase.exe
+C:\Users\marcondag\Documents\TIY\misc\StairCase\StairCase\obj\Debug\StairCase.pdb
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\3\3.0-staircase\StairCase\StairCase\bin\Debug\StairCase.exe.config
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\3\3.0-staircase\StairCase\StairCase\obj\Debug\StairCase.exe
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\3\3.0-staircase\StairCase\StairCase\obj\Debug\StairCase.pdb
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\3\3.0-staircase\StairCase\StairCase\bin\Debug\StairCase.exe
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\3\3.0-staircase\StairCase\StairCase\bin\Debug\StairCase.pdb
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\3\3.0-staircase\StairCase\StairCase\obj\Debug\StairCase.csprojResolveAssemblyReference.cache
