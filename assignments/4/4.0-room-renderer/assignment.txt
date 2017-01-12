@@ -2,4 +2,13 @@ Create a new .Net Framework Console Application.
 Create a room data model using a Factory.  
 Add items to each room randomly.  
 Render the room to the console using a Renderer class.  
-Here is an example of a rendered room with 
+Here is an example of a rendered room with tables displaying as T.
+
+
+xxxxxxxxxxxxxx
+x        xx  x 
+x        xxxxx 
+x   TT   xx  x
+x   TT   xx  x
+x        xx  x
+xxxxxxxxxxxxxx 
