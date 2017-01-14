@@ -1,0 +1,6 @@
+c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFromScratch\bin\Debug\RenderFromScratch.exe.config
+c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFromScratch\bin\Debug\RenderFromScratch.exe
+c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFromScratch\bin\Debug\RenderFromScratch.pdb
+c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFromScratch\obj\Debug\RenderFromScratch.csprojResolveAssemblyReference.cache
+c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFromScratch\obj\Debug\RenderFromScratch.exe
+c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFromScratch\obj\Debug\RenderFromScratch.pdb
