@@ -20,15 +20,15 @@ namespace RenderFromScratch
         {
             List<IRenderable> renderables = new List<IRenderable>();
 
-            Console.WriteLine("Enter desired Length of room: ");
+            Console.WriteLine("Enter desired Length of room (0-100): ");
             int roomLength = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter desired Width of room: ");
+            Console.WriteLine("Enter desired Width of room (0-100): ");
             int roomWidth = int.Parse(Console.ReadLine());
             Console.ReadLine();
 
             Random random = new Random();
-            int randomNumber = random.Next(0, 50);
+            int randomNumber = random.Next(0, 100);
 
             Table table = new Table();
             table.X = randomNumber;
@@ -54,16 +54,38 @@ namespace RenderFromScratch
             Renderer render = new Renderer();
             render.Render(renderables);
 
-            for (int y = 0; y < roomLength; y++)
+            if (roomLength > 0 || roomWidth > 0)
             {
-                for (int x = 0; x < roomWidth; x++)
-                {
-                    Console.Write("*");
-                }
-
                 Console.WriteLine();
+                for (int y = 0; y < roomLength; y++)
+                {
+                    for (int x = 0; x < roomWidth; x++)
+                    {
+                        if (y == 0)
+                        {
+                            Console.Write("*");
+                        }
+                        else if (y == roomLength - 1)
+                        {
+                            Console.Write("*");
+                        }
+                        else if (x == 0)
+                        {
+                            Console.Write("*");
+                        }
+                        else if(x == roomWidth - 1)
+                        {
+                            Console.Write("*");
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                    }
+
+                    Console.WriteLine();
+                }
             }
-        
     }
 
 
