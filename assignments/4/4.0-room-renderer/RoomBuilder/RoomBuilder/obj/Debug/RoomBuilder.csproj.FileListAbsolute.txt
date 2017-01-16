@@ -1,0 +1,6 @@
+c:\users\thinkpad\documents\visual studio 2015\Projects\RoomBuilder\RoomBuilder\bin\Debug\RoomBuilder.exe.config
+c:\users\thinkpad\documents\visual studio 2015\Projects\RoomBuilder\RoomBuilder\bin\Debug\RoomBuilder.exe
+c:\users\thinkpad\documents\visual studio 2015\Projects\RoomBuilder\RoomBuilder\bin\Debug\RoomBuilder.pdb
+c:\users\thinkpad\documents\visual studio 2015\Projects\RoomBuilder\RoomBuilder\obj\Debug\RoomBuilder.csprojResolveAssemblyReference.cache
+c:\users\thinkpad\documents\visual studio 2015\Projects\RoomBuilder\RoomBuilder\obj\Debug\RoomBuilder.exe
+c:\users\thinkpad\documents\visual studio 2015\Projects\RoomBuilder\RoomBuilder\obj\Debug\RoomBuilder.pdb
