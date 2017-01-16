@@ -1,0 +1,9 @@
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\RoomRenderer\RoomRenderer\bin\Debug\RoomRenderer.exe.config
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\RoomRenderer\RoomRenderer\bin\Debug\RoomRenderer.exe
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\RoomRenderer\RoomRenderer\bin\Debug\RoomRenderer.pdb
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\RoomRenderer\RoomRenderer\obj\Debug\RoomRenderer.csprojResolveAssemblyReference.cache
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\RoomRenderer\RoomRenderer\obj\Debug\RoomRenderer.exe
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\RoomRenderer\RoomRenderer\obj\Debug\RoomRenderer.pdb
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomRenderer\RoomRenderer\bin\Debug\RoomRenderer.exe.config
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomRenderer\RoomRenderer\obj\Debug\RoomRenderer.exe
+C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomRenderer\RoomRenderer\obj\Debug\RoomRenderer.pdb
