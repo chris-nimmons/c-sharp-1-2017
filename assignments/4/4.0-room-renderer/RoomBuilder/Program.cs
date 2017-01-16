@@ -22,9 +22,11 @@ namespace RoomBuilder
             Random random = new Random();
             List<IRenderable> renderables = new List<IRenderable>();
 
-            
+
             Console.OutputEncoding = Encoding.GetEncoding(866);
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("┌───────────────────────────────────────────────────────────┐");
+            Console.ResetColor();
 
             int rows = random.Next(1, 10);
             int cols = random.Next(1, 15);
@@ -37,8 +39,9 @@ namespace RoomBuilder
                     if (col + 1 > nextrow)
                     {
                         //Console.SetCursorPosition(rows, cols);
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("│                                                           │");
-                      
+                        Console.ResetColor();
                     }
                     else
                     {
@@ -46,7 +49,9 @@ namespace RoomBuilder
                     }
                 }
             }
-            Console.WriteLine("─────────────────────────────────────────────────────────────");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
+            Console.ResetColor();
 
             Walls walls = new Walls();
 
@@ -105,8 +110,6 @@ namespace RoomBuilder
 
         public void Render()
         {
-            //Console.SetCursorPosition(rows, cols);
-            //Console.Write("│                                                           │");
         }
     }
 
@@ -119,7 +122,9 @@ namespace RoomBuilder
         public void Render()
         {
             Console.SetCursorPosition(X, Y);
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.Write('T');
+            Console.ResetColor();
         }
     }
 
@@ -140,6 +145,7 @@ namespace RoomBuilder
                 int X = Random.Next(10, 30);
                 int Y = Random.Next(10, 30);
                 Console.SetCursorPosition(X, Y);
+
             }
 
         }
@@ -158,7 +164,9 @@ namespace RoomBuilder
         public void Render()
         {
             Console.SetCursorPosition(X, Y);
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write('C');
+            Console.ResetColor();
         }
     }
 
