@@ -35,14 +35,17 @@ namespace RenderFromScratch
 
             Console.ReadLine();
 
-            Random random = new Random();
-            int randomNumber = random.Next(0, 100);
+            Random random1 = new Random();
+            int randomNumber1 = random1.Next(0, 100);
 
             Room room = new Room();
-            room.positionX = randomNumber;
-            room.positionY = randomNumber;
+            room.positionX = randomNumber1;
+            room.positionY = randomNumber1;
             room.Length = Length;
             room.Width = Width;
+
+            Random random = new Random();
+            int randomNumber = random.Next(room.Width - 1, room.Length -1);
 
             Table table = new Table();
             table.X = randomNumber;
@@ -55,6 +58,7 @@ namespace RenderFromScratch
             Chair chair = new Chair();
             chair.X = randomNumber;
             chair.Y = randomNumber;
+
 
             renderables.Add(table);
             renderables.Add(table2);
