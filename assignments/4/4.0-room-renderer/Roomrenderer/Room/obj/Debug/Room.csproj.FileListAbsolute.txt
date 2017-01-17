@@ -1,5 +1,0 @@
-C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\4\Room\Room\bin\Debug\Room.exe.config
-C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\4\Room\Room\bin\Debug\Room.exe
-C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\4\Room\Room\bin\Debug\Room.pdb
-C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\4\Room\Room\obj\Debug\Room.exe
-C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\4\Room\Room\obj\Debug\Room.pdb
