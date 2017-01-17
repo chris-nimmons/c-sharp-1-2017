@@ -1,0 +1,5 @@
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\HW1.3\HW1.3\bin\Debug\HW1.3.dll
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\HW1.3\HW1.3\bin\Debug\HW1.3.pdb
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\HW1.3\HW1.3\obj\Debug\HW1.3.csprojResolveAssemblyReference.cache
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\HW1.3\HW1.3\obj\Debug\HW1.3.dll
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\1\1.3-framework-library\HW1.3\HW1.3\obj\Debug\HW1.3.pdb
