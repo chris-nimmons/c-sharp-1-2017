@@ -8,61 +8,56 @@ namespace RoomBuilder
 {
     class Program
     {
+        public bool Running { get; set; }
         static void Main(string[] args)
         {
             Program program = new Program();
             program.Start();
             Console.ReadLine();
+
+
         }
 
 
         public void Start()
         {
-
             Random random = new Random();
+
+
+
             List<IRenderable> renderables = new List<IRenderable>();
 
-
-            Console.OutputEncoding = Encoding.GetEncoding(866);
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("┌───────────────────────────────────────────────────────────┐");
-            Console.ResetColor();
-
-            int rows = random.Next(1, 10);
-            int cols = random.Next(1, 15);
-
-            for (int row = 0; row < rows; row++)
             {
-                for (int col = 0; col < cols; col++)
+                int width = random.Next(40,50);
+                int height = random.Next(20,30);
+
+
+
+
+                for (int x = 0; x <= width; x++)
                 {
-                    int nextrow = cols - col;
-                    if (col + 1 > nextrow)
-                    {
-                        //Console.SetCursorPosition(rows, cols);
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        Console.WriteLine("│                                                           │");
-                        Console.ResetColor();
-                    }
-                    else
-                    {
-                        ;
-                    }
+                    Console.SetCursorPosition(x, 0);
+                    Console.Write("R");
+                    Console.SetCursorPosition(x, height);
+                    Console.Write("G");
                 }
+                for (int y = 0; y <= height; y++)
+                {
+                    Console.SetCursorPosition(0, y);
+                    Console.Write("L");
+                    Console.SetCursorPosition(width, y);
+                    Console.Write("R");
+                }
+               
             }
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
-            Console.ResetColor();
-
-            Walls walls = new Walls();
-
 
             Table table = new Table();
-            table.X = random.Next(2, 10);
-            table.Y = random.Next(2, 10);
+            table.X = random.Next(2, 40);
+            table.Y = random.Next(2, 30);
 
             Table table2 = new Table();
-            table2.X = random.Next(2, 10);
-            table2.Y = random.Next(2, 10);
+            table2.X = random.Next(2, 30);
+            table2.Y = random.Next(2, 30);
 
             Chair chair = new Chair();
             chair.X = table.X - 1;
@@ -82,19 +77,32 @@ namespace RoomBuilder
 
             renderables.Add(table);
             renderables.Add(table2);
-
             renderables.Add(chair);
             renderables.Add(chair2);
             renderables.Add(chair3);
             renderables.Add(chair4);
-            renderables.Add(walls);
+
 
             Renderer render = new Renderer();
             render.Render(renderables);
 
-            // Console.SetCursorPosition(0,walls.rows+1);
-            //Console.WriteLine("└───────────────────────────────────────────────────────────┘");
+
+
             Console.ReadLine();
+
+
+
+            var program = new Program();
+            program.Running = true;
+
+            while (program.Running)
+            {
+                program.Running = false;
+                {
+                    Console.Clear();
+                    Start();
+                }
+            }
 
         }
 
@@ -102,16 +110,6 @@ namespace RoomBuilder
     }
 
     //Classes 
-
-    public class Walls : IRenderable
-    {
-        public int rows { get; set; }
-        public int cols { get; set; }
-
-        public void Render()
-        {
-        }
-    }
 
 
     public class Table : IRenderable
@@ -132,6 +130,9 @@ namespace RoomBuilder
     {
 
         public Random Random { get; set; }
+
+        int X { get; set; }
+        int Y { get; set; }
 
         public void Render(List<IRenderable> renderables)
         {
