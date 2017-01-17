@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContainerLib
+namespace RoomRenderer
 {
     public class Room : IContainer
     {
@@ -21,7 +21,7 @@ namespace ContainerLib
         public Border Border { get; set; }
 
         public List<List<IRenderable>> BorderOverlay { get; set; }
-        public List<List<IRenderable>> RoomFeatures { get; set; }
+        public List<IAngled> RoomFeatures { get; set; }
 
         public Room(int x,
                     int y,
@@ -52,7 +52,7 @@ namespace ContainerLib
             Border.BorderPopulator();
 
             BorderOverlay = new List<List<IRenderable>>();
-            RoomFeatures = new List<List<IRenderable>>();
+            RoomFeatures = new List<IAngled>();
         }
     }
 }

@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerLib\Border.cs" />
+    <Compile Include="RoomFeatures\Table.cs" />
+    <Compile Include="RoomFeatures\Chair.cs" />
+    <Compile Include="RoomFeatures\Chalkboard.cs" />
     <Compile Include="ContainerLib\Container.cs" />
     <Compile Include="ContainerLib\Interfaces.cs" />
     <Compile Include="ContainerLib\Room.cs" />

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ContainerLib;
+using RoomRenderer;
 using Factories;
 using Managers;
 
@@ -34,30 +34,29 @@ namespace RoomRenderer
 
         public void TestingBoundaries()
         {
-            var chalkboards = new string[]
+            var validAngles = new Angle[]
             {
-                "long chalkboard",
-                "long chalkboard diagonal early down",
-                "long chalkboard vertical",
-                "long chalkboard diagonal late down",
-                "long chalkboard left",
-                "long chalkboard diagonal early up",
-                "long chalkboard vertical up",
-                "long chalkboard diagonal late up"
+                Angle.HorizontalRight,
+                Angle.DiagonalDownRight,
+                Angle.VerticalDown,
+                Angle.DiagonalDownLeft,
+                Angle.HorizontalLeft,
+                Angle.DiagonalUpLeft,
+                Angle.VerticalUp,
+                Angle.DiagonalUpRight
             };
             var renderer = new Renderer();
-            LocationsManager manager;
             var random = new Random();
             var container = new Container() { Random = random };
-            container.AddRoom('A');
+            container.AddRoom('G');
             var factory = new FeatureFactory(container.Rooms[0]) { Random = random };
 
             while (true) {
-                foreach (var chalkboard in chalkboards)
+                foreach (var angle in validAngles)
                 {
                     Console.Clear();
-                    container.Rooms[0].RoomFeatures = new List<List<IRenderable>>();
-                    container.Rooms[0].RoomFeatures.Add(factory.DefaultChalkboard(chalkboard));
+                    container.Rooms[0].RoomFeatures = new List<IAngled>();
+                    container.Rooms[0].RoomFeatures.Add(factory.DefaultChalkboard(angle));
                     renderer.RenderRoom(container.Rooms[0]);
                     Console.ReadKey(true);
                 } }
@@ -65,34 +64,36 @@ namespace RoomRenderer
 
         public void TestingAngles()
         {
-            var validAngles = new int[]
+            var validAngles = new Angle[]
             {
-                5, 15, 25, 30, 35, 45, 55, 60
+                Angle.HorizontalRight,
+                Angle.DiagonalDownRight,
+                Angle.VerticalDown,
+                Angle.DiagonalDownLeft,
+                Angle.HorizontalLeft,
+                Angle.DiagonalUpLeft,
+                Angle.VerticalUp,
+                Angle.DiagonalUpRight
             };
             var renderer = new Renderer();
-            LocationsManager manager;
-
-            manager = new LocationsManager()
-            {
-                X = 4,
-                Y = 4,
-                Width = 4,
-                Height = 2,
-                Angle = 55,
-                DisplayGlyph = '-',
-                DiagonalGlyphEarly = '\\',
-                DiagonalGlyphLate = '/',
-                VerticalGlyph = '|'
-            };
-
-            renderer.RenderLocations(manager.Populate());
-            Console.ReadKey(true); 
 
             foreach (var angle in validAngles)
             {
                 Console.Clear();
 
-                manager = new LocationsManager()
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.SetCursorPosition(i, 0);
+                    Console.Write(i);
+                }
+
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.SetCursorPosition(0, i);
+                    Console.Write(i);
+                }
+
+                var manager = new LocationsManager()
                 {
                     X = 4,
                     Y = 4,

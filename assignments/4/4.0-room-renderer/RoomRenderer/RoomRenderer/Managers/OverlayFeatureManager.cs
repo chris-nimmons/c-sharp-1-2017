@@ -1,4 +1,4 @@
-﻿using ContainerLib;
+﻿using RoomRenderer;
 using System.Collections.Generic;
 
 namespace Managers
@@ -17,8 +17,8 @@ namespace Managers
             Locations = new List<IRenderable>();
             X = room.X - 1;
             Y = room.Y - 1;
-            Width = room.Width + 2;
-            Height = room.Height + 2;
+            Width = room.Width + 1;
+            Height = room.Height + 1;
         }
 
         public List<IRenderable> NewOverlayFeature(int x,

@@ -1,5 +1,5 @@
 ﻿using System;
-using ContainerLib;
+using RoomRenderer;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +28,14 @@ namespace RoomRenderer
         public void RenderRoomIndex(Room room)
         {
             WriteAt(room.X, room.Y, room.Index.ToString().ToCharArray()[0]);
+        }
+
+        public void RenderRange(List<IAngled> listOfIAngled)
+        {
+            foreach (IAngled feature in listOfIAngled)
+            {
+                RenderLocations(feature.Locations);
+            }
         }
 
         public void RenderRange(List<List<IRenderable>> listOfLocations)

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ContainerLib;
+using RoomRenderer;
 using Factories;
 using Managers;
 
@@ -41,10 +41,10 @@ namespace RoomRenderer
             return newRoom;
         }
 
-        public List<List<IRenderable>> RandomDefaultFeature(Room room, int quantity = 1)
+        public List<IAngled> RandomDefaultFeature(Room room, int quantity = 1)
         {
-            List<IRenderable> newFeature;
-            var newFeatures = new List<List<IRenderable>>();
+            IAngled newFeature;
+            var newFeatures = new List<IAngled>();
             var featureFactory = new FeatureFactory(room) { Random = Random };
             var overlap = true;
 
@@ -56,7 +56,7 @@ namespace RoomRenderer
 
                     if (room.RoomFeatures.Count != 0)
                     {
-                        foreach (var oldFeature in room.RoomFeatures)
+                        foreach (IAngled oldFeature in room.RoomFeatures)
                         {
                             overlap = Overlap(newFeature, oldFeature);
                             if (overlap)
@@ -84,9 +84,9 @@ namespace RoomRenderer
             return newFeatures;
         }
 
-        public List<List<IRenderable>> NewDefaultFeature(Room room, string option, int quantity = 1)
+        public List<IAngled> NewDefaultFeature(Room room, string option, int quantity = 1)
         {
-            var newFeatures = new List<List<IRenderable>>();
+            var newFeatures = new List<IAngled>();
             var featureFactory = new FeatureFactory(room) { Random = Random };
 
             for (int i = 0; i < quantity; i++)
@@ -97,9 +97,9 @@ namespace RoomRenderer
             return newFeatures;
         }
 
-        public List<List<IRenderable>> NewRandomRoomFeatures(Room room, int quantity, char displayGlyph = 'C')
+        public List<IAngled> NewRandomRoomFeatures(Room room, int quantity, char displayGlyph = 'C')
         {
-            var newFeatures = new List<List<IRenderable>>();
+            var newFeatures = new List<IAngled>();
             var featureFactory = new FeatureFactory(room) { Random = Random };
 
             for (int i = 0; i < quantity; i++)
@@ -173,11 +173,11 @@ namespace RoomRenderer
             return true;
         }
 
-        public bool Overlap(List<IRenderable> newFeature, List<IRenderable> oldFeature)
+        public bool Overlap(IAngled newFeature, IAngled oldFeature)
         {
-            foreach (var oldCoor in oldFeature)
+            foreach (var oldCoor in oldFeature.Locations)
             {
-                foreach (var newCoor in newFeature)
+                foreach (var newCoor in newFeature.Locations)
                 {
                     if (!IsUnique(newCoor, oldCoor))
                     {

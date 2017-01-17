@@ -1,4 +1,4 @@
-﻿using ContainerLib;
+﻿using RoomRenderer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +71,15 @@ namespace Factories
                                     newRoomCoordinates.Item2,
                                     5,
                                     5,
+                                    defHoriz,
+                                    defVert,
+                                    defCorner,
+                                    Random);
+                case 'G':
+                    return new Room(newRoomCoordinates.Item1,
+                                    newRoomCoordinates.Item2,
+                                    10,
+                                    10,
                                     defHoriz,
                                     defVert,
                                     defCorner,

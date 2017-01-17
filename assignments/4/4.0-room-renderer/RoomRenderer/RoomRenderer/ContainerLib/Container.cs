@@ -4,7 +4,7 @@ using Factories;
 using RoomRenderer;
 using Managers;
 
-namespace ContainerLib
+namespace RoomRenderer
 {
     public class Container
     {

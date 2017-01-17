@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Managers;
 
-namespace ContainerLib
+namespace RoomRenderer
 {
     public class Border : IBorderType
     {

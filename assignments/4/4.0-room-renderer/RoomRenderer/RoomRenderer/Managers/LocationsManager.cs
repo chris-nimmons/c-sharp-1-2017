@@ -1,4 +1,4 @@
-﻿using ContainerLib;
+﻿using RoomRenderer;
 using System.Collections.Generic;
 
 namespace Managers
@@ -9,7 +9,7 @@ namespace Managers
         public int Y { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
-        public int Angle { get; set; }
+        public Angle Angle { get; set; }
 
         public char DisplayGlyph { get; set; }
         public char DiagonalGlyphEarly { get; set; }
@@ -18,31 +18,27 @@ namespace Managers
 
         public List<IRenderable> Locations { get; set; }
 
-        public LocationsManager()
-        {
-            Locations = new List<IRenderable>();
-        }
-
         public List<IRenderable> Populate()
         {
+            Locations = new List<IRenderable>();
             switch (Angle)
             {
                 default:
-                case 15:
+                case Angle.HorizontalRight:
                     return HorizontalRight();
-                case 25:
+                case Angle.DiagonalDownRight:
                     return DiagonalDownRight();
-                case 30:
+                case Angle.VerticalDown:
                     return VerticalDown();
-                case 35:
+                case Angle.DiagonalDownLeft:
                     return DiagonalDownLeft();
-                case 45:
+                case Angle.HorizontalLeft:
                     return HorizontalLeft();
-                case 55:
+                case Angle.DiagonalUpLeft:
                     return DiagonalUpLeft();
-                case 60:
+                case Angle.VerticalUp:
                     return VerticalUp();
-                case 5:
+                case Angle.DiagonalUpRight:
                     return DiagonalUpRight();
             }
         }
@@ -141,7 +137,7 @@ namespace Managers
         {
             for (int w = 0; w < Width; w++)
             {
-                for (int h = 0 - w - 1; h < Height - w - 1; h++)
+                for (int h = 0 - w; h < Height - w; h++)
                 {
                     Locations.Add(new Renderable()
                     {

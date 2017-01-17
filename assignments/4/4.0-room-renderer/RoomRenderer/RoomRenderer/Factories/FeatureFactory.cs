@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ContainerLib;
+using RoomRenderer;
 using Managers;
 
 namespace Factories
@@ -44,13 +44,70 @@ namespace Factories
             };
         }
 
-        public List<IRenderable> NewRoomFeature()
+        public IAngled NewChalkboard(Room room, Angle angle)
+        {
+            var width = Random.Next(2, 5);
+            var height = 1;
+            var x = RandomXFromFeatureSize(room, angle, width, height);
+            var y = RandomYFromFeatureSize(room, angle, width, height);
+            return new Chalkboard(x, y, width, height, angle);
+        }
+
+        public int RandomXFromFeatureSize(Room room, Angle angle, int width, int height)
+        {
+            switch (angle)
+            {
+                default:
+                case Angle.HorizontalRight:
+                    return Random.Next(room.X, room.X + room.Width - (width - 1));
+                case Angle.DiagonalDownRight:
+                    return Random.Next(room.X, room.X + room.Width - (width - 1) - (height - 1));
+                case Angle.VerticalDown:
+                    return Random.Next(room.X, room.X + room.Width - (height - 1));
+                case Angle.DiagonalDownLeft:
+                    return Random.Next(room.X + (width - 1), room.X + room.Width - (height - 1));
+                case Angle.HorizontalLeft:
+                    return Random.Next(room.X + (width - 1), room.X + room.Width);
+                case Angle.DiagonalUpLeft:
+                    return Random.Next(room.X + (width - 1) + (height - 1), room.X + room.Width);
+                case Angle.VerticalUp:
+                    return Random.Next(room.X, room.X + room.Width - (height - 1));
+                case Angle.DiagonalUpRight:
+                    return Random.Next(room.X, room.X + room.Width - (width - 1) - (height - 1));
+            }
+        }
+
+        public int RandomYFromFeatureSize(Room room, Angle angle, int width, int height)
+        {
+            switch (angle)
+            {
+                default:
+                case Angle.HorizontalRight:
+                    return Random.Next(room.Y, room.Y + room.Height - (height - 1));
+                case Angle.DiagonalDownRight:
+                    return Random.Next(room.Y, room.Y + room.Height - (width - 1));
+                case Angle.VerticalDown:
+                    return Random.Next(room.Y, room.Y + room.Height - (width - 1));
+                case Angle.DiagonalDownLeft:
+                    return Random.Next(room.Y, room.Y + room.Height - (width - 1));
+                case Angle.HorizontalLeft:
+                    return Random.Next(room.Y, room.Y + room.Height - (height - 1));
+                case Angle.DiagonalUpLeft:
+                    return Random.Next(room.Y + (width - 1), room.Y + room.Height);
+                case Angle.VerticalUp:
+                    return Random.Next(room.Y + (width - 1), room.Y + room.Height);
+                case Angle.DiagonalUpRight:
+                    return Random.Next(room.Y + (width - 1), room.Y + room.Height);
+            }
+        }
+
+        public IAngled NewRoomFeature()
         {
             var pick = Random.Next(0, DefaultOptions.Length);
             return NewRoomFeature(DefaultOptions[pick]);
         }
 
-        public List<IRenderable> NewRoomFeature(string option)
+        public IAngled NewRoomFeature(string option)
         {
             switch (option.ToLower())
             {
@@ -97,279 +154,298 @@ namespace Factories
             }
         }
 
-        public List<IRenderable> DefaultChalkboard(string option)
+        public Chalkboard DefaultChalkboard(Angle angle)
         {
-            LocationsManager locationsManager;
+            int width = 4;
+            int height = 1;
 
-            var displayGlyph = '=';
-            var earlyGlyph = '\\';
-            var lateGlyph = '/';
-            var vertGlyph = '|';
+            return new Chalkboard
+                (
+                    RandomXFromFeatureSize(Room, angle, width, height),
+                    RandomYFromFeatureSize(Room, angle, width, height),
+                    width,
+                    height,
+                    angle
+                );
+        }
+
+        public Chalkboard DefaultChalkboard(string option)
+        {
+            int width;
+            int height;
+            Angle angle;
 
             switch (option)
             {
                 default:
                 case "small chalkboard":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height + 1),
-                        Width = 2,
-                        Height = 1,
-                        Angle = 15,
-                        DisplayGlyph = displayGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 2;
+                    height = 1;
+                    angle = Angle.HorizontalRight;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "small chalkboard vertical":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height),
-                        Width = 2,
-                        Height = 1,
-                        Angle = 30,
-                        DisplayGlyph = displayGlyph,
-                        VerticalGlyph = vertGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 2;
+                    height = 1;
+                    angle = Angle.VerticalDown;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "small chalkboard diagonal early down":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height),
-                        Width = 2,
-                        Height = 1,
-                        Angle = 25,
-                        DisplayGlyph = displayGlyph,
-                        DiagonalGlyphEarly = earlyGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 2;
+                    height = 1;
+                    angle = Angle.DiagonalDownRight;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "small chalkboard diagonal late down":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X + 1, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height),
-                        Width = 2,
-                        Height = 1,
-                        Angle = 35,
-                        DisplayGlyph = displayGlyph,
-                        DiagonalGlyphLate = lateGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 2;
+                    height = 1;
+                    angle = Angle.DiagonalDownLeft;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chalkboard":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width - 2),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height + 1),
-                        Width = 4,
-                        Height = 1,
-                        Angle = 15,
-                        DisplayGlyph = displayGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 1;
+                    angle = Angle.HorizontalRight;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chalkboard diagonal early down":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width - 2),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height - 2),
-                        Width = 4,
-                        Height = 1,
-                        Angle = 25,
-                        DisplayGlyph = displayGlyph,
-                        DiagonalGlyphEarly = earlyGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 1;
+                    angle = Angle.DiagonalDownRight;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chalkboard vertical":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height - 2),
-                        Width = 4,
-                        Height = 1,
-                        Angle = 30,
-                        DisplayGlyph = displayGlyph,
-                        VerticalGlyph = vertGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 1;
+                    angle = Angle.VerticalDown;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chalkboard diagonal late down":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X + 3, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height - 2),
-                        Width = 4,
-                        Height = 1,
-                        Angle = 35,
-                        DisplayGlyph = displayGlyph,
-                        DiagonalGlyphLate = lateGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 1;
+                    angle = Angle.DiagonalDownLeft;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chalkboard left":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X + 3, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height + 1),
-                        Width = 4,
-                        Height = 1,
-                        Angle = 45,
-                        DisplayGlyph = displayGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 1;
+                    angle = Angle.HorizontalLeft;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chalkboard diagonal early up":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X + 4, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y + 3, Room.Y + Room.Height + 1),
-                        Width = 4,
-                        Height = 1,
-                        Angle = 55,
-                        DisplayGlyph = displayGlyph,
-                        DiagonalGlyphEarly = earlyGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 1;
+                    angle = Angle.DiagonalUpLeft;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chalkboard vertical up":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y + 3, Room.Y + Room.Height + 1),
-                        Width = 4,
-                        Height = 1,
-                        Angle = 60,
-                        DisplayGlyph = displayGlyph,
-                        VerticalGlyph = vertGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 1;
+                    angle = Angle.VerticalUp;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chalkboard diagonal late up":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width - 2),
-                        Y = Random.Next(Room.Y + 3, Room.Y + Room.Height + 1),
-                        Width = 4,
-                        Height = 1,
-                        Angle = 5,
-                        DisplayGlyph = displayGlyph,
-                        DiagonalGlyphLate = lateGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 1;
+                    angle = Angle.DiagonalUpRight;
+                    return new Chalkboard
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
             }
         }
 
-        public List<IRenderable> DefaultChair(string option)
+        public IAngled DefaultChair(string option)
         {
-            LocationsManager locationsManager;
-
-            var chairGlyph = 'C';
+            int width;
+            int height;
+            Angle angle;
 
             switch (option)
             {
                 default:
                 case "small chair":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height + 1),
-                        Width = 1,
-                        Height = 1,
-                        Angle = 15,
-                        DisplayGlyph = chairGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 1;
+                    height = 1;
+                    angle = Angle.HorizontalRight;
+                    return new Chair
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chair":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width - 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height + 1),
-                        Width = 3,
-                        Height = 1,
-                        Angle = 15,
-                        DisplayGlyph = chairGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 3;
+                    height = 1;
+                    angle = Angle.HorizontalRight;
+                    return new Chair
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chair vertical":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width - 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height + 1),
-                        Width = 3,
-                        Height = 1,
-                        Angle = 30,
-                        DisplayGlyph = chairGlyph,
-                        VerticalGlyph = chairGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 3;
+                    height = 1;
+                    angle = Angle.VerticalUp;
+                    return new Chair
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long chair diagonal":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X + 2, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height - 1),
-                        Width = 3,
-                        Height = 1,
-                        Angle = 35,
-                        DisplayGlyph = chairGlyph,
-                        DiagonalGlyphLate = chairGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 3;
+                    height = 1;
+                    angle = Angle.DiagonalDownLeft;
+                    return new Chair
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
             }
         }
 
-        public List<IRenderable> DefaultTable(string option)
+        public IAngled DefaultTable(string option)
         {
-            LocationsManager locationsManager;
-
-            var tableGlyph = 'T';
+            int width;
+            int height;
+            Angle angle;
 
             switch (option)
             {
                 default:
                 case "small table":
-                    locationsManager = new Managers.LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height + 1),
-                        Width = 1,
-                        Height = 1,
-                        Angle = 15,
-                        DisplayGlyph = tableGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 1;
+                    height = 1;
+                    angle = Angle.HorizontalRight;
+                    return new Table
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long table":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width - 2),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height),
-                        Width = 4,
-                        Height = 2,
-                        Angle = 15,
-                        DisplayGlyph = tableGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 2;
+                    angle = Angle.HorizontalRight;
+                    return new Table
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long table vertical":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X + 1, Room.X + Room.Width + 1),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height - 2),
-                        Width = 4,
-                        Height = 2,
-                        Angle = 30,
-                        DisplayGlyph = tableGlyph,
-                        VerticalGlyph = tableGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 2;
+                    angle = Angle.VerticalDown;
+                    return new Table
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
                 case "long table diagonal":
-                    locationsManager = new LocationsManager()
-                    {
-                        X = Random.Next(Room.X, Room.X + Room.Width - 2),
-                        Y = Random.Next(Room.Y, Room.Y + Room.Height - 2),
-                        Width = 4,
-                        Height = 2,
-                        Angle = 25,
-                        DisplayGlyph = tableGlyph,
-                        DiagonalGlyphEarly = tableGlyph
-                    };
-                    return locationsManager.Populate();
+                    width = 4;
+                    height = 2;
+                    angle = Angle.DiagonalDownRight;
+                    return new Table
+                        (
+                            RandomXFromFeatureSize(Room, angle, width, height),
+                            RandomYFromFeatureSize(Room, angle, width, height),
+                            width,
+                            height,
+                            angle
+                        );
             }
         }
 
-        public List<IRenderable> NewRoomFeature(int x, int y, int width, int height, int angle, char displayGlyph, char diagonalGlyphEarly = '\\', char diagonalGlyphLate = '/', char verticalGlyph = '|')
+        public IAngled NewRoomFeature(int x, int y, int width, int height, Angle angle, char displayGlyph, char diagonalGlyphEarly = '\\', char diagonalGlyphLate = '/', char verticalGlyph = '|')
         {
             var locationsManager = new LocationsManager()
             {
@@ -384,10 +460,10 @@ namespace Factories
                 VerticalGlyph = verticalGlyph
             };
 
-            return locationsManager.Populate();
+            return locationsManager.Populate() as IAngled;
         }
 
-        public List<IRenderable> RandomRoomFeature(char displayGlyph = 'C')
+        public IAngled RandomRoomFeature(char displayGlyph = 'C')
         {
             var width = Random.Next(1, 4);
             var height = Random.Next(1, 4);
@@ -401,10 +477,10 @@ namespace Factories
                 Width = width,
                 Height = height,
                 DisplayGlyph = displayGlyph,
-                Angle = 15
+                Angle = Angle.HorizontalRight
             };
 
-            return locationsManager.Populate();
+            return locationsManager.Populate() as IAngled;
         }
 
     }

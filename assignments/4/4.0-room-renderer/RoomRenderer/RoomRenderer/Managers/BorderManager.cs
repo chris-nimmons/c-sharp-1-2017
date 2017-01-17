@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using ContainerLib;
+using RoomRenderer;
 
 namespace Managers
 {
@@ -24,8 +24,8 @@ namespace Managers
                              char horizontalGlyph,
                              char verticalGlyph)
         {
-            Width = containerWidth + 2;
-            Height = containerHeight + 2;
+            Width = containerWidth + 1;
+            Height = containerHeight + 1;
             X = containerOriginX - 1;
             Y = containerOriginY - 1;
             CornerGlyph = cornerGlyph;
