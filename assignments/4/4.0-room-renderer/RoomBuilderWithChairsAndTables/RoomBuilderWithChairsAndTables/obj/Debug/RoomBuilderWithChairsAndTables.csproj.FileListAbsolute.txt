@@ -1,5 +1,0 @@
-C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomBuilderWithChairsAndTables\RoomBuilderWithChairsAndTables\bin\Debug\RoomBuilderWithChairsAndTables.exe.config
-C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomBuilderWithChairsAndTables\RoomBuilderWithChairsAndTables\bin\Debug\RoomBuilderWithChairsAndTables.exe
-C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomBuilderWithChairsAndTables\RoomBuilderWithChairsAndTables\bin\Debug\RoomBuilderWithChairsAndTables.pdb
-C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomBuilderWithChairsAndTables\RoomBuilderWithChairsAndTables\obj\Debug\RoomBuilderWithChairsAndTables.exe
-C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomBuilderWithChairsAndTables\RoomBuilderWithChairsAndTables\obj\Debug\RoomBuilderWithChairsAndTables.pdb

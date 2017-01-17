@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{546C5C01-056A-4785-AB56-CC5806411E8D}</ProjectGuid>
+    <ProjectGuid>{1D2AB92D-A182-49EC-BA33-726FD33A55C1}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RoomBuilderWithChairsAndTables</RootNamespace>
-    <AssemblyName>RoomBuilderWithChairsAndTables</AssemblyName>
+    <RootNamespace>TheRealRoomBuilder</RootNamespace>
+    <AssemblyName>TheRealRoomBuilder</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
