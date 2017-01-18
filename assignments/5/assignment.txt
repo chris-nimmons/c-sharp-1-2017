@@ -1,0 +1,61 @@
+Write a Console Application that displays the moves of each chess peice to the console.
+All pieces start at 10,10.
+Here is a visual move list for reference.  Use loops to create all moves except the knight and pawn.  
+
+
+King
+-----------------
+    XXX
+    XXX
+    XXX
+
+-----------------
+Queen
+-----------------
+
+ X X X
+  XXX
+XXXOXXXX
+  XXX
+ X X X
+
+-----------------
+Knight
+-----------------
+
+   X   X
+X         X
+     O
+X         X
+   X   X
+
+-----------------
+Pawn
+-----------------
+
+
+     X
+     O
+
+
+-----------------
+Bishop
+-----------------
+
+   X   X
+    X X 
+     O
+    X X
+   X   X
+
+-----------------
+Castle
+-----------------
+
+        X 
+        X 
+        X
+XXXXXXXXOXXXXXXXX
+        X
+        X
+        X
