@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Character.cs" />
     <Compile Include="ContainerLib\Border.cs" />
+    <Compile Include="Managers\CharacterManager.cs" />
     <Compile Include="RoomFeatures\Table.cs" />
     <Compile Include="RoomFeatures\Chair.cs" />
     <Compile Include="RoomFeatures\Chalkboard.cs" />

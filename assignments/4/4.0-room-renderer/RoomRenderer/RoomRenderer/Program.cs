@@ -22,14 +22,16 @@ namespace RoomRenderer
             var container = new Container() { Random = random };
             var renderer = new Renderer();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 2; i++)
             {
-                container.AddRoom();
+                container.AddRoom(6, 'T');
                 //renderer.RenderRoom(container.Rooms[container.Rooms.Count - 1]);
             }
 
             //var renderer = new Renderer();
             renderer.RenderContainer(container);
+            var manager = new CharacterManager(1, 1, container.AllRenderPoints);
+            while (manager.CharacterLooper((int)Console.ReadKey(true).Key)) { }
         }
 
         public void TestingBoundaries()

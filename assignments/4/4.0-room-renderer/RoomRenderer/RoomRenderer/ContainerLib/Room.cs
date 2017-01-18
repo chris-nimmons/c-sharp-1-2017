@@ -54,5 +54,16 @@ namespace RoomRenderer
             BorderOverlay = new List<List<IRenderable>>();
             RoomFeatures = new List<IAngled>();
         }
+
+        public void CleanUpBorder()
+        {
+            foreach (var feature in BorderOverlay)
+            {
+                foreach (var point in feature)
+                {
+                    Border.Locations.RemoveAll(p => p.X == point.X && p.Y == point.Y);
+                }
+            }
+        }
     }
 }

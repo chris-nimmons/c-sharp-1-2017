@@ -10,10 +10,12 @@ namespace RoomRenderer
     {
         public Random Random { get; set; }
         public List<Room> Rooms { get; set; }
+        public List<IRenderable> AllRenderPoints { get; set; }
+        public List<List<IRenderable>> Doors { get; set; }
         public List<Tuple<int, int>> ValidRoomCoordinates { get; set; }
         public int OriginX { get; set; }
         public int OriginY { get; set; }
-
+        
         public Container(int defaultX = 1,
                          int defaultY = 1)
         {
@@ -22,10 +24,11 @@ namespace RoomRenderer
 
             Rooms = new List<Room>();
             ValidRoomCoordinates = new List<Tuple<int, int>>();
+            AllRenderPoints = new List<IRenderable>();
             NewValidCoordinate(OriginX, OriginY);
         }
 
-        public void AddRoom(char option = 'R')
+        public void AddRoom(int defaultFeatures = 1, char option = 'R')
         {
             var roomManager = new RoomManager() { Random = Random };
             var newRoom = roomManager.CreateRoom(Rooms, ValidRoomCoordinates, option);
@@ -33,15 +36,26 @@ namespace RoomRenderer
             newRoom.BorderOverlay.AddRange(roomManager.NewOverlayFeatures(newRoom, 2, 'D'));
             //newRoom.RoomFeatures.AddRange(roomManager.NewRandomRoomFeatures(newRoom, 2, 'C'));
             //newRoom.RoomFeatures.AddRange(roomManager.NewRoomFeatures(newRoom, 2, 'T'));
-            newRoom.RoomFeatures.AddRange(roomManager.RandomDefaultFeature(newRoom, 3));
+            newRoom.RoomFeatures.AddRange(roomManager.RandomDefaultFeature(newRoom, defaultFeatures));
 
             newRoom.Index = Rooms.Count;
-            CleanUp(newRoom);
+            newRoom.CleanUpBorder();
+            CleanUpCoordinates(newRoom);
+
+            AllRenderPoints.AddRange(newRoom.Border.Locations);
+            foreach (var list in newRoom.BorderOverlay)
+            {
+                AllRenderPoints.AddRange(list);
+            }
+            foreach (var feature in newRoom.RoomFeatures)
+            {
+                AllRenderPoints.AddRange(feature.Locations);
+            }
 
             Rooms.Add(newRoom);
         }
 
-        public void CleanUp(Room newRoom)
+        public void CleanUpCoordinates(Room newRoom)
         {
             GeneratePossibleCoordinates(newRoom);
 
