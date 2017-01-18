@@ -1,0 +1,6 @@
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessPieces\bin\Debug\ChessPieces.exe.config
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessPieces\bin\Debug\ChessPieces.exe
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessPieces\bin\Debug\ChessPieces.pdb
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessPieces\obj\Debug\ChessPieces.csprojResolveAssemblyReference.cache
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessPieces\obj\Debug\ChessPieces.exe
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessPieces\obj\Debug\ChessPieces.pdb
