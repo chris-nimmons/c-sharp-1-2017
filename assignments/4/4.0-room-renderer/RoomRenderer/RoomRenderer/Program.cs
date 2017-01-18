@@ -31,7 +31,7 @@ namespace RoomRenderer
             //var renderer = new Renderer();
             renderer.RenderContainer(container);
             var manager = new CharacterManager(1, 1, container.AllRenderPoints);
-            while (manager.CharacterLooper((int)Console.ReadKey(true).Key)) { }
+            while (manager.CharacterLooper(Console.ReadKey(true).Key)) { }
         }
 
         public void TestingBoundaries()

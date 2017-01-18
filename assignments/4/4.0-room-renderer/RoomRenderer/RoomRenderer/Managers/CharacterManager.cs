@@ -17,13 +17,13 @@ namespace RoomRenderer
             AllRenderPoints = allRenderPoints;
         }
 
-        public bool CharacterLooper(int key)
+        public bool CharacterLooper(ConsoleKey key)
         {
             switch (key)
             {
                 default:
                     return true;
-                case (int)ConsoleKey.UpArrow:
+                case ConsoleKey.UpArrow:
                     if (OkayMovement(key) == WhatsThere.Nothing)
                     {
                         MoveUp();
@@ -33,7 +33,7 @@ namespace RoomRenderer
                         MoveUp();
                     }
                     return true;
-                case (int)ConsoleKey.DownArrow:
+                case ConsoleKey.DownArrow:
                     if (OkayMovement(key) == WhatsThere.Nothing)
                     {
                         MoveDown();
@@ -43,7 +43,7 @@ namespace RoomRenderer
                         MoveDown();
                     }
                     return true;
-                case (int)ConsoleKey.RightArrow:
+                case ConsoleKey.RightArrow:
                     if (OkayMovement(key) == WhatsThere.Nothing)
                     {
                         MoveRight();
@@ -53,7 +53,7 @@ namespace RoomRenderer
                         MoveRight();
                     }
                     return true;
-                case (int)ConsoleKey.LeftArrow:
+                case ConsoleKey.LeftArrow:
                     if (OkayMovement(key) == WhatsThere.Nothing)
                     {
                         MoveLeft();
@@ -63,7 +63,7 @@ namespace RoomRenderer
                         MoveLeft();
                     }
                     return true;
-                case (int)ConsoleKey.Escape:
+                case ConsoleKey.Escape:
                     return false;
             }
         }
@@ -108,19 +108,19 @@ namespace RoomRenderer
             Console.Write(Character.DisplayGlyph);
         }
 
-        public WhatsThere OkayMovement(int key)
+        public WhatsThere OkayMovement(ConsoleKey key)
         {
             switch (key)
             {
                 default:
                     return WhatsThere.Nothing;
-                case (int)ConsoleKey.UpArrow:
+                case ConsoleKey.UpArrow:
                     return TestUp();
-                case (int)ConsoleKey.DownArrow:
+                case ConsoleKey.DownArrow:
                     return TestDown();
-                case (int)ConsoleKey.RightArrow:
+                case ConsoleKey.RightArrow:
                     return TestRight();
-                case (int)ConsoleKey.LeftArrow:
+                case ConsoleKey.LeftArrow:
                     return TestLeft();
             }
         }
@@ -129,6 +129,10 @@ namespace RoomRenderer
         {
             foreach (var point in AllRenderPoints)
             {
+                if (IsItVoid(ConsoleKey.UpArrow))
+                {
+                    return WhatsThere.TheVoid;
+                }
                 if (point.X == Character.X && point.Y == Character.Y - 1)
                 {
                     return WhatIsIt(point.DisplayGlyph);
@@ -141,6 +145,10 @@ namespace RoomRenderer
         {
             foreach (var point in AllRenderPoints)
             {
+                if (IsItVoid(ConsoleKey.DownArrow))
+                {
+                    return WhatsThere.TheVoid;
+                }
                 if (point.X == Character.X && point.Y == Character.Y + 1)
                 {
                     return WhatIsIt(point.DisplayGlyph);
@@ -153,6 +161,10 @@ namespace RoomRenderer
         {
             foreach (var point in AllRenderPoints)
             {
+                if (IsItVoid(ConsoleKey.RightArrow))
+                {
+                    return WhatsThere.TheVoid;
+                }
                 if (point.X == Character.X + 1 && point.Y == Character.Y)
                 {
                     return WhatIsIt(point.DisplayGlyph);
@@ -165,12 +177,49 @@ namespace RoomRenderer
         {
             foreach (var point in AllRenderPoints)
             {
+                if (IsItVoid(ConsoleKey.LeftArrow))
+                {
+                    return WhatsThere.TheVoid;
+                }
                 if (point.X == Character.X - 1 && point.Y == Character.Y)
                 {
                     return WhatIsIt(point.DisplayGlyph);
                 }
             }
             return WhatsThere.Nothing;
+        }
+
+        public bool IsItVoid(ConsoleKey key)
+        {
+            switch (key)
+            {
+                default:
+                    return false;
+                case ConsoleKey.UpArrow:
+                    if (Character.Y - 1 < 0)
+                    {
+                        return true;
+                    }
+                    return false;
+                case ConsoleKey.DownArrow:
+                    if (Character.Y + 1 == Console.BufferHeight)
+                    {
+                        return true;
+                    }
+                    return false;
+                case ConsoleKey.RightArrow:
+                    if (Character.X + 1 == Console.BufferWidth)
+                    {
+                        return true;
+                    }
+                    return false;
+                case ConsoleKey.LeftArrow:
+                    if (Character.X - 1 < 0)
+                    {
+                        return true;
+                    }
+                    return false;
+            }
         }
 
         public WhatsThere WhatIsIt(char glyph)
@@ -196,7 +245,8 @@ namespace RoomRenderer
             Nothing,
             Unknown,
             Feature,
-            Door
+            Door,
+            TheVoid
         }
     }
 }
