@@ -13,7 +13,7 @@ namespace Rendering
             //instance of start below to run start method
             Program program = new Program();
             program.Start();
-            Console.ReadLine();
+           Console.ReadLine();
         }
         public void Start()
         {
@@ -22,91 +22,76 @@ namespace Rendering
             //setting a new variable
             List<IRenderable> renderables = new List<IRenderable>();
             Table table = new Table();
+            Table table1 = new Table();
             Table table2 = new Table();
             Table table3 = new Table();
-            Table table4 = new Table();
-            Table table5 = new Table();
-            table.X = 2;
-            table.Y = 1;
 
-            table2.X = 9;
-            table2.Y = 9;
-
-            table3.X = 9;
-            table3.Y = 1;
-
-            table4.X = 2;
-            table4.Y = 9;
-
-            table5.X = random.Next(2, 9);
-            table5.Y = random.Next(2, 9);
+            table.X = random.Next(4, 8);
+            table.Y = random.Next(4, 9);
+            table1.X = random.Next(21, 29);
+            table1.Y = random.Next(4, 8);
+            table2.X = random.Next(4, 8);
+            table2.Y = random.Next(21, 29);
+            table3.X = random.Next(21, 29);
+            table3.Y = random.Next(21, 29);
 
 
             renderables.Add(table);
+            renderables.Add(table1);
             renderables.Add(table2);
             renderables.Add(table3);
-            renderables.Add(table4);
-            renderables.Add(table5);
-
 
             Chair chair = new Chair();
-            chair.X = 4;
-            chair.Y = 4;
+            Chair chair1 = new Chair();
+            Chair chair2 = new Chair();
+            Chair chair3 = new Chair();
+            chair.X = random.Next(4, 8);
+            chair.Y = random.Next(4, 9);
+            chair1.X = random.Next(21, 29);
+            chair1.Y = random.Next(4, 8);
+            chair2.X = random.Next(4, 8);
+            chair2.Y = random.Next(21, 29);
+            chair3.X = random.Next(21, 29);
+            chair3.Y = random.Next(21, 29);
 
             renderables.Add(chair);
+            renderables.Add(chair1);
+            renderables.Add(chair2);
+            renderables.Add(chair3);
 
-            List<ISizeable> sizeable = new List<ISizeable>();
+
+            List<ISizeable> sizeables = new List<ISizeable>();
             Room room = new Room();
-            sizeable.Add(room);
+            Room room1 = new Room();
+            Room room2 = new Room();
+            Room room3 = new Room();
 
+            room.X = 1;
+            room.Y = 1;
+            room.Width = random.Next(10, 15);
+            room.Length = random.Next(10, 15);
+            room1.X = 20;
+            room1.Y = 1;
+            room1.Width = random.Next(10, 15);
+            room1.Length = random.Next(10, 15);
+            room2.X = 1;
+            room2.Y = 20;
+            room2.Width = random.Next(10, 15);
+            room2.Length = random.Next(10, 15);
+            room3.X = 20;
+            room3.Y = 20;
+            room3.Width = random.Next(10, 15);
+            room3.Length = random.Next(10, 15);
 
-            string[] array1 = new string[7];
-            array1[0] = "w";
-            array1[1] = "w";
-            array1[2] = "w";
-            array1[3] = "w";
-            array1[4] = "w";
-            array1[5] = "w";
-            array1[6] = "w";
-            foreach (var data in array1)
-            {
-                Console.Write(data + " ");
-            }
-
-            room.Length = 10;
-
-            for (int height = 0; height < room.Length; height++)
-            {
-                if (height == 6)
-                {
-                    Console.WriteLine("I");
-                    Console.SetCursorPosition(12, height);
-                    Console.WriteLine("I");
-
-                }
-                else
-                {
-                    Console.WriteLine("w");
-                    Console.SetCursorPosition(12, height);
-                    Console.WriteLine("x");
-                   
-                }
-            }
-
-            string[] array = new string[7];
-            array[0] = "w";
-
-            foreach (var data in array1)
-            {
-                Console.Write(data + " ");
-            }
-
-            
+            sizeables.Add(room);
+            sizeables.Add(room1);
+            sizeables.Add(room2);
+            sizeables.Add(room3);
 
             Renderer renderer = new Renderer();
             //call the renderer method
             renderer.Render(renderables);
-            renderer.Render(sizeable);
+            renderer.Render(sizeables);
         }
     
     }
@@ -124,9 +109,13 @@ namespace Rendering
             //this is able to run because of renderer class goes into start class
             Console.SetCursorPosition(X, Y);
             Console.Write("[]");
+            Console.ReadKey();
         }
 
     }
+
+    
+
     public class Chair : IRenderable
     {
         public int X { get; set; }
@@ -136,21 +125,38 @@ namespace Rendering
         {
             Console.SetCursorPosition(X, Y);
             Console.Write("C");
+            Console.ReadKey();
         }
     }
 
     public class Room : ISizeable
     {
-        public int Height { get; set; }
+        public int Width { get; set; }
         public int Length { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
         public void Render()
         {
-            return;
+            for (int column = X; column <= X + Width; column++)
+            {
+                Console.SetCursorPosition(column, Y);
+                Console.Write("w");
+                Console.SetCursorPosition(column, Length + Y);
+                Console.Write("w");
+            }
+            for (int row = Y; row <= Y + Length; row++)
+            {
+                Console.SetCursorPosition(X, row);
+                Console.Write("w");
+                Console.SetCursorPosition(Width + X, row);
+                Console.Write("w");
+            }
+            Console.ReadKey();
         }
     }
-
     public class Renderer
     {
+
         //parameters go in parenthesis to method name
         public void Render(List<IRenderable> renderables)
         {
@@ -164,11 +170,11 @@ namespace Rendering
         public void Render(List<ISizeable> sizeables)
         {
             foreach (ISizeable sizeable in sizeables)
-            {
-                sizeable.Render();
-                return;
+             {
+                 sizeable.Render();
+                Console.WriteLine();
+
             }
-            
         }
     }
     public interface IRenderable
@@ -178,7 +184,7 @@ namespace Rendering
 
     public interface ISizeable
     {
-        int Height { get; set; }
+        int Width { get; set; }
         int Length { get; set; }
         void Render();
     }
