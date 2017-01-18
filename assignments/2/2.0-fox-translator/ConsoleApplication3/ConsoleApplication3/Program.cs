@@ -30,9 +30,14 @@ namespace ConsoleApplication3
                     Console.Write("acorn ");
                     Console.ReadKey(true);
                 }
-                else if (word == "joff")
+                else if (word == "ring")
                 {
                     Console.Write("and ");
+                    Console.ReadKey(true);
+                }
+                else if (word == "joff")
+                {
+                    Console.Write("me ");
                     Console.ReadKey(true);
                 }
                 else if (word == "ho")
