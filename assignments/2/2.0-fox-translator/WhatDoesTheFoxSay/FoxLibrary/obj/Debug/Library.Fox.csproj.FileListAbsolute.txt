@@ -3,3 +3,8 @@ C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\FoxLibrary\bin\Debug\FoxLibrary.pdb
 C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\FoxLibrary\obj\Debug\Library.Fox.csprojResolveAssemblyReference.cache
 C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\FoxLibrary\obj\Debug\FoxLibrary.dll
 C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\FoxLibrary\obj\Debug\FoxLibrary.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\FoxLibrary\bin\Debug\FoxLibrary.dll
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\FoxLibrary\bin\Debug\FoxLibrary.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\FoxLibrary\obj\Debug\Library.Fox.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\FoxLibrary\obj\Debug\FoxLibrary.dll
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\FoxLibrary\obj\Debug\FoxLibrary.pdb

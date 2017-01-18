@@ -4,3 +4,9 @@ C:\Users\Kyle\Desktop\BoxStack\BoxStack\bin\Debug\BoxStack.exe
 C:\Users\Kyle\Desktop\BoxStack\BoxStack\bin\Debug\BoxStack.pdb
 C:\Users\Kyle\Desktop\BoxStack\BoxStack\obj\Debug\BoxStack.exe
 C:\Users\Kyle\Desktop\BoxStack\BoxStack\obj\Debug\BoxStack.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\BoxStack\BoxStack\bin\Debug\BoxStack.exe.config
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\BoxStack\BoxStack\obj\Debug\BoxStack.exe
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\BoxStack\BoxStack\obj\Debug\BoxStack.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\BoxStack\BoxStack\bin\Debug\BoxStack.exe
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\BoxStack\BoxStack\bin\Debug\BoxStack.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\BoxStack\BoxStack\obj\Debug\BoxStack.csprojResolveAssemblyReference.cache

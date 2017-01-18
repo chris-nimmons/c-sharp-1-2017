@@ -29,17 +29,23 @@ namespace BoxStack
             //Console.WriteLine(AddX);
 
 
-            int rows = 10;
-            int cols = 10;
+            int totalRows = 10;
+            int totalCols = 10;
           
 
             
-            for (int row = 0; row < rows; row++)
+            for (int currentRow = 0; currentRow < totalRows; currentRow++)
             {
-                for (int col = 0; col < cols; col++)
+                for (int currentCol = 0; currentCol < totalCols; currentCol++)
                 {
-                    int spaces = cols - row;
-                    if (col + 1 >= spaces)
+                    // TThink of it like a grid or matrix
+                    //   0 1 2
+                    // 0! ! !X!
+                    // 1! !X!X!
+                    // 2!X!X!X!
+                                        
+                    int spaces = totalCols - currentRow;   
+                    if (currentCol + 1 >= spaces)
                     {
 
                         Console.Write("X");

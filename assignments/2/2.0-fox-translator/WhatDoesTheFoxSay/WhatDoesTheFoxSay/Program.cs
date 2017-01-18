@@ -40,3 +40,6 @@ namespace WhatDoesTheFoxSay
         }
     }
 }
+
+
+//now see if instead of if/then make it  a switch

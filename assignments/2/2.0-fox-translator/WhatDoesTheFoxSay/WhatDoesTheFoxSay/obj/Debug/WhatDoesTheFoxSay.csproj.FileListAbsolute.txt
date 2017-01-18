@@ -6,3 +6,11 @@ C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\WhatDoesTheFoxSay\obj\Debug\WhatDoesTheF
 C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\WhatDoesTheFoxSay\obj\Debug\WhatDoesTheFoxSay.csprojResolveAssemblyReference.cache
 C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\WhatDoesTheFoxSay\bin\Debug\FoxLibrary.dll
 C:\Users\Kyle\Desktop\WhatDoesTheFoxSay\WhatDoesTheFoxSay\bin\Debug\FoxLibrary.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\WhatDoesTheFoxSay\bin\Debug\WhatDoesTheFoxSay.exe.config
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\WhatDoesTheFoxSay\obj\Debug\WhatDoesTheFoxSay.exe
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\WhatDoesTheFoxSay\obj\Debug\WhatDoesTheFoxSay.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\WhatDoesTheFoxSay\bin\Debug\WhatDoesTheFoxSay.exe
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\WhatDoesTheFoxSay\bin\Debug\WhatDoesTheFoxSay.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\WhatDoesTheFoxSay\bin\Debug\FoxLibrary.dll
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\WhatDoesTheFoxSay\bin\Debug\FoxLibrary.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\WhatDoesTheFoxSay\WhatDoesTheFoxSay\obj\Debug\WhatDoesTheFoxSay.csprojResolveAssemblyReference.cache
