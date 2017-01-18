@@ -45,19 +45,20 @@ namespace RenderFromScratch
             room.Width = Width;
 
             Random random = new Random();
-            int randomNumber = random.Next(room.Width - 1, room.Length -1);
+            int randomNumberW = random.Next(0, room.Width - 1);
+            int randomNumberL = random.Next(0, room.Length - 1);
 
             Table table = new Table();
-            table.X = randomNumber;
-            table.Y = randomNumber;
+            table.X = randomNumberW;
+            table.Y = randomNumberL;
 
             Table table2 = new Table();
-            table2.X = randomNumber;
-            table2.Y = randomNumber;
+            table2.X = randomNumberW;
+            table2.Y = randomNumberL;
 
             Chair chair = new Chair();
-            chair.X = randomNumber;
-            chair.Y = randomNumber;
+            chair.X = randomNumberW;
+            chair.Y = randomNumberL;
 
 
             renderables.Add(table);
@@ -107,42 +108,58 @@ namespace RenderFromScratch
             public void Render()
             {
                 Console.SetCursorPosition(positionX, positionY);
-                    if (positionX > 0 && positionY > 0)
+                if (positionX > 0 && positionY > 0)
+                {
+                    Console.WriteLine();
+                    for (int y = 0; y < Length; y++)
                     {
-                        Console.WriteLine();
-                        for (int y = 0; y < Length; y++)
+                        for (int x = 0; x < Width; x++)
                         {
-                            for (int x = 0; x < Width; x++)
+                            if (y == 0)
                             {
-                                if (y == 0)
+                                Console.Write("*");
+                            }
+                            else if (y == Length - 1)
+                            {
+                                Console.Write("*");
+                            }
+                            else if (x == 0)
+                            {
+                                Console.Write("*");
+                            }
+                            else if (x == Width - 1)
+                            {
+                                Console.Write("*");
+                            }
+                            else if (x != 'T' && y != 'T')
+                            {
+                                Console.Write(" ");
+                            }
+                            else if (y != 'C' && x != 'C')
+                            {
+                                Console.Write(" ");
+                            }
+                            else
+                            {
+                                if (x != 'T' && y != 'T')
                                 {
-                                    Console.Write("*");
-                                }
-                                else if (y == Length - 1)
-                                {
-                                    Console.Write("*");
-                                }
-                                else if (x == 0)
-                                {
-                                    Console.Write("*");
-                                }
-                                else if (x == Width - 1)
-                                {
-                                    Console.Write("*");
+                                    Console.Write("T");
                                 }
                                 else
                                 {
-                                    Console.Write(" ");
+                                    Console.Write("C");
                                 }
+
                             }
-
-                            Console.WriteLine();
                         }
-                    }
-               }
-            }
 
-            public class Renderer
+                        Console.WriteLine();
+                    }
+                }
+            }
+        }
+
+        public class Renderer
         {
             public void Render(List<IRenderable> renderables)
             {
