@@ -45,11 +45,6 @@ namespace ConsoleApplication3
                     Console.Write("I ");
                     Console.ReadKey(true);
                 }
-                else if (word == "Ring")
-                {
-                    Console.Write("me ");
-                    Console.ReadKey(true);
-                }
                 else if (word == "hatee")
                 {
                     Console.Write("dont ");
