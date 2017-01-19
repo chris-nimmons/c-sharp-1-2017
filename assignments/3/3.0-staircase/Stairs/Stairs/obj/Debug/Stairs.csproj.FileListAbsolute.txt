@@ -1,0 +1,5 @@
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\Stairs\Stairs\bin\Debug\Stairs.exe.config
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\Stairs\Stairs\bin\Debug\Stairs.exe
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\Stairs\Stairs\bin\Debug\Stairs.pdb
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\Stairs\Stairs\obj\Debug\Stairs.exe
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\Stairs\Stairs\obj\Debug\Stairs.pdb
