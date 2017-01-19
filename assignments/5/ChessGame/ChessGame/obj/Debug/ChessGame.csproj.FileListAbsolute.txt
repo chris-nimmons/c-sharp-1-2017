@@ -1,0 +1,6 @@
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessGame\ChessGame\bin\Debug\ChessGame.exe.config
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessGame\ChessGame\bin\Debug\ChessGame.exe
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessGame\ChessGame\bin\Debug\ChessGame.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessGame\ChessGame\obj\Debug\ChessGame.csprojResolveAssemblyReference.cache
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessGame\ChessGame\obj\Debug\ChessGame.exe
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessGame\ChessGame\obj\Debug\ChessGame.pdb
