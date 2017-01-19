@@ -1,0 +1,5 @@
+c:\users\thinkpad\documents\visual studio 2015\Projects\Stairs\Stairs\obj\Debug\Stairs.csprojResolveAssemblyReference.cache
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Stairs\Stairs\bin\Debug\Stairs.exe
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Stairs\Stairs\bin\Debug\Stairs.pdb
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Stairs\Stairs\obj\Debug\Stairs.exe
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Stairs\Stairs\obj\Debug\Stairs.pdb
