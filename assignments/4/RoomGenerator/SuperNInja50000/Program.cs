@@ -28,8 +28,34 @@ namespace RoomGenerator
             {
                 Room room = new Room();
 
-                room.length = random.Next(20, 80);
-                room.width = random.Next(20, 80);
+                //generate room dimensions
+                room.height = random.Next(10, 20);
+                room.width = random.Next(10, 20);
+
+                if (i == 0) //first room, act normal
+                {
+                    room.X = random.Next(0, 5);
+                    room.Y = random.Next(0, 5);
+                }
+                else
+                {
+                    int directionOfNextRoomarino = random.Next(0, 1);
+                    if (directionOfNextRoomarino == 0) //goes East
+                    {
+                        Room lastRoom = (Room)renderables.Last();
+                        room.X = lastRoom.X + lastRoom.width;
+                        room.Y = random.Next(10, 20);
+                    }
+
+                    
+                    else // goes South
+                    {
+                        Room lastRoom = (Room)renderables.Last();
+                        room.X = random.Next(10, 20);
+                        room.Y = lastRoom.Y + lastRoom.height;
+                    }
+                }
+                
 
                 renderables.Add(room);
             }
@@ -61,7 +87,7 @@ namespace RoomGenerator
         }
     }
 
-    public class Table : Room, IRenderable
+    public class Table : IRenderable
     { 
 
         public int X { get; set; }
@@ -91,39 +117,49 @@ namespace RoomGenerator
     }
     public class Room : IRenderable
     {
-        public int length { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int height { get; set; }
         public int width { get; set; }
+
         public void Render()
         {
 
-            for (int x = 0; x <= length; x++)
+            for (int row = X+1; row < X + width; row++)
             {
-                Console.SetCursorPosition(x, 0);
+                //top left corner to top right corner
+                Console.SetCursorPosition(row, Y);
                 Console.Write("X");
-
-                Console.SetCursorPosition(x, width);
+                //bottom left corner to bottom right corner
+                Console.SetCursorPosition(row, Y + height);
                 Console.Write("X");
 
             }
 
-            for (int y = 0; y <= width; y++)
+            for (int col = Y; col <= Y + height; col++)
             {
-                Console.SetCursorPosition(0, y);
+                //top left corner to bottom left corner
+                Console.SetCursorPosition(X, col);
+                Console.Write("X");
+                //top right corner to bottom right corner
+                Console.SetCursorPosition(X + width, col);
                 Console.Write("X");
 
-                Console.SetCursorPosition(length, y);
-                Console.Write("X");
             }
+
+            //debug help
+            //Console.SetCursorPosition(X + 1, Y + 1);
+            //Console.WriteLine("X: " + X + " Y: " + Y + " Width: " + width + " Height: " + height);
         }
     }
 
     public class Renderer
     {
-        public void Render(List<IRenderable> tables)
+        public void Render(List<IRenderable> renderables)
         {
-            foreach (IRenderable table in tables)
+            foreach (IRenderable renderable in renderables)
             {
-                table.Render();
+                renderable.Render();
                 //this runs the Render method under public class Table above
                 //jumping around into differnt classes
             }
