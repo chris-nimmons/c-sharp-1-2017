@@ -1,0 +1,6 @@
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\5\5.0-chess-loops\ChessMate\ChessMate\bin\Debug\ChessMate.exe.config
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\5\5.0-chess-loops\ChessMate\ChessMate\bin\Debug\ChessMate.exe
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\5\5.0-chess-loops\ChessMate\ChessMate\bin\Debug\ChessMate.pdb
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\5\5.0-chess-loops\ChessMate\ChessMate\obj\Debug\ChessMate.csprojResolveAssemblyReference.cache
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\5\5.0-chess-loops\ChessMate\ChessMate\obj\Debug\ChessMate.exe
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\5\5.0-chess-loops\ChessMate\ChessMate\obj\Debug\ChessMate.pdb
