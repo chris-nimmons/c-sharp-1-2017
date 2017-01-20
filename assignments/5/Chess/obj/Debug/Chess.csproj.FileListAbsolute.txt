@@ -1,0 +1,6 @@
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Chess\bin\Debug\Chess.exe.config
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Chess\bin\Debug\Chess.exe
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Chess\bin\Debug\Chess.pdb
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Chess\obj\Debug\Chess.csprojResolveAssemblyReference.cache
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Chess\obj\Debug\Chess.exe
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\Homework\Chess\obj\Debug\Chess.pdb
