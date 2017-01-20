@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperNInja50000
+namespace RoomGenerator
 {
     class Program
     {
@@ -15,6 +15,7 @@ namespace SuperNInja50000
             program.Start();
 
             Console.ReadLine();
+            
         }
 
         public void Start()
@@ -22,225 +23,158 @@ namespace SuperNInja50000
             //THIS IS ALL YOU NEED FOR RANDOM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             Random random = new Random();
 
-            RoomFactory factory = new RoomFactory();
-            List<Room> rooms = new List<Room>();
-
-
-
-
             List<IRenderable> renderables = new List<IRenderable>();
-            Table table = new Table();
-            Table table2 = new Table();
-            Table table3 = new Table();
-            Chair chair = new Chair();
-            Room room = new Room();
-            //RNG totalRows = new RNG();
+           
+            for (int i = 0; i <= 3; i++)
+            {
+                Room room = new Room();
 
+                //generate room dimensions
+                room.height = random.Next(10, 20);
+                room.width = random.Next(10, 20);
 
-            table.X = random.Next(1, 20);
-            table.Y = random.Next(1, 20);
-            table2.X = random.Next(1, 20);
-            table2.Y = random.Next(1, 20);
-            table3.X = random.Next(1, 20);
-            table3.Y = random.Next(1, 20);
-            chair.X = random.Next(1, 20);
-            chair.Y = random.Next(1, 20);
-            //totalRows.totalRows = random.Next(10, 40);
+                if (i == 0) //first room, act normal
+                {
+                    room.X = random.Next(0, 5);
+                    room.Y = random.Next(0, 5);
+                }
+                else
+                {
+                    
 
-            //room.Height = random.Next(1, 15);
-            //room.Width = random.Next(1, 15);
+                    int directionOfNextRoomarino = random.Next(0, 1);
+                    if (directionOfNextRoomarino == 0) //goes East
+                    {
+                        Room lastRoom = (Room)renderables.Last();
+                        room.X = lastRoom.X + lastRoom.width;
+                        room.Y = random.Next(10, 20);
+                    }
 
+                    
+                    else // goes South
+                    {
+                        Room lastRoom = (Room)renderables.Last();
+                        room.X = random.Next(10, 20);
+                        room.Y = lastRoom.Y + lastRoom.height;
+                    }
+                }
+                
 
-            renderables.Add(table);
-            renderables.Add(table2);
-            renderables.Add(table3);
-            renderables.Add(chair);
-            renderables.Add(room);
+                renderables.Add(room);
+            }
 
+            for (int t = 0; t < random.Next(1, 8); t++)
+            {
+                Table table = new Table();
 
+                table.X = random.Next(1, 50);
+                table.Y = random.Next(1, 50);
+
+                renderables.Add(table);
+            }
+
+            for (int c = 0; c < random.Next(1, 8); c++)
+            {
+                Chair chair = new Chair();
+
+                chair.X = random.Next(1, 50);
+                chair.Y = random.Next(1, 50);
+
+                renderables.Add(chair);
+            }
 
             Renderer renderer = new Renderer();
             renderer.Render(renderables);
+
+            Console.ReadLine();
         }
+    }
 
+    public class Table : IRenderable
+    { 
 
-        public class RoomFactory //: RNG
-
-        /* This is a room generator
+        public int X { get; set; }
+        public int Y { get; set; }
+        //Render method goes here
+        //This is the render method
+        public void Render()
         {
-            public Random random { get; set; }
-            public RoomFactory()
-            {
-                random = new Random();
-            }
-            public Room Create()
-            {
-
-                Room room = new Room()
-                {
-                    Height = random.Next(8, 10),
-                    Width = random.Next(10, 30),
-                    Length = random.Next(10, 30),
-                };
-
-                return room;
-            }
+            Console.SetCursorPosition(X, Y);
+            //if (X == )
+            //{
+            //break;
+            //}
+            Console.Write("TT");
         }
-        */
+    }
+    public class Chair : IRenderable
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public void Render()
         {
-            public RoomFactory()
+            Console.SetCursorPosition(X, Y);
+            Console.Write("C");
+        }
+    }
+    public class Room : IRenderable
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int height { get; set; }
+        public int width { get; set; }
+
+        public void Render()
+        {
+
+            for (int row = X+1; row < X + width; row++)
             {
-                Random random = new Random();
+                //top left corner to top right corner
+                Console.SetCursorPosition(row, Y);
+                Console.Write("X");
+                //bottom left corner to bottom right corner
+                Console.SetCursorPosition(row, Y + height);
+                Console.Write("X");
 
+            }
 
-                int totalRows = random.Next(10, 40);
+            for (int col = Y; col <= Y + height; col++)
+            {
+                //top left corner to bottom left corner
+                Console.SetCursorPosition(X, col);
+                Console.Write("X");
+                //top right corner to bottom right corner
+                Console.SetCursorPosition(X + width, col);
+                Console.Write("X");
 
-                /*
-                int totalRows2 = random.Next(10, 40);
-                int totalCols2 = random.Next(10, 40);
-                int startRow2 = random.Next(10, 40);
-                int startCol2 = random.Next(10, 40);
-                */
+            }
 
-                Console.WriteLine("Please press Enter to generate furniture.");
+            //debug help
+            //Console.SetCursorPosition(X + 1, Y + 1);
+            //Console.WriteLine("X: " + X + " Y: " + Y + " Width: " + width + " Height: " + height);
+        }
+    }
 
-                for (int row = 0; row <= totalRows; row++)
-                {
-                    for (int col = 0; col <= totalRows; col++)
-                    {
-                        if (row == 0)
-                        {
-                            Console.Write('X');
-                        }
-                        else if (col == 0)
-                        {
-                            Console.Write("X");
-                        }
-                        else if (row == totalRows)
-                        {
-                            Console.Write('X');
-                        }
-                        else if (col == totalRows)
-                        {
-                            Console.Write('X');
-                        }
-                        else
-                        {
-                            Console.Write(" ");
-                        }
-                    }
-                    Console.WriteLine();
-                }
-
-                /*
-                for (int row2 = 0; row2 <= totalRows2; row2++)
-                {
-                    for (int col2 = 0; col2 <= totalCols2; col2++)
-                    {
-                        if (row2 == 0)
-                        {
-                            Console.Write('X');
-                        }
-
-                        else if (col2 == 0)
-                        {
-                            Console.Write('X');
-                        }
-
-                        else if (row2 == totalRows2)
-                        {
-                            Console.Write('X');
-                        }
-
-                        else if (col2 == totalCols2)
-                        {
-                            Console.Write('X');
-                        }
-                        else if (row2 == totalRows)
-                        {
-                            break;
-                        }
-                        else if (col2 == totalRows)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.Write('-');
-                        }
-                    }
-                }
-                Console.WriteLine();
-                */
-
-                Console.WriteLine("Please press Enter to generate furniture.");
-                Console.ReadLine();
+    public class Renderer
+    {
+        public void Render(List<IRenderable> renderables)
+        {
+            foreach (IRenderable renderable in renderables)
+            {
+                renderable.Render();
+                //this runs the Render method under public class Table above
+                //jumping around into differnt classes
             }
         }
-        public class Table : IRenderable //, RNG
-        {
-            public int X { get; set; }
-            public int Y { get; set; }
-            //Render method goes here
-            //This is the render method
-            public void Render()
-            {
-                Console.SetCursorPosition(X, Y);
-                //if (X == totalRows)
-                //{
-                //break;
-                //}
-                Console.Write("TT");
-            }
-        }
-        public class Chair : IRenderable
-        {
-            public int X { get; set; }
-            public int Y { get; set; }
+    }
 
-            public void Render()
-            {
-                Console.SetCursorPosition(X, Y);
-                Console.Write("C");
-            }
-        }
-        public class Room : IRenderable
-        {
-            public int Height { get; set; }
-            public int Width { get; set; }
-            public void Render()
-            {
-            }
-        }
-        public class Renderer
-        {
-            public void Render(List<IRenderable> tables)
-            {
-                foreach (IRenderable table in tables)
-                {
-                    //this runs the Render method under public class Table above
-                    //jumping around into differnt classes
-                    table.Render();
-                }
-            }
-        }
-
-        /*
-        public class RNG
-        {
-            public int totalRows { get; set; }
-            public int totalRows2 { get; set; }
-        }
-        */
-
-
-        // Interfaces /////////////////////////////////////////////////////////////////////////////////////////////
-        public interface IRenderable
-        {
-            void Render();
-            //this worked when Table under the list of renderable tables was changed to IRenderable
-            //int X { get; set; }
-            //int Y { get; set; }
-        }
+    // Interfaces /////////////////////////////////////////////////////////////////////////////////////////////
+    public interface IRenderable
+    {
+        void Render();
+        //this worked when Table under the list of renderable tables was changed to IRenderable
+        //int X { get; set; }
+        //int Y { get; set; }
     }
 }

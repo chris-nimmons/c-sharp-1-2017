@@ -1,0 +1,12 @@
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomGenerator\SuperNInja50000\bin\Debug\SuperNInja50000.exe.config
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomGenerator\SuperNInja50000\bin\Debug\SuperNInja50000.exe
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomGenerator\SuperNInja50000\bin\Debug\SuperNInja50000.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomGenerator\SuperNInja50000\obj\Debug\SuperNInja50000.exe
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomGenerator\SuperNInja50000\obj\Debug\SuperNInja50000.pdb
+C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\4\4.0-room-renderer\RoomGenerator\SuperNInja50000\obj\Debug\RoomGenerator.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Desktop\IronYardShit\4.0-room-renderer_backup\RoomGenerator\SuperNInja50000\bin\Debug\SuperNInja50000.exe.config
+C:\Users\Kyle\Desktop\IronYardShit\4.0-room-renderer_backup\RoomGenerator\SuperNInja50000\obj\Debug\SuperNInja50000.exe
+C:\Users\Kyle\Desktop\IronYardShit\4.0-room-renderer_backup\RoomGenerator\SuperNInja50000\obj\Debug\SuperNInja50000.pdb
+C:\Users\Kyle\Desktop\IronYardShit\4.0-room-renderer_backup\RoomGenerator\SuperNInja50000\bin\Debug\SuperNInja50000.exe
+C:\Users\Kyle\Desktop\IronYardShit\4.0-room-renderer_backup\RoomGenerator\SuperNInja50000\bin\Debug\SuperNInja50000.pdb
+C:\Users\Kyle\Desktop\IronYardShit\4.0-room-renderer_backup\RoomGenerator\SuperNInja50000\obj\Debug\RoomGenerator.csprojResolveAssemblyReference.cache
