@@ -4,3 +4,9 @@ c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFro
 c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFromScratch\obj\Debug\RenderFromScratch.csprojResolveAssemblyReference.cache
 c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFromScratch\obj\Debug\RenderFromScratch.exe
 c:\users\colby\documents\visual studio 2015\Projects\RenderFromScratch\RenderFromScratch\obj\Debug\RenderFromScratch.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\4\RenderFromScratch\RenderFromScratch\bin\Debug\RenderFromScratch.exe.config
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\4\RenderFromScratch\RenderFromScratch\obj\Debug\RenderFromScratch.exe
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\4\RenderFromScratch\RenderFromScratch\obj\Debug\RenderFromScratch.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\4\RenderFromScratch\RenderFromScratch\obj\Debug\RenderFromScratch.csprojResolveAssemblyReference.cache
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\4\RenderFromScratch\RenderFromScratch\bin\Debug\RenderFromScratch.exe
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\4\RenderFromScratch\RenderFromScratch\bin\Debug\RenderFromScratch.pdb
