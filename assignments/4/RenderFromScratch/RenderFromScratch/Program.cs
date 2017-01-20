@@ -51,58 +51,26 @@ namespace RenderFromScratch
             room.yOffset = yoffset;
 
             Table table = new Table();
-            table.X = random.Next(xoffset, width + xoffset);
-            table.Y = random.Next(yoffset, length + yoffset);
-
             Chair chair = new Chair();
-            chair.X = random.Next(xoffset, width + xoffset);
-            chair.Y = random.Next(xoffset, length + yoffset);
-
-            Table table1 = new Table();
-            table1.X = random.Next(xoffset, width + xoffset);
-            table1.Y = random.Next(yoffset, length + yoffset);
-
-            Chair chair1 = new Chair();
-            chair1.X = random.Next(xoffset, width + xoffset);
-            chair1.Y = random.Next(xoffset, length + yoffset);
-
-            Table table2 = new Table();
-            table2.X = random.Next(xoffset, width + xoffset);
-            table2.Y = random.Next(yoffset, length + yoffset);
-
-            Chair chair2 = new Chair();
-            chair2.X = random.Next(xoffset, width + xoffset);
-            chair2.Y = random.Next(xoffset, length + yoffset);
-
-            Table table3 = new Table();
-            table3.X = random.Next(xoffset, width + xoffset);
-            table3.Y = random.Next(yoffset, length + yoffset);
-
-            Chair chair3 = new Chair();
-            chair3.X = random.Next(xoffset, width + xoffset);
-            chair3.Y = random.Next(xoffset, length + yoffset);
 
             renderables.Add(room);
             renderables.Add(table);
             renderables.Add(chair);
-            renderables.Add(table1);
-            renderables.Add(chair1);
-            renderables.Add(table2);
-            renderables.Add(chair2);
-
 
             Renderer render = new Renderer();
             render.Render(renderables);
 
-            Console.SetCursorPosition(xoffset + width,yoffset + length);
+            Console.SetCursorPosition(xoffset + width, yoffset + length);
 
         }
+
 
 
         public interface IRenderable
         {
             void Render();
         }
+
         public class Table : IRenderable
         {
             public int X { get; set; }
@@ -141,6 +109,7 @@ namespace RenderFromScratch
                 }
             }
         }
+
         public class Room : IRenderable
         {
             public int Length { get; set; }
@@ -148,9 +117,9 @@ namespace RenderFromScratch
             public int xOffset { get; set; }
             public int yOffset { get; set; }
 
+
             public void Render()
             {
-                Random random = new Random();
                 for (int x = xOffset; x < Width + xOffset; x++)
                 {
                     for (int y = yOffset; y < Length + yOffset; y++)
@@ -160,21 +129,27 @@ namespace RenderFromScratch
                             Console.SetCursorPosition(x, y);
                             Console.Write('X');
                         }
-                        else if(x == (Width + xOffset)-1)
+                        else if (x == (Width + xOffset) - 1)
                         {
 
                             Console.SetCursorPosition(x, y);
                             Console.Write('X');
                         }
-                        else if(y == (Length + yOffset)-1)
+                        else if (y == (Length + yOffset) - 1)
                         {
                             Console.SetCursorPosition(x, y);
                             Console.Write('X');
                         }
                         else
                         {
-
-                            Console.Write(' ');
+                            Random randomplace = new Random();
+                            int randomx = randomplace.Next(1, 19);
+                            int randomy = randomplace.Next(1, 19);
+                            Console.SetCursorPosition(randomx, randomy);
+                            Random randomchar = new Random();
+                            char[] alpha = "TC   TC   TC   TC TC TC TC TC TC".ToCharArray();
+                            int index = randomchar.Next(alpha.Length);
+                            Console.Write(alpha[index]);
                         }
 
                     }
@@ -197,5 +172,3 @@ namespace RenderFromScratch
 
     }
 }
-
-
