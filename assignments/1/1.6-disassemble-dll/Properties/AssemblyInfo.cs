@@ -1,10 +1,3 @@
-﻿// C:\Users\Kyle\Desktop\c-sharp-1-2017\assignments\1\1.6-disassemble-dll\Reference.dll
-// Reference, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-
-// Global type: <Module>
-// Architecture: AnyCPU (64-bit preferred)
-// Runtime: .NET 4.0
-
 using System;
 using System.Diagnostics;
 using System.Reflection;
@@ -27,6 +20,3 @@ using System.Runtime.Versioning;
 [assembly: ComVisible(false)]
 [assembly: Guid("3b1d9f68-5f91-4e14-b5aa-a2f5760d454a")]
 [assembly: TargetFramework(".NETFramework,Version=v4.5.2", FrameworkDisplayName = ".NET Framework 4.5.2")]
-
-
-// Oooooooakkkkkaaay, not sure if this is right

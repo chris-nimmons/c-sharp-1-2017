@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Decompiler")]
+[assembly: AssemblyTitle("SuperNInja50000")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Decompiler")]
+[assembly: AssemblyProduct("SuperNInja50000")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c44fe359-da4c-4977-9442-e59e0be3a5ac")]
+[assembly: Guid("a4558f8a-2ff2-4b54-8ab0-5062674b2a09")]
 
 // Version information for an assembly consists of the following four values:
 //

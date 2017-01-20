@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C44FE359-DA4C-4977-9442-E59E0BE3A5AC}</ProjectGuid>
+    <ProjectGuid>{A4558F8A-2FF2-4B54-8AB0-5062674B2A09}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Decompiler</RootNamespace>
-    <AssemblyName>Decompiler</AssemblyName>
+    <RootNamespace>SuperNInja50000</RootNamespace>
+    <AssemblyName>SuperNInja50000</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GraveyardOfFailedIdeas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
