@@ -52,12 +52,12 @@ namespace RoomBuilder
 
 
             Table table = new Table();
-            table.X = random.Next(2, 20);
-            table.Y = random.Next(2, 20);
+            table.X = random.Next(2, 10);
+            table.Y = random.Next(2, 10);
 
             Table table2 = new Table();
-            table2.X = random.Next(2, 20);
-            table2.Y = random.Next(2, 20);
+            table2.X = random.Next(2, 10);
+            table2.Y = random.Next(2, 10);
 
             Chair chair = new Chair();
             chair.X = table.X - 1;

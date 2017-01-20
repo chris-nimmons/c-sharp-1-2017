@@ -14,8 +14,6 @@ namespace RoomBuilder
             Program program = new Program();
             program.Start();
             Console.ReadLine();
-
-
         }
 
 
@@ -23,32 +21,33 @@ namespace RoomBuilder
         {
             Random random = new Random();
 
-
-
             List<IRenderable> renderables = new List<IRenderable>();
 
             {
-                int width = random.Next(40,50);
-                int height = random.Next(20,30);
-
-
+                int width = random.Next(40, 50);
+                int height = random.Next(20, 30);
 
 
                 for (int x = 0; x <= width; x++)
                 {
                     Console.SetCursorPosition(x, 0);
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.Write("R");
+                    Console.ResetColor();
                     Console.SetCursorPosition(x, height);
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("G");
+                    Console.ResetColor();
                 }
                 for (int y = 0; y <= height; y++)
                 {
                     Console.SetCursorPosition(0, y);
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.Write("L");
                     Console.SetCursorPosition(width, y);
                     Console.Write("R");
+                    Console.ResetColor();
                 }
-               
             }
 
             Table table = new Table();
@@ -56,8 +55,8 @@ namespace RoomBuilder
             table.Y = random.Next(2, 30);
 
             Table table2 = new Table();
-            table2.X = random.Next(2, 30);
-            table2.Y = random.Next(2, 30);
+            table2.X = random.Next(2, 25);
+            table2.Y = random.Next(2, 25);
 
             Chair chair = new Chair();
             chair.X = table.X - 1;
@@ -86,11 +85,7 @@ namespace RoomBuilder
             Renderer render = new Renderer();
             render.Render(renderables);
 
-
-
             Console.ReadLine();
-
-
 
             var program = new Program();
             program.Running = true;
@@ -103,10 +98,7 @@ namespace RoomBuilder
                     Start();
                 }
             }
-
         }
-
-
     }
 
     //Classes 
