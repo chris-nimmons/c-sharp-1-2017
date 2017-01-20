@@ -18,6 +18,7 @@ namespace RenderFromScratch
             program.Start();
             Console.ReadLine();
             program.Start();
+            Console.ReadLine();
             Console.Write("You're done!!! Press enter!");
 
 
@@ -27,47 +28,73 @@ namespace RenderFromScratch
         {
             List<IRenderable> renderables = new List<IRenderable>();
 
-            Console.WriteLine("Enter desired Length of room (0-100): ");
-            int Length = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter desired Length of room (0-20): ");
+            int length = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter desired Width of room (0-100): ");
-            int Width = int.Parse(Console.ReadLine());
+            Console.WriteLine();
 
-            Console.ReadLine();
+            Console.WriteLine("Enter desired Width of room (0-20): ");
+            int width = int.Parse(Console.ReadLine());
 
-            Random random1 = new Random();
-            int randomNumber1 = random1.Next(0, 100);
+            Console.Clear();
 
-            Room room = new Room();
-            room.positionX = randomNumber1;
-            room.positionY = randomNumber1;
-            room.Length = Length;
-            room.Width = Width;
+            Console.WriteLine();
 
             Random random = new Random();
-            int randomNumberW = random.Next(0, room.Width - 1);
-            int randomNumberL = random.Next(0, room.Length - 1);
+            int xoffset = random.Next(0, 20);
+            int yoffset = random.Next(0, 20);
+
+            Room room = new Room();
+            room.Length = length;
+            room.Width = width;
+            room.xOffset = xoffset;
+            room.yOffset = yoffset;
 
             Table table = new Table();
-            table.X = randomNumberW;
-            table.Y = randomNumberL;
-
-            Table table2 = new Table();
-            table2.X = randomNumberW;
-            table2.Y = randomNumberL;
+            table.X = random.Next(xoffset, width + xoffset);
+            table.Y = random.Next(yoffset, length + yoffset);
 
             Chair chair = new Chair();
-            chair.X = randomNumberW;
-            chair.Y = randomNumberL;
+            chair.X = random.Next(xoffset, width + xoffset);
+            chair.Y = random.Next(xoffset, length + yoffset);
 
+            Table table1 = new Table();
+            table1.X = random.Next(xoffset, width + xoffset);
+            table1.Y = random.Next(yoffset, length + yoffset);
 
-            renderables.Add(table);
-            renderables.Add(table2);
-            renderables.Add(chair);
+            Chair chair1 = new Chair();
+            chair1.X = random.Next(xoffset, width + xoffset);
+            chair1.Y = random.Next(xoffset, length + yoffset);
+
+            Table table2 = new Table();
+            table2.X = random.Next(xoffset, width + xoffset);
+            table2.Y = random.Next(yoffset, length + yoffset);
+
+            Chair chair2 = new Chair();
+            chair2.X = random.Next(xoffset, width + xoffset);
+            chair2.Y = random.Next(xoffset, length + yoffset);
+
+            Table table3 = new Table();
+            table3.X = random.Next(xoffset, width + xoffset);
+            table3.Y = random.Next(yoffset, length + yoffset);
+
+            Chair chair3 = new Chair();
+            chair3.X = random.Next(xoffset, width + xoffset);
+            chair3.Y = random.Next(xoffset, length + yoffset);
+
             renderables.Add(room);
+            renderables.Add(table);
+            renderables.Add(chair);
+            renderables.Add(table1);
+            renderables.Add(chair1);
+            renderables.Add(table2);
+            renderables.Add(chair2);
+
 
             Renderer render = new Renderer();
             render.Render(renderables);
+
+            Console.SetCursorPosition(xoffset + width,yoffset + length);
 
         }
 
@@ -83,8 +110,16 @@ namespace RenderFromScratch
 
             public void Render()
             {
-                Console.SetCursorPosition(X, Y);
-                Console.Write('T');
+                if (X < 0 || Y < 0)
+                {
+                    Console.SetCursorPosition(X, Y);
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.SetCursorPosition(X, Y);
+                    Console.Write('T');
+                }
             }
         }
         public class Chair : IRenderable
@@ -94,68 +129,57 @@ namespace RenderFromScratch
 
             public void Render()
             {
-                Console.SetCursorPosition(X, Y);
-                Console.Write('C');
+                if (X < 0 || Y < 0)
+                {
+                    Console.SetCursorPosition(X, Y);
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.SetCursorPosition(X, Y);
+                    Console.Write('C');
+                }
             }
         }
         public class Room : IRenderable
         {
             public int Length { get; set; }
             public int Width { get; set; }
-            public int positionX { get; set; }
-            public int positionY { get; set; }
+            public int xOffset { get; set; }
+            public int yOffset { get; set; }
 
             public void Render()
             {
-                Console.SetCursorPosition(positionX, positionY);
-                if (positionX > 0 && positionY > 0)
+                Random random = new Random();
+                for (int x = xOffset; x < Width + xOffset; x++)
                 {
-                    Console.WriteLine();
-                    for (int y = 0; y < Length; y++)
+                    for (int y = yOffset; y < Length + yOffset; y++)
                     {
-                        for (int x = 0; x < Width; x++)
+                        if (x == xOffset || y == yOffset)
                         {
-                            if (y == 0)
-                            {
-                                Console.Write("*");
-                            }
-                            else if (y == Length - 1)
-                            {
-                                Console.Write("*");
-                            }
-                            else if (x == 0)
-                            {
-                                Console.Write("*");
-                            }
-                            else if (x == Width - 1)
-                            {
-                                Console.Write("*");
-                            }
-                            else if (x != 'T' && y != 'T')
-                            {
-                                Console.Write(" ");
-                            }
-                            else if (y != 'C' && x != 'C')
-                            {
-                                Console.Write(" ");
-                            }
-                            else
-                            {
-                                if (x != 'T' && y != 'T')
-                                {
-                                    Console.Write("T");
-                                }
-                                else
-                                {
-                                    Console.Write("C");
-                                }
+                            Console.SetCursorPosition(x, y);
+                            Console.Write('X');
+                        }
+                        else if(x == (Width + xOffset)-1)
+                        {
 
-                            }
+                            Console.SetCursorPosition(x, y);
+                            Console.Write('X');
+                        }
+                        else if(y == (Length + yOffset)-1)
+                        {
+                            Console.SetCursorPosition(x, y);
+                            Console.Write('X');
+                        }
+                        else
+                        {
+
+                            Console.Write(' ');
                         }
 
-                        Console.WriteLine();
                     }
                 }
+                Console.ReadLine();
             }
         }
 
