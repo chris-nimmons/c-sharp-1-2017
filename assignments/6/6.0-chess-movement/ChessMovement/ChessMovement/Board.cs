@@ -5,13 +5,6 @@ using System.Text;
 
 namespace ChessMovement
 {
-    public class Cell
-    {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public Piece Piece { get; set; }
-    }
-
     public class Board
     {
         public Piece[] Pieces { get; set; }
@@ -38,13 +31,13 @@ namespace ChessMovement
                 {
                     x = (i + 32) % 8;
                     y = (i + 32) / 8;
-                    Pieces[i] = pieceFactory.NewPiece((PieceIndex)i, x, y);
+                    Pieces[i] = pieceFactory.CreatePiece((PieceIndex)i, x, y);
                 }
                 else
                 {
                     x = i % 8;
                     y = i / 8;
-                    Pieces[i] = pieceFactory.NewPiece((PieceIndex)i, x, y);
+                    Pieces[i] = pieceFactory.CreatePiece((PieceIndex)i, x, y);
                 }
             }
 
@@ -56,7 +49,7 @@ namespace ChessMovement
                     {
                         X = p.X,
                         Y = p.Y,
-                        Piece = pieceFactory.NewPiece(p.ID, p.X, p.Y)
+                        Piece = pieceFactory.CreatePiece(p.ID, p.X, p.Y)
                     };
                 }
             }
@@ -78,7 +71,7 @@ namespace ChessMovement
                             {
                                 X = p.X,
                                 Y = p.Y,
-                                Piece = pieceFactory.NewPiece(p.ID, p.X, p.Y)
+                                Piece = pieceFactory.CreatePiece(p.ID, p.X, p.Y)
                             };
                         }
                     }
@@ -143,7 +136,7 @@ namespace ChessMovement
         //}
         #endregion
 
-        public Piece SelectionLoop(Piece selection, int renderOffsetX, int renderOffsetY)
+        public Piece GetSelection(Piece selection, int renderOffsetX, int renderOffsetY)
         {
             var running = true;
 
@@ -271,6 +264,7 @@ namespace ChessMovement
                         }
                         break;
                     case ConsoleKey.Escape:
+                        TurnCount = -1;
                         running = false;
                         break;
                 }
