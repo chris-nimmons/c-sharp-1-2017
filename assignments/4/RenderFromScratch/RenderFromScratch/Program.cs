@@ -54,8 +54,8 @@ namespace RenderFromScratch
             Chair chair = new Chair();
 
             renderables.Add(room);
-            renderables.Add(table);
             renderables.Add(chair);
+            renderables.Add(table);
 
             Renderer render = new Renderer();
             render.Render(renderables);
@@ -75,18 +75,27 @@ namespace RenderFromScratch
         {
             public int X { get; set; }
             public int Y { get; set; }
+            public int Length { get; set; }
+            public int Width { get; set; }
+            public int xOffset { get; set; }
+            public int yOffset { get; set; }
 
             public void Render()
             {
-                if (X < 0 || Y < 0)
+                if (X <= Width && X >= (Width+xOffset)-1)
                 {
                     Console.SetCursorPosition(X, Y);
-                    Console.Write("");
+                    Console.Write("X");
+                }
+                else if (Y <= Length && Y >= (Length + yOffset)-1) 
+                {
+                    Console.SetCursorPosition(X, Y);
+                    Console.Write("X");
                 }
                 else
                 {
                     Console.SetCursorPosition(X, Y);
-                    Console.Write('T');
+                    Console.Write("T");
                 }
             }
         }
@@ -94,24 +103,36 @@ namespace RenderFromScratch
         {
             public int X { get; set; }
             public int Y { get; set; }
+            public int Length { get; set; }
+            public int Width { get; set; }
+            public int xOffset { get; set; }
+            public int yOffset { get; set; }
+
 
             public void Render()
             {
-                if (X < 0 || Y < 0)
+                if (X <= Width && X >= (Width + xOffset) - 1)
                 {
                     Console.SetCursorPosition(X, Y);
-                    Console.Write("");
+                    Console.Write("X");
+                }
+                else if (Y <= Length && Y >= (Length + yOffset) - 1)
+                {
+                    Console.SetCursorPosition(X, Y);
+                    Console.Write("X");
                 }
                 else
                 {
                     Console.SetCursorPosition(X, Y);
-                    Console.Write('C');
+                    Console.Write("C");
                 }
             }
         }
 
         public class Room : IRenderable
         {
+            public int X { get; set; }
+            public int Y { get; set; }
             public int Length { get; set; }
             public int Width { get; set; }
             public int xOffset { get; set; }
@@ -124,6 +145,19 @@ namespace RenderFromScratch
                 {
                     for (int y = yOffset; y < Length + yOffset; y++)
                     {
+                        Random value = new Random();
+                        X = value.Next(1, 19);
+                        Y = value.Next(1, 19);
+
+                        Table table = new Table();
+                        Chair chair = new Chair();
+                        Table table1 = new Table();
+                        Chair chair1 = new Chair();
+                        Table table2 = new Table();
+                        Chair chair2 = new Chair();
+                        Table table3 = new Table();
+                        Chair chair3 = new Chair();
+
                         if (x == xOffset || y == yOffset)
                         {
                             Console.SetCursorPosition(x, y);
@@ -142,14 +176,28 @@ namespace RenderFromScratch
                         }
                         else
                         {
-                            Random randomplace = new Random();
-                            int randomx = randomplace.Next(1, 19);
-                            int randomy = randomplace.Next(1, 19);
-                            Console.SetCursorPosition(randomx, randomy);
-                            Random randomchar = new Random();
-                            char[] alpha = "TC   TC   TC   TC TC TC TC TC TC".ToCharArray();
-                            int index = randomchar.Next(alpha.Length);
-                            Console.Write(alpha[index]);
+                            if (x != X && y != Y)
+                            {
+                                Console.SetCursorPosition(x, y);
+                                Console.Write(" ");
+                            }
+                            else
+                            {
+                                Console.SetCursorPosition(X, Y);
+                                Console.Write('T');
+                                Console.Write('C');
+                                Console.SetCursorPosition(X, Y);
+                                Console.Write('T');
+                                Console.Write('C');
+                                Console.SetCursorPosition(X, Y);
+                                Console.Write('T');
+                                Console.Write('C');
+                                Console.SetCursorPosition(X, Y);
+                                Console.Write('T');
+                                Console.Write('C');
+
+                            }
+
                         }
 
                     }
