@@ -1,0 +1,8 @@
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessCalculations\obj\Debug\ChessCalculations.csprojResolveAssemblyReference.cache
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessCalculations\bin\Debug\ChessCalculations.exe.config
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessCalculations\bin\Debug\ChessCalculations.exe
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessCalculations\bin\Debug\ChessCalculations.pdb
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessCalculations\bin\Debug\ChessPieces.exe
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessCalculations\bin\Debug\ChessPieces.pdb
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessCalculations\obj\Debug\ChessCalculations.exe
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessPieces\ChessCalculations\obj\Debug\ChessCalculations.pdb

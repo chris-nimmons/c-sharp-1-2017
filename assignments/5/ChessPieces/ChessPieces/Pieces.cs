@@ -8,11 +8,11 @@ namespace ChessPieces
 {
     public enum Limit
     {
-        Size = 8,
-        Left = 5,
-        Upper = 5,
-        Right = Left + Size - 1,
-        Lower = Upper + Size - 1
+        Size = 7, // Refers to the size of the board - 1 indicating the maximum array position
+        Left = 0,
+        Upper = 0,
+        Right = Left + Size,
+        Lower = Upper + Size
     }
 
     public enum Color
@@ -31,18 +31,23 @@ namespace ChessPieces
         Knight = 'H'
     }
 
+    public enum PieceID
+    {
+        P1, P2, P3, P4, P5, P6, P7, P8,
+        R1, H1, B1, Q,  K,  B2, H2, R2
+    }
+
     public class Move
     {
         public int X { get; set; }
         public int Y { get; set; }
+        public bool Takeable { get; set; }
     }
 
     public interface IPiece
     {
         int X { get; set; }
-        int Xi { get; }
         int Y { get; set; }
-        int Yi { get; }
         Type Type { get; set; }
         Color Color { get; set; }
         int TimesMoved { get; set; }
@@ -52,17 +57,20 @@ namespace ChessPieces
 
     public class Piece
     {
+        public PieceID ID { get; set; }
         public int X { get; set; }
-        public int Xi { get { return (int)Limit.Left - X; } }
         public int Y { get; set; }
-        public int Yi { get { return (int)Limit.Upper - Y; } }
         public Type Type { get; set; }
         public Color Color { get; set; }
         public int TimesMoved { get; set; }
+        public Cell[][,] Boards { get; set; }
+        public List<Move> PossibleMoves { get; set; }
+        public Cell[,] PresentBoard { get; set; }
 
         public Piece()
         {
             TimesMoved = 0;
+            PossibleMoves = new List<Move>();
         }
 
         protected List<Move> LeftRight()
@@ -124,7 +132,7 @@ namespace ChessPieces
         }
     }
 
-    public class Queen : Piece, IPiece
+    public class Queen : Piece
     {
         public Queen()
         {
@@ -146,7 +154,7 @@ namespace ChessPieces
         }
     }
 
-    public class King : Piece, IPiece
+    public class King : Piece
     {
         public King()
         {
@@ -171,7 +179,7 @@ namespace ChessPieces
         }
     }
 
-    public class Pawn : Piece, IPiece
+    public class Pawn : Piece
     {
         public Pawn()
         {
@@ -194,7 +202,7 @@ namespace ChessPieces
         }
     }
 
-    public class Bishop : Piece, IPiece
+    public class Bishop : Piece
     {
         public Bishop()
         {
@@ -214,7 +222,7 @@ namespace ChessPieces
         }
     }
 
-    public class Rook : Piece, IPiece
+    public class Rook : Piece
     {
         public Rook()
         {
@@ -234,7 +242,7 @@ namespace ChessPieces
         }
     }
 
-    public class Knight : Piece, IPiece
+    public class Knight : Piece
     {
         public Knight()
         {
