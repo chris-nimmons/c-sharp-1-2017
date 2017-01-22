@@ -13,6 +13,12 @@ namespace RenderFromScratch
             Program program = new Program();
             program.Start();
             Console.ReadLine();
+            program.Start();
+            Console.ReadLine();
+            program.Start();
+            Console.ReadLine();
+            program.Start();
+            Console.ReadLine();
             Console.Write("You're done!!! Press enter!");
             Console.ReadLine();
         }
