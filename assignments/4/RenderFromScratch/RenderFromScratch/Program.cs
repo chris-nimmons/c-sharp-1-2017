@@ -106,10 +106,6 @@ namespace RenderFromScratch
 
             public int X { get; set; }
             public int Y { get; set; }
-            public int Length { get; set; }
-            public int Width { get; set; }
-            public int xOffset { get; set; }
-            public int yOffset { get; set; }
 
             public void Render()
             {
@@ -117,7 +113,11 @@ namespace RenderFromScratch
                 {
                     for (int Y = this.dimensions.yOffset; Y < this.dimensions.Length + this.dimensions.yOffset; Y++)
                     {
+                        int x = RandomInt(this.dimensions.xOffset + 1, this.dimensions.Width + this.dimensions.xOffset - 1);
+                        int y = RandomInt(this.dimensions.yOffset + 1, this.dimensions.Length + this.dimensions.yOffset - 1);
 
+                        Console.SetCursorPosition(x, y);
+                        Console.Write('T');
                     }
                 }
             }
@@ -134,10 +134,7 @@ namespace RenderFromScratch
 
             public int X { get; set; }
             public int Y { get; set; }
-            public int Length { get; set; }
-            public int Width { get; set; }
-            public int xOffset { get; set; }
-            public int yOffset { get; set; }
+
 
 
             public void Render()
@@ -146,7 +143,11 @@ namespace RenderFromScratch
                 {
                     for (int Y = this.dimensions.yOffset; Y < this.dimensions.Length + this.dimensions.yOffset; Y++)
                     {
+                        int x  = RandomInt(this.dimensions.xOffset + 1, this.dimensions.Width + this.dimensions.xOffset - 1);
+                        int y = RandomInt(this.dimensions.yOffset + 1, this.dimensions.Length + this.dimensions.yOffset - 1);
 
+                        Console.SetCursorPosition(x, y);
+                        Console.Write('C');
                     }
                 }
             }
