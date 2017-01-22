@@ -13,15 +13,6 @@ namespace RenderFromScratch
             Program program = new Program();
             program.Start();
             Console.ReadLine();
-            Console.Clear();
-            program.Start();
-            Console.ReadLine();
-            Console.Clear();
-            program.Start();
-            Console.ReadLine();
-            Console.Clear();
-            program.Start();
-            Console.ReadLine();
             Console.Write("You're done!!! Press enter!");
             Console.ReadLine();
         }
@@ -126,8 +117,7 @@ namespace RenderFromScratch
                 {
                     for (int Y = this.dimensions.yOffset; Y < this.dimensions.Length + this.dimensions.yOffset; Y++)
                     {
-                        Console.SetCursorPosition(X, Y);
-                        Console.Write('T');
+
                     }
                 }
             }
@@ -156,8 +146,7 @@ namespace RenderFromScratch
                 {
                     for (int Y = this.dimensions.yOffset; Y < this.dimensions.Length + this.dimensions.yOffset; Y++)
                     {
-                        Console.SetCursorPosition(X, Y);
-                        Console.Write('C');
+
                     }
                 }
             }
