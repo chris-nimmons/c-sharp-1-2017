@@ -58,12 +58,19 @@ namespace RenderFromScratch
 
         public class Dimensions
         {
-
             public int Length { get; set; }
             public int Width { get; set; }
             public int xOffset { get; set; }
             public int yOffset { get; set; }
 
+        }
+
+        private static Random random = new Random();
+
+        public static int RandomInt(int min = 0, int max = 19)
+        {
+            int rand = random.Next(min, max);
+            return rand;
         }
 
         public static Dimensions CreateDimensions()
@@ -80,10 +87,8 @@ namespace RenderFromScratch
 
             Console.WriteLine();
 
-            Random random = new Random();
-
-            int xoffset = random.Next(0, 20);
-            int yoffset = random.Next(0, 20);
+            int xoffset = RandomInt(0, 20);
+            int yoffset = RandomInt(0, 20);
 
             var dimensions = new Dimensions
             {
@@ -110,7 +115,10 @@ namespace RenderFromScratch
 
             public int X { get; set; }
             public int Y { get; set; }
-
+            public int Length { get; set; }
+            public int Width { get; set; }
+            public int xOffset { get; set; }
+            public int yOffset { get; set; }
 
             public void Render()
             {
@@ -136,6 +144,10 @@ namespace RenderFromScratch
 
             public int X { get; set; }
             public int Y { get; set; }
+            public int Length { get; set; }
+            public int Width { get; set; }
+            public int xOffset { get; set; }
+            public int yOffset { get; set; }
 
 
             public void Render()
@@ -163,7 +175,10 @@ namespace RenderFromScratch
 
             public int X { get; set; }
             public int Y { get; set; }
-
+            public int Length { get; set; }
+            public int Width { get; set; }
+            public int xOffset { get; set; }
+            public int yOffset { get; set; }
 
             public void Render()
             {
