@@ -1,0 +1,6 @@
+c:\users\thinkpad\documents\visual studio 2015\Projects\PieceMovers\PieceMovers\bin\Debug\PieceMovers.exe.config
+c:\users\thinkpad\documents\visual studio 2015\Projects\PieceMovers\PieceMovers\obj\Debug\PieceMovers.csprojResolveAssemblyReference.cache
+c:\users\thinkpad\documents\visual studio 2015\Projects\PieceMovers\PieceMovers\bin\Debug\PieceMovers.exe
+c:\users\thinkpad\documents\visual studio 2015\Projects\PieceMovers\PieceMovers\bin\Debug\PieceMovers.pdb
+c:\users\thinkpad\documents\visual studio 2015\Projects\PieceMovers\PieceMovers\obj\Debug\PieceMovers.exe
+c:\users\thinkpad\documents\visual studio 2015\Projects\PieceMovers\PieceMovers\obj\Debug\PieceMovers.pdb
