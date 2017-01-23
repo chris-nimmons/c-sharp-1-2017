@@ -1,0 +1,6 @@
+c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendProject\bin\Debug\PracticeForChessWeekendProject.exe.config
+c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendProject\bin\Debug\PracticeForChessWeekendProject.exe
+c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendProject\bin\Debug\PracticeForChessWeekendProject.pdb
+c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendProject\obj\Debug\PracticeForChessWeekendProject.csprojResolveAssemblyReference.cache
+c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendProject\obj\Debug\PracticeForChessWeekendProject.exe
+c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendProject\obj\Debug\PracticeForChessWeekendProject.pdb
