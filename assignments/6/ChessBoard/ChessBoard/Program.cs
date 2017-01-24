@@ -19,8 +19,8 @@ namespace ChessBoard
                 var piece = new Piece()
                 {
                     Index = i,
-                    X = random.Next(0,11),
-                    Y = random.Next(0,11)
+                    X = random.Next(0, 11),
+                    Y = random.Next(0, 11)
                 };
                 pieces.Add(piece);
             }
@@ -125,17 +125,12 @@ namespace ChessBoard
         }
     }
 
-    }
-    public class Pieces
-    {
-        public int Index { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
-    }
-
-
-
-
-
+}
+public class Pieces
+{
+    public int Index { get; set; }
+    public int X { get; set; }
+    public int Y { get; set; }
+}
 
 
