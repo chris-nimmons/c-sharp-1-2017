@@ -10,67 +10,24 @@ namespace PieceMovers
     {
         static void Main(string[] args)
         {
-            var queen = new Queen();
-            queen.letter = 'Q';
-            queen.startRender();
-            var castle = new Castle();
-            castle.letter = 'C';
-            castle.startRender();
-            var king = new King();
-            king.letter = 'K';
-            king.startRender();
-            var pawn = new Pawn();
-            pawn.letter = 'P';
-            pawn.startRender();
-            var knight = new Knight();
-            knight.letter = 'N';
-            knight.startRender();
-            var bishop = new Bishop();
-            bishop.startRender();
-
-            Console.ReadLine();
-
-            var pieces = new List<Piece>();
-            pieces.Add(new Piece { letter = queen.letter });
-            pieces.Add(new Piece { letter = pawn.letter });
-            pieces.Add(new Piece { letter = castle.letter });
-            pieces.Add(new Piece { letter = king.letter });
-            pieces.Add(new Piece { letter = bishop.letter });
-            pieces.Add(new Piece { letter = knight.letter });
-
-            var moves = new List<Move>();
-          //  moves.Add(new Move { queen.moves });
-
-
-
-            //for (int letter = 0; letter < 7; letter++)
-            //{
-
-            //}
-            //{
-            //    var piece = new Piece()
-            //    {
-            //    };
-            //    pieces.Add(piece);
-            //}
-
-            //pieces.ForEach(Console.WriteLine);
-            //Console.ReadLine();
-
-
-            var cursor = new Cursor();
-
-            //foreach (var piece in pieces)
-            //{
-            //    Console.SetCursorPosition(piece.X, piece.Y);
-            //    Console.Write(piece.letter);
-            //}
-
-
-            //pieces.ForEach(Console.WriteLine);
-            //Console.ReadLine();
+            Renderer renderer = new Renderer();
             Piece selection = null;
 
+            var pieces = new List<Piece>();
+
+            pieces.Add(new Queen { X = 3, Y = 0, Visible = true });
+            pieces.Add(new Bishop { X = 1, Y = 0, Visible = true });
+            pieces.Add(new Castle { X = 0, Y = 0, Visible = true });
+            pieces.Add(new King { X = 4, Y = 0, Visible = true });
+            pieces.Add(new Pawn { X = 1, Y = 1, Visible = true });
+            pieces.Add(new Knight { X = 2, Y = 0, Visible = true });
+
+            foreach (var piece in pieces)
+            {
+                renderer.Render(piece);
+            }
+
+            var cursor = new Cursor();
             Console.SetCursorPosition(cursor.X, cursor.Y);
             bool running = true;
             while (running)
@@ -101,6 +58,10 @@ namespace PieceMovers
                             {
                                 {
                                     highlighted = piece;
+                                    foreach (var move in pieces)
+                                    {
+                                        renderer.Render(move);
+                                    }
                                     break;
                                 }
                             }
@@ -111,7 +72,7 @@ namespace PieceMovers
                             {
                                 if (highlighted == selection)
                                 {
-                                    Console.Write(selection.letter);
+                                    Console.Write(selection.Letter);
                                     //deselecting
                                     selection = null;
                                 }
@@ -125,6 +86,7 @@ namespace PieceMovers
                                 //selecting
                                 selection = highlighted;
                                 Console.Write("#");
+
                             }
                         }
                         else
@@ -132,11 +94,12 @@ namespace PieceMovers
                             if (selection != null)
                             {
                                 //moving
+                                Console.SetCursorPosition(selection.X, selection.Y);
+                                Console.Write(' ');
                                 selection.X = cursor.X;
                                 selection.Y = cursor.Y;
-
-                                Console.Write(selection.letter);
-
+                                Console.SetCursorPosition(selection.X, selection.Y);
+                                Console.Write(selection.Letter);
                                 selection = null;
                             }
                         }
