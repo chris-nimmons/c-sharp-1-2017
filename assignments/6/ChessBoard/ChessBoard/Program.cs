@@ -10,45 +10,28 @@ namespace ChessBoard
     {
         static void Main(string[] args)
         {
-            Program program = new Program();
-            program.Start();
-        }
-
-        public void Start()
-        {
             var random = new Random();
 
             var pieces = new List<Piece>();
-            //for (int i = 0; i < random.Next(1, 9); i++)
-            //{
-            //    var piece = new Piece()
-            //    {
-            //        Index = i,
-            //        X = random.Next(0, 21),
-            //        Y = random.Next(0, 21)
-            //    };
-            //    pieces.Add(piece);
-            //}
 
-            Piece king = new Piece(3, 0);
-            Piece queen = new Piece(4, 0);
-
-            pieces.Add(king);
-            pieces.Add(queen);
-
-            foreach(var piece in pieces)
+            for (int i = 0; i < 11; i++)
             {
-                Console.SetCursorPosition(piece.X, piece.Y);
-                Console.Write(piece.Index);
-                piece.Render();
+                var piece = new Piece()
+                {
+                    Index = i,
+                    X = random.Next(0,11),
+                    Y = random.Next(0,11)
+                };
+                pieces.Add(piece);
             }
 
-            var cursor = new Cursor();
+            var cursor = new CursorPosition();
 
             Piece selection = null;
             foreach (var piece in pieces)
             {
                 Console.SetCursorPosition(piece.X, piece.Y);
+                Console.Write(piece.Index);
             }
 
             Console.SetCursorPosition(cursor.X, cursor.Y);
@@ -77,7 +60,6 @@ namespace ChessBoard
                         Piece highlighted = null;
                         foreach (var piece in pieces)
                         {
-                            // if the cursor is over a piece
                             if (cursor.X == piece.X && cursor.Y == piece.Y)
                             {
                                 highlighted = piece;
@@ -139,20 +121,19 @@ namespace ChessBoard
 
                 Console.SetCursorPosition(cursor.X, cursor.Y);
             }
+
         }
-        
     }
 
-    public class Cursor
+    }
+    public class Pieces
     {
+        public int Index { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
-
     }
 
-}
 
-    
 
 
 
