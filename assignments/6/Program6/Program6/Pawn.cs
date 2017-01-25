@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program6
 {
-    class Pawn : Piece
+    class Pawn : Piece 
     {
         public void GetMoves()
         {

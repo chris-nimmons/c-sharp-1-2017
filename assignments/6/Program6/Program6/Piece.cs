@@ -8,7 +8,12 @@ namespace Program6
 {
     class Piece : IRenderable
     {
-
+        public List<Queen> Queens { get; set; }
+        public List<King> Kings { get; set; }
+        public List<Pawn> Pawns { get; set; }
+        public List<Bishop> Bishops { get; set; }
+        public List<Knight> Kinghts { get; set; }
+        public List<Castle> Castles { get; set; }
 
         public class PieceProperties
         {
