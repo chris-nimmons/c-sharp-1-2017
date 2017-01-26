@@ -11,19 +11,13 @@ namespace TestDrivenDesignLecture
         public float Length { get; set; }
         public float Width { get; set; }
         public float Height { get; set; }
-        public float Value
-        {
-            get { return Length * Width * Height; }
-
-        }
+        public float Value { get { return Length * Width * Height; } }
 
         public Volume(float length, float width, float height)
         {
-            Length = length;
-            Width = width;
-            Height = height;
+            Length = Math.Abs(length);
+            Width = Math.Abs(width);
+            Height = Math.Abs(height);
         }
-
-
     }
 }
