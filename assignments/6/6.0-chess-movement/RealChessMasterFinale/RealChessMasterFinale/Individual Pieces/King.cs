@@ -19,6 +19,7 @@ namespace RealChessMasterFinale
 
             for (int col = X; col <= X + 1; col++)
             {
+                moves.Add(new Move { X = X + 1, Y = Y });
 
                 moves.Add(new Move { X = col + X, Y = Y });
 
