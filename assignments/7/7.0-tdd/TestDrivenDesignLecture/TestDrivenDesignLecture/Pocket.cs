@@ -19,9 +19,9 @@ namespace TestDrivenDesignLecture
 
         public bool Add(Content content)
         {
-            if (content.Volume.Width < Volume.Width
-                && content.Volume.Length < Volume.Length
-                && content.Volume.Height < Volume.Height)
+            if (content.Volume.Width <= Volume.Width &&
+                content.Volume.Length <= Volume.Length &&
+                content.Volume.Height <= Volume.Height)
             {
                 Contents.Add(content);
                 return true;
