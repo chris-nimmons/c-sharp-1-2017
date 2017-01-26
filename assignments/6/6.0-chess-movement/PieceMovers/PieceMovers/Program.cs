@@ -12,15 +12,23 @@ namespace PieceMovers
         {
             Renderer renderer = new Renderer();
             Piece selection = null;
+            //var welcome = new WelcomeScreen();
 
+            //if (welcome.Visible)
+            //{
+            //    renderer.Render(welcome);
+
+            //} Console.ReadLine();
+
+            var moves = new List<Move>();
             var pieces = new List<Piece>();
 
-            pieces.Add(new Queen { X = 3, Y = 0, Visible = true });
-            pieces.Add(new Bishop { X = 1, Y = 0, Visible = true });
-            pieces.Add(new Castle { X = 0, Y = 0, Visible = true });
-            pieces.Add(new King { X = 4, Y = 0, Visible = true });
-            pieces.Add(new Pawn { X = 1, Y = 1, Visible = true });
-            pieces.Add(new Knight { X = 2, Y = 0, Visible = true });
+            pieces.Add(new Queen { X = 3, Y = 0 });
+            pieces.Add(new Bishop { X = 1, Y = 0 });
+            pieces.Add(new Castle { X = 0, Y = 0 });
+            pieces.Add(new King { X = 4, Y = 0 });
+            pieces.Add(new Pawn { X = 1, Y = 1 });
+            pieces.Add(new Knight { X = 2, Y = 0 });
 
             foreach (var piece in pieces)
             {
@@ -32,6 +40,8 @@ namespace PieceMovers
             bool running = true;
             while (running)
             {
+                Console.SetCursorPosition(cursor.X, cursor.Y);
+
                 var info = Console.ReadKey(true);
                 switch (info.Key)
                 {
@@ -58,10 +68,7 @@ namespace PieceMovers
                             {
                                 {
                                     highlighted = piece;
-                                    foreach (var move in pieces)
-                                    {
-                                        renderer.Render(move);
-                                    }
+                                    Console.Clear();
                                     break;
                                 }
                             }
@@ -85,40 +92,69 @@ namespace PieceMovers
                             {
                                 //selecting
                                 selection = highlighted;
-                                Console.Write("#");
+                                selection.Visible = false;
+                                moves = selection.Moves();
 
+                                foreach (var move in moves)
+                                {
+                                    if (move.X < 8 && move.Y < 8)
+                                    {
+                                        if (move.X >= 0 && move.Y >= 0)
+                                        {
+                                            renderer.Render(move);
+                                        }
+                                    }
+                                }
                             }
                         }
                         else
                         {
                             if (selection != null)
+
+                                selection.Visible = true;
+                            foreach (var move in moves)
                             {
-                                //moving
-                                Console.SetCursorPosition(selection.X, selection.Y);
-                                Console.Write(' ');
-                                selection.X = cursor.X;
-                                selection.Y = cursor.Y;
-                                Console.SetCursorPosition(selection.X, selection.Y);
-                                Console.Write(selection.Letter);
-                                selection = null;
+                                if (cursor.X == move.X && cursor.Y == move.Y)
+                                {
+                                    Console.SetCursorPosition(selection.X, selection.Y);
+                                    Console.Write(' ');
+                                    selection.X = cursor.X;
+                                    selection.Y = cursor.Y;
+                                    Console.SetCursorPosition(selection.X, selection.Y);
+                                    Console.Write(selection.Letter);
+                                    Console.ResetColor();
+                                    selection.Visible = true;
+                                    selection = null;
+                                    Console.Clear();
+                                    foreach (var piece in pieces)
+                                    {
+                                        piece.Visible = true;
+                                        renderer.Render(piece);
+                                    }
+                                }
                             }
+                            break;
+                        }
+                        if (cursor.X < 0)
+                        {
+                            cursor.X = 0;
+                        }
+                        if (cursor.Y < 0)
+                        {
+                            cursor.Y = 0;
+                        }
+                        foreach (var piece in pieces)
+                        {
+                            piece.Visible = true;
+                            Console.ForegroundColor = ConsoleColor.White;
+                            renderer.Render(piece);
                         }
                         break;
                 }
-                if (cursor.X < 0)
-                {
-                    cursor.X = 0;
-                }
-                if (cursor.Y < 0)
-                {
-                    cursor.Y = 0;
-                }
-                Console.SetCursorPosition(cursor.X, cursor.Y);
             }
         }
+
     }
-
-
 }
 
 
