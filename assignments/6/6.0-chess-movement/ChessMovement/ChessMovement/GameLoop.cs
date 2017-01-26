@@ -7,41 +7,49 @@ namespace ChessMovement
 {
     public class GameLoop
     {
+        public int moves;
+        public GameBoard Board { get; set; }
+
         public void Start()
         {
-            var board = new Board();
-            board.InitAllPieces();
+            Board = new GameBoard();
+            Board.Initialize();
+            Board.State = new State(Board.TurnCount, Board.Pieces);
+            Board.State.PopulateBoard();
             Piece selection = null;
             bool running = true;
-            int turn = board.TurnCount;
+            int turn = Board.TurnCount;
 
             var renderer = new Renderer(10, 5);
-            renderer.Render(board.Pieces);
+            renderer.Render(Board.Pieces);
 
             while (running)
             {
-                while (turn == board.TurnCount)
+                while (turn == Board.TurnCount)
                 {
-                    selection = board.GetSelection(selection, renderer.OffsetX, renderer.OffsetY);
+                    int totalCurrentNodes = 0;
+                    Board.State.BranchNode(0, 4, ref totalCurrentNodes, 0);
+
+                    selection = Board.GetSelection(selection, renderer.OffsetX, renderer.OffsetY);
 
                     if (selection != null)
                     {
                         renderer.HideSelection(selection);
-                        renderer.RenderMoves(selection.GetMoves());
+                        renderer.RenderMoves(Board.State.GetMoves(selection));
                     }
                     else
                     {
                         Console.Clear();
-                        renderer.Render(board.Pieces);
+                        renderer.Render(Board.Pieces);
                     }
                 }
 
-                if (board.TurnCount == -1)
+                if (Board.TurnCount == -1)
                 {
                     break;
                 }
                 turn++;
-                renderer.Render(board.Pieces);
+                renderer.Render(Board.Pieces);
             }
         }
     }

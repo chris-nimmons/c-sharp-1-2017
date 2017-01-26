@@ -3,3 +3,11 @@ C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\6\6.0-chess-movement
 C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\6\6.0-chess-movement\ChessMovement\ChessMovement\obj\Debug\ChessMovement.csprojResolveAssemblyReference.cache
 C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\6\6.0-chess-movement\ChessMovement\ChessMovement\obj\Debug\ChessMovement.exe
 C:\Users\marcondag\Documents\TIY\c-sharp-1-2017\assignments\6\6.0-chess-movement\ChessMovement\ChessMovement\obj\Debug\ChessMovement.pdb
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessMovement\ChessMovement\obj\Debug\ChessMovement.exe
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessMovement\ChessMovement\obj\Debug\ChessMovement.pdb
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessMovement\ChessMovement\bin\Debug\ChessMovement.exe
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessMovement\ChessMovement\bin\Debug\ChessMovement.pdb
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessMovement\ChessMovement\obj\Debug\ChessMovement.csprojResolveAssemblyReference.cache
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessMovement\ChessMovement\bin\Debug\ChessMovement.exe.config
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessMovement\ChessMovement\bin\Debug\AutoMapper.dll
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\ChessMovement\ChessMovement\bin\Debug\AutoMapper.xml
