@@ -38,24 +38,21 @@ namespace TestDrivenDesignLecture
             
         }
 
-        public void Remove(Content content)
+        public bool Remove(Content content)
         {
-            Contents.Remove(content);
+            return Contents.Remove(content);
         }
 
         public bool Check(Content content)
         {
-            bool output = Contents.Contains(content);
-            return output;
-
+            return Contents.Contains(content);
         }
 
         public List<Content> Dump()
         {
-            return Contents;
+            var swapped = new List<Content>(Contents);
+            Contents.Clear();
+            return swapped;
         }
-
-
-
     }
 }
