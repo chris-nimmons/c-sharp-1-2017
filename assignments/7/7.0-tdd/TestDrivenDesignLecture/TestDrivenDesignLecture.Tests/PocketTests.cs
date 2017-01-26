@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestDrivenDesignLecture.Tests
@@ -102,6 +103,18 @@ namespace TestDrivenDesignLecture.Tests
         }
 
         [TestMethod]
+        public void Pocket_Dump_ShouldReturnListOfTypePocket()
+        {
+            var pocket = new Pocket(1, 1, 1);
+            var content = new Content(1, 1, 1);
+            pocket.Add(content);
+
+            var dumped = pocket.Dump();
+
+            Assert.IsInstanceOfType(dumped, new List<Content>().GetType());
+        }
+
+        [TestMethod]
         public void Pocket_Dump_ShouldReturnFullListOfContents()
         {
             var pocket = new Pocket(2, 2, 2);
@@ -127,6 +140,20 @@ namespace TestDrivenDesignLecture.Tests
             var dumped = pocket.Dump();
 
             Assert.IsTrue(dumped.Count == 0);
+        }
+
+        [TestMethod]
+        public void Pocket_Dump_ShouldReturnEmptyListOnSecondDump()
+        {
+            var pocket = new Pocket(1, 1, 1);
+            var content = new Content(1, 1, 1);
+            pocket.Add(content);
+
+            var firstDump = pocket.Dump();
+            var secondDump = pocket.Dump();
+
+            Assert.IsTrue(firstDump.Count > 0);
+            Assert.IsTrue(secondDump.Count == 0);
         }
     }
 }

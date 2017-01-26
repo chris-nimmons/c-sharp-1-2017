@@ -8,6 +8,15 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
+        public void Bag_WeightProperty_ShouldSetToAbsoluteValue()
+        {
+            var bag = new Bag(1, 1, 1);
+            bag.Weight = -5;
+
+            Assert.IsTrue(bag.Weight == 5);
+        }
+
+        [TestMethod]
         public void Bag_Check_ShouldReturnFalseIfContentNotInList()
         {
             var bag = new Bag(1, 1, 1);
