@@ -8,9 +8,11 @@ namespace TestDrivenDesignLecture
 {
     public class Bag
     {
+        private float _weight;
+
         public string Color { get; set; }
         public Volume Volume { get; set; }
-        public float Weight { get; set; }
+        public float Weight { get { return _weight; } set { _weight = Math.Abs(value); } }
         public List<Pocket> Pockets { get; set; }
         private List<Content> Contents { get; set; }        
         public Condition Condition { get; set; }
