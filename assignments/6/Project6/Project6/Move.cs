@@ -13,7 +13,7 @@ namespace Project6
 
         public Move()
         {
-                
+            Console.SetCursorPosition(X, Y);
         }
     }
 }
