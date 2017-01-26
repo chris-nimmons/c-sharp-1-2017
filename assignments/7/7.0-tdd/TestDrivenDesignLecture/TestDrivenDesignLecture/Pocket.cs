@@ -31,7 +31,6 @@ namespace TestDrivenDesignLecture
                 return false;
             }
         }
-
         
         public bool Remove(Content content)
         {
@@ -49,7 +48,5 @@ namespace TestDrivenDesignLecture
             Contents.Clear();
             return swapper;
         }
-
-
     }
 }

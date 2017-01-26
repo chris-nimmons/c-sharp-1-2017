@@ -34,8 +34,7 @@ namespace TestDrivenDesignLecture
             else
             {
                 return false;
-            }      
-            
+            }         
         }
 
         public bool Remove(Content content)
