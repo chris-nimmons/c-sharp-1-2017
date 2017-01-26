@@ -1,0 +1,5 @@
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\Stairsfinal\Stairsfinal\bin\Debug\Stairsfinal.exe.config
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\Stairsfinal\Stairsfinal\bin\Debug\Stairsfinal.exe
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\Stairsfinal\Stairsfinal\bin\Debug\Stairsfinal.pdb
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\Stairsfinal\Stairsfinal\obj\Debug\Stairsfinal.exe
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\3\3.0-staircase\Stairsfinal\Stairsfinal\obj\Debug\Stairsfinal.pdb

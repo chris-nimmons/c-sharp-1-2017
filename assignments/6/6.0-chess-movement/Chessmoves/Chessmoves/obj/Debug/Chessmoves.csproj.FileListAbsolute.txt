@@ -1,0 +1,6 @@
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chessmoves\Chessmoves\bin\Debug\Chessmoves.exe.config
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chessmoves\Chessmoves\bin\Debug\Chessmoves.exe
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chessmoves\Chessmoves\bin\Debug\Chessmoves.pdb
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chessmoves\Chessmoves\obj\Debug\Chessmoves.csprojResolveAssemblyReference.cache
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chessmoves\Chessmoves\obj\Debug\Chessmoves.exe
+C:\Users\Jeff\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chessmoves\Chessmoves\obj\Debug\Chessmoves.pdb
