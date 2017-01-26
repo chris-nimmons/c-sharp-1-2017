@@ -1,0 +1,6 @@
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\RealChessMasterFinale\RealChessMasterFinale\bin\Debug\RealChessMasterFinale.exe.config
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\RealChessMasterFinale\RealChessMasterFinale\obj\Debug\RealChessMasterFinale.csprojResolveAssemblyReference.cache
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\RealChessMasterFinale\RealChessMasterFinale\bin\Debug\RealChessMasterFinale.exe
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\RealChessMasterFinale\RealChessMasterFinale\bin\Debug\RealChessMasterFinale.pdb
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\RealChessMasterFinale\RealChessMasterFinale\obj\Debug\RealChessMasterFinale.exe
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\RealChessMasterFinale\RealChessMasterFinale\obj\Debug\RealChessMasterFinale.pdb
