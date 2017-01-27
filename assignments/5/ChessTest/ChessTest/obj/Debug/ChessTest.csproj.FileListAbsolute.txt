@@ -1,0 +1,6 @@
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessTest\ChessTest\bin\Debug\ChessTest.exe.config
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessTest\ChessTest\bin\Debug\ChessTest.exe
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessTest\ChessTest\bin\Debug\ChessTest.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessTest\ChessTest\obj\Debug\ChessTest.exe
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessTest\ChessTest\obj\Debug\ChessTest.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\5\ChessTest\ChessTest\obj\Debug\ChessTest.csprojResolveAssemblyReference.cache

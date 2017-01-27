@@ -12,35 +12,56 @@ namespace Project6
         {
 
             Renderer renderer = new Renderer();
+            Cursor cursor = new Cursor();
+            var pieces = new List<Piece>();
+            var king = new King() { X = 3, Y = 0 };
+            var queen = new Queen() { X = 4, Y = 0 };
+            var bishop = new Bishop() { X = 2, Y = 0 };
+            var bishop2 = new Bishop() { X = 5, Y = 0 };
+            var knight = new Knight() { X = 1, Y = 0 };
+            var castle = new Castle() { X = 0, Y = 0 };
+            var knight2 = new Knight() { X = 6, Y = 0 };
+            var castle2 = new Castle() { X = 7, Y= 0};
 
-            var cursor = new Cursor();
+            var kingBlack = new King() { X = 4, Y = 7 };
+            var queenBlack = new Queen() { X = 3, Y = 7};
+            var bishopBlack = new Bishop() { X = 2, Y = 7 };
+            var bishop2Black = new Bishop() { X = 5, Y = 7 };
+            var knightBlack = new Knight() { X = 1, Y = 7 };
+            var castleBlack = new Castle() { X = 0, Y = 7 };
+            var knight2Black = new Knight() { X = 6, Y = 7 };
+            var castle2Black = new Castle() { X = 7, Y = 7 };
 
-            Pawn pawn = new Pawn();
-            Pawn one = new Pawn();
-            King two = new King();
-            Queen queen = new Queen();
+            var pawns = new List<Pawn>();
 
+            for (int x = 0; x < 8; x++)
+            {
+                var pawn = new Pawn() { Y = 1, X = x };
+                pieces.Add(pawn);
 
-            List<Piece> pieces = new List<Piece>();
+                pawn = new Pawn() { Y = 6, X = x };
+                pieces.Add(pawn);
+            }
 
-            one.X = 4;
-            one.Y = 0;
+            pieces.Add(castle2Black);
+            pieces.Add(knightBlack);
+            pieces.Add(castleBlack);
+            pieces.Add(bishop2Black);
+            pieces.Add(bishopBlack);
+            pieces.Add(knightBlack);
+            pieces.Add(knight2Black);
+            pieces.Add(kingBlack);
+            pieces.Add(queenBlack);
 
-            two.X = 2;
-            two.Y = 0;
-
-            pawn.X = 1;
-            pawn.Y = 0;
-
-            queen.X = 3;
-            queen.Y = 0;
-            queen.Visible = true;
-
-            pieces.Add(pawn);
-            pieces.Add(one);
-            pieces.Add(two);
+            pieces.Add(castle2);
+            pieces.Add(knight);
+            pieces.Add(castle);
+            pieces.Add(bishop2);
+            pieces.Add(bishop);
+            pieces.Add(knight);
+            pieces.Add(knight2);
+            pieces.Add(king);
             pieces.Add(queen);
-
             renderer.Render(pieces);
 
             Piece selection = null;
@@ -48,6 +69,7 @@ namespace Project6
             {
                 Console.SetCursorPosition(piece.X, piece.Y);
             }
+
 
             Console.SetCursorPosition(cursor.X, cursor.Y);
             bool running = true;
@@ -86,7 +108,7 @@ namespace Project6
                             {
                                 if (highlighted == selection)
                                 {
-                                    Console.Write(selection);
+                                    Console.Write(selection.Letter);
                                     selection = null;
                                 }
                                 else
@@ -104,7 +126,7 @@ namespace Project6
                         {
                             if (selection != null)
                             {
-                                Console.Write(selection);
+                                Console.Write(selection.Letter);
                                 selection.X = cursor.X;
                                 selection.Y = cursor.Y;
 
@@ -113,18 +135,28 @@ namespace Project6
                         }
                         break;
                 }
-                if (cursor.X < 0)
+                if (cursor.X < 0 || cursor.Y < 0)
+                {
+                    cursor.X = 0;
+                    cursor.Y = 0;
+                }
+                if (cursor.X > 7 || cursor.Y < 0)
+                {
+                    cursor.X = 0;
+
+                }
+                if (cursor.X > 7)
                 {
                     cursor.X = 0;
                 }
-                if (cursor.Y < 0)
+                if (cursor.X < 0 || cursor.Y > 7)
                 {
                     cursor.Y = 0;
                 }
                 Console.SetCursorPosition(cursor.X, cursor.Y);
             }
-
         }
+
     }
     public class Cursor
     {
@@ -133,3 +165,4 @@ namespace Project6
 
     }
 }
+
