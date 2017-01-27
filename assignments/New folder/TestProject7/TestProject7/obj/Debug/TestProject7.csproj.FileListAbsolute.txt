@@ -1,0 +1,6 @@
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\TestProject7\TestProject7\bin\Debug\TestProject7.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\TestProject7\TestProject7\bin\Debug\TestProject7.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\TestProject7\TestProject7\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\TestProject7\TestProject7\obj\Debug\TestProject7.csprojResolveAssemblyReference.cache
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\TestProject7\TestProject7\obj\Debug\TestProject7.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\TestProject7\TestProject7\obj\Debug\TestProject7.pdb
