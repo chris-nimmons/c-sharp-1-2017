@@ -1,0 +1,6 @@
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chess Movement\ChessMovement\bin\Debug\ChessMovement.exe.config
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chess Movement\ChessMovement\obj\Debug\ChessMovement.csprojResolveAssemblyReference.cache
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chess Movement\ChessMovement\bin\Debug\ChessMovement.exe
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chess Movement\ChessMovement\bin\Debug\ChessMovement.pdb
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chess Movement\ChessMovement\obj\Debug\ChessMovement.exe
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\Chess Movement\ChessMovement\obj\Debug\ChessMovement.pdb
