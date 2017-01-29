@@ -8,6 +8,14 @@ namespace Project6
 {
     class Board
     {
+        Pawn pawn = new Pawn();
+        Cursor cursor = new Cursor();
+        public bool playing = true;
+        public bool IsMoveAllowed()
+        {
+
+            return false;
+        }
 
         private const int boardWidth = 8;
         private const int boardLength = 8;
@@ -25,7 +33,7 @@ namespace Project6
         }
         public List<Piece> GetPieces()
         {
-
+              
             var pieces = new List<Piece>();
 
             foreach (var piece in this.chessBoard)
@@ -39,6 +47,7 @@ namespace Project6
             return pieces;
 
         }
+
 
 
 
