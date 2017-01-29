@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Project6
 {
-    public class Piece 
+    public abstract class Piece 
     {
-        public int X { get; set;  }
-        public int Y { get; set; }
+        public abstract string[] GetMoves();
 
-        public char Letter { get; set; }
-        public bool Visible { get; set; }
+        public abstract int X { get; set;  }
+        public abstract int Y { get; set; }
+
+        public abstract char Letter { get; set; }
+        public abstract bool Visible { get; set; }
 
 
         public Piece()
