@@ -22,26 +22,26 @@ namespace Project6
 
             PreLoadChessBoard();
 
-            int width = boardWidth;
-            int length = boardLength;
-
-            DisplayChessBoardWithPieces(width, length);
-
         }
-
-        private static void DisplayChessBoardWithPieces(int width, int length)
+        public List<Piece> GetPieces()
         {
-            for (int i = 0; i < width ; i++)
+
+            var pieces = new List<Piece>();
+
+            foreach (var piece in this.chessBoard)
             {
-
-                for (int j = 0; j < length; j++)
+                if (piece != null)
                 {
-                    Console.SetCursorPosition(i, j);
-                    Console.Write("X");
+                    pieces.Add(piece);
                 }
-
             }
+
+            return pieces;
+
         }
+
+
+
 
         /// <summary>
         /// Sets up chess board with the initial position for the black and white pieces.
