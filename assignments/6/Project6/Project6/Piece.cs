@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project6
 {
-    public class Piece
+    public class Piece 
     {
         public int X { get; set;  }
         public int Y { get; set; }

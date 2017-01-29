@@ -8,9 +8,12 @@ namespace Project6
 {
     public class Pawn : Piece
     {
+
         public Pawn()
         {
             Letter = 'P';
         }
+        
+
     }
 }
