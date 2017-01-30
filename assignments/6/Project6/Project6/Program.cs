@@ -125,5 +125,9 @@ namespace Project6
         public int X { get; set; }
         public int Y { get; set; }
 
+        public static implicit operator Cursor(List<Cursor> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
