@@ -16,7 +16,7 @@ namespace RealChessMasterFinale
 
         public Move()
         {
-            // this.Visible = true;
+            
             Index = '#';
 
         }

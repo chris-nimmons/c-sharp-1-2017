@@ -18,6 +18,7 @@ namespace RealChessMasterFinale
 
 
             var moves = new List<Move>();
+            
 
 
             foreach (var renderable in board.Renderables)
@@ -60,37 +61,38 @@ namespace RealChessMasterFinale
                             {
                                 highlighted = piece;
                                 break;
+
                             }
                         }
 
                         if (highlighted != null)
                         {
+                            
 
                             if (selection != null)
                             {
+
                                 //get moves here?  Nah son
+                             
+                                    
 
+                                        if (highlighted == selection)
+                                        {
+                                            selection.Visible = true;
+                                            //deselecting
+                                            selection = null;
+                                            highlighted = null;
+                                            moves.Clear();
+                                        }
 
-                                if (highlighted == selection)
-                                {
-
-                                    selection.Visible = true;
-                                    //deselecting
-                                    selection = null;
-                                    highlighted = null;
-                                    moves.Clear();
-
-                                }
-
-                                else
-                                {
-                                    break;
-                                    selection.Visible = true;
-                                    selection = null;
-                                    highlighted = null;
-                                    moves.Clear();
-
-                                }
+                                        else
+                                        {
+                                            selection.Visible = true;
+                                            selection = null;
+                                            highlighted = null;
+                                            moves.Clear();
+                                        }
+                                                                    
                             }
 
                             //if we dont have a selection
@@ -100,25 +102,36 @@ namespace RealChessMasterFinale
                                 selection = highlighted;
                                 selection.Visible = false;
                                 moves = selection.GetMoves();
-
                             }
+
                         }
 
                         //if the cursor is not over a piece
                         else
                         {
-
+                            
                             //if there is a piece selected
                             if (selection != null)
                             {
-                                break;
-                                //moving Ninja Style
-                                selection.Visible = true;
-                                selection.X = cursor.X;
-                                selection.Y = cursor.Y;
 
-                                selection = null;
-                                moves.Clear();
+                                foreach (var move in moves)
+                                {
+                                    renderer.Render(move);
+
+                                    if (move.X == cursor.X && move.Y == cursor.Y)
+                                    {
+
+                                        //moving Ninja Style
+                                        selection.Visible = true;
+                                        selection.X = cursor.X;
+                                        selection.Y = cursor.Y;
+
+                                        selection = null;
+                                        moves.Clear();
+                                        break;
+
+                                    }
+                                }
                             }
                         }
 
@@ -143,7 +156,9 @@ namespace RealChessMasterFinale
                     cursor.Y = 0;
                 }
 
+
                 renderer.Clear();
+
 
                 foreach (var move in moves)
                 {
@@ -159,7 +174,7 @@ namespace RealChessMasterFinale
                 Console.SetCursorPosition(cursor.X, cursor.Y);
 
             }
-            //Console.ReadLine();
+           
         }
     }
 

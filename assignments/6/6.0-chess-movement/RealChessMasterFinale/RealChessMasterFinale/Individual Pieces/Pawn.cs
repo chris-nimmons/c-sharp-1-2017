@@ -11,6 +11,7 @@ namespace RealChessMasterFinale
         public Pawn()
         {
             Index = 'P';
+
         }
 
         public override List<Move> GetMoves()

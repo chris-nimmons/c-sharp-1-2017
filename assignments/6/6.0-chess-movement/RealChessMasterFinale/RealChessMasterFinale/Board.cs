@@ -14,6 +14,7 @@ namespace RealChessMasterFinale
         public List<Piece> Pieces { get; set; }
 
 
+
         public Board()
         {
             Pieces = new List<Piece>();
@@ -25,11 +26,14 @@ namespace RealChessMasterFinale
             Pieces = new List<Piece>();
             Renderables = new List<IRenderable>();
 
+
             var king = new King() { X = 4, Y = 0, };
             Pieces.Add(king);
 
+
             var queen = new Queen() { X = 3, Y = 0 };
             Pieces.Add(queen);
+
 
             var knight = new Knight() { X = 1, Y = 0 };
             Pieces.Add(knight);
@@ -47,8 +51,10 @@ namespace RealChessMasterFinale
             {
                 Renderables.Add(piece);
                 piece.Visible = true;
-
+                piece.GetMoves();            // Maybe here?
             }
+
+
 
         }
 
