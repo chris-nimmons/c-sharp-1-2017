@@ -59,12 +59,15 @@ namespace Project6
 
         public bool IsMoveAllowed(Piece selectedPiece, Cursor toPosition)
         {
-
             var allowedMoves = selectedPiece.GetMoves();
+            var cursor = new Cursor();
+            cursor.X = toPosition.X;
+            cursor.Y = toPosition.Y;
 
             if (allowedMoves != null)
             {
-                
+                cursor.X++;
+                cursor.Y++;
                 return true;
             }
             else
