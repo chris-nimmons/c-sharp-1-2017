@@ -8,12 +8,14 @@ namespace TestDrivenDesignLecture
 {
     public class Bag
     {
+        public float Length { get; set; }
         public string Color { get; set; }
         public Volume Volume { get; set; }
         public float Weight { get; set; }
         public List<Pocket> Pockets { get; set; }
         private List<Content> Contents { get; set; }        
         public Condition Condition { get; set; }
+        
 
         public Bag(float length, float width, float height)
         {
@@ -22,14 +24,27 @@ namespace TestDrivenDesignLecture
             Volume = new Volume(length, width, height);
         }
 
-        public bool Add(Content content)
+        public bool Add(Content content, Content content2)
         {
+            
             if (content.Volume.Length < Volume.Length
                 && content.Volume.Width < Volume.Width &&
                 content.Volume.Height < Volume.Height)
             {
-                Contents.Add(content);
-                return true;
+                if (content.Volume.Length + content2.Volume.Length > Volume.Length || content.Volume.Width + content2.Volume.Width > Volume.Width ||
+                content.Volume.Height + content.Volume.Height > Volume.Height)
+                {
+                    Contents.Add(content);
+                    ;
+                    return false;
+                }
+                else
+                {
+                    Contents.Add(content);
+                    Contents.Add(content2);
+                    return true;
+                }
+               
             }
             else
             {
@@ -38,9 +53,21 @@ namespace TestDrivenDesignLecture
             
         }
 
-        public void Remove(Content content)
+        public bool Remove(Content content)
         {
-            Contents.Remove(content);
+            if (content.Volume.Length < Volume.Length
+                && content.Volume.Width < Volume.Width &&
+                content.Volume.Height < Volume.Height)
+            {
+                Contents.Remove(content);
+                return true;
+            }
+            
+            else
+            {
+                return false;
+            }
+           
         }
 
         public bool Check(Content content)
@@ -52,10 +79,12 @@ namespace TestDrivenDesignLecture
 
         public List<Content> Dump()
         {
-            return Contents;
+            var swapper = new List<Content>(Contents);
+            Contents.Clear();
+            return swapper;
         }
 
-
+        
 
     }
 }

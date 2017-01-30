@@ -9,6 +9,7 @@ namespace TestDrivenDesignLecture
     public class Content
     {
         public Volume Volume { get; set; }
+       
         public float Weight { get; set; }
         public string Name { get; set; }
 
@@ -16,6 +17,11 @@ namespace TestDrivenDesignLecture
         {
             Volume = new Volume(length, width, height);
         }
+
+        
+       
+
+
     }
 
 }
