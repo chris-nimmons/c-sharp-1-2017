@@ -62,7 +62,16 @@ namespace Project6
 
             var allowedMoves = selectedPiece.GetMoves();
 
-            return true;
+            if (allowedMoves != null)
+            {
+                
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+  
 
         }
 
