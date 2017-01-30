@@ -11,6 +11,7 @@ namespace TestDrivenDesignLecture
         public float Length { get; set; }
         public float Width { get; set; }
         public float Height { get; set; }
+
         public float Value
         {
             get { return Length * Width * Height; }
