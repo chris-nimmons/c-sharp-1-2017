@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestDrivenDesignLecture\TestDrivenDesignLecture.csproj">
+    <ProjectReference Include="..\TestDrivenDesignLecture\TestDrivenDesignLectureAssignment.csproj">
       <Project>{8651dd43-ea7c-455c-a4e4-adc5a940a7b0}</Project>
-      <Name>TestDrivenDesignLecture</Name>
+      <Name>TestDrivenDesignLectureAssignment</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

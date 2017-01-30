@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrivenDesignLecture", "TestDrivenDesignLecture\TestDrivenDesignLecture.csproj", "{8651DD43-EA7C-455C-A4E4-ADC5A940A7B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrivenDesignLectureAssignment", "TestDrivenDesignLecture\TestDrivenDesignLectureAssignment.csproj", "{8651DD43-EA7C-455C-A4E4-ADC5A940A7B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrivenDesignLecture.Test", "TestDrivenDesignLecture.Test\TestDrivenDesignLecture.Test.csproj", "{E0A7F77D-E989-44BD-A013-A9DE00E48EDE}"
 EndProject
