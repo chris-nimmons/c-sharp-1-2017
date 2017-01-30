@@ -16,7 +16,7 @@ namespace Project6
         public abstract char Letter { get; set; }
         public abstract bool Visible { get; set; }
 
-        public abstract Enum Color { get; set; }
+        public enum Color { White, Black }
 
         public Piece()
         {

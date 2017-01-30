@@ -21,6 +21,7 @@ namespace Project6
 
         public override int Y { get; set; }
 
+        public Color color { get; set; }
 
         public override string[] GetMoves()
         {
