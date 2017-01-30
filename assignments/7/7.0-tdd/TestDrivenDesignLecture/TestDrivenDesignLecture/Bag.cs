@@ -24,9 +24,9 @@ namespace TestDrivenDesignLecture
 
         public bool Add(Content content)
         {
-            if (content.Volume.Length < Volume.Length
-                && content.Volume.Width < Volume.Width &&
-                content.Volume.Height < Volume.Height)
+            if (content.Volume.Length <= Volume.Length
+                && content.Volume.Width <= Volume.Width &&
+                content.Volume.Height <= Volume.Height)
             {
                 Contents.Add(content);
                 return true;
@@ -38,9 +38,10 @@ namespace TestDrivenDesignLecture
             
         }
 
-        public void Remove(Content content)
+        public bool Remove(Content content)
         {
             Contents.Remove(content);
+            return true;
         }
 
         public bool Check(Content content)
