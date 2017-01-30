@@ -23,6 +23,7 @@ namespace Project6
 
         public override int Y { get; set; }
 
+        public abstract Enum Color { get; set; }
 
         public override string[] GetMoves()
         {

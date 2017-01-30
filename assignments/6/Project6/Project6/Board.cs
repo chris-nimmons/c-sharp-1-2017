@@ -33,7 +33,7 @@ namespace Project6
         }
         public List<Piece> GetPieces()
         {
-              
+
             var pieces = new List<Piece>();
 
             foreach (var piece in this.chessBoard)
@@ -48,9 +48,20 @@ namespace Project6
 
         }
 
+        /// <summary>
+        /// Determines if the move detected by the selected piece and to position is allowed.
+        /// </summary>
+        /// <param name="selectedPiece"></param>
+        /// <param name="toPosition"></param>
+        /// <returns>True if moved allowed for the piece, false means the piece does not move.</returns>
+        public bool IsMoveAllowed(Piece selectedPiece, Cursor toPosition)
+        {
 
+            var allowedMoves = selectedPiece.GetMoves();
 
+            return true;
 
+        }
 
         /// <summary>
         /// Sets up chess board with the initial position for the black and white pieces.

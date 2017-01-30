@@ -13,21 +13,27 @@ namespace Project6
         {
 
             Renderer renderer = new Renderer();
+
             Cursor cursor = new Cursor();
 
             Board board = new Board();
+
             var pieces = board.GetPieces();
+
             renderer.Render(pieces);
 
             Piece selection = null;
 
             Console.SetCursorPosition(cursor.X, cursor.Y);
+
             bool running = true;
+
             while (running)
             {
                 var info = Console.ReadKey(true);
                 switch (info.Key)
                 {
+
                     case ConsoleKey.Escape:
                         running = false;
                         break;
@@ -44,9 +50,10 @@ namespace Project6
                         cursor.X++;
                         break;
                     case ConsoleKey.Enter:
-                        Piece highlighted = null;
-                        highlighted = pieces.Where(p => cursor.X == p.X && cursor.Y == p.Y).Select(p => p).FirstOrDefault();
 
+                        Piece highlighted = null;
+
+                        highlighted = pieces.Where(p => cursor.X == p.X && cursor.Y == p.Y).Select(p => p).FirstOrDefault();
 
                         if (highlighted != null)
                         {
@@ -59,20 +66,28 @@ namespace Project6
                                 }
                                 else
                                 {
-
+                                    // Have selected another piece.
                                 }
                             }
                             else
                             {
+
+                                // Entering selection mode
                                 selection = highlighted;
+
                                 Console.Write("X");
+
                             }
                         }
                         else
                         {
                             if (selection != null)
                             {
+
+                                bool isMovedAllowed = board.IsMoveAllowed(selection, cursor);
+
                                 Console.Write(selection.Letter);
+
                                 selection.X = cursor.X;
                                 selection.Y = cursor.Y;
 
@@ -81,6 +96,7 @@ namespace Project6
                         }
                         break;
                 }
+
                 if (cursor.X < 0 || cursor.Y < 0)
                 {
                     cursor.X = 0;
