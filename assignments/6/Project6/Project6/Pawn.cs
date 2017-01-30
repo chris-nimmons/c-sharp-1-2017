@@ -28,7 +28,10 @@ namespace Project6
 
         public override string[] GetMoves()
         {
-            throw new NotImplementedException();
+            var cursor = new Cursor();
+            Console.SetCursorPosition(X, Y);
+            return (X,Y);
+           
         }
 
     }
