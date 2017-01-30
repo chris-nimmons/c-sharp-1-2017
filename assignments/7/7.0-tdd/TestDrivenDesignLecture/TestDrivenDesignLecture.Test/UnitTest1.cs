@@ -41,16 +41,16 @@ namespace TestDrivenDesignLecture.Test
             Assert.IsTrue(removed);
             Assert.IsFalse(bag.Check(content));
         }
-        //[TestMethod]
-        //public void Bag_should_not_remove() //if something expanded in the bag, like an umbrella
-        //{
-        //    var content = new Content(20, 20, 20);
-        //    var bag = new Bag(10, 10, 10);
-        //    var removed = bag.Remove(content);
-          
-        //    Assert.IsFalse(removed); //false positive. Didn't remove b/c nothing in there
-        //    //Assert.IsTrue(bag.Check(content)); //the content isn't adding in the first place
-        //}
+        [TestMethod]
+        public void Bag_should_not_remove() //if something expanded in the bag, like an umbrella
+        {
+            var content = new Content(20, 20, 20);
+            var bag = new Bag(10, 10, 10);
+            var removed = bag.Remove(content);
+
+            Assert.IsFalse(removed); //false positive. Didn't remove b/c nothing in there
+            //Assert.IsTrue(bag.Check(content)); //the content isn't adding in the first place
+        }
         [TestMethod]
         public void Bag_should_dump()
         {
@@ -60,6 +60,7 @@ namespace TestDrivenDesignLecture.Test
  
             Assert.IsFalse(bag.Check(content));
         }
+
         [TestMethod]
         public void Bag_should_not_add_oversized() //if there is already something added, it will not overflow
         {
@@ -113,16 +114,16 @@ namespace TestDrivenDesignLecture.Test
             Assert.IsFalse(added);
             Assert.IsFalse(pocket.Check(content));
         }
-        //[TestMethod]
-        //public void pocket_should_remove()
-        //{
-        //    var content = new Content(5, 5, 5);
-        //    var pocket = new Pocket(20, 20, 20);
-        //    var removed = pocket.Remove(content);
+        [TestMethod]
+        public void pocket_should_remove()
+        {
+            var content = new Content(5, 5, 5);
+            var pocket = new Pocket(20, 20, 20);
+            var removed = pocket.Remove(content);
 
-        //    Assert.IsTrue(removed);
-        //    Assert.IsFalse(pocket.Check(content));
-        //}
+            Assert.IsTrue(removed);
+            Assert.IsFalse(pocket.Check(content));
+        }
         [TestMethod]
         public void Pocket_should_not_remove()
         {
@@ -131,7 +132,7 @@ namespace TestDrivenDesignLecture.Test
             var removed = pocket.Remove(content);
 
             Assert.IsFalse(removed);
-            //Assert.IsTrue(bag.Check(content)); //maybe I don't know hwat happening in my code
+            //Assert.IsTrue(pocket.Check(content)); 
         }
         [TestMethod]
         public void Pocket_should_dump()
