@@ -12,6 +12,8 @@ namespace Project6
         {
             Letter = 'N';
         }
+        public override PieceType Color { get; set; }
+
         public override char Letter { get; set; }
 
 
@@ -21,11 +23,11 @@ namespace Project6
 
         public override int Y { get; set; }
 
-        public Color color { get; set; }
 
         public override string[] GetMoves()
         {
             throw new NotImplementedException();
         }
+
     }
 }

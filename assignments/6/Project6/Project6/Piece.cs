@@ -8,6 +8,13 @@ namespace Project6
 {
     public abstract class Piece
     {
+
+        public enum PieceType
+        {
+            White = 0,
+            Black = 1
+        }
+
         public abstract string[] GetMoves();
 
         public abstract int X { get; set; }
@@ -16,7 +23,7 @@ namespace Project6
         public abstract char Letter { get; set; }
         public abstract bool Visible { get; set; }
 
-        public enum Color { White, Black }
+        public abstract PieceType Color { get; set; }
 
         public Piece()
         {

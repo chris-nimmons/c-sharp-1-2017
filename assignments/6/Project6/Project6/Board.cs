@@ -54,6 +54,9 @@ namespace Project6
         /// <param name="selectedPiece"></param>
         /// <param name="toPosition"></param>
         /// <returns>True if moved allowed for the piece, false means the piece does not move.</returns>
+        /// 
+
+
         public bool IsMoveAllowed(Piece selectedPiece, Cursor toPosition)
         {
 
@@ -69,39 +72,39 @@ namespace Project6
         private void PreLoadChessBoard()
         {
 
-            SetPiece(new King() { X = 3, Y = 0 });
-            SetPiece(new Queen() { X = 4, Y = 0 });
-            SetPiece(new Bishop() { X = 2, Y = 0 });
-            SetPiece(new Bishop() { X = 5, Y = 0 });
-            SetPiece(new Knight() { X = 1, Y = 0 });
-            SetPiece(new Castle() { X = 0, Y = 0 });
-            SetPiece(new Knight() { X = 6, Y = 0 });
-            SetPiece(new Castle() { X = 7, Y = 0 });
-            SetPiece(new Pawn() { X = 0, Y = 1 });
-            SetPiece(new Pawn() { X = 1, Y = 1 });
-            SetPiece(new Pawn() { X = 2, Y = 1 });
-            SetPiece(new Pawn() { X = 3, Y = 1 });
-            SetPiece(new Pawn() { X = 4, Y = 1 });
-            SetPiece(new Pawn() { X = 5, Y = 1 });
-            SetPiece(new Pawn() { X = 6, Y = 1 });
-            SetPiece(new Pawn() { X = 7, Y = 1 });
+            SetPiece(new King() { X = 3, Y = 0, Color = Piece.PieceType.White });
+            SetPiece(new Queen() { X = 4, Y = 0, Color = Piece.PieceType.White });
+            SetPiece(new Bishop() { X = 2, Y = 0, Color = Piece.PieceType.White });
+            SetPiece(new Bishop() { X = 5, Y = 0, Color = Piece.PieceType.White });
+            SetPiece(new Knight() { X = 1, Y = 0, Color = Piece.PieceType.White });
+            SetPiece(new Castle() { X = 0, Y = 0, Color = Piece.PieceType.White });
+            SetPiece(new Knight() { X = 6, Y = 0, Color = Piece.PieceType.White });
+            SetPiece(new Castle() { X = 7, Y = 0, Color = Piece.PieceType.White });
+            SetPiece(new Pawn() { X = 0, Y = 1, Color = Piece.PieceType.White });
+            SetPiece(new Pawn() { X = 1, Y = 1, Color = Piece.PieceType.White });
+            SetPiece(new Pawn() { X = 2, Y = 1, Color = Piece.PieceType.White });
+            SetPiece(new Pawn() { X = 3, Y = 1, Color = Piece.PieceType.White });
+            SetPiece(new Pawn() { X = 4, Y = 1, Color = Piece.PieceType.White });
+            SetPiece(new Pawn() { X = 5, Y = 1, Color = Piece.PieceType.White });
+            SetPiece(new Pawn() { X = 6, Y = 1, Color = Piece.PieceType.White });
+            SetPiece(new Pawn() { X = 7, Y = 1, Color = Piece.PieceType.White });
 
-            SetPiece(new King() { X = 4, Y = 7 });
-            SetPiece(new Queen() { X = 3, Y = 7 });
-            SetPiece(new Bishop() { X = 2, Y = 7 });
-            SetPiece(new Bishop() { X = 5, Y = 7 });
-            SetPiece(new Knight() { X = 1, Y = 7 });
-            SetPiece(new Castle() { X = 0, Y = 7 });
-            SetPiece(new Knight() { X = 6, Y = 7 });
-            SetPiece(new Castle() { X = 7, Y = 7 });
-            SetPiece(new Pawn() { X = 0, Y = 6 });
-            SetPiece(new Pawn() { X = 1, Y = 6 });
-            SetPiece(new Pawn() { X = 2, Y = 6 });
-            SetPiece(new Pawn() { X = 3, Y = 6 });
-            SetPiece(new Pawn() { X = 4, Y = 6 });
-            SetPiece(new Pawn() { X = 5, Y = 6 });
-            SetPiece(new Pawn() { X = 6, Y = 6 });
-            SetPiece(new Pawn() { X = 7, Y = 6 });
+            SetPiece(new King() { X = 4, Y = 7, Color = Piece.PieceType.Black });
+            SetPiece(new Queen() { X = 3, Y = 7, Color = Piece.PieceType.Black });
+            SetPiece(new Bishop() { X = 2, Y = 7, Color = Piece.PieceType.Black });
+            SetPiece(new Bishop() { X = 5, Y = 7, Color = Piece.PieceType.Black });
+            SetPiece(new Knight() { X = 1, Y = 7, Color = Piece.PieceType.Black });
+            SetPiece(new Castle() { X = 0, Y = 7, Color = Piece.PieceType.Black });
+            SetPiece(new Knight() { X = 6, Y = 7, Color = Piece.PieceType.Black });
+            SetPiece(new Castle() { X = 7, Y = 7, Color = Piece.PieceType.Black });
+            SetPiece(new Pawn() { X = 0, Y = 6, Color = Piece.PieceType.Black });
+            SetPiece(new Pawn() { X = 1, Y = 6, Color = Piece.PieceType.Black });
+            SetPiece(new Pawn() { X = 2, Y = 6, Color = Piece.PieceType.Black });
+            SetPiece(new Pawn() { X = 3, Y = 6, Color = Piece.PieceType.Black });
+            SetPiece(new Pawn() { X = 4, Y = 6, Color = Piece.PieceType.Black });
+            SetPiece(new Pawn() { X = 5, Y = 6, Color = Piece.PieceType.Black });
+            SetPiece(new Pawn() { X = 6, Y = 6, Color = Piece.PieceType.Black });
+            SetPiece(new Pawn() { X = 7, Y = 6, Color = Piece.PieceType.Black });
 
         }
 
