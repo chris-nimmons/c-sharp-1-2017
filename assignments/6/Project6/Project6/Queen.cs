@@ -24,11 +24,30 @@ namespace Project6
         public override int Y { get; set; }
 
 
-        public override string[] GetMoves()
+        public override Cursor[] GetMoves()
         {
-            throw new NotImplementedException();
-        }
 
+            var allowedCursors = new List<Cursor>();
+            if (Color.Equals(0))
+            {
+                allowedCursors.Add(new Cursor
+                {
+                    X = 0,
+                    Y = 0
+                });
+            }
+            else
+            {
+                allowedCursors.Add(new Cursor
+                {
+                    X = 0,
+                    Y = 0
+                });
+
+            }
+            return allowedCursors.ToArray();
+
+        }
     }
 }
-  
+
