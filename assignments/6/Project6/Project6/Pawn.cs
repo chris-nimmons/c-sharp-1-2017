@@ -40,7 +40,7 @@ namespace Project6
                     Y = -1
                 });
             }
-            else
+            else if (Color.Equals(1))
             {
                 allowedCursors.Add(new Cursor
                 {
