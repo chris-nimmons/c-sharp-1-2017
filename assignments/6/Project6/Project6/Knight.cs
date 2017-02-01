@@ -28,20 +28,92 @@ namespace Project6
         {
 
             var allowedCursors = new List<Cursor>();
-            if (Color.Equals(0))
+            if (this.Color == PieceType.White)
             {
                 allowedCursors.Add(new Cursor
                 {
-                    X = 0,
-                    Y = 0
+                    X = X + 1,
+                    Y = Y + 2
                 });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X - 1,
+                    Y = Y + 2
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X + 1,
+                    Y = Y -2
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X + 2 ,
+                    Y = Y - 1
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X - 2,
+                    Y = Y - 1
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X - 1,
+                    Y = Y - 2
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X + 2,
+                    Y = Y + 1
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X - 2,
+                    Y = Y + 1
+                });
+
+
             }
-            else
+            else if (this.Color == PieceType.Black)
             {
                 allowedCursors.Add(new Cursor
                 {
-                    X = 0,
-                    Y = 0
+                    X = X + 1,
+                    Y = Y + 2
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X - 1,
+                    Y = Y + 2
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X + 1,
+                    Y = Y - 2
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X + 2,
+                    Y = Y - 1
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X - 2,
+                    Y = Y - 1
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X - 1,
+                    Y = Y - 2
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X + 2,
+                    Y = Y + 1
+                });
+                allowedCursors.Add(new Cursor
+                {
+                    X = X - 2,
+                    Y = Y + 1
                 });
 
             }

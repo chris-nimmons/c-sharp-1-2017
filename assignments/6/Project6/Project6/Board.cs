@@ -59,7 +59,15 @@ namespace Project6
 
         public bool IsMoveAllowed(Piece selectedPiece, Cursor toPosition)
         {
-            
+            var allowedCursors = selectedPiece.GetMoves();
+            foreach(var cursor in allowedCursors)
+            {
+                if(cursor.X == toPosition.X && cursor.Y == toPosition.Y)
+                {
+                    return true;
+                }
+            }
+            return false;
   
 
         }
@@ -67,7 +75,7 @@ namespace Project6
         /// <summary>
         /// Sets up chess board with the initial position for the black and white pieces.
         /// </summary>
-        private void PreLoadChessBoard()
+        private void PreLoadChessBoard() 
         {
 
             SetPiece(new King() { X = 3, Y = 0, Color = Piece.PieceType.White });

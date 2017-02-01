@@ -67,6 +67,9 @@ namespace Project6
                                 else
                                 {
                                     // Have selected another piece.
+                                    selection = null;
+                                    selection = highlighted;
+                                    
                                 }
                             }
                             else
@@ -75,7 +78,7 @@ namespace Project6
                                 // Entering selection mode
                                 selection = highlighted;
 
-                                Console.Write("X");
+                                Console.Write(" ");
 
                             }
                         }

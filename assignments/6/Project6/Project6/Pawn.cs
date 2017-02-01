@@ -37,7 +37,7 @@ namespace Project6
                 allowedCursors.Add(new Cursor
                 {
                     X = X,
-                    Y = Y +1
+                    Y = Y + 1
                 });
             }
             else if (this.Color == PieceType.Black)
@@ -45,7 +45,7 @@ namespace Project6
                 allowedCursors.Add(new Cursor
                 {
                     X = X,
-                    Y = Y-1
+                    Y = Y - 1
                 });
             }
 
@@ -54,4 +54,4 @@ namespace Project6
         }
 
     }
-}
+} 
