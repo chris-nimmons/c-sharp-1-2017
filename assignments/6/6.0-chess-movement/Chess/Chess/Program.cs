@@ -105,7 +105,6 @@ namespace Chessmoves
                                         selection = null;
                                         moves.Clear();
                                         break;
-
                                     }
                                 }
                             }

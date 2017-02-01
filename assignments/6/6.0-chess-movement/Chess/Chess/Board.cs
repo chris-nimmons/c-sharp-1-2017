@@ -49,7 +49,7 @@ namespace Chessmoves
 
             foreach (var piece in Pieces)
             {
-                Renderable.Add(piece);
+                //Renderable.Add(piece);
                 piece.Visible = true;
             }
 
