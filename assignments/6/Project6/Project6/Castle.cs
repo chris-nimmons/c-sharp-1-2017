@@ -24,30 +24,30 @@ namespace Project6
         public override int Y { get; set; }
 
 
-        public override Cursor[] GetMoves()
+        public override List<Move> GetMoves()
         {
 
-            var allowedCursors = new List<Cursor>();
+            var allowedCursors = new List<Move>();
 
 
             if (this.Color == PieceType.White)
             {
-                allowedCursors.Add(new Cursor
+                allowedCursors.Add(new Move
                 {
                     X = X,
                     Y = Y - 1
                 });
-                allowedCursors.Add(new Cursor
+                allowedCursors.Add(new Move
                 {
                     X = X + 1,
                     Y = Y
                 });
-                allowedCursors.Add(new Cursor
+                allowedCursors.Add(new Move
                 {
                     X = X,
                     Y = Y + 1
                 });
-                allowedCursors.Add(new Cursor
+                allowedCursors.Add(new Move
                 {
                     X = X - 1,
                     Y = Y
@@ -55,29 +55,29 @@ namespace Project6
             }
             else if (this.Color == PieceType.Black)
             {
-                allowedCursors.Add(new Cursor
+                allowedCursors.Add(new Move
                 {
                     X = X + 1,
                     Y = Y 
                 });
-                allowedCursors.Add(new Cursor
+                allowedCursors.Add(new Move
                 {
                     X = X - 1,
                     Y = Y 
                 });
-                allowedCursors.Add(new Cursor
+                allowedCursors.Add(new Move
                 {
                     X = X,
                     Y = Y - 1
                 });
-                allowedCursors.Add(new Cursor
+                allowedCursors.Add(new Move
                 {
                     X = X,
                     Y = Y + 1
                 });
             }
 
-            return allowedCursors.ToArray();
+            return allowedCursors;
 
         }
     }

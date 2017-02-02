@@ -11,15 +11,8 @@ namespace Project6
         Pawn pawn = new Pawn();
         Cursor cursor = new Cursor();
         public bool playing = true;
-        public bool IsMoveAllowed()
-        {
-
-            return false;
-        }
-
         private const int boardWidth = 8;
         private const int boardLength = 8;
-
         /// <summary>
         /// Chess board.
         /// </summary>
@@ -27,10 +20,15 @@ namespace Project6
 
         public Board()
         {
-
             PreLoadChessBoard();
-
         }
+
+        public bool IsMoveAllowed()
+        {
+
+            return false;
+        }
+
         public List<Piece> GetPieces()
         {
 

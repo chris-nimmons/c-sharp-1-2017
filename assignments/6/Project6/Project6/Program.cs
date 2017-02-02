@@ -22,10 +22,11 @@ namespace Project6
 
             renderer.Render(pieces);
 
-            Piece selection = null;
+            Piece selectedPiece = null; // RAS : Renamed this variable to better identify what this variable is doing in the code. This is the selected piece from the board.
 
             Console.SetCursorPosition(cursor.X, cursor.Y);
 
+            List<Move> moves = new List<Move>();
             bool running = true;
 
             while (running)
@@ -51,81 +52,73 @@ namespace Project6
                         break;
                     case ConsoleKey.Enter:
 
-                        Piece highlighted = null;
+                        Piece highlightedPiece = null;
 
-                        highlighted = pieces.Where(p => cursor.X == p.X && cursor.Y == p.Y).Select(p => p).FirstOrDefault();
+                        highlightedPiece = pieces.FirstOrDefault(p => p.X == cursor.X && p.Y == cursor.Y);
 
-                        if (highlighted != null)
+                        if (highlightedPiece != null)
                         {
-                            if (selection != null)
+                            if (selectedPiece != null)
                             {
-                                if (highlighted == selection)
+                                if (highlightedPiece == selectedPiece)
                                 {
-                                    Console.Write(selection.Letter);
-                                    selection = null;
+                                    selectedPiece.Visible = true;
+                                    selectedPiece = null;
                                 }
                                 else
                                 {
-                                    // Have selected another piece.
-                                    selection = null;
-                                    selection = highlighted;
-                                    
+
                                 }
                             }
                             else
                             {
-
                                 // Entering selection mode
-                                selection = highlighted;
-
+                                selectedPiece = highlightedPiece;
+                                selectedPiece.Visible = false;
+                                moves = selectedPiece.GetMoves();
                             }
                         }
                         else
                         {
-                            if (selection != null)
+                            if (selectedPiece != null)
                             {
 
-                                bool isMovedAllowed = board.IsMoveAllowed(selection, cursor);
-                                if (isMovedAllowed == true)
+                                bool isMovedAllowed = board.IsMoveAllowed(selectedPiece, cursor);
+
+                                if (isMovedAllowed) //  You don't need the '== true' variable is a boolean.
                                 {
-
-
-                                    selection.X = cursor.X;
-                                    selection.Y = cursor.Y;
-                                    Console.Write(selection.Letter);
-
-
+                                    //  Now update the selected piece cursor location.
+                                    selectedPiece.X = cursor.X;
+                                    selectedPiece.Y = cursor.Y;
+                                    selectedPiece.Visible = true;
+                                    selectedPiece = null;
                                 }
-                                else if (isMovedAllowed == false)
-                                {
-                                    cursor.X = 0;
-                                    cursor.Y = 0;
-                                  
-                                }
-
                             }
                         }
                         break;
                 }
 
-                if (cursor.X < 0 || cursor.Y < 0)
+                if (cursor.X < 0)
                 {
                     cursor.X = 0;
+                }
+                if (cursor.Y < 0)
+                {
                     cursor.Y = 0;
                 }
-                if (cursor.X > 7 || cursor.Y < 0)
-                {
-                    cursor.X = 0;
 
-                }
                 if (cursor.X > 7)
                 {
-                    cursor.X = 0;
+                    cursor.X = 7;
                 }
-                if (cursor.X < 0 || cursor.Y > 7)
+                if (cursor.Y > 7)
                 {
-                    cursor.Y = 0;
+                    cursor.Y = 7;
                 }
+
+                renderer.Clear();
+                renderer.Render(pieces);
+
                 Console.SetCursorPosition(cursor.X, cursor.Y);
             }
         }

@@ -15,7 +15,7 @@ namespace Project6
             Black = 1
         }
 
-        public abstract Cursor[] GetMoves();
+        public abstract List<Move> GetMoves();
 
         public abstract int X { get; set; }
         public abstract int Y { get; set; }

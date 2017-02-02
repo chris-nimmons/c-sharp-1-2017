@@ -11,9 +11,5 @@ namespace Project6
         public int X { get; set; }
         public int Y { get; set; }
 
-        public Move()
-        {
-            Console.SetCursorPosition(X, Y);
-        }
     }
 }

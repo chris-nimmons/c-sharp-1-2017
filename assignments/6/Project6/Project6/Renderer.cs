@@ -8,7 +8,10 @@ namespace Project6
 {
     public class Renderer
     {
-
+        public void Clear()
+        {
+            Console.Clear();
+        }
         public void Render(List<Piece> pieces)
         {
             foreach ( Piece piece in pieces)
