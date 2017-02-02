@@ -78,8 +78,6 @@ namespace Project6
                                 // Entering selection mode
                                 selection = highlighted;
 
-                                Console.Write(" ");
-
                             }
                         }
                         else
@@ -90,16 +88,16 @@ namespace Project6
                                 bool isMovedAllowed = board.IsMoveAllowed(selection, cursor);
                                 if (isMovedAllowed == true)
                                 {
-
                                     Console.Write(selection.Letter);
 
                                     selection.X = cursor.X;
                                     selection.Y = cursor.Y;
                                 }
-                                else
+                                else if (isMovedAllowed == false)
                                 {
-                                    selection = null;
+                                    Console.Write(selection);
                                 }
+
                             }
                         }
                         break;
