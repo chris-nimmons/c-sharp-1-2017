@@ -88,14 +88,19 @@ namespace Project6
                                 bool isMovedAllowed = board.IsMoveAllowed(selection, cursor);
                                 if (isMovedAllowed == true)
                                 {
-                                    Console.Write(selection.Letter);
+
 
                                     selection.X = cursor.X;
                                     selection.Y = cursor.Y;
+                                    Console.Write(selection.Letter);
+
+
                                 }
                                 else if (isMovedAllowed == false)
                                 {
-                                    Console.Write(selection);
+                                    cursor.X = 0;
+                                    cursor.Y = 0;
+                                  
                                 }
 
                             }
