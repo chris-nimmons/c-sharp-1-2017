@@ -4,3 +4,6 @@ c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendP
 c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendProject\obj\Debug\PracticeForChessWeekendProject.csprojResolveAssemblyReference.cache
 c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendProject\obj\Debug\PracticeForChessWeekendProject.exe
 c:\users\spencer\desktop\PracticeForChessWeekendProject\PracticeForChessWeekendProject\obj\Debug\PracticeForChessWeekendProject.pdb
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\PracticeForChessWeekendProject\PracticeForChessWeekendProject\bin\Debug\PracticeForChessWeekendProject.exe.config
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\PracticeForChessWeekendProject\PracticeForChessWeekendProject\obj\Debug\PracticeForChessWeekendProject.exe
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\PracticeForChessWeekendProject\PracticeForChessWeekendProject\obj\Debug\PracticeForChessWeekendProject.pdb

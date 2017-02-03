@@ -11,35 +11,35 @@ namespace ChessMate
 
         public void Render()
         {
-            x = 10;
-            y = 10;
+            X = 10;
+            Y = 10;
 
-            Console.SetCursorPosition(x + 2, y + 1);
+            Console.SetCursorPosition(X + 2, Y + 1);
             Console.Write("X");
 
-            Console.SetCursorPosition(x + 2, y - 1);
+            Console.SetCursorPosition(X + 2, Y - 1);
             Console.Write("X");
 
-            Console.SetCursorPosition(x - 2, y + 1);
+            Console.SetCursorPosition(X - 2, Y + 1);
             Console.Write("X");
 
-            Console.SetCursorPosition(x - 2, y - 1);
+            Console.SetCursorPosition(X - 2, Y - 1);
             Console.Write("X");
 
-            Console.SetCursorPosition(x + 1, y + 2);
+            Console.SetCursorPosition(X + 1, Y + 2);
             Console.Write("X");
 
-            Console.SetCursorPosition(x + 1, y - 2);
+            Console.SetCursorPosition(X + 1, Y - 2);
             Console.Write("X");
 
-            Console.SetCursorPosition(x - 1, y - 2);
+            Console.SetCursorPosition(X - 1, Y - 2);
             Console.Write("X");
 
-            Console.SetCursorPosition(x - 1, y + 2);
+            Console.SetCursorPosition(X - 1, Y + 2);
             Console.Write("X");
 
 
-            Console.SetCursorPosition(x, y);
+            Console.SetCursorPosition(X, Y);
             Console.Write("O");
 
             Console.SetCursorPosition(7, 0);

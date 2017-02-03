@@ -1,0 +1,12 @@
+c:\users\spencer\desktop\Shop\Shop.Models\bin\Debug\Shop.Models.dll.config
+c:\users\spencer\desktop\Shop\Shop.Models\bin\Debug\Shop.Models.dll
+c:\users\spencer\desktop\Shop\Shop.Models\bin\Debug\Shop.Models.pdb
+c:\users\spencer\desktop\Shop\Shop.Models\bin\Debug\EntityFramework.dll
+c:\users\spencer\desktop\Shop\Shop.Models\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\spencer\desktop\Shop\Shop.Models\bin\Debug\EntityFramework.xml
+c:\users\spencer\desktop\Shop\Shop.Models\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\spencer\desktop\Shop\Shop.Models\obj\Debug\Shop.Models.csprojResolveAssemblyReference.cache
+c:\users\spencer\desktop\Shop\Shop.Models\obj\Debug\Shop.Models.dll
+c:\users\spencer\desktop\Shop\Shop.Models\obj\Debug\Shop.Models.pdb
+c:\users\spencer\desktop\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.Initialization.resources
+c:\users\spencer\desktop\Shop\Shop.Models\obj\Debug\Shop.Models.csproj.GenerateResource.Cache

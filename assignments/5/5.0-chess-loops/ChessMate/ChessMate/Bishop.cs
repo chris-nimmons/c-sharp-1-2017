@@ -11,26 +11,26 @@ namespace ChessMate
 
         public void Render()
         {
-            x = 10;
-            y = 10;
+            X = 10;
+            Y = 10;
             moves = 10;
 
             for (int i = 0; i <= moves; i++)
             {
 
-                Console.SetCursorPosition(x, y);
+                Console.SetCursorPosition(X, Y);
                 Console.Write("X");
 
-                Console.SetCursorPosition(x - i, y + i);
+                Console.SetCursorPosition(X - i, Y + i);
                 Console.Write("X");
 
-                Console.SetCursorPosition(x + i, y - i);
+                Console.SetCursorPosition(X + i, Y - i);
                 Console.Write("X");
 
-                Console.SetCursorPosition(x + i, y + i);
+                Console.SetCursorPosition(X + i, Y + i);
                 Console.Write("X");
 
-                Console.SetCursorPosition(x - i, y - i);
+                Console.SetCursorPosition(X - i, Y - i);
                 Console.Write("X");
 
             }

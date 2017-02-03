@@ -15,10 +15,11 @@ namespace FoxTranslator
             string sentence = "wa pow ring ding tchoff pa joff ho hatee tchoffo dingeringeding";
             Translators translate = new Translators();
             string translation = translate.Translate(sentence);
-            
+            Console.WriteLine(translation);
+            Console.ReadLine();
 
 
-            
+
             //string[] words = sentence.Split(' ');
             //string translatedSentence = string.Empty;
 
@@ -70,8 +71,8 @@ namespace FoxTranslator
             //    }
 
             //}
-            Console.WriteLine(translation);
-            Console.ReadLine();
+            //Console.WriteLine(translation);
+            //Console.ReadLine();
 
         }
     }
