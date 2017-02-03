@@ -1,0 +1,6 @@
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Exercise1-26\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Exercise1-26\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Exercise1-26\UnitTestProject\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Exercise1-26\UnitTestProject\obj\Debug\BagTest.csprojResolveAssemblyReference.cache
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Exercise1-26\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Exercise1-26\UnitTestProject\obj\Debug\UnitTestProject.pdb

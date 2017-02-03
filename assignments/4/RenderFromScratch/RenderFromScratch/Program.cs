@@ -20,19 +20,63 @@ namespace RenderFromScratch
             program.Start();
             Console.ReadLine();
             Console.Write("You're done!!! Press enter!");
-
-
+            Console.ReadLine();
         }
 
         public void Start()
         {
+
             List<IRenderable> renderables = new List<IRenderable>();
+
+            Dimensions dimensions = CreateDimensions();
+
+            var table = new Table(dimensions);
+            var chair = new Chair(dimensions);
+            var room = new Room(dimensions);
+
+            renderables.Add(room);
+            renderables.Add(chair);
+            renderables.Add(table);
+
+
+            Renderer render = new Renderer();
+            render.Render(renderables);
+
+            Console.SetCursorPosition(dimensions.xOffset
+                + dimensions.Width
+                , dimensions.yOffset
+                + dimensions.Length);
+        }
+
+        public interface IRenderable
+        {
+            void Render();
+        }
+
+        public class Dimensions
+        {
+            public int Length { get; set; }
+            public int Width { get; set; }
+            public int xOffset { get; set; }
+            public int yOffset { get; set; }
+
+        }
+
+        private static Random random = new Random();
+
+        public static int RandomInt(int min = 0, int max = 19)
+        {
+            int rand = random.Next(min, max);
+            return rand;
+        }
+
+        public static Dimensions CreateDimensions()
+        {
 
             Console.WriteLine("Enter desired Length of room (0-20): ");
             int length = int.Parse(Console.ReadLine());
 
             Console.WriteLine();
-
             Console.WriteLine("Enter desired Width of room (0-20): ");
             int width = int.Parse(Console.ReadLine());
 
@@ -40,109 +84,93 @@ namespace RenderFromScratch
 
             Console.WriteLine();
 
-            Random random = new Random();
-            int xoffset = random.Next(0, 20);
-            int yoffset = random.Next(0, 20);
+            int xoffset = RandomInt(0, 20);
+            int yoffset = RandomInt(0, 20);
 
-            Room room = new Room();
-            room.Length = length;
-            room.Width = width;
-            room.xOffset = xoffset;
-            room.yOffset = yoffset;
+            var dimensions = new Dimensions
+            {
+                Length = length,
+                Width = width,
+                xOffset = xoffset,
+                yOffset = yoffset
+            };
 
-            Table table = new Table();
-            table.X = random.Next(xoffset, width + xoffset);
-            table.Y = random.Next(yoffset, length + yoffset);
-
-            Chair chair = new Chair();
-            chair.X = random.Next(xoffset, width + xoffset);
-            chair.Y = random.Next(xoffset, length + yoffset);
-
-            Table table1 = new Table();
-            table1.X = random.Next(xoffset, width + xoffset);
-            table1.Y = random.Next(yoffset, length + yoffset);
-
-            Chair chair1 = new Chair();
-            chair1.X = random.Next(xoffset, width + xoffset);
-            chair1.Y = random.Next(xoffset, length + yoffset);
-
-            Table table2 = new Table();
-            table2.X = random.Next(xoffset, width + xoffset);
-            table2.Y = random.Next(yoffset, length + yoffset);
-
-            Chair chair2 = new Chair();
-            chair2.X = random.Next(xoffset, width + xoffset);
-            chair2.Y = random.Next(xoffset, length + yoffset);
-
-            Table table3 = new Table();
-            table3.X = random.Next(xoffset, width + xoffset);
-            table3.Y = random.Next(yoffset, length + yoffset);
-
-            Chair chair3 = new Chair();
-            chair3.X = random.Next(xoffset, width + xoffset);
-            chair3.Y = random.Next(xoffset, length + yoffset);
-
-            renderables.Add(room);
-            renderables.Add(table);
-            renderables.Add(chair);
-            renderables.Add(table1);
-            renderables.Add(chair1);
-            renderables.Add(table2);
-            renderables.Add(chair2);
-
-
-            Renderer render = new Renderer();
-            render.Render(renderables);
-
-            Console.SetCursorPosition(xoffset + width,yoffset + length);
+            return dimensions;
 
         }
 
 
-        public interface IRenderable
-        {
-            void Render();
-        }
+
         public class Table : IRenderable
         {
+            private Dimensions dimensions;
+
+            public Table(Dimensions dimensions)
+            {
+                this.dimensions = dimensions;
+            }
+
             public int X { get; set; }
             public int Y { get; set; }
 
             public void Render()
             {
-                if (X < 0 || Y < 0)
+                for (int X = this.dimensions.xOffset; X < this.dimensions.Width + this.dimensions.xOffset; X++)
                 {
-                    Console.SetCursorPosition(X, Y);
-                    Console.Write("");
-                }
-                else
-                {
-                    Console.SetCursorPosition(X, Y);
-                    Console.Write('T');
+                    for (int Y = this.dimensions.yOffset; Y < this.dimensions.Length + this.dimensions.yOffset; Y++)
+                    {
+                        int x = RandomInt(this.dimensions.xOffset + 1, this.dimensions.Width + this.dimensions.xOffset - 1);
+                        int y = RandomInt(this.dimensions.yOffset + 1, this.dimensions.Length + this.dimensions.yOffset - 1);
+
+                        Console.SetCursorPosition(x, y);
+                        Console.Write('T');
+                    }
                 }
             }
         }
+
         public class Chair : IRenderable
         {
+            private Dimensions dimensions;
+
+            public Chair(Dimensions dimensions)
+            {
+                this.dimensions = dimensions;
+            }
+
             public int X { get; set; }
             public int Y { get; set; }
 
+
+
             public void Render()
             {
-                if (X < 0 || Y < 0)
+                for (int X = this.dimensions.xOffset; X < this.dimensions.Width + this.dimensions.xOffset; X++)
                 {
-                    Console.SetCursorPosition(X, Y);
-                    Console.Write("");
-                }
-                else
-                {
-                    Console.SetCursorPosition(X, Y);
-                    Console.Write('C');
+                    for (int Y = this.dimensions.yOffset; Y < this.dimensions.Length + this.dimensions.yOffset; Y++)
+                    {
+                        int x  = RandomInt(this.dimensions.xOffset + 1, this.dimensions.Width + this.dimensions.xOffset - 1);
+                        int y = RandomInt(this.dimensions.yOffset + 1, this.dimensions.Length + this.dimensions.yOffset - 1);
+
+                        Console.SetCursorPosition(x, y);
+                        Console.Write('C');
+                    }
                 }
             }
+
         }
+
         public class Room : IRenderable
         {
+            private Dimensions dimensions;
+
+            public Room(Dimensions dimensions)
+            {
+                this.dimensions = dimensions;
+            }
+
+            public int X { get; set; }
+            public int Y { get; set; }
             public int Length { get; set; }
             public int Width { get; set; }
             public int xOffset { get; set; }
@@ -150,52 +178,60 @@ namespace RenderFromScratch
 
             public void Render()
             {
-                Random random = new Random();
-                for (int x = xOffset; x < Width + xOffset; x++)
+                for (int X = this.dimensions.xOffset; X < this.dimensions.Width + this.dimensions.xOffset; X++)
                 {
-                    for (int y = yOffset; y < Length + yOffset; y++)
+                    for (int Y = this.dimensions.yOffset; Y < this.dimensions.Length + this.dimensions.yOffset; Y++)
                     {
-                        if (x == xOffset || y == yOffset)
+                        if (X == this.dimensions.xOffset || Y == this.dimensions.yOffset)
                         {
-                            Console.SetCursorPosition(x, y);
+                            Console.SetCursorPosition(X, Y);
                             Console.Write('X');
                         }
-                        else if(x == (Width + xOffset)-1)
+                        else if (X == (this.dimensions.Width + this.dimensions.xOffset) - 1)
                         {
 
-                            Console.SetCursorPosition(x, y);
+                            Console.SetCursorPosition(X, Y);
                             Console.Write('X');
                         }
-                        else if(y == (Length + yOffset)-1)
+                        else if (Y == (this.dimensions.Length + this.dimensions.yOffset) - 1)
                         {
-                            Console.SetCursorPosition(x, y);
+                            Console.SetCursorPosition(X, Y);
                             Console.Write('X');
                         }
                         else
                         {
 
-                            Console.Write(' ');
-                        }
+                            Console.SetCursorPosition(X, Y);
+                            Console.Write(" ");
 
+                        }
                     }
                 }
-                Console.ReadLine();
             }
         }
 
-        public class Renderer
-        {
-            public void Render(List<IRenderable> renderables)
+
+            public class Renderer
             {
-                foreach (IRenderable renderable in renderables)
+                public int X { get; set; }
+                public int Y { get; set; }
+                public int Length { get; set; }
+                public int Width { get; set; }
+                public int xOffset { get; set; }
+                public int yOffset { get; set; }
+
+                public void Render(List<IRenderable> renderables)
                 {
-                    renderable.Render();
+                    foreach (IRenderable renderable in renderables)
+                    {
+
+                        renderable.Render();
+                    }
                 }
+
             }
 
         }
 
     }
-}
-
 

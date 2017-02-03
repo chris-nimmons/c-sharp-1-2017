@@ -1,0 +1,2 @@
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Exercise1-26\Exercise1-26\bin\Debug\Exercise1-26.exe.config
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Exercise1-26\Exercise1-26\obj\Debug\Exercise1-26.csprojResolveAssemblyReference.cache
