@@ -91,7 +91,7 @@ namespace TestDrivenDesign.test
             var content = new Content(5, 5, 5, "Pencil", 3);
             var add = bag.Add(content);
 
-            Assert.IsFalse(false);
+            Assert.IsFalse(bag.Check(content));
         }
 
         ///////******pocket tests******///////
@@ -111,6 +111,9 @@ namespace TestDrivenDesign.test
         {
             var pocket = new Pocket(2, 2, 2);
             var dump = pocket.Dump();
+            var content = new Content(1, 1, 1, "Pencil", 3);
+            var remove = pocket.Remove(content);
+            Assert.IsFalse(pocket.Remove(content));
         }
 
         [TestMethod]
