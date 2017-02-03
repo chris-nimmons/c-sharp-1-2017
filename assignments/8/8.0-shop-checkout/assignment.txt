@@ -1,0 +1,4 @@
+Using the shop project created in class create an interface using html and bootstrap to display
+the products, make a purchase, and show that there was a successful purchase.    
+
+Modify the database to have transactions so the shop can keep track of what was sold.  
