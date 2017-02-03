@@ -16,13 +16,7 @@ namespace Chess
 
         public void Start()
         {
-            //List<IRenderable> renderables = new List<IRenderable>();
-
-            //Renderer renderer = new Renderer();
-            //renderer.Render(renderables);
-
-            //Renderer renderer = new Renderer();
-
+           
             King king = new King();
             king.Render();
             Console.ReadLine();           
@@ -53,8 +47,7 @@ namespace Chess
             Console.ReadLine();
             Console.Clear();
 
-            //Renderer renderer = new Renderer();
-            //renderer.Render(renderables);
+            
            Console.ReadLine();
 
         }

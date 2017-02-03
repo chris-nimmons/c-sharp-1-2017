@@ -8,24 +8,26 @@ namespace Chess
 {
     public class King : Pieces
     {
-        public int X = 10;
-        public int Y = 10;
-        public int spaces = 1;
 
-       
+
         public void Render()
         {
+            int X = 10;
+            int Y = 10;
+            int spaces = 1;
+
+
             Console.Write("King");
 
             for (int a = 0; a < X + spaces; a++)
             {
-                for (int b= 0; b < Y + spaces; b++)
+                for (int b = 0; b < Y + spaces; b++)
                 {
 
                     Console.SetCursorPosition(X + spaces, Y);
                     Console.Write("X");
 
-                    Console.SetCursorPosition(X - spaces, Y );
+                    Console.SetCursorPosition(X - spaces, Y);
                     Console.Write("X");
 
                     Console.SetCursorPosition(X, Y + spaces);
@@ -53,10 +55,10 @@ namespace Chess
         }
 
 
-       
-            
-        }
+
+
+    }
 
 }
-    
+
 

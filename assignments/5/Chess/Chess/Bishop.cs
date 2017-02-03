@@ -8,13 +8,15 @@ namespace Chess
 {
     class Bishop : Pieces
     {
-        public int X = 10;
-        public int Y = 10;
-        public int spaces = 10;
-        
+
+
 
         public void Render()
         {
+            int X = 10;
+            int Y = 10;
+            int spaces = 10;
+
             Console.SetCursorPosition(0, 0);
             Console.Write("Bishop");
 
@@ -48,6 +50,6 @@ namespace Chess
             Console.SetCursorPosition(10, 10);
             Console.Write("O");
         }
-        
+
     }
 }

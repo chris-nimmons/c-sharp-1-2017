@@ -10,7 +10,6 @@ namespace Chess
     {
 
 
-
         public void Render()
         {
             int X = 10;
