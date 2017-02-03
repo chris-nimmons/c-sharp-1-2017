@@ -1,6 +1,5 @@
 Using for, foreach, split and if statements translate what the fox says.  
 
-"wa pow ring ding tchoff pa joff ho hatee tchoffo dingeringeding"
 
 Legend:
 
@@ -9,7 +8,7 @@ owe - pow
 acorn - pa
 and - joff
 I - ho
-me - Ring 
+me - ring 
 dont - hatee
 a - ding
 squirrels - dingeringeding

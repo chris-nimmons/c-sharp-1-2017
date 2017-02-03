@@ -1,0 +1,6 @@
+Create chess classes for each piece.  Add a method on to the individual chess piece classes named GetMoves.
+Return a list of moves from GetMoves method.  
+Upon selection of a piece show the moves.  
+Only allow the piece to move to the moves show.  
+The moves list should work for any position on the 20 x 20 theoretical board and 
+should not overflow the board with moves.  
