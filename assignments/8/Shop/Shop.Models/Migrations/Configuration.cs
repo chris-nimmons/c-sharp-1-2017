@@ -16,9 +16,9 @@ namespace Shop.Models.Migrations
         {
             if (!context.Products.Any())
             {
-                var product = new Product() { Name = "Nerf  gun", Price = 49, Quantity = 7, SKU = "00000", Weight = 10 };
+                var product = new Product() { Name = "Nerf  Gun", Price = 49, Quantity = 7, SKU = "00000", Weight = 10 };
                 context.Products.Add(product);
-                product = new Product() { Name = "Depends", Price = 10, Quantity = 20, SKU = "00110", Weight = 3 };
+                product = new Product() { Name = "Computer Monitor", Price = 10, Quantity = 20, SKU = "00110", Weight = 3 };
                 context.Products.Add(product);
                 product = new Product() { Name = "Computer Mouse", Price = 5, Quantity = 3, SKU = "11110", Weight = 1 };
                 context.Products.Add(product);

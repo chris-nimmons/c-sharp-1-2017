@@ -14,7 +14,5 @@ namespace Shop.Models
         {
 
         }
-
-
     }
 }

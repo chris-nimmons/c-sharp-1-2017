@@ -241,6 +241,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceProducts.cs" />
     <Compile Include="Migrations\201702021545416_Initialization.cs" />
     <Compile Include="Migrations\201702021545416_Initialization.Designer.cs">
       <DependentUpon>201702021545416_Initialization.cs</DependentUpon>
