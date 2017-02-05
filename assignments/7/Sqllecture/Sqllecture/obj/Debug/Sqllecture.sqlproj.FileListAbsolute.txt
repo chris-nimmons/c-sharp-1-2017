@@ -1,0 +1,9 @@
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Sqllecture\Sqllecture\bin\Debug\Sqllecture.dacpac
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Sqllecture\Sqllecture\bin\Debug\Sqllecture.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Sqllecture\Sqllecture\bin\Debug\Sqllecture.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Sqllecture\Sqllecture\obj\Debug\Model.xml
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Sqllecture\Sqllecture\obj\Debug\refactor.xml
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Sqllecture\Sqllecture\obj\Debug\postdeploy.sql
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Sqllecture\Sqllecture\obj\Debug\predeploy.sql
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Sqllecture\Sqllecture\obj\Debug\Sqllecture.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Sqllecture\Sqllecture\obj\Debug\Sqllecture.pdb
