@@ -31,6 +31,7 @@ namespace Shop.Web.Controllers
                 .Skip(index * size)
                 .Take(size)
                 .ToList();
+
         }
     }
 }
