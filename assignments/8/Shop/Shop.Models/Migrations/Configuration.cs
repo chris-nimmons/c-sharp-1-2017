@@ -22,6 +22,7 @@ namespace Shop.Models.Migrations
                 context.Products.Add(product);
                 product = new Product() { Name = "Computer Mouse", Price = 5, Quantity = 3, SKU = "11110", Weight = 1 };
                 context.Products.Add(product);
+
                 context.SaveChanges();
             }
         }

@@ -50,11 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cart.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Migrations\201702021549098_Initialization.cs" />
     <Compile Include="Migrations\201702021549098_Initialization.Designer.cs">
       <DependentUpon>201702021549098_Initialization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702062033158_CartsMigration.cs" />
+    <Compile Include="Migrations\201702062033158_CartsMigration.Designer.cs">
+      <DependentUpon>201702062033158_CartsMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
@@ -71,9 +74,12 @@
     <EmbeddedResource Include="Migrations\201702021549098_Initialization.resx">
       <DependentUpon>201702021549098_Initialization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702062033158_CartsMigration.resx">
+      <DependentUpon>201702062033158_CartsMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HTMLPage.html" />
+    <Content Include="Model.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
