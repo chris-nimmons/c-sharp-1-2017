@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201702071449557_CartOrdersMigration.Designer.cs">
       <DependentUpon>201702071449557_CartOrdersMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702071837568_changing chars.cs" />
+    <Compile Include="Migrations\201702071837568_changing chars.Designer.cs">
+      <DependentUpon>201702071837568_changing chars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
@@ -84,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702071449557_CartOrdersMigration.resx">
       <DependentUpon>201702071449557_CartOrdersMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071837568_changing chars.resx">
+      <DependentUpon>201702071837568_changing chars.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

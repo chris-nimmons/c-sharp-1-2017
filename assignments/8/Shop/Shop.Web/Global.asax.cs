@@ -36,7 +36,7 @@ namespace Shop.Web
             if (cookie == null)
             {
                 var cart = new Cart() { Signature = Guid.NewGuid() };
-                HttpContext.Current.Request.Cookies.Add(new HttpCookie("cart", cart.Signature.ToString()));
+                HttpContext.Current.Response.Cookies.Add(new HttpCookie("cart", cart.Signature.ToString()));
                 context.Carts.Add(cart);
                 context.SaveChanges();
 
@@ -51,7 +51,7 @@ namespace Shop.Web
                 else
                 {
                     cart = new Cart() { Signature = Guid.NewGuid() };
-                    HttpContext.Current.Request.Cookies.Add(new HttpCookie("cart", cart.Signature.ToString()));
+                    HttpContext.Current.Response.Cookies.Add(new HttpCookie("cart", cart.Signature.ToString()));
                     context.Carts.Add(cart);
                     context.SaveChanges();
 

@@ -24,3 +24,4 @@ C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\S
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\Shop.Models.pdb
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.CartsMigration.resources
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.CartOrdersMigration.resources
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.changingchars.resources
