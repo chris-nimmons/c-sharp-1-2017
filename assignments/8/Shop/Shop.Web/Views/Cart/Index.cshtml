@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row">
+    <d href="~/cart/clear" class="btn btn-danger pull-right":Clear>
+    </d>
+
+<table class="table">
+    @{
+        decimal subTotal = 0;
+    }
+    @foreach (var order in Model.Orders)
+    {
+        subTotal += order.Quantity * order.Product.Price;
+        <tr>
+            <td>
+                <img src=" Border.Product.Image" class="icon-sm" />
+            </td>
+            <td>
+                @order.Product.Name 
+            </td>
+            <td>
+                @order.Quantity * @order.Product.Price
+            </td>
+            <td>
+                @subTotal
+            </td>
+            <td>
+                <a href="~/cart/remove/@order.Product.Id" class=" btn btn-danger btn-block">Remove</a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td><strong>Total</strong></td>
+        <td colspan=" 3"></td>
+        <td> @Model.Total</td>
+    </tr>
+    <caption href ="~/cart/Checkout" class=" btn btn-primary">Checkout</caption>
+

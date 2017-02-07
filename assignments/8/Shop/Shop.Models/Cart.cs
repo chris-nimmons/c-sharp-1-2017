@@ -10,11 +10,21 @@ namespace Shop.Models
     public class Cart  
     {
         public int Id { get; set; }
-        public virtual List<Product> Products { get; set; }
+        public virtual List<Order> Orders { get; set; }
+
+        public decimal Total
+        {
+            get
+            {
+                return Orders.Sum(q => q.Quantity * q.Product.Price);
+            }
+        }
+
+        public Guid Signature { get; set; }
 
         public Cart()
         {
-            Products = new List<Product>();
+            Orders = new List<Order>();
         }
     }   
 }
