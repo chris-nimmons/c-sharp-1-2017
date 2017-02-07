@@ -22,9 +22,9 @@ namespace Shop.Web.Controllers
             return View(products);
         }
 
-        public ActionResult Product(int Id)
+        public ActionResult Product(int id)
         {
-            var product = Context.Products.Find(Id);
+            var product = Context.Products.Find(id);
             return View(product);
         }
     }

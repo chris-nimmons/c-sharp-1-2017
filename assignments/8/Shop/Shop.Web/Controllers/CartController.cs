@@ -33,14 +33,14 @@ namespace Shop.Web.Controllers
         {
             var product = Context.Products.Find(Id);
 
-            var cookie = Request.Cookies["Cart"];
+            var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
 
             var products = new Product();
             var cart = Context.Carts
                 .Include(q => q.Orders)
-                .Include(q => q.Orders.Select(r => r.Product.Id == product.Id))
-                .First();
+                .Include(q => q.Orders.Select(r => r.Product))
+                .First(q=> q.Signature == signature);
 
 
             var order = cart.Orders.FirstOrDefault(q => q.Product.Id == product.Id);
@@ -61,7 +61,7 @@ namespace Shop.Web.Controllers
 
 
 
-            return RedirectToAction("Product", "Products", new { Id = product.Id });
+            return RedirectToAction("Product", "Home", new { id = product.Id });
         }
         public ActionResult Remove(int Id)
         {

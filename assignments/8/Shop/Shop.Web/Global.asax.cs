@@ -29,7 +29,7 @@ namespace Shop.Web
 
         private void WebApiApplication_AuthenticateRequest(object sender, EventArgs e)
         {
-            var cookie = HttpContext.Current.Request.Cookies["Cart"];
+            var cookie = HttpContext.Current.Request.Cookies["cart"];
 
             var context = new ShopContext();
 

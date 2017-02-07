@@ -1,12 +1,12 @@
-﻿
+﻿@model Product
 @{
     ViewBag.Title = "Product";
 }
 
-<h2>Product
-    Model.Name;
+<h2>
+    @Model.Name
 </h2>
-    <div>Model.Price</div>
-    <div> Model.Quantity</div>
-<a href="~/Cart/add/Model.Id" class="btn btn-primary":Add to Cart></a>
+    <div>@Model.Price</div>
+    <div> @Model.Quantity</div>
+<a href="~/cart/add/@Model.Id" class="btn btn-primary":>Buy</a>
 
