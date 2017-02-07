@@ -1,0 +1,13 @@
+﻿@model List<Product>
+@{
+    ViewBag.Title = "Products";
+}
+
+@foreach (var product in Model)
+{
+    <div>foreach(var product in Model)</div>
+    <div> class="" </div>
+
+    <div>@</div>
+    <a href="~/shop/cart" class="btn btn-primary">Buy</a>
+}
