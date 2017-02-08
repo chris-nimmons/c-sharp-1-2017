@@ -11,7 +11,7 @@ namespace Shop.Web.Areas.Admin.Controllers
     [RoutePrefix("products")]
     public class ProductsController : Controller
     {
-       public ShopContext Context { get; set; }
+        public ShopContext Context { get; set; }
 
         public ProductsController()
         {
@@ -45,6 +45,14 @@ namespace Shop.Web.Areas.Admin.Controllers
             return View(existing);
         }
         [Route("add")]
+        public ActionResult Add()
+        {
+
+            return View();
+
+        }
+
+        [Route("add-do")]
         public ActionResult Add(Product products)
         {
             var add = Context.Products.Find(products.Id);
