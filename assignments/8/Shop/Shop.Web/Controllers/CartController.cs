@@ -14,6 +14,9 @@ namespace Shop.Web.Models
         // GET: Cart
         public ShopContext Context { get; set; }
 
+        List<Transaction> transactions = new List<Transaction>();
+        
+
         public CartController()
         {
             Context = new ShopContext();
@@ -108,7 +111,7 @@ namespace Shop.Web.Models
         }
 
         [Route("clear")]
-        public ActionResult Clear()
+        public ActionResult Clear(int Orders)
         {
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
@@ -129,7 +132,7 @@ namespace Shop.Web.Models
 
 
         [Route("checkout")]
-        public ActionResult Checkout()
+        public ActionResult Checkout(int Orders)
         {
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
@@ -138,7 +141,7 @@ namespace Shop.Web.Models
                 .Include(q => q.Orders)
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
-            return View(cart);
+            return View(transactions);
         }
 
         [Route("checkout-do")]

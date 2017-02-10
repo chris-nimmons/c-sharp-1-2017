@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.Web.Models
+namespace Shop.Models
 {
     public class Transaction
     {
