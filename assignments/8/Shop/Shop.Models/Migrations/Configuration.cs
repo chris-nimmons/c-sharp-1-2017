@@ -1,11 +1,13 @@
-namespace Shop.Models.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System;
+using System.Linq;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using Shop.Web.Models;
+using Shop.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Shop.Models.ShopContext>
+namespace Shop.Web.Models
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<ShopContext>
     {
         public Configuration()
         {
@@ -14,7 +16,7 @@ namespace Shop.Models.Migrations
 
 
 
-        protected override void Seed(Shop.Models.ShopContext context)
+        protected override void Seed(ShopContext context)
         {
             if (!context.Products.Any())
             {

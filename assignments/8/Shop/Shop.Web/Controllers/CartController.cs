@@ -6,8 +6,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 
-namespace Shop.Web.Controllers
+namespace Shop.Web.Models
 {
+    [RoutePrefix("cart")]
     public class CartController : Controller
     {
         // GET: Cart
@@ -17,30 +18,35 @@ namespace Shop.Web.Controllers
         {
             Context = new ShopContext();
         }
+
+        [Route("")]
         public ActionResult Index()
         {
+            var cookie = Request.Cookies["cart"];
+            var signature = Guid.Parse(cookie.Value);
+
             var cart = Context.Carts
                 .Include(q => q.Orders)
                 .Include(q => q.Orders.Select(r => r.Product))
-                .First();
+                .First(q => q.Signature == signature);
 
             return View(cart);
 
 
         }
 
-        public ActionResult Add(int Id)
+        [Route("add/{id}")]
+        public ActionResult Add(int id)
         {
-            var product = Context.Products.Find(Id);
+            var product = Context.Products.Find(id);
 
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
 
-            var products = new Product();
             var cart = Context.Carts
                 .Include(q => q.Orders)
                 .Include(q => q.Orders.Select(r => r.Product))
-                .First(q=> q.Signature == signature);
+                .First(q => q.Signature == signature);
 
 
             var order = cart.Orders.FirstOrDefault(q => q.Product.Id == product.Id);
@@ -63,17 +69,19 @@ namespace Shop.Web.Controllers
 
             return RedirectToAction("Product", "Home", new { id = product.Id });
         }
-        public ActionResult Remove(int Id)
+
+        [Route("remove/{id}")]
+        public ActionResult Remove(int id)
         {
 
-            var cookie = Request.Cookies["Cart"];
+            var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
-            var product = Context.Products.Find(Id);
+            var product = Context.Products.Find(id);
 
             var cart = Context.Carts
             .Include(q => q.Orders)
-            .Include(q => q.Orders.Select(r => r.Product.Id == product.Id))
-            .First();
+            .Include(q => q.Orders.Select(r => r.Product))
+            .First(q => q.Signature == signature);
 
 
             var order = cart.Orders.FirstOrDefault(q => q.Product.Id == product.Id);
@@ -98,16 +106,45 @@ namespace Shop.Web.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [Route("clear")]
         public ActionResult Clear()
         {
-            var cart = Context.Carts.First();
+            var cookie = Request.Cookies["cart"];
+            var signature = Guid.Parse(cookie.Value);
+
+            //Including objects in the query (q)
+
+            var cart = Context.Carts
+            .Include(q => q.Orders)
+            .Include(q => q.Orders.Select(r => r.Product))
+            .First(q => q.Signature == signature);
 
             cart.Orders.Clear();
 
+            Context.SaveChanges();
+
             return RedirectToAction("Index");
-
-
         }
 
+
+        [Route("checkout")]
+        public ActionResult Checkout()
+        {
+            var cookie = Request.Cookies["cart"];
+            var signature = Guid.Parse(cookie.Value);
+
+            var cart = Context.Carts
+                .Include(q => q.Orders)
+                .Include(q => q.Orders.Select(r => r.Product))
+                .First(q => q.Signature == signature);
+            return View(cart);
+        }
+
+        [Route("checkout-do")]
+        public ActionResult CheckoutDo()
+        {
+            return View();
+        }
     }
 }

@@ -17,7 +17,7 @@ using Shop.Web.Models;
 using Shop.Web.Providers;
 using Shop.Web.Results;
 
-namespace Shop.Web.Controllers
+namespace Shop.Web.Models
 {
     [Authorize]
     [RoutePrefix("api/Account")]

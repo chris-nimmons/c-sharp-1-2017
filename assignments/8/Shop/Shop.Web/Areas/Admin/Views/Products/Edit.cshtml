@@ -3,36 +3,37 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="col-sm-6 col-sm-offset-3"></div>
-<form method="put" action="~/admin/products/edit">
+<div class="col-sm-6 col-sm-offset-3">
+    <form method="put" action="~/admin/products/edit">
 
-    <input type="hidden" value="Model.Id " name="Id" />
-    <div class="form-group">
-        <label class="control-label">
-            Name:
-        </label>
-        <input type="text" value="Model.Name" name="Name" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label class="control-label">
-            Price:
-        </label>
-        <input type="text" value="Model.Name" name="Price" class="form-control" />
-    </div>
+        <input type="hidden" name="Id" />
+        <div class="form-group">
+            <label class="control-label">
+                Name:
+            </label>
+            <input type="text" name="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">
+                Price:
+            </label>
+            <input type="text" name="Price" class="form-control" />
+        </div>
 
-    <div class="form-group">
-        <label class="control-label">
-            Weight:
-        </label>
-        <input type="text" value="Model.Name" name="Weight" class="form-control" />
-    </div>
+        <div class="form-group">
+            <label class="control-label">
+                Weight:
+            </label>
+            <input type="text" name="Weight" class="form-control" />
+        </div>
 
-    <div class="form-group">
-        <label class="control-label">
-            Quantity:
-        </label>
-        <input type="text" value="Model.Name" name="Quantity" class="form-control" />
-    </div>
+        <div class="form-group">
+            <label class="control-label">
+                Quantity:
+            </label>
+            <input type="text" name="Quantity" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success">Change</button>
 
-</form>
-
+    </form>
+</div>

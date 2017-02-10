@@ -92,6 +92,7 @@ C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Shop\Shop.Web\obj\Debug\Shop
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Shop\Shop.Web\obj\Debug\Shop.Web.pdb
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Shop\Shop.Web\obj\Debug\Shop.Web.Migrations.Initialization.resources
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Shop\Shop.Web\obj\Debug\Shop.Web.csproj.GenerateResource.Cache
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\obj\Debug\Shop.Web.csprojResolveAssemblyReference.cache
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\bin\ApplicationInsights.config
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\bin\roslyn\csc.exe
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -181,6 +182,5 @@ C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\bin\Microsoft.
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\bin\System.Web.Http.Owin.xml
-C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\obj\Debug\Shop.Web.csprojResolveAssemblyReference.cache
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\obj\Debug\Shop.Web.dll
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Web\obj\Debug\Shop.Web.pdb

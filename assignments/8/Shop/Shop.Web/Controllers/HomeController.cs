@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Shop.Web.Controllers
+namespace Shop.Web.Models
 {
     public class HomeController : Controller
     {

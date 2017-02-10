@@ -1,4 +1,5 @@
 ﻿using Shop.Models;
+using Shop.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,8 +47,9 @@ namespace Shop.Web
             {
                 var signature = Guid.Parse(cookie.Value);
                 var cart = context.Carts.FirstOrDefault(q => q.Signature == signature);
-                if (cart == null)
+                if (cart != null)
                 {
+
                 }
                 else
                 {

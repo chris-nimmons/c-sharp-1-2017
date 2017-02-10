@@ -1,9 +1,11 @@
 ﻿using Shop.Models;
+using Shop.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace Shop.Web.Areas.Admin.Controllers
 {
@@ -11,12 +13,15 @@ namespace Shop.Web.Areas.Admin.Controllers
     [RoutePrefix("products")]
     public class ProductsController : Controller
     {
+        
         public ShopContext Context { get; set; }
 
         public ProductsController()
         {
             Context = new ShopContext();
         }
+
+
         [Route("")]
         // GET: Admin/Products
         public ActionResult Index()
@@ -24,12 +29,16 @@ namespace Shop.Web.Areas.Admin.Controllers
             var products = Context.Products.ToList();
             return View(products);
         }
+
+
         [Route("{id}/edit")]
         public ActionResult Edit(int id)
         {
             var product = Context.Products.Find(id);
             return View(product);
         }
+
+
         [Route("edit")]
         public ActionResult Edit(Product product)
         {
@@ -44,26 +53,35 @@ namespace Shop.Web.Areas.Admin.Controllers
             Context.SaveChanges();
             return View(existing);
         }
+
+
         [Route("add")]
         public ActionResult Add()
         {
-
             return View();
-
         }
 
+
         [Route("add-do")]
-        public ActionResult Add(Product products)
+        public ActionResult Add(Product product)
         {
-            var add = Context.Products.Find(products.Id);
+            Context.Products.Add(product);
 
-            add.Name = "Nerf Gun";
-            add.Price = 49;
-            add.Quantity = 7;
-            add.SKU = null;
-            add.Weight = 33;
+            Context.SaveChanges();
+            return Redirect("~/admin/products");
+        }
 
-            return View(add);
+
+        //   /shop/admin/products/{id}/delete
+        [Route("{id}/delete")]
+        public ActionResult Delete(int id)
+        {
+            var existing = Context.Products.Find(id);
+            Context.Products.Remove(existing);
+
+            Context.SaveChanges();
+
+            return Redirect("~/admin/products");
         }
     }
 }
