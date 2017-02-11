@@ -54,6 +54,34 @@
     <Compile Include="Migrations\201702111920318_FirstFix.Designer.cs">
       <DependentUpon>201702111920318_FirstFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702112034460_second2.cs" />
+    <Compile Include="Migrations\201702112034460_second2.Designer.cs">
+      <DependentUpon>201702112034460_second2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702112104066_second7.cs" />
+    <Compile Include="Migrations\201702112104066_second7.Designer.cs">
+      <DependentUpon>201702112104066_second7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702112107056_second8.cs" />
+    <Compile Include="Migrations\201702112107056_second8.Designer.cs">
+      <DependentUpon>201702112107056_second8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702112109124_second9.cs" />
+    <Compile Include="Migrations\201702112109124_second9.Designer.cs">
+      <DependentUpon>201702112109124_second9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702112111471_second4.cs" />
+    <Compile Include="Migrations\201702112111471_second4.Designer.cs">
+      <DependentUpon>201702112111471_second4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702112115383_third.cs" />
+    <Compile Include="Migrations\201702112115383_third.Designer.cs">
+      <DependentUpon>201702112115383_third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702112133117_transactionfix.cs" />
+    <Compile Include="Migrations\201702112133117_transactionfix.Designer.cs">
+      <DependentUpon>201702112133117_transactionfix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Customer.cs" />
@@ -71,6 +99,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702111920318_FirstFix.resx">
       <DependentUpon>201702111920318_FirstFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702112034460_second2.resx">
+      <DependentUpon>201702112034460_second2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702112104066_second7.resx">
+      <DependentUpon>201702112104066_second7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702112107056_second8.resx">
+      <DependentUpon>201702112107056_second8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702112109124_second9.resx">
+      <DependentUpon>201702112109124_second9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702112111471_second4.resx">
+      <DependentUpon>201702112111471_second4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702112115383_third.resx">
+      <DependentUpon>201702112115383_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702112133117_transactionfix.resx">
+      <DependentUpon>201702112133117_transactionfix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+
+<div class="container" style="background-color: silver">
+
+    <div class="row">
+        @foreach (var product in Model)
+        {
+
+            <div class="col-lg-6">
+
+                <p>Name: @product.Name</p>
+                <p>Price: @product.Price</p>
+                <p><span style="font-size:20px;">@product.SKU</span></p>
+                <p>
+                    <a href="~/Products/Product/@product.Id" class="btn btn-primary"><img class="media-object" src="@product.IMG" style="width: 72px; height: 72px;"></a>
+                </p>
+                
+
+                <p> --------------------------------------- </p>
+
+            </div>
+        }
+    </div>
+</div>

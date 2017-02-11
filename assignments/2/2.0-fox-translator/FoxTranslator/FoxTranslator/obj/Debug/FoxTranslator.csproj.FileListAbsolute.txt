@@ -4,3 +4,6 @@ C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\bin\Debug\FoxTranslator.ex
 C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\bin\Debug\FoxTranslator.pdb
 C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\obj\Debug\FoxTranslator.exe
 C:\Users\Thinkpad\Desktop\FoxTranslator\FoxTranslator\obj\Debug\FoxTranslator.pdb
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\FoxTranslator\FoxTranslator\bin\Debug\FoxTranslator.exe.config
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\FoxTranslator\FoxTranslator\obj\Debug\FoxTranslator.exe
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\2\2.0-fox-translator\FoxTranslator\FoxTranslator\obj\Debug\FoxTranslator.pdb

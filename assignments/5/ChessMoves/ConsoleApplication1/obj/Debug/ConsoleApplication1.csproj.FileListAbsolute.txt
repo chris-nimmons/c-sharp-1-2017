@@ -4,3 +4,6 @@ c:\users\thinkpad\documents\visual studio 2015\Projects\ConsoleApplication1\Cons
 c:\users\thinkpad\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 c:\users\thinkpad\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 c:\users\thinkpad\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\5\ChessMoves\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\5\ChessMoves\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\5\ChessMoves\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

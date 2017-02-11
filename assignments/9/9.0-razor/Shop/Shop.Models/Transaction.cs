@@ -14,9 +14,10 @@ namespace Shop.Models
         public Customer Customer { get; set; }
         public Cart Cart { get; set; }
         public virtual List<Order> Orders { get; set; }
+
         public Transaction()
         {
-          var  Orders = new List<Order>();
+            Orders = new List<Order>();
         }
     }
 }

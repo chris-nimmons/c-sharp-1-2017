@@ -1,0 +1,40 @@
+﻿@using Shop.Models;
+@model List<Product>
+@{
+    ViewBag.Title = "products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tbody>
+
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    @product.Name
+                </td>
+                <td>
+                    @product.Price
+                </td>
+                <td>
+                    @product.Quantity
+                </td>
+                <td>
+                    @product.SKU
+                </td>
+                <td>
+                    @product.Weight
+                </td>
+                <td>
+                    <a href="~/admin/products/@product.Id/edit" class="btn btn-primary">Edit</a>
+                </td>
+                <td>
+                    <a href="~/admin/products/@product.Id/delete" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="~/admin/products/add" class="btn btn-success">Add</a>
+<form method="post" action="~/admin/products/delete"></form>

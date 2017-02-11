@@ -16,12 +16,6 @@ namespace Shop.Models
             Orders = new List<Order>();
         }
         public Guid Signature { get; set; }
-        public decimal Subtotal
-        {
-            get
-            {
-                return Orders.Sum(q=>q.Quantity * q.Product.Price);
-            }
-        }
+
     }
 }

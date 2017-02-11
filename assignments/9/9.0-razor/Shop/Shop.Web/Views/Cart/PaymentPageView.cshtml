@@ -1,0 +1,77 @@
+﻿@model Shop.Models.Cart
+@{
+    ViewBag.Title = "PaymentPageView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ decimal Subtotal = 0;}
+@foreach (var order in Model.Orders)
+{
+  Subtotal += order.Quantity * order.Product.Price;
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Total</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="@order.Product.IMG" style="width: 100px; height: 72px;"> </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="@order.Product.Name">@order.Product.Name</a></h4>
+
+                                        <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <input type="email" class="form-control" id="exampleInputEmail1" value="@order.Quantity">
+                            </td>
+
+                            <td class="col-sm-1 col-md-1 text-center"><a href="@order.Product.Price"><strong>@order.Product.Price</strong></a></td>
+                            <td class="col-sm-1 col-md-1">
+                                <a class="btn btn-primary btn-lg" href="~/cart/Remove/@order.Product.Id">
+                                    <strong>--</strong>
+                                </a>
+                                <a class="btn btn-primary btn-lg" href="~/cart/Add/@order.Product.Id">
+                                    <strong>+</strong>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h5>Subtotal</h5></td>
+                            <td class="text-right">
+                                <h5><strong>@Subtotal</strong></h5>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+}
+
+<tr>
+    <td><h3>Total</h3></td>
+    <td class="text-right"><h3><strong>@Subtotal</strong></h3></td>
+</tr>
+<tr>
+    <td>
+        <a class="btn btn-primary btn-success" href="http://localhost/shop/Products/Products" role="button">Continue Shopping &raquo;</a>
+    </td>
+    <td>
+        <a class="btn btn-primary btn-success" href="~/cart/Clear/">Empty Cart</a>
+    </td>
+</tr>
+
+<a class="btn btn-primary btn-success" href="~/cart/checkout" role="button">Place My Order &raquo;</a>

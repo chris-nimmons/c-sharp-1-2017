@@ -1,0 +1,37 @@
+﻿
+
+@using Shop.Models
+
+<div class="container">
+    <div class="row">
+        @foreach (var customers in Model)
+        {
+
+            <div class="col-lg-6">
+                <p>Name: @customers.Name</p>
+                <p>Email: @customers.Email</p>
+                <p><span style="font-size:20px;">@customers.Address_1</span></p>
+                <p>
+                    <button type="submit">@customers.Name</button>
+                </p>
+                @*@if (@customer.Name == "Depends")
+                {
+                    <a href="http://www.nbc.com/saturday-night-live/video/oops-i-crapped-my-pants/n11128?snl=1">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/31%2BVKQug8RL.jpg" />
+                    </a>}
+                else if (@customer.Name == "Nerf Gun")
+                {
+                    <img src="http://nerfgunheadquarters.com/wp-content/uploads/2015/07/cs18-PIC.jpg" style="width:250px; height:200px;" />
+
+                }
+                else if (@customer.Name == "Computer Mouse")
+                {
+                    <img src="http://g02.a.alicdn.com/kf/HTB1CMsuHVXXXXaqXpXXq6xXFXXXu/Delux-wireless-2-4Ghz-M618-M618GL-ergonomics-vertical-mouse-for-PC-computer-laptop-drop-with-manual.jpg" style="width:250px; height:200px;" />
+
+                }*@
+                <p> --------------------------------------- </p>
+
+            </div>
+        }
+    </div>
+</div>
