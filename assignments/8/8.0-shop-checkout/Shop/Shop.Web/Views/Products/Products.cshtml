@@ -1,4 +1,6 @@
 ﻿
+
+
 @{
     ViewBag.Title = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,4 +8,31 @@
 
 <h2>Products</h2>
 
-@Html.Action("ProductListPartial", "Products")
+
+@*<h2>@Model.Name</h2>
+
+<div>$@Model.Price</div>
+<div>@Model.Quantity</div>
+<div>@Model.SKU</div>
+<a href="~/" class ="btn btn-primary">Buy</a>*@
+<table class="table">
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    <img class="icon-sm" style="width:200px;height:200px;border:0" src="@product.Image" alt="Generic placeholder image">
+                </td>
+                <td>
+                    <h3>@product.DescriptionOne</h3>
+                </td>
+                <td>
+                    <p>@product.DescriotionTwo</p>
+                </td>
+                <td>
+                    <p><a class="btn btn-primary" href="http://localhost/shop/Products/Product/@product.Id">Learn More &raquo;</a></p>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -15,3 +15,19 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.m-t-2 {
+    margin-top: 20px
+}
+
+.m-t-1 {
+    margin-top: 10px;
+}
+
+.m-t-0 {
+    margin-top: 0;
+}
+
+.icon-sm {
+    width: 64px;
+}

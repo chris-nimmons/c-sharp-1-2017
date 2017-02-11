@@ -52,11 +52,16 @@
     <Compile Include="Cart.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="Migrations\201702021546483_Initialization.cs" />
-    <Compile Include="Migrations\201702021546483_Initialization.Designer.cs">
-      <DependentUpon>201702021546483_Initialization.cs</DependentUpon>
+    <Compile Include="Migrations\201702081833473_Initialization.cs" />
+    <Compile Include="Migrations\201702081833473_Initialization.Designer.cs">
+      <DependentUpon>201702081833473_Initialization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702091436174_TransactionsMigration.cs" />
+    <Compile Include="Migrations\201702091436174_TransactionsMigration.Designer.cs">
+      <DependentUpon>201702091436174_TransactionsMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShopContext.cs" />
@@ -67,8 +72,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702021546483_Initialization.resx">
-      <DependentUpon>201702021546483_Initialization.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702081833473_Initialization.resx">
+      <DependentUpon>201702081833473_Initialization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702091436174_TransactionsMigration.resx">
+      <DependentUpon>201702091436174_TransactionsMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
