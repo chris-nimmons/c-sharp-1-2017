@@ -4,7 +4,7 @@
 }
 
 <div class="row">
-    <a href="~/cart/clear" class="btn btn-danger pull-right">Clear</a>
+    <a href="~/cart/transactions" class="btn btn-success pull-left">Transactions</a>
 
     <table class="table">
         @{ decimal subTotal = 0; }
@@ -17,7 +17,7 @@
                     @order.Product.Name
                 </td>
                 <td>
-                    @order.Quantity + 1
+                    @order.Quantity + @order.Product.Price
                 </td>
                 <td>
                     @subTotal
@@ -33,6 +33,6 @@
             <td> @Model.Orders</td>
         </tr>
     </table>
-    <a href="~/cart/Checkout" class="btn btn-primary">Checkout</a>
-
+    <a href="~/cart/transactions" class="btn btn-primary">Transaction History</a>
+    k
 </div>

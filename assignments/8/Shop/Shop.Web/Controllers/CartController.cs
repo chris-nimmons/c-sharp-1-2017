@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 
+
 namespace Shop.Web.Models
 {
     [RoutePrefix("cart")]
@@ -15,6 +16,7 @@ namespace Shop.Web.Models
         public ShopContext Context { get; set; }
 
         List<Transaction> transactions = new List<Transaction>();
+
         
 
         public CartController()
@@ -141,11 +143,19 @@ namespace Shop.Web.Models
                 .Include(q => q.Orders)
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
-            return View(transactions);
+            return RedirectToAction("cart");
         }
 
         [Route("checkout-do")]
-        public ActionResult CheckoutDo()
+        public ActionResult CheckoutDo(int Orders)
+        {
+
+            return View();
+        }
+
+
+        [Route("transactions")]
+        public ActionResult Transactions(Transaction transaction)
         {
             return View();
         }
