@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <div class="col-sm-offset-3 col-sm-6 m-t-2">
+
+    @foreach (var product in Model)
+    {
+        <img src=@product.Image class="img-rounded" width="300" height="300" />
+
+        <input type="hidden" value="Model.Id" name="Id" />
+
+        <div class="group-form">
+            <label class="control-label">
+                Name :
+            </label>
+            <input type="text" value="@product.Name" name="Name"
+                   class="form-control" />
+        </div>
+        <div class="group-form">
+            <label class="control-lable">
+                Price :
+            </label>
+            <input type="text" value="$@product.Price" name="Price"
+                   class="form-control" />
+        </div>
+        <div class="group-form">
+            <label class="control-lable">
+                Product Description :
+            </label>
+            <input type="text" value="@product.DescriptionOne"
+                   class="control-label" />
+        </div>
+        <div class="group-form">
+            <label class="control-lable">
+                SKU :
+            </label>
+            <span style="font-size:10px"></span>@product.SKU
+            
+        </div>
+
+        <a href="~/cart/add/@product.Id" class="btn btn-warning btn-md">Add To Cart</a>
+
+        <p>---------</p>
+    }
+</div>
