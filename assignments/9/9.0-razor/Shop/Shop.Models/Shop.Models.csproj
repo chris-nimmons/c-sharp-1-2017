@@ -82,6 +82,30 @@
     <Compile Include="Migrations\201702112133117_transactionfix.Designer.cs">
       <DependentUpon>201702112133117_transactionfix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702121750537_total.cs" />
+    <Compile Include="Migrations\201702121750537_total.Designer.cs">
+      <DependentUpon>201702121750537_total.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702121824083_cusromers.cs" />
+    <Compile Include="Migrations\201702121824083_cusromers.Designer.cs">
+      <DependentUpon>201702121824083_cusromers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702121955200_customerstotransactions.cs" />
+    <Compile Include="Migrations\201702121955200_customerstotransactions.Designer.cs">
+      <DependentUpon>201702121955200_customerstotransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702122010503_reporting.cs" />
+    <Compile Include="Migrations\201702122010503_reporting.Designer.cs">
+      <DependentUpon>201702122010503_reporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702122035485_reporting2.cs" />
+    <Compile Include="Migrations\201702122035485_reporting2.Designer.cs">
+      <DependentUpon>201702122035485_reporting2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702122109023_customerstotransactions1.cs" />
+    <Compile Include="Migrations\201702122109023_customerstotransactions1.Designer.cs">
+      <DependentUpon>201702122109023_customerstotransactions1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Customer.cs" />
@@ -120,6 +144,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702112133117_transactionfix.resx">
       <DependentUpon>201702112133117_transactionfix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702121750537_total.resx">
+      <DependentUpon>201702121750537_total.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702121824083_cusromers.resx">
+      <DependentUpon>201702121824083_cusromers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702121955200_customerstotransactions.resx">
+      <DependentUpon>201702121955200_customerstotransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702122010503_reporting.resx">
+      <DependentUpon>201702122010503_reporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702122035485_reporting2.resx">
+      <DependentUpon>201702122035485_reporting2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702122109023_customerstotransactions1.resx">
+      <DependentUpon>201702122109023_customerstotransactions1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

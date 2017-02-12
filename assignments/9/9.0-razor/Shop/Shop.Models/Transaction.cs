@@ -10,7 +10,7 @@ namespace Shop.Models
     {
         public int Id { get; set; }
          public DateTime TimeStamp { get; set; }
-        public decimal TransactionTotal { get; set; }
+        public virtual decimal TransactionTotal { get; set; }
         public Customer Customer { get; set; }
         public Cart Cart { get; set; }
         public virtual List<Order> Orders { get; set; }
@@ -18,6 +18,8 @@ namespace Shop.Models
         public Transaction()
         {
             Orders = new List<Order>();
+    
+             
         }
     }
 }

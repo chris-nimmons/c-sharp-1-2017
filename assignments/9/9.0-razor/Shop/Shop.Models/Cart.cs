@@ -9,13 +9,15 @@ namespace Shop.Models
     public class Cart
     {
         public int Id { get; set; }
-        //public int Customerid { get; set; }
+        public int Customerid { get; set; }
         public virtual List<Order> Orders { get; set; }
+        public Guid Signature { get; set; }
         public Cart()
         {
             Orders = new List<Order>();
+  
         }
-        public Guid Signature { get; set; }
+
 
     }
 }

@@ -17,3 +17,9 @@ C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Deb
 C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.second4.resources
 C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.third.resources
 C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.transactionfix.resources
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.total.resources
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.cusromers.resources
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.customerstotransactions.resources
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.reporting.resources
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.reporting2.resources
+C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.customerstotransactions1.resources

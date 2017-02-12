@@ -4,12 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
 
 
-<div> @Model.Name</div>
+
+<div>
+    @Model.Name
+
+</div>
 <div> @Model.Price</div>
 <div> @Model.SKU</div>
 <a href="~/cart/add/@Model.Id" class="btn btn-primary">Add to Cart</a>
-
+<a href="~/Products/Product/@Model.Id" class="btn btn-primary"><img class="media-object" src="@Model.IMG" style="width: 72px; height: 72px;"></a>
 

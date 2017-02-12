@@ -9,6 +9,7 @@ namespace Shop.Models
     public class Customer
     {
         public int Id { get; set; }
+        public Guid Signature { get; set; }
         public string Name { get; set; }
         public virtual string Email { get; set; }
         public virtual string Address_1 { get; set; }

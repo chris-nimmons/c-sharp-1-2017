@@ -13,6 +13,7 @@ namespace Shop.Models
         public DbSet<Transaction> Transactions {get; set;}
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Cart> Carts { get; set; }
+       
         public ShopContext() : base("Name=ShopContext")
 
         {

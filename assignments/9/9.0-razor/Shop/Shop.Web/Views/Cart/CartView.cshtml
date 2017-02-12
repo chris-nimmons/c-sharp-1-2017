@@ -1,7 +1,7 @@
 ﻿@model Shop.Models.Cart
 @{
     ViewBag.Title = "CartView";
-    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{ decimal Subtotal = 0;}
 @foreach (var order in Model.Orders)
@@ -50,24 +50,63 @@
                             <td><h5>Subtotal</h5></td>
                             <td class="text-right">
                                 <h5><strong>@Subtotal</strong></h5>
-                            
+
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            </div>
+        </div>
+        }
 
-</div>
-    </div>
-}
-<tr>
-    <td>
-        <a class="btn btn-primary btn-success" href="http://localhost/shop/Products/Products" role="button">Continue Shopping &raquo;</a>
-    </td>
-    <td>
-        <a class="btn btn-primary btn-success" href="~/cart/clear" role="button">Empty Cart</a>
-    </td>
-    <td>
-        <a class="btn btn-primary btn-success" href="~/cart/PaymentPageView" role="button">Checkout &raquo;</a>
-    </td>
-</tr>
+        <tr>
+            <td>
+                <a class="btn btn-primary btn-success" href="http://localhost/shop/Products/Products" role="button">Continue Shopping &raquo;</a>
+            </td>
+            <td>
+                <a class="btn btn-primary btn-success" href="~/cart/clear" role="button">Empty Cart</a>
+            </td>
+            <td>
+                <a class="btn btn-primary btn-success" href="~/cart/PaymentPageView" role="button">Checkout &raquo;</a>
+            </td>
+        </tr>
+        <div class="col-sm-offset-3 col-sm-6 m-t-2">
+            <form method="post" action="~/cart/NewCustomer">
+                <input type="hidden" value="0" name="Id" />
+                <div class="form-group">
+                    <label class="control-label" style="font-size:30px;">
+                        New? Create an account
+                    </label>
+                </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Name:
+                        </label>
+                        <input type="text" value="" name="Name" class="form-control " />
+                    </div>
+                <div class="form-group">
+                    <label class="control-label">
+                        Email:
+                    </label>
+                    <input type="email" value="" name="Email" class="form-control " />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">
+                        Address 1:
+                    </label>
+                    <input type="text" value="" name="Address1" class="form-control " />
+                </div><div class="form-group">
+                    <label class="control-label">
+                        Address 2:
+                    </label>
+                    <input type="text" value="" name="Address2" class="form-control " />
+                </div><div class="form-group">
+                    <label class="control-label">
+                        City:
+                    </label>
+                    <input type="text" value="" name="City" class="form-control " />
+                </div>
+                <button type="submit" class="btn btn-success">Create Account</button>
+            </form>
+        </div>

@@ -37,18 +37,32 @@ namespace Shop.Web.Controllers
             return new List<Product>();
         }
 
+
+
+        public ActionResult NewCustomer(Customer customer)
+        {
+            var newCustomer = Context.Customers.Add(customer);
+            customer.Name = newCustomer.Name;
+            customer.Email = newCustomer.Email;
+            customer.Address_1 = newCustomer.Address_1;
+            customer.Address_2 = newCustomer.Address_2;
+            customer.City = newCustomer.City;
+            customer.State = newCustomer.State;
+            customer.Signature = new Guid();
+            Context.SaveChanges();
+            return RedirectToAction("Cartview");
+        }
+
         public ActionResult Add(int id)
         {
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
             var product = Context.Products.Find(id);
-
+            var customer = Context.Customers.Find(id);
             var cart = Context.Carts
             .Include(q => q.Orders)
             .Include(q => q.Orders.Select(r => r.Product))
-                  .First(q => q.Signature == signature);
-            //  .First();
-
+            .First(q => q.Signature == signature);
             var order = cart.Orders.FirstOrDefault(q => q.Product.Id == product.Id);
             if (order != null)
             {
@@ -62,13 +76,9 @@ namespace Shop.Web.Controllers
             {
                 order = new Order() { Product = product, Quantity = 1 };
                 cart.Orders.Add(order);
-
                 Context.SaveChanges();
             }
-
             return RedirectToAction("CartView");
-            //return RedirectToAction("Product", "Products", new { id = product.Id });
-
         }
         public ActionResult Remove(int id)
         {
@@ -99,23 +109,18 @@ namespace Shop.Web.Controllers
             return RedirectToAction("CartView");
         }
 
-
         public ActionResult Clear()
         {
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
-
-
             var cart = Context.Carts
-                .Include(q => q.Orders)
-                 .Include(q => q.Orders.Select(s => s.Product))
-                    .First(q => q.Signature == signature);
+            .Include(q => q.Orders)
+            .Include(q => q.Orders.Select(s => s.Product))
+            .First(q => q.Signature == signature);
             cart.Orders.Clear();
             Context.SaveChanges();
             return RedirectToAction("CartView");
         }
-
-
 
         public ActionResult PaymentPageView()
         {
@@ -126,10 +131,8 @@ namespace Shop.Web.Controllers
              .Include(q => q.Orders.Select(r => r.Product))
              .First(q => q.Signature == signature);
             return View(cart);
-            
+
         }
-
-
         public ActionResult CheckoutDo()
         {
             var cookie = Request.Cookies["cart"];
@@ -137,24 +140,23 @@ namespace Shop.Web.Controllers
             var cart = Context.Carts.First(q => q.Signature == signature);
             return View();
         }
-
-
-
-
-
         public ActionResult Checkout()
         {
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
-                        var cart = Context.Carts
-                .Include(q => q.Orders)
-                 .Include(q => q.Orders.Select(s => s.Product))
-                    .First(q => q.Signature == signature);
-            var transaction = new Transaction();
+            var cart = Context.Carts
+            .Include(q => q.Orders)
+            .Include(q => q.Orders.Select(s => s.Product))
+            .First(q => q.Signature == signature);
 
+            //var customer = Context.Customers
+            //.First(q => q.Signature == signature);
+
+            var transaction = new Transaction();
             foreach (var order in cart.Orders)
             {
                 transaction.Orders.Add(order);
+                transaction.TransactionTotal += (order.Quantity * order.Product.Price);
             }
 
             transaction.TimeStamp = DateTime.UtcNow;

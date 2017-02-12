@@ -37,7 +37,7 @@ namespace Shop.Web.Controllers
 
 
         [HttpGet]
-        [Route("customers")]
+        [Route("customerprofile")]
 
 
         public List<Customer> GetCustomers(int page = 1, int size = 20)
