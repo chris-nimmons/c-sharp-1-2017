@@ -36,8 +36,6 @@ namespace Shop.Web.Models
                 .First(q => q.Signature == signature);
 
             return View(cart);
-
-
         }
 
         [Route("add/{id}")]
@@ -113,7 +111,7 @@ namespace Shop.Web.Models
         }
 
         [Route("clear")]
-        public ActionResult Clear(int Orders)
+        public ActionResult Clear()
         {
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
@@ -134,7 +132,7 @@ namespace Shop.Web.Models
 
 
         [Route("checkout")]
-        public ActionResult Checkout(int Orders)
+        public ActionResult Checkout()
         {
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
@@ -143,18 +141,20 @@ namespace Shop.Web.Models
                 .Include(q => q.Orders)
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
-            return RedirectToAction("cart");
+
+            return RedirectToAction("CheckoutDo");
+
         }
 
         [Route("checkout-do")]
-        public ActionResult CheckoutDo(int Orders)
+        public ActionResult CheckoutDo()
         {
 
             return View();
         }
 
 
-        [Route("transactions")]
+        [Route("Transactions")]
         public ActionResult Transactions(int id)
         {
 

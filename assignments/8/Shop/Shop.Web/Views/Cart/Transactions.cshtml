@@ -1,10 +1,10 @@
 ﻿@model Transaction
 @{
-    Layout = null;
+    ViewBag.Title = "Transactions";
 }
 
 <div class="row">
-    <a href="~/cart/transactions" class="btn btn-success pull-left">Transactions</a>
+    <a href="~/cart/clear" class="btn btn-danger pull-left">Transactions</a>
 
     <table class="table">
         @{ decimal subTotal = 0; }
@@ -17,22 +17,18 @@
                     @order.Product.Name
                 </td>
                 <td>
-                    @order.Quantity + @order.Product.Price
+                    @order.Quantity * @order.Product.Price
                 </td>
                 <td>
                     @subTotal
                 </td>
-                <td>
-                    <a href="~/cart/remove/@order.Product.Id" class="btn btn-danger btn-block">Remove</a>
-                </td>
             </tr>
         }
         <tr>
-            <td><strong>Transactions</strong></td>
-            <td colspan="3"></td>
-            <td> @Model.Orders</td>
+            <td><strong>Total</strong></td>
+            <td colspan=" 3"></td>
+            <td> @Model.Total</td>
         </tr>
     </table>
-    <a href="~/cart/transactions" class="btn btn-primary">Transaction History</a>
-    k
+
 </div>

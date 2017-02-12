@@ -11,8 +11,18 @@ namespace Shop.Models
     public class Transaction
     {
         public int Id { get; set; }
-        public DateTime TimeStamp { get; set; }
         public virtual List<Order> Orders { get; set; }
+
+        public decimal Total
+        {
+            get
+            {
+                return Orders.Sum(q => q.Quantity * q.Product.Price);
+            }
+        }
+
+        public Guid Signature { get; set; }
+
         public Transaction()
         {
             Orders = new List<Order>();
