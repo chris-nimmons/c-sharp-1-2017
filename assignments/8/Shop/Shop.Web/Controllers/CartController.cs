@@ -31,7 +31,7 @@ namespace Shop.Web.Models
             var signature = Guid.Parse(cookie.Value);
 
             var cart = Context.Carts
-                .Include(q => q.Orders)
+                .Include(q => q.Orders)  
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
 
@@ -70,7 +70,7 @@ namespace Shop.Web.Models
                 Context.SaveChanges();
             }
 
-
+             
 
             return RedirectToAction("Product", "Home", new { id = product.Id });
         }
@@ -155,8 +155,9 @@ namespace Shop.Web.Models
 
 
         [Route("transactions")]
-        public ActionResult Transactions(Transaction transaction)
+        public ActionResult Transactions(int id)
         {
+
             return View();
         }
     }
