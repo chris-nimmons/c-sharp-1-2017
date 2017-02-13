@@ -149,7 +149,6 @@ namespace Shop.Web.Models
         [Route("checkout-do")]
         public ActionResult CheckoutDo()
         {
-
             return View();
         }
 
