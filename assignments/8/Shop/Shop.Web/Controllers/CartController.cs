@@ -15,9 +15,7 @@ namespace Shop.Web.Models
         // GET: Cart
         public ShopContext Context { get; set; }
 
-        List<Transaction> transactions = new List<Transaction>();
 
-        
 
         public CartController()
         {
@@ -31,7 +29,7 @@ namespace Shop.Web.Models
             var signature = Guid.Parse(cookie.Value);
 
             var cart = Context.Carts
-                .Include(q => q.Orders)  
+                .Include(q => q.Orders)
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
 
@@ -41,6 +39,7 @@ namespace Shop.Web.Models
         [Route("add/{id}")]
         public ActionResult Add(int id)
         {
+
             var product = Context.Products.Find(id);
 
             var cookie = Request.Cookies["cart"];
@@ -68,7 +67,6 @@ namespace Shop.Web.Models
                 Context.SaveChanges();
             }
 
-             
 
             return RedirectToAction("Product", "Home", new { id = product.Id });
         }
@@ -142,7 +140,9 @@ namespace Shop.Web.Models
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
 
-            return RedirectToAction("CheckoutDo");
+
+
+            return RedirectToAction("transaction");
 
         }
 
@@ -153,10 +153,9 @@ namespace Shop.Web.Models
         }
 
 
-        [Route("Transactions")]
-        public ActionResult Transactions(int id)
+        [Route("transactions")]
+        public ActionResult Transaction()
         {
-
             return View();
         }
     }

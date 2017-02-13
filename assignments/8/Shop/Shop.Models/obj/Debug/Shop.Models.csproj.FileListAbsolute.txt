@@ -24,3 +24,4 @@ C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\S
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\Shop.Models.csprojResolveAssemblyReference.cache
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\Shop.Web.Models.NewMigration.resources
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\Shop.Web.Models.NewMigration1.resources
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\8\Shop\Shop.Models\obj\Debug\Shop.Web.Models.NuMigration.resources

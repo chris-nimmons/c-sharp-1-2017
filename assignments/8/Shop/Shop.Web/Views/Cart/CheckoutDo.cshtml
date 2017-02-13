@@ -1,4 +1,4 @@
-﻿@model Cart
+﻿@model Transaction
 @{
     ViewBag.Title = "CheckoutDo";
 }
@@ -10,35 +10,31 @@
         @{
             decimal subTotal = 0;
         }
-        @foreach (var order in Model.Orders)
+        @for (int i = 0;i < Model.Total; i++)
         {
-            subTotal += order.Quantity * order.Product.Price;
+            for (int j = 0; j < Model.Total; j++)
+            {
+                subTotal += order.Quantity * order.Product.Price;
             <tr>
-                <td>
-                    <img src="@order.Product.Image" alt="Smiley face" height="42" width="42">
-
-                </td>
                 <td>
                     @order.Product.Name
                 </td>
                 <td>
-                    @order.Quantity * @order.Product.Price
+                    @order.Quantity ++
                 </td>
                 <td>
                     @subTotal
                 </td>
-                <td>
-                    <a href="~/cart/remove/@order.Product.Id" class="btn btn-danger btn-block">Remove</a>
-                </td>
             </tr>
+            }
         }
         <tr>
             <td><strong>Total</strong></td>
-            <td colspan=" 3"></td>
+            <td colspan="3"></td>
             <td> @Model.Total</td>
         </tr>
     </table>
 
-    <a href="~/cart" class="btn btn-success">Continue Shopping</a>
+    <a href="~/cart/checkout-do" class="btn btn-success">Checkout</a>
 
 </div>

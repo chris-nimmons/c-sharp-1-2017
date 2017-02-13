@@ -10,6 +10,7 @@ namespace Shop.Models
 {
     public class Transaction
     {
+        public string Product { get; set; }
         public int Id { get; set; }
         public virtual List<Order> Orders { get; set; }
 
@@ -23,9 +24,5 @@ namespace Shop.Models
 
         public Guid Signature { get; set; }
 
-        public Transaction()
-        {
-            Orders = new List<Order>();
-        }
     }
 }
