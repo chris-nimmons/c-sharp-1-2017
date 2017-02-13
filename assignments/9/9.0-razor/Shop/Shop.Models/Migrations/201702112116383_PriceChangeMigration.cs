@@ -1,0 +1,20 @@
+namespace Shop.Models.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class PriceChangeMigration : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Carts", "Total", c => c.Decimal(nullable: false, precision: 18, scale: 2));
+            AddColumn("dbo.Transactions", "Total", c => c.Decimal(nullable: false, precision: 18, scale: 2));
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Transactions", "Total");
+            DropColumn("dbo.Carts", "Total");
+        }
+    }
+}
