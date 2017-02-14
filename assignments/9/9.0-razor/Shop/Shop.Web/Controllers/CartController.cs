@@ -42,6 +42,8 @@ namespace Shop.Web.Controllers
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
 
+            //var transaction = Context.Transactions.Find();
+                    
             var order = cart.Orders.FirstOrDefault(q => q.Product.Id == product.Id);
 
             if (order != null)
@@ -129,16 +131,21 @@ namespace Shop.Web.Controllers
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
 
-            var cart = Context.Carts.First(q => q.Signature == signature);
+            var cart = Context.Carts
+                .Include(q=>q.Orders)
+                .Include(q=>q.Orders.Select(r=>r.Product))
+                .First(q => q.Signature == signature);
 
-            var transaction = new Transaction();
+            var transaction = new Transaction()
+            {TimeStamp = DateTime.UtcNow};
 
             foreach (var order in cart.Orders)
             {
                 transaction.Orders.Add(order);
             }
 
-            transaction.TimeStamp = DateTime.UtcNow;
+            Context.Transactions.Add(transaction);
+
 
             Context.SaveChanges();
 

@@ -11,6 +11,8 @@ namespace Shop.Models
         public int Id { get; set; }    
         public DateTime TimeStamp { get; set; }  
         public virtual List<Order> Orders { get; set; } 
+        public decimal Price { get; set; }
+        public int Quanity { get; set; }
        
 
         public Transaction()

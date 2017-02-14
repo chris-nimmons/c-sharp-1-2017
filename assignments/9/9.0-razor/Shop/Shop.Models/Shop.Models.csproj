@@ -49,13 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201702111949438_Initialization.cs" />
-    <Compile Include="Migrations\201702111949438_Initialization.Designer.cs">
-      <DependentUpon>201702111949438_Initialization.cs</DependentUpon>
+    <Compile Include="Migrations\201702142004372_Initialization.cs" />
+    <Compile Include="Migrations\201702142004372_Initialization.Designer.cs">
+      <DependentUpon>201702142004372_Initialization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthenticationContext.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CustomerAccount.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,8 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702111949438_Initialization.resx">
-      <DependentUpon>201702111949438_Initialization.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702142004372_Initialization.resx">
+      <DependentUpon>201702142004372_Initialization.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

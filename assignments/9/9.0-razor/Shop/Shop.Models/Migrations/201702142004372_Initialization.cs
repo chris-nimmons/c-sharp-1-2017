@@ -72,6 +72,8 @@ namespace Shop.Models.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         TimeStamp = c.DateTime(nullable: false),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Quanity = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
