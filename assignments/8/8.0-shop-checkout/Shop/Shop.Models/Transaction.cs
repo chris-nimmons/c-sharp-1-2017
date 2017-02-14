@@ -11,11 +11,13 @@ namespace Shop.Models
         public int Id { get; set; }
         public DateTime TimeStamp { get; set; }
         public virtual List<Order> Orders { get; set; }
-        
+        public decimal Total { get; set; }
+     
 
         public Transaction()
         {
             Orders = new List<Order>();
+            
         }
     }
 }

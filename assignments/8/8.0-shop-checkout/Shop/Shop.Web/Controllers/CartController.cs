@@ -52,7 +52,7 @@ namespace Shop.Web.Controllers
                 if (order.Quantity < order.Product.Quantity)
                 {
                     order.Quantity++;
-
+                    cart.Total = cart.Total + product.Price;
                     Context.SaveChanges();
                 }
 
@@ -61,8 +61,12 @@ namespace Shop.Web.Controllers
             {
                 order = new Order() { Product = product, Quantity = 1 };
                 cart.Orders.Add(order);
+                cart.Total = cart.Total + product.Price;
                 Context.SaveChanges();
             }
+
+            Context.SaveChanges();
+
             if (location == "product")
             {
                 return RedirectToAction("Product", "Products", new { id = product.Id });
@@ -75,7 +79,6 @@ namespace Shop.Web.Controllers
             {
                 return RedirectToAction("Index", "Cart");
             }
-
 
         }
 
@@ -98,10 +101,12 @@ namespace Shop.Web.Controllers
                 if (order.Quantity > 1)
                 {
                     order.Quantity--;
+                    cart.Total = cart.Total - product.Price;
                 }
                 else
                 {
                     cart.Orders.Remove(order);
+                    cart.Total = cart.Total - product.Price;
                 }
 
                 Context.SaveChanges();
@@ -119,12 +124,12 @@ namespace Shop.Web.Controllers
             var cart = Context.Carts.Include(q => q.Orders).First(q => q.Signature == signature);
 
             cart.Orders.Clear();
+            cart.Total = 0;
 
             Context.SaveChanges();
 
             return RedirectToAction("Index", "Cart");
         }
-
 
         [Route("checkout")]
         public ActionResult Checkout()
@@ -140,7 +145,6 @@ namespace Shop.Web.Controllers
             return View(cart);
         }
 
-
         [Route("checkout-do")]
         public ActionResult CheckoutDo()
         {
@@ -151,17 +155,17 @@ namespace Shop.Web.Controllers
 
             var transaction = new Transaction()     //create transaction
             {
-                TimeStamp = DateTime.UtcNow             //utc now is universal time, always use it for DateTime
-            };   
+                TimeStamp = DateTime.UtcNow,             //utc now is universal time, always use it for DateTime
+                Total = 0
+            };
 
-            foreach (var order in cart.Orders)
-            {
-                transaction.Orders.Add(order);          //adding each order to the transaction
-            }
+            transaction.Total = 0;
+            var orderTotal = cart.Total;
+            transaction.Total = orderTotal;
+            Context.SaveChanges();
+            cart.Total = 0;
 
             Context.Transactions.Add(transaction);
-
-            
 
             Context.SaveChanges();
             cart.Orders.Clear();

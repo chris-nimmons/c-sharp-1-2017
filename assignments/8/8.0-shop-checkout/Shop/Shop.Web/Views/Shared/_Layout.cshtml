@@ -15,6 +15,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("The Greatest Shopping Experience EVER", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
@@ -22,7 +23,16 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Products", "Products", "Products", new { area = "" }, null)</li>
+                    @*<li>@Html.ActionLink("Login", "Login", "Accounts", new { area = "" },null) </li>*@
+
+                    @*@{ decimal cartTotal = 0;}
+                    @foreach (var order in Model.Orders)
+                    {
+                        cartTotal += order.Quantity * order.Product.Price;
+                    }*@
                     <li>@Html.ActionLink("Cart", "Index", "Cart", new { area = "" }, null)</li>
+                    @*<li> <a class="btn btn-primary" href="http://localhost/shop/Cart">@cartTotal</a></li>*@
+                    @*<li class="icon-sm" style="color:blue"> @cartTotal </li>*@
                    
                 </ul>
             </div>

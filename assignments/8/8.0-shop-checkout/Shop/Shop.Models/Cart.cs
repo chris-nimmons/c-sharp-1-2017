@@ -10,19 +10,14 @@ namespace Shop.Models
     {
         public int Id { get; set; }
         public virtual List<Order> Orders { get; set; }
-        public decimal Total
-        {
-            get
-            {
-                return Orders.Sum(q => q.Quantity * q.Product.Price);
-            }
-        }
+        public decimal Total { get; set; }
 
         public Guid Signature { get; set; }
 
         public Cart()
         {
             Orders = new List<Order>();
+           
         }
 
     }
