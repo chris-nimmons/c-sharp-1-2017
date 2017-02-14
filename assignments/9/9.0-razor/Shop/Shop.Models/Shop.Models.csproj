@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="AuthenticationContext.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Customer.cs" />
@@ -71,6 +73,10 @@
     <Compile Include="Migrations\201702112116383_PriceChangeMigration.cs" />
     <Compile Include="Migrations\201702112116383_PriceChangeMigration.Designer.cs">
       <DependentUpon>201702112116383_PriceChangeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702132056213_AccountMigration.cs" />
+    <Compile Include="Migrations\201702132056213_AccountMigration.Designer.cs">
+      <DependentUpon>201702132056213_AccountMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702112116383_PriceChangeMigration.resx">
       <DependentUpon>201702112116383_PriceChangeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702132056213_AccountMigration.resx">
+      <DependentUpon>201702132056213_AccountMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

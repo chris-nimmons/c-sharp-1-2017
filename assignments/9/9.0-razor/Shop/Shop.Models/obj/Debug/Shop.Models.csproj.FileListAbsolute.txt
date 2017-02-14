@@ -26,3 +26,4 @@ C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\8\8.0-shop-checkout\Shop\Sho
 C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\8\8.0-shop-checkout\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.AddingTotalToTransactionMigration.resources
 C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\8\8.0-shop-checkout\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.TransactionTotalMigration.resources
 C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\8\8.0-shop-checkout\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.PriceChangeMigration.resources
+C:\Users\Spencer\Desktop\c-sharp-1-2017\assignments\8\8.0-shop-checkout\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.AccountMigration.resources
