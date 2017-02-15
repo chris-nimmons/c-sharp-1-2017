@@ -3,7 +3,7 @@ namespace Shop.Models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initialization : DbMigration
+    public partial class IntilizationMigration : DbMigration
     {
         public override void Up()
         {
@@ -55,6 +55,17 @@ namespace Shop.Models.Migrations
                 .Index(t => t.Customer_Id);
             
             CreateTable(
+                "dbo.CustomerAccounts",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Email = c.String(),
+                        Password = c.String(),
+                        Signature = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Customers",
                 c => new
                     {
@@ -93,6 +104,7 @@ namespace Shop.Models.Migrations
             DropIndex("dbo.Orders", new[] { "Product_Id" });
             DropTable("dbo.Transactions");
             DropTable("dbo.Customers");
+            DropTable("dbo.CustomerAccounts");
             DropTable("dbo.Products");
             DropTable("dbo.Orders");
             DropTable("dbo.Carts");

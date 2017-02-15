@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Shop.Models.Models;
+using Shop.Models;
 using Shop.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -13,11 +13,11 @@ namespace Shop.Web.Controllers
 {
     public class CustomerAccountsController : Controller
     {
-        public AuthenticationContext Context { get; set; }
+        public ShopContext Context { get; set; }
 
         public CustomerAccountsController()
         {
-            Context = new AuthenticationContext();
+            Context = new ShopContext();
         }
 
         public ActionResult Login(LoginRequest model)
@@ -52,6 +52,14 @@ namespace Shop.Web.Controllers
                 return Redirect("~/home");
             }
         }
+        public ActionResult LoginAccount()
+        {
+            return View();
+        }
+        public ActionResult RegisterAccount()
+        {
+            return View();
+        }
 
         public ActionResult Register(RegisterRequest model)
         {
@@ -66,7 +74,7 @@ namespace Shop.Web.Controllers
 
             Context.CustomerAccounts.Add(customeraccount);
             Context.SaveChanges();
-            return View();
+            return Redirect("~/home");
         }
 
 

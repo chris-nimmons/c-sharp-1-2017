@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Shop.Models;
-using Shop.Models.Models;
 using Shop.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -38,7 +37,7 @@ namespace Shop.Web
             var cookieCustomer = HttpContext.Current.Request.Cookies["autentication"];
 
 
-            var authenticationcontext = new AuthenticationContext();
+            var ShopContext = new ShopContext();
 
             if (cookieCustomer == null)
             {
@@ -49,12 +48,13 @@ namespace Shop.Web
             else
             {
                 var signature = Guid.Parse(cookieCustomer.Value);
-                var custormeraccount = authenticationcontext.CustomerAccounts.FirstOrDefault(q => q.Signature == signature);
+                var custormeraccount = ShopContext.CustomerAccounts.FirstOrDefault(q => q.Signature == signature);
                 var input = cookieCustomer.Value;
 
                 UserModel user = JsonConvert.DeserializeObject<UserModel>(input);
 
                 HttpContext.Current.User = new GenericPrincipal(new GenericIdentity(user.Name), user.Roles.ToArray());
+
 
             }
 

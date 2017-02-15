@@ -49,11 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201702142004372_Initialization.cs" />
-    <Compile Include="Migrations\201702142004372_Initialization.Designer.cs">
-      <DependentUpon>201702142004372_Initialization.cs</DependentUpon>
+    <Compile Include="Migrations\201702151821413_IntilizationMigration.cs" />
+    <Compile Include="Migrations\201702151821413_IntilizationMigration.Designer.cs">
+      <DependentUpon>201702151821413_IntilizationMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\AuthenticationContext.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -71,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702142004372_Initialization.resx">
-      <DependentUpon>201702142004372_Initialization.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702151821413_IntilizationMigration.resx">
+      <DependentUpon>201702151821413_IntilizationMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
