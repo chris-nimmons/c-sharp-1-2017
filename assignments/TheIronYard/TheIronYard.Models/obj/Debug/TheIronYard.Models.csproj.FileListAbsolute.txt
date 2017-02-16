@@ -1,0 +1,13 @@
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\bin\Debug\TheIronYard.Models.dll.config
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\bin\Debug\TheIronYard.Models.dll
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\bin\Debug\TheIronYard.Models.pdb
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\bin\Debug\EntityFramework.dll
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\bin\Debug\EntityFramework.xml
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\obj\Debug\TheIronYard.Models.csprojResolveAssemblyReference.cache
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\obj\Debug\TheIronYard.Models.dll
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\obj\Debug\TheIronYard.Models.pdb
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\obj\Debug\TheIronYard.Models.Migrations.Initialization.resources
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\obj\Debug\TheIronYard.Models.csproj.GenerateResource.Cache
+C:\Users\marcondag\Documents\TIY\the-iron-yard\misc\TheIronYard.Models\TheIronYard.Models\obj\Debug\TheIronYard.Models.Migrations.Deparmentalization.resources

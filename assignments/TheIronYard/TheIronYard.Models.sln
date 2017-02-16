@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheIronYard.Models", "TheIronYard.Models\TheIronYard.Models.csproj", "{3D6DD083-2BAD-45A3-9C7B-03A2BBCE1BCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheIronYard.Context", "TheIronYard.Console\TheIronYard.Context.csproj", "{A67F9FC2-1EBB-4676-A2D8-694980087BEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D6DD083-2BAD-45A3-9C7B-03A2BBCE1BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6DD083-2BAD-45A3-9C7B-03A2BBCE1BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6DD083-2BAD-45A3-9C7B-03A2BBCE1BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6DD083-2BAD-45A3-9C7B-03A2BBCE1BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A67F9FC2-1EBB-4676-A2D8-694980087BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A67F9FC2-1EBB-4676-A2D8-694980087BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A67F9FC2-1EBB-4676-A2D8-694980087BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A67F9FC2-1EBB-4676-A2D8-694980087BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
