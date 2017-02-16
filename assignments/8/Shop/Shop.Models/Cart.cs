@@ -1,18 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Shop.Models
 {
-    class Cart
+    public class Cart  
     {
         public int Id { get; set; }
-        public List<Product> Products { get; set; }
+        public virtual List<Order> Orders { get; set; }
+
+        public decimal Total
+        {
+            get
+            {
+                return Orders.Sum(q => q.Quantity * q.Product.Price);
+            }
+        }
+
+        public Guid Signature { get; set; }
+
         public Cart()
         {
-            Products = new List<Product>();
+            Orders = new List<Order>();
         }
-    }
+    }   
 }

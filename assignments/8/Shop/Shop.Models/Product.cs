@@ -14,6 +14,8 @@ namespace Shop.Models
         public string SKU { get; set; }
         public float Weight { get; set; }
         public int Quantity { get; set; }
+        public string Image { get; set; }
+       
 
     }
 }
