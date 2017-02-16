@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace PieceMovers
 {
-
-
-    public class Piece
+    public abstract class Piece : IRenderable
     {
+        public bool Visible { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
-        public char letter { get; set; }
- 
+        public char Letter { get; set; }
+        public abstract List<Move> Moves();
+
+        public void Render()
+        {
+            Console.SetCursorPosition(X, Y);
+            Console.Write(Letter);
+        }
     }
 }
+
+

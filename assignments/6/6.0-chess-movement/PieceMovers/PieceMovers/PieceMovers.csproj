@@ -43,17 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bishop.cs" />
-    <Compile Include="Castle.cs" />
+    <Compile Include="PieceModels\Bishop.cs" />
+    <Compile Include="PieceModels\Castle.cs" />
     <Compile Include="Cursor.cs" />
-    <Compile Include="King.cs" />
-    <Compile Include="Knight.cs" />
+    <Compile Include="Interfaces\IRenderable.cs" />
+    <Compile Include="PieceModels\King.cs" />
+    <Compile Include="PieceModels\Knight.cs" />
     <Compile Include="Move.cs" />
-    <Compile Include="Pawn.cs" />
+    <Compile Include="PieceModels\Pawn.cs" />
     <Compile Include="Piece.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="..\..\..\..\..\Desktop\c-sharp-1-2017\assignments\6\6.0-chess-movement\PieceMovers\PieceMovers\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queen.cs" />
+    <Compile Include="PieceModels\Queen.cs" />
+    <Compile Include="Renderer.cs" />
+    <Compile Include="WelcomeScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
