@@ -11,11 +11,17 @@ namespace CoreShop.Controllers
     public class ProductsController : Controller
     {
         private ShopContext Context { get; set; }
-
+        public List<Product> Products { get; set; }
 
         public ProductsController()
         {
             Context = new ShopContext();
+        }
+
+        [HttpGet]
+        public List<Product> Get()
+        {
+            return Context.Products.ToList();
         }
 
 
