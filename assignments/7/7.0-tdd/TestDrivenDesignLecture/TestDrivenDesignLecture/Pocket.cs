@@ -10,6 +10,9 @@ namespace TestDrivenDesignLecture
     {
         private List<Content> Contents { get; set; }
         public Volume Volume { get; set; }
+        public bool Color { get; set; }
+        public Condition Condition { get; set; }
+        public float Weight { get; set; }
 
         public Pocket(float length, float width, float height)
         {

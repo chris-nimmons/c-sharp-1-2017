@@ -8,7 +8,7 @@ namespace TestDrivenDesignLecture
 {
     public class Bag
     {
-        public string Color { get; set; }
+        public bool Color { get; set; }
         public Volume Volume { get; set; }
         public float Weight { get; set; }
         public List<Pocket> Pockets { get; set; }
@@ -38,9 +38,10 @@ namespace TestDrivenDesignLecture
             
         }
 
-        public void Remove(Content content)
+        public bool Remove(Content content)
         {
-            Contents.Remove(content);
+            bool output = Contents.Remove(content);
+            return output;
         }
 
         public bool Check(Content content)
