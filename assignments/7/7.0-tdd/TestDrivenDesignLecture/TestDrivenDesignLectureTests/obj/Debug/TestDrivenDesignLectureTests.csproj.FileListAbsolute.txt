@@ -1,0 +1,8 @@
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\7\7.0-tdd\TestDrivenDesignLecture\TestDrivenDesignLectureTests\bin\Debug\TestDrivenDesignLectureTests.dll
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\7\7.0-tdd\TestDrivenDesignLecture\TestDrivenDesignLectureTests\bin\Debug\TestDrivenDesignLectureTests.pdb
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\7\7.0-tdd\TestDrivenDesignLecture\TestDrivenDesignLectureTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\7\7.0-tdd\TestDrivenDesignLecture\TestDrivenDesignLectureTests\bin\Debug\TestDrivenDesignLecture.dll
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\7\7.0-tdd\TestDrivenDesignLecture\TestDrivenDesignLectureTests\bin\Debug\TestDrivenDesignLecture.pdb
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\7\7.0-tdd\TestDrivenDesignLecture\TestDrivenDesignLectureTests\obj\Debug\TestDrivenDesignLectureTests.csprojResolveAssemblyReference.cache
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\7\7.0-tdd\TestDrivenDesignLecture\TestDrivenDesignLectureTests\obj\Debug\TestDrivenDesignLectureTests.dll
+C:\Users\Mackenzie Jo\Desktop\c-sharp-1-2017\assignments\7\7.0-tdd\TestDrivenDesignLecture\TestDrivenDesignLectureTests\obj\Debug\TestDrivenDesignLectureTests.pdb
