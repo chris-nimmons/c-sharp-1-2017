@@ -1,0 +1,19 @@
+Create a Shop web application.  
+
+Features should include:
+
+Show all products
+Show single product
+Add products
+Edit products
+Remove products
+
+Show cart
+Add product to cart
+Remove product from cart
+Clear all products from cart
+
+Checkout 
+Set transactions 
+Show transactions
+Show single transaction
