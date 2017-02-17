@@ -23,3 +23,15 @@ C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Deb
 C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.reporting.resources
 C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.reporting2.resources
 C:\Users\Thinkpad\Documents\Visual Studio 2015\Projects\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.customerstotransactions1.resources
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\bin\Debug\Shop.Models.dll.config
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\bin\Debug\Shop.Models.dll
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\bin\Debug\Shop.Models.pdb
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\bin\Debug\EntityFramework.dll
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\bin\Debug\EntityFramework.xml
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\obj\Debug\Shop.Models.csprojResolveAssemblyReference.cache
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\obj\Debug\Shop.Models.dll
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\obj\Debug\Shop.Models.pdb
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\obj\Debug\Shop.Models.Migrations.Buildfix.resources
+C:\Users\Thinkpad\Desktop\c-sharp-1-2017\assignments\9\9.0-razor\Shop\Shop.Models\obj\Debug\Shop.Models.csproj.GenerateResource.Cache

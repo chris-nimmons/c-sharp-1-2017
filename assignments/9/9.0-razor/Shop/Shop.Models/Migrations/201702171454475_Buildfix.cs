@@ -3,7 +3,7 @@ namespace Shop.Models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstFix : DbMigration
+    public partial class Buildfix : DbMigration
     {
         public override void Up()
         {
@@ -12,6 +12,7 @@ namespace Shop.Models.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Customerid = c.Int(nullable: false),
                         Signature = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -54,6 +55,7 @@ namespace Shop.Models.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Signature = c.Guid(nullable: false),
                         Name = c.String(),
                         Email = c.String(),
                         Address_1 = c.String(),

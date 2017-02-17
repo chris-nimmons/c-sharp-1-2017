@@ -50,61 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cart.cs" />
-    <Compile Include="Migrations\201702111920318_FirstFix.cs" />
-    <Compile Include="Migrations\201702111920318_FirstFix.Designer.cs">
-      <DependentUpon>201702111920318_FirstFix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702112034460_second2.cs" />
-    <Compile Include="Migrations\201702112034460_second2.Designer.cs">
-      <DependentUpon>201702112034460_second2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702112104066_second7.cs" />
-    <Compile Include="Migrations\201702112104066_second7.Designer.cs">
-      <DependentUpon>201702112104066_second7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702112107056_second8.cs" />
-    <Compile Include="Migrations\201702112107056_second8.Designer.cs">
-      <DependentUpon>201702112107056_second8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702112109124_second9.cs" />
-    <Compile Include="Migrations\201702112109124_second9.Designer.cs">
-      <DependentUpon>201702112109124_second9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702112111471_second4.cs" />
-    <Compile Include="Migrations\201702112111471_second4.Designer.cs">
-      <DependentUpon>201702112111471_second4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702112115383_third.cs" />
-    <Compile Include="Migrations\201702112115383_third.Designer.cs">
-      <DependentUpon>201702112115383_third.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702112133117_transactionfix.cs" />
-    <Compile Include="Migrations\201702112133117_transactionfix.Designer.cs">
-      <DependentUpon>201702112133117_transactionfix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702121750537_total.cs" />
-    <Compile Include="Migrations\201702121750537_total.Designer.cs">
-      <DependentUpon>201702121750537_total.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702121824083_cusromers.cs" />
-    <Compile Include="Migrations\201702121824083_cusromers.Designer.cs">
-      <DependentUpon>201702121824083_cusromers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702121955200_customerstotransactions.cs" />
-    <Compile Include="Migrations\201702121955200_customerstotransactions.Designer.cs">
-      <DependentUpon>201702121955200_customerstotransactions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702122010503_reporting.cs" />
-    <Compile Include="Migrations\201702122010503_reporting.Designer.cs">
-      <DependentUpon>201702122010503_reporting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702122035485_reporting2.cs" />
-    <Compile Include="Migrations\201702122035485_reporting2.Designer.cs">
-      <DependentUpon>201702122035485_reporting2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702122109023_customerstotransactions1.cs" />
-    <Compile Include="Migrations\201702122109023_customerstotransactions1.Designer.cs">
-      <DependentUpon>201702122109023_customerstotransactions1.cs</DependentUpon>
+    <Compile Include="Migrations\201702171454475_Buildfix.cs" />
+    <Compile Include="Migrations\201702171454475_Buildfix.Designer.cs">
+      <DependentUpon>201702171454475_Buildfix.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="Transaction.cs" />
@@ -121,47 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702111920318_FirstFix.resx">
-      <DependentUpon>201702111920318_FirstFix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702112034460_second2.resx">
-      <DependentUpon>201702112034460_second2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702112104066_second7.resx">
-      <DependentUpon>201702112104066_second7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702112107056_second8.resx">
-      <DependentUpon>201702112107056_second8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702112109124_second9.resx">
-      <DependentUpon>201702112109124_second9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702112111471_second4.resx">
-      <DependentUpon>201702112111471_second4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702112115383_third.resx">
-      <DependentUpon>201702112115383_third.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702112133117_transactionfix.resx">
-      <DependentUpon>201702112133117_transactionfix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702121750537_total.resx">
-      <DependentUpon>201702121750537_total.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702121824083_cusromers.resx">
-      <DependentUpon>201702121824083_cusromers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702121955200_customerstotransactions.resx">
-      <DependentUpon>201702121955200_customerstotransactions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702122010503_reporting.resx">
-      <DependentUpon>201702122010503_reporting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702122035485_reporting2.resx">
-      <DependentUpon>201702122035485_reporting2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702122109023_customerstotransactions1.resx">
-      <DependentUpon>201702122109023_customerstotransactions1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702171454475_Buildfix.resx">
+      <DependentUpon>201702171454475_Buildfix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

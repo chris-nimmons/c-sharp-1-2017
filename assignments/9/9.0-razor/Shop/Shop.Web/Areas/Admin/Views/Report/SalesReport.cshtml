@@ -1,0 +1,21 @@
+﻿@using Shop.Models;
+@model List<Transaction>
+@{
+    ViewBag.Title = "SalesReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var transactions in Model)
+        {
+
+            <div class="col-lg-6">
+                <p>TransactionTime: @transactions.TimeStamp</p>
+                <p>Total: @transactions.TransactionTotal</p>
+                <p> --------------------------------------- </p>
+
+            </div>
+        }
+    </div>
+</div>
