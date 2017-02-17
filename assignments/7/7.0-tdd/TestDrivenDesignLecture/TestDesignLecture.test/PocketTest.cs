@@ -5,7 +5,7 @@ using TestDrivenDesignLecture;
 namespace TestDesignLecture.test
 {
     [TestClass]
-    public class UnitTest4
+    public class PocketTest
     {
         [TestMethod]
         public void Content_Should_Add_To_Bag()
