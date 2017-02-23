@@ -8,21 +8,24 @@ using System.Data.Entity;
 
 namespace Shop.Models
 {
-    public class Transaction
+    public class Transaction 
     {
-        public string Product { get; set; }
         public int Id { get; set; }
-        public virtual List<Order> Orders { get; set; }
+        public virtual List<Order> Bought { get; set; }
 
         public decimal Total
         {
             get
             {
-                return Orders.Sum(q => q.Quantity * q.Product.Price);
+                return Bought.Sum(q => q.Quantity * q.Product.Price);
             }
         }
 
         public Guid Signature { get; set; }
 
+        public Transaction()
+        {
+            Bought = new List<Order>();
+        }
     }
 }

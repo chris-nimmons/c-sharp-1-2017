@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201702132034227_NuMigration.Designer.cs">
       <DependentUpon>201702132034227_NuMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702142144040_NewestMigrations.cs" />
+    <Compile Include="Migrations\201702142144040_NewestMigrations.Designer.cs">
+      <DependentUpon>201702142144040_NewestMigrations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
@@ -81,9 +85,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model.html" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\201702091925547_InitialMigration.resx">
       <DependentUpon>201702091925547_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702132034227_NuMigration.resx">
       <DependentUpon>201702132034227_NuMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702142144040_NewestMigrations.resx">
+      <DependentUpon>201702142144040_NewestMigrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

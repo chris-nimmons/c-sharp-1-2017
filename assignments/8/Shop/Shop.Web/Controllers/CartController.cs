@@ -142,7 +142,7 @@ namespace Shop.Web.Models
 
 
 
-            return RedirectToAction("transaction");
+            return RedirectToAction("checkout-do");
 
         }
 
@@ -154,9 +154,11 @@ namespace Shop.Web.Models
 
 
         [Route("transactions")]
-        public ActionResult Transaction()
+        public ActionResult Transactions()
         {
-            return View();
+            var transactions = Context.Transactions.ToList();
+
+            return View(transactions);
         }
     }
 }

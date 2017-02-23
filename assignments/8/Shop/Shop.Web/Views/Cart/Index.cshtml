@@ -5,7 +5,7 @@
 
 <div class="row">
     <a href="~/cart/clear" class="btn btn-danger pull-right">Clear</a>
-
+    <a href="~/cart/transactions" class="btn btn-danger pull-left">Transactions</a>
     <table class="table">
         @{ decimal subTotal = 0; }
         @foreach (var order in Model.Orders)
@@ -34,6 +34,6 @@
             <td> @Model.Total</td>
         </tr>
     </table>
-    <a href="~/cart/Checkout" class=" btn btn-primary">Checkout</a>
+    <a href="~/cart/Checkout" class="btn btn-primary">Checkout</a>
 
 </div>

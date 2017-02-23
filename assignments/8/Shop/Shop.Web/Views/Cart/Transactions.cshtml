@@ -1,33 +1,22 @@
-﻿@model Cart
+﻿@model List<Transaction>
 @{
     ViewBag.Title = "Transactions";
 }
 
 <div class="row">
-    <a href="~/cart/clear" class="btn btn-danger pull-left">Transactions</a>
+    <a href="~/cart/transactions" class="btn btn-danger pull-left">Transactions</a>
 
     <table class="table">
-        @{ decimal subTotal = 0; }
-        @foreach (var order in Model.Orders)
-        {
-            subTotal += order.Quantity * order.Product.Price;
-            <tr>
-                <td>
-                    @order.Product.Name
-                </td>
-                <td>
-                    @order.Quantity * @order.Product.Price
-                </td>
-                <td>
-                    @subTotal
-                </td>
-            </tr>
-        }
+
+
+
+
         <tr>
             <td><strong>Total</strong></td>
-            <td colspan=" 3"></td>
-            <td> @Model.Total</td>
+            <td colspan="3"></td>
+            <td> @Model.Count</td>
         </tr>
     </table>
+    <a href="~/cart/Checkout" class="btn btn-primary">Checkout</a>
 
 </div>
