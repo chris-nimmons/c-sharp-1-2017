@@ -20,7 +20,7 @@ namespace Shop.Models
         {
             get
             {
-                return Bought.Sum(q => q.Quantity * q.Product.Price);
+                return Bought.Sum(q => q.Quantity * q.Price);
             }
         }
 
