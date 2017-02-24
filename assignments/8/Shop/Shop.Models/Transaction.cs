@@ -11,6 +11,9 @@ namespace Shop.Models
     public class Transaction 
     {
         public int Id { get; set; }
+        public decimal Quantity { get; set; }
+        public string Product { get; set; }
+        public decimal Price { get; set; }
         public virtual List<Order> Bought { get; set; }
 
         public decimal Total

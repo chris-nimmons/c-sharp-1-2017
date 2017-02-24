@@ -1,4 +1,5 @@
-﻿using Shop.Web.Models;
+﻿using Shop.Models;
+using Shop.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace Shop.Web.Controllers
         public TransactionsController()
         {
             Context = new ShopContext();
+        }
+
+        public ActionResult Index()
+        {
+            var products = Context.Products.ToList();
+            return View(products);
         }
 
     }

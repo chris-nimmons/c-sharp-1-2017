@@ -7,15 +7,23 @@
     <a href="~/cart/transactions" class="btn btn-danger pull-left">Transactions</a>
 
     <table class="table">
+        @{ decimal Total = 0; }
+        @foreach (var transaction in Model)
+        {
+            Total += transaction.Quantity * transaction.Price;
+            <tr>
+                <td>
+                    @transaction.Product
+                </td>
+                <td>
+                    @transaction.Quantity * @transaction.Price
+                </td>
+                <td><strong>Total</strong></td>
+                <td colspan="3"></td>
+                <td> @transaction.Total</td>
+            </tr>
+        }
 
-
-
-
-        <tr>
-            <td><strong>Total</strong></td>
-            <td colspan="3"></td>
-            <td> @Model.Count</td>
-        </tr>
     </table>
     <a href="~/cart/Checkout" class="btn btn-primary">Checkout</a>
 
