@@ -19,19 +19,32 @@ namespace ChessMovement
         {
             var moves = new List<IRenderable>();
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 8; i++)
             {
-                moves.Add(new Move() { X = X + i, Y = Y});
-                moves.Add(new Move() { X = X, Y = Y + i });
+                var move = new Move() { X = X + i, Y = Y };
+                if(IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
 
-                //if (X < 0 = 0)
-                //{
+                move = new Move() { X = X, Y = Y + i };
+                if(IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
 
-                //}
-                //if( Y < 0 = 0)
-                //{
+                move = new Move() { X = X - i, Y = Y };
+                if(IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
 
-                // }
+                move = new Move() { X = X, Y = Y - i };
+                if(IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
+
             
            }
             return moves;

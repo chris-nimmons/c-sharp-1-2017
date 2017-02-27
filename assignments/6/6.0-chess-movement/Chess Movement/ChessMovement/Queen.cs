@@ -19,23 +19,58 @@ namespace ChessMovement
         {
             var moves = new List<IRenderable>();
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 8; i++)
             {
-                if (X - i >= 0)
-                {
-                    moves.Add(new Move() { X = X - i, Y = Y + i });
-                    moves.Add(new Move() { X = X - 1, Y = Y });
-                    moves.Add(new Move() { X = X, Y = Y + 1 });
-                    moves.Add(new Move() { X = X + i, Y = Y + i });
+               
+                    var move = new Move() { X = X - i, Y = Y + i };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
 
-                }
-                if (Y - 1 >= 0)
-                {
-                    moves.Add(new Move() { X = X + i, Y = Y - i });
-                    moves.Add(new Move() { X = X - i, Y = Y - i });
-                    moves.Add(new Move() { X = X + i, Y = Y });
-                    moves.Add(new Move() { X = X, Y = Y - 1 });
-                }
+                    move = new Move() { X = X - i, Y = Y };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
+
+                    move = new Move() { X = X, Y = Y + i };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
+
+                    move = new Move() { X = X + i, Y = Y + i };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
+               
+                    move = new Move() { X = X + i, Y = Y - i };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
+
+                    move = new Move() { X = X - i, Y = Y - i };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
+
+                    move = new Move() { X = X + i, Y = Y };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
+
+                    move = new Move() { X = X, Y = Y - i };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
+
+                
            
             }
             return moves;

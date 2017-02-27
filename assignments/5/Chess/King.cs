@@ -11,19 +11,22 @@ namespace Chess
         public int X { get; set; }
         public int Y { get; set; }
         public int Length { get; set; }
-        public int Width { get; set; }
+        public void GetMoves()
+        {
+
+        }
         public void Render()
         {
-            for (int row = X; row < Length + Y; row++)
+            for (int col = X; col < Length + Y; col++)
             {
-                for (int col = Y; col < Width + X; col++)
+                for (int row = Y; row < Length + X; row++)
                 {
-                    Console.SetCursorPosition(row, col);
+                    Console.SetCursorPosition(col, row);
                     Console.Write("x");
-                    Console.SetCursorPosition(1, 1);
-                    Console.Write("o");
-                    Console.SetCursorPosition(0, 4);
-                    Console.WriteLine("King");
+                    //Console.SetCursorPosition(1, 1);
+                    //Console.Write("o");
+                    //Console.SetCursorPosition(0, 4);
+                    //Console.WriteLine("King");
                 }
 
             }

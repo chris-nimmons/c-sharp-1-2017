@@ -41,7 +41,7 @@ namespace TestDrivenDesignLecture
         {
 
              Contents.Remove(content);
-            return true;
+             return true;
         }
 
         public bool Check(Content content)

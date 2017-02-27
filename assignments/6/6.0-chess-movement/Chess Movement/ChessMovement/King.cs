@@ -21,17 +21,29 @@ namespace ChessMovement
             {
                 for (int col = 0; col < 2; col++)
                 {
-                    if (X - row >= 0)
+                    var move = new Move() { X = X - row, Y = Y + col };
+                    if (IsOnBoard(move))
                     {
-                    moves.Add(new Move() { X = X - row, Y = Y + col });
-                    moves.Add(new Move() { X = X + row, Y = Y + col });
-                    }
-                    if (Y - col >= 0)
-                    {
-                    moves.Add(new Move() { X = X + row, Y = Y - col });
-                    moves.Add(new Move() { X = X - row, Y = Y - col });
+                        moves.Add(move);
                     }
 
+                    move = new Move() { X = X + row, Y = Y + col };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
+
+                    move = new Move() { X = X + row, Y = Y - col };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
+
+                    move = new Move() { X = X - row, Y = Y - col };
+                    if(IsOnBoard(move))
+                    {
+                        moves.Add(move);
+                    }
                 }
             }
             return moves;

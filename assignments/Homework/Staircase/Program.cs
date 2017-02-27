@@ -16,9 +16,9 @@ namespace Staircase
             {
                 int spaces = cols - (row + 1);
 
-                for (int col = 0; col < cols; col++)
+               for (int col = 0; col < cols; col++)
                 {
-                    if (col >= spaces)
+                  if (col >= spaces)
                     {
                         Console.Write("x");
                     }

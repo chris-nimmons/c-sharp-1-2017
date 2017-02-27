@@ -21,7 +21,12 @@ namespace ChessMovement
 
             for (int i = 0; i < 2; i++)
             {
-                moves.Add(new Move() { X = X, Y = Y + i });
+                var move = new Move() { X = X, Y = Y + i };
+                if(IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
+
             }
             return moves;
         }

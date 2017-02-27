@@ -18,9 +18,37 @@ namespace Rendering
         public void Start()
         {
             Random random = new Random();
+            List<IRenderable> renderables = new List<IRenderable>();
+
+            Room room = new Room();
+            Room room1 = new Room();
+            Room room2 = new Room();
+            Room room3 = new Room();
+
+            room.X = 1;
+            room.Y = 1;
+            room.Width = random.Next(10, 15);
+            room.Length = random.Next(10, 15);
+            room1.X = 20;
+            room1.Y = 1;
+            room1.Width = random.Next(10, 15);
+            room1.Length = random.Next(10, 15);
+            room2.X = 1;
+            room2.Y = 20;
+            room2.Width = random.Next(10, 15);
+            room2.Length = random.Next(10, 15);
+            room3.X = 20;
+            room3.Y = 20;
+            room3.Width = random.Next(10, 15);
+            room3.Length = random.Next(10, 15);
+
+            renderables.Add(room);
+            renderables.Add(room1);
+            renderables.Add(room2);
+            renderables.Add(room3);
 
             //setting a new variable
-            List<IRenderable> renderables = new List<IRenderable>();
+
             Table table = new Table();
             Table table1 = new Table();
             Table table2 = new Table();
@@ -60,38 +88,12 @@ namespace Rendering
             renderables.Add(chair3);
 
 
-            List<ISizeable> sizeables = new List<ISizeable>();
-            Room room = new Room();
-            Room room1 = new Room();
-            Room room2 = new Room();
-            Room room3 = new Room();
-
-            room.X = 1;
-            room.Y = 1;
-            room.Width = random.Next(10, 15);
-            room.Length = random.Next(10, 15);
-            room1.X = 20;
-            room1.Y = 1;
-            room1.Width = random.Next(10, 15);
-            room1.Length = random.Next(10, 15);
-            room2.X = 1;
-            room2.Y = 20;
-            room2.Width = random.Next(10, 15);
-            room2.Length = random.Next(10, 15);
-            room3.X = 20;
-            room3.Y = 20;
-            room3.Width = random.Next(10, 15);
-            room3.Length = random.Next(10, 15);
-
-            sizeables.Add(room);
-            sizeables.Add(room1);
-            sizeables.Add(room2);
-            sizeables.Add(room3);
+            
 
             Renderer renderer = new Renderer();
             //call the renderer method
             renderer.Render(renderables);
-            renderer.Render(sizeables);
+
         }
     
     }
@@ -100,8 +102,9 @@ namespace Rendering
     {
         //properties need to be capitalized
         public int X { get; set; }
-
         public int Y { get; set; }
+        public int Width { get; set; }
+        public int Length { get; set; }
 
         //Render method goes here and this is it
         public void Render()
@@ -110,6 +113,7 @@ namespace Rendering
             Console.SetCursorPosition(X, Y);
             Console.Write("[]");
             Console.ReadKey();
+
         }
 
     }
@@ -120,6 +124,8 @@ namespace Rendering
     {
         public int X { get; set; }
         public int Y { get; set; }
+        public int Width { get; set; }
+        public int Length { get; set; }
 
         public void Render()
         {
@@ -129,7 +135,7 @@ namespace Rendering
         }
     }
 
-    public class Room : ISizeable
+    public class Room : IRenderable
     {
         public int Width { get; set; }
         public int Length { get; set; }
@@ -165,27 +171,16 @@ namespace Rendering
             foreach (IRenderable renderable in renderables)
             {
                 renderable.Render();
-            }
-        }
-        public void Render(List<ISizeable> sizeables)
-        {
-            foreach (ISizeable sizeable in sizeables)
-             {
-                 sizeable.Render();
                 Console.WriteLine();
-
             }
         }
+
     }
     public interface IRenderable
-    {
-        void Render();
-    }
-
-    public interface ISizeable
     {
         int Width { get; set; }
         int Length { get; set; }
         void Render();
     }
+
 }

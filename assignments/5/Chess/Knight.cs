@@ -11,7 +11,10 @@ namespace Chess
         public int X { get; set; }
         public int Y { get; set; }
         public int Length { get; set; }
-        public int Width { get; set; }
+        public void GetMoves()
+        {
+
+        }
         public void Render()
         {
             for (int i = 0; i < Length; i++)
@@ -32,10 +35,10 @@ namespace Chess
                 Console.Write("x");
                 Console.SetCursorPosition(0, 1);
                 Console.Write("x");
-                Console.SetCursorPosition(2, 2);
-                Console.Write("o");
-                Console.SetCursorPosition(0, 6);
-                Console.WriteLine("Knight");
+                //Console.SetCursorPosition(2, 2);
+                //Console.Write("o");
+                //Console.SetCursorPosition(0, 6);
+                //Console.WriteLine("Knight");
             }
             Console.ReadLine();
             Console.Clear();

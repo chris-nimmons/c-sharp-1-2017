@@ -83,7 +83,7 @@ namespace ChessMovement
                                 if (highlighted == selection)
                                 {
                                     selection.Visible = true;
-
+                                    moves.Clear();
                                     //deselecting
                                     selection = null;
                                 }
@@ -102,6 +102,7 @@ namespace ChessMovement
                                 selection.Visible = false;
                                
                                 moves = selection.GetMoves();
+ 
                                 
                             }
 
@@ -126,7 +127,10 @@ namespace ChessMovement
                                 selection = null;
                                 break;
                                     }
-
+                                    else
+                                    {
+                                        //selection.Visible = false;
+                                    }
                                 }
                                 //moving
 
@@ -147,13 +151,13 @@ namespace ChessMovement
                 {
                     cursor.Y = 0;
                 }
-                if (cursor.X >= 8)
+                if (cursor.X >= 7)
                 {
-                    cursor.X = 8;
+                    cursor.X = 7;
                 }
-                if (cursor.Y >= 8)
+                if (cursor.Y >= 7)
                 {
-                    cursor.Y = 8;
+                    cursor.Y = 7;
                 }
 
 

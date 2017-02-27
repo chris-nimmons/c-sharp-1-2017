@@ -21,14 +21,46 @@ namespace ChessMovement
 
             for (int i = 0; i < 7; i++)
             {
-                moves.Add(new Move() { X = X + 1, Y = Y });
-                moves.Add(new Move() { X = X + 3, Y = Y });
-                moves.Add(new Move() { X = X + 4, Y = Y + 1 });
-                moves.Add(new Move() { X = X + 4, Y = Y + 3 });
-                moves.Add(new Move() { X = X + 3, Y = Y + 4 });
-                moves.Add(new Move() { X = X + 1, Y = Y + 4 });
-                moves.Add(new Move() { X = X, Y = Y + 3 });
-                moves.Add(new Move() { X = X, Y = Y + 1 });
+                var move = new Move() { X = X + 1, Y = Y + 2 };
+                if (IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
+                move = new Move() { X = X + 2, Y = Y + 1 };
+                if (IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
+                move = new Move() { X = X + 2, Y = Y - 1 };
+                if (IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
+                move = new Move() { X = X + 1, Y = Y - 2 };
+                if (IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
+                move = new Move() { X = X - 1, Y = Y + 2 };
+                if (IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
+                move = new Move() { X = X - 2, Y = Y + 1 };
+                if (IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
+                move = new Move() { X = X - 2, Y = Y - 1 };
+                if (IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
+                move = new Move() { X = X - 1, Y = Y - 2 };
+                if (IsOnBoard(move))
+                {
+                    moves.Add(move);
+                }
             }
             return moves;
         }
