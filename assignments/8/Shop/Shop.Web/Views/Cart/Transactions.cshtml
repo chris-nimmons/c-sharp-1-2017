@@ -7,14 +7,10 @@
     <a href="~/cart/transactions" class="btn btn-danger pull-left">Transactions</a>
 
     <table class="table">
-        @{ decimal subTotal = 0; }
         @foreach (var transaction in Model)
         {
-            subTotal += transaction.Quantity * transaction.Price;
             <tr>
                 <td>@transaction.Signature</td>
-                <td>@transaction.Quantity * @transaction.Price</td>
-                <td>@subTotal</td>
                 <td><strong>Total</strong></td>
                 <td colspan="3"></td>
                 <td> @transaction.Total</td>

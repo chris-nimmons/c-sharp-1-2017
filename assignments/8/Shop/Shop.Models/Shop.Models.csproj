@@ -51,29 +51,9 @@
   <ItemGroup>
     <Compile Include="Cart.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="Migrations\201702091925547_InitialMigration.cs" />
-    <Compile Include="Migrations\201702091925547_InitialMigration.Designer.cs">
-      <DependentUpon>201702091925547_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702101500509_NewMigration.cs" />
-    <Compile Include="Migrations\201702101500509_NewMigration.Designer.cs">
-      <DependentUpon>201702101500509_NewMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702122311308_NewMigration1.cs" />
-    <Compile Include="Migrations\201702122311308_NewMigration1.Designer.cs">
-      <DependentUpon>201702122311308_NewMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702132034227_NuMigration.cs" />
-    <Compile Include="Migrations\201702132034227_NuMigration.Designer.cs">
-      <DependentUpon>201702132034227_NuMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702142144040_NewestMigrations.cs" />
-    <Compile Include="Migrations\201702142144040_NewestMigrations.Designer.cs">
-      <DependentUpon>201702142144040_NewestMigrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702241553453_InitialMigration1.cs" />
-    <Compile Include="Migrations\201702241553453_InitialMigration1.Designer.cs">
-      <DependentUpon>201702241553453_InitialMigration1.cs</DependentUpon>
+    <Compile Include="Migrations\201702271654134_NewMigration.cs" />
+    <Compile Include="Migrations\201702271654134_NewMigration.Designer.cs">
+      <DependentUpon>201702271654134_NewMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
@@ -89,23 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702091925547_InitialMigration.resx">
-      <DependentUpon>201702091925547_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702101500509_NewMigration.resx">
-      <DependentUpon>201702101500509_NewMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702122311308_NewMigration1.resx">
-      <DependentUpon>201702122311308_NewMigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702132034227_NuMigration.resx">
-      <DependentUpon>201702132034227_NuMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702142144040_NewestMigrations.resx">
-      <DependentUpon>201702142144040_NewestMigrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702241553453_InitialMigration1.resx">
-      <DependentUpon>201702241553453_InitialMigration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702271654134_NewMigration.resx">
+      <DependentUpon>201702271654134_NewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
