@@ -141,15 +141,15 @@ namespace Shop.Web.Models
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
 
-            var transaction = cart.Orders.FirstOrDefault(q => q.Product.Id == product.Id);
+
+            var transaction = new Transaction() { Signature = Guid.NewGuid() };
 
             foreach (var order in cart.Orders)
             {
-
-                transaction = new Transaction() {Product = product, Quantity = 0 };
-                order.Quantity++;
+                transaction.Orders.Add(order);
             }
 
+            Context.SaveChanges();
             return RedirectToAction("checkout-do");
 
         }
