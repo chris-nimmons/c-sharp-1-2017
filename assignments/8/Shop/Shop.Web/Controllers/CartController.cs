@@ -56,15 +56,13 @@ namespace Shop.Web.Models
             {
                 if (order.Quantity < order.Product.Quantity)
                 {
-                    order = new Order() { Product = product, Price = 5.00M, Quantity = 1 };
                     order.Quantity++;
-                    cart.Orders.Add(order);
                     Context.SaveChanges();
                 }
             }
             else
             {
-                order = new Order() { Product = product, Price = 0.00M , Quantity = 1};
+                order = new Order() { Product = product, Price = product.Price, Quantity = 1};
                 cart.Orders.Add(order);
                 Context.SaveChanges();
             }
