@@ -20,7 +20,7 @@ namespace Shop.Web.Controllers
 
         public ActionResult Index()
         {
-            var products = Context.Products.ToList();
+            var products = Context.Transactions.ToList();
             return View(products);
         }
 

@@ -130,17 +130,25 @@ namespace Shop.Web.Models
 
 
         [Route("checkout")]
-        public ActionResult Checkout()
+        public ActionResult Checkout(int id)
         {
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
+            var product = Context.Products.Find(id);
 
             var cart = Context.Carts
                 .Include(q => q.Orders)
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
 
+            var transaction = cart.Orders.FirstOrDefault(q => q.Product.Id == product.Id);
 
+            foreach (var order in cart.Orders)
+            {
+
+                transaction = new Transaction() {Product = product, Quantity = 0 };
+                order.Quantity++;
+            }
 
             return RedirectToAction("checkout-do");
 
