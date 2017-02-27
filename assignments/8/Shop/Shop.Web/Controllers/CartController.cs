@@ -56,13 +56,15 @@ namespace Shop.Web.Models
             {
                 if (order.Quantity < order.Product.Quantity)
                 {
+                    order = new Order() { Product = product, Price = 5.00M, Quantity = 1 };
                     order.Quantity++;
+                    cart.Orders.Add(order);
                     Context.SaveChanges();
                 }
             }
             else
             {
-                order = new Order() { Product = product, Quantity = 1 };
+                order = new Order() { Product = product, Price = 0.00M , Quantity = 1};
                 cart.Orders.Add(order);
                 Context.SaveChanges();
             }
@@ -130,17 +132,15 @@ namespace Shop.Web.Models
 
 
         [Route("checkout")]
-        public ActionResult Checkout(int id)
+        public ActionResult Checkout()
         {
             var cookie = Request.Cookies["cart"];
             var signature = Guid.Parse(cookie.Value);
-            var product = Context.Products.Find(id);
 
             var cart = Context.Carts
                 .Include(q => q.Orders)
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
-
 
             var transaction = new Transaction() { Signature = Guid.NewGuid() };
 
@@ -148,10 +148,13 @@ namespace Shop.Web.Models
             {
                 transaction.Orders.Add(order);
             }
-
+            //TODO: Add transaction to context.  
+            Context.Transactions.Add(transaction);
+            //TODO: clear cart here.
+            cart.Orders.Clear();
             Context.SaveChanges();
-            return RedirectToAction("checkout-do");
 
+            return RedirectToAction("checkout-do");
         }
 
         [Route("checkout-do")]
@@ -164,7 +167,17 @@ namespace Shop.Web.Models
         [Route("transactions")]
         public ActionResult Transactions()
         {
-            var transactions = Context.Transactions.ToList();
+            var cookie = Request.Cookies["cart"];
+            var signature = Guid.Parse(cookie.Value);
+
+            var transactions = Context.Transactions
+                .Include(q => q.Orders)
+                .Include(q => q.Orders.Select(r => r.Product))
+                .ToList();
+
+
+
+
 
             return View(transactions);
         }

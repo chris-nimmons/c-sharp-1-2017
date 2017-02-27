@@ -4,7 +4,6 @@
 }
 
 <div class="row">
-    <a href="~/cart/transactions" class="btn btn-danger pull-left">Transactions</a>
 
     <table class="table">
         @foreach (var transaction in Model)
@@ -12,12 +11,10 @@
             <tr>
                 <td>@transaction.Signature</td>
                 <td><strong>Total</strong></td>
-                <td colspan="3"></td>
                 <td> @transaction.Total</td>
             </tr>
         }
 
     </table>
-    <a href="~/cart/Checkout" class="btn btn-primary">Checkout</a>
 
 </div>

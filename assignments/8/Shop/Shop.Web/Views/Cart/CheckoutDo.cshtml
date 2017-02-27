@@ -1,10 +1,10 @@
-﻿
+﻿@model Cart
 @{
-    Layout = null;
+    ViewBag.Title = "CheckoutDo";
 }
 
 <div class="row">
-    <a href="~/transactions" class="btn btn-danger pull-left">Transactions</a>
+    <a href="~/cart/transactions" class="btn btn-danger pull-left">Transactions</a>
 
     <table class="table">
             <tr>
@@ -12,7 +12,7 @@
                     Thanks for shopping!
                 </td>
             </tr>
-        }
+        
     </table>
     <a href="~/cart/Checkout" class="btn btn-primary">Checkout</a>
 
