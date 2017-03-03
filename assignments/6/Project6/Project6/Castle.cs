@@ -29,52 +29,58 @@ namespace Project6
 
             var allowedCursors = new List<Move>();
 
-
             if (this.Color == PieceType.White)
             {
-                allowedCursors.Add(new Move
+                for (int i = 0; i < 8; i++)
                 {
-                    X = X,
-                    Y = Y - 1
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X + 1,
-                    Y = Y
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X,
-                    Y = Y + 1
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X - 1,
-                    Y = Y
-                });
+                    allowedCursors.Add(new Move
+                    {
+                        X = X,
+                        Y = Y - i
+                    });
+                    allowedCursors.Add(new Move
+                    {
+                        X = X + i,
+                        Y = Y
+                    });
+                    allowedCursors.Add(new Move
+                    {
+                        X = X,
+                        Y = Y + i
+                    });
+                    allowedCursors.Add(new Move
+                    {
+                        X = X - i,
+                        Y = Y
+                    });
+                }
+
             }
             else if (this.Color == PieceType.Black)
             {
-                allowedCursors.Add(new Move
+                for (int i = 0; i < 8; i++)
                 {
-                    X = X + 1,
-                    Y = Y 
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X - 1,
-                    Y = Y 
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X,
-                    Y = Y - 1
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X,
-                    Y = Y + 1
-                });
+                    allowedCursors.Add(new Move
+                    {
+                        X = X,
+                        Y = Y - i
+                    });
+                    allowedCursors.Add(new Move
+                    {
+                        X = X + i,
+                        Y = Y
+                    });
+                    allowedCursors.Add(new Move
+                    {
+                        X = X,
+                        Y = Y + i
+                    });
+                    allowedCursors.Add(new Move
+                    {
+                        X = X - i,
+                        Y = Y
+                    });
+                }
             }
 
             return allowedCursors;
