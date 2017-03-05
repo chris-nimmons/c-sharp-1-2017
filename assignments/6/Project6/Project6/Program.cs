@@ -75,7 +75,7 @@ namespace Project6
                                 // Entering selection mode
                                 selectedPiece = highlightedPiece;
                                 selectedPiece.Visible = false;
-                                moves = selectedPiece.GetMoves();
+                                
                             }
                         }
                         else

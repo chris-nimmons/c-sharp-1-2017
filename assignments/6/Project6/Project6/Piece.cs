@@ -15,7 +15,8 @@ namespace Project6
             Black = 1
         }
 
-        public abstract List<Move> GetMoves();
+
+        public abstract bool IsMoveAllowed(List<Piece> board, Cursor toPosition);
 
         public abstract int X { get; set; }
         public abstract int Y { get; set; }
@@ -28,8 +29,8 @@ namespace Project6
         public Piece()
         {
             Visible = true;
-
         }
+
 
     }
 }

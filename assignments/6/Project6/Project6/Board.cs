@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project6
 {
-    class Board
+    class Board 
     {
         Pawn pawn = new Pawn();
         Cursor cursor = new Cursor();
@@ -17,6 +17,8 @@ namespace Project6
         /// Chess board.
         /// </summary>
         private Piece[,] chessBoard = new Piece[8, 8];
+
+        private List<Piece> pieces;
 
         public Board()
         {
@@ -41,6 +43,7 @@ namespace Project6
                     pieces.Add(piece);
                 }
             }
+            this.pieces = pieces;
 
             return pieces;
 
@@ -57,19 +60,13 @@ namespace Project6
 
         public bool IsMoveAllowed(Piece selectedPiece, Cursor toPosition)
         {
-            var allowedCursors = selectedPiece.GetMoves();
-            foreach(var cursor in allowedCursors)
-            {
-                if(cursor.X == toPosition.X && cursor.Y == toPosition.Y)
-                {
-                    return true;
-                }
-            }
-            return false;
-  
+
+            return selectedPiece.IsMoveAllowed(pieces, toPosition);
+
+
+
 
         }
-
         /// <summary>
         /// Sets up chess board with the initial position for the black and white pieces.
         /// </summary>

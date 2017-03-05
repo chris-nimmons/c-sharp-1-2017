@@ -26,32 +26,58 @@ namespace Project6
         public override int Y { get; set; }
 
 
-        public override List<Move> GetMoves()
+        //public override List<Move> GetMoves()
+        //{
+
+        //     var allowedCursors = new List<Move>();
+
+
+        //    if (this.Color == PieceType.White)
+        //    {
+        //        allowedCursors.Add(new Move
+        //        {
+        //            X = X,
+        //            Y = Y + 1
+        //        });
+        //    }
+        //    else if (this.Color == PieceType.Black)
+        //    {
+        //        allowedCursors.Add(new Move
+        //        {
+        //            X = X,
+        //            Y = Y - 1
+        //        });
+        //    }
+
+        //    return allowedCursors;
+
+        //}
+
+        public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
         {
 
-             var allowedCursors = new List<Move>();
-
-
-            if (this.Color == PieceType.White)
+            if (toPosition.X == this.X && toPosition.Y == this.Y)
             {
-                allowedCursors.Add(new Move
-                {
-                    X = X,
-                    Y = Y + 1
-                });
-            }
-            else if (this.Color == PieceType.Black)
-            {
-                allowedCursors.Add(new Move
-                {
-                    X = X,
-                    Y = Y - 1
-                });
+                return true;
             }
 
-            return allowedCursors;
+            if ((this.X == toPosition.X) && (Math.Abs(this.Y - toPosition.Y) > 1))
+            {
+                return false;
+            }
+
+            if (this.Color == PieceType.White && this.X == toPosition.X && this.Y < toPosition.Y)
+            {
+                return true;
+            }
+
+            if (this.Color == PieceType.Black && this.X == toPosition.X && this.Y > toPosition.Y)
+            {
+                return true;
+            }
+
+            return false;
 
         }
-
     }
 } 
