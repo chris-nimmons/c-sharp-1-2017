@@ -118,7 +118,7 @@ namespace Project6
             {
                 return true;
             }
-            if (this.Color == PieceType.White && this.Y == toPosition.Y && this.X > toPosition.X)
+            if (this.Color == PieceType.Black && this.Y == toPosition.Y && this.X > toPosition.X)
             {
                 return true;
             }

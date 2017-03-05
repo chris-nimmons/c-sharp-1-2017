@@ -149,7 +149,7 @@ namespace Project6
                 // Partial match means move was not diagonal.
                 if (tempCursor.X == toPosition.X || tempCursor.Y == toPosition.Y)
                 {
-                    return true;
+                    return false;
                 }
 
                 // Check if we have a piece in the way.
@@ -157,7 +157,6 @@ namespace Project6
                 {
                     return false;
                 }
-
 
                 // Reached top edge.
                 if (tempCursor.X == edgeX || tempCursor.Y == edgeY)
@@ -186,7 +185,7 @@ namespace Project6
             // piece position x and y.
             if (this.X == toPosition.X || this.Y == toPosition.Y)
             {
-                return true;
+                return false;
             }
 
             // Now check general direction of the bishop by checking the to position to the
@@ -194,61 +193,39 @@ namespace Project6
 
             var tempCursor = new Cursor();
 
-            if (toPosition.X < this.X)
+            if (toPosition.X == this.X && toPosition.Y == this.Y)
             {
-
-                var direction = new Func<Cursor, Cursor>((cursor) =>
-                {
-                    cursor.X = cursor.X - 1;
-                    cursor.Y = cursor.Y;
-                    return cursor;
-                });
-
-                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
-
+                return true;
             }
 
-            if (toPosition.X > this.X)
+            if ((this.X == toPosition.X) && (Math.Abs(this.Y - toPosition.Y) > 1))
             {
-
-                var direction = new Func<Cursor, Cursor>((cursor) =>
-                {
-                    cursor.X = cursor.X + 1;
-                    cursor.Y = cursor.Y;
-                    return cursor;
-                });
-
-                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
-
+                return true;
             }
 
-            if (toPosition.X < this.X)
+            if ((this.Y == toPosition.Y) && (Math.Abs(this.X - toPosition.X) > 1))
             {
-
-                var direction = new Func<Cursor, Cursor>((cursor) =>
-                {
-                    cursor.X = cursor.X;
-                    cursor.Y = cursor.Y + 1;
-                    return cursor;
-                });
-
-                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
-
+                return true;
             }
 
-            if (toPosition.X > this.Y)
+            if (this.Color == PieceType.White && this.X == toPosition.X && this.Y < toPosition.Y)
             {
-
-                var direction = new Func<Cursor, Cursor>((cursor) =>
-                {
-                    cursor.X = cursor.X;
-                    cursor.Y = cursor.Y - 1;
-                    return cursor;
-                });
-
-                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
-
+                return true;
             }
+            if (this.Color == PieceType.White && this.Y == toPosition.Y && this.X < toPosition.X)
+            {
+                return true;
+            }
+
+            if (this.Color == PieceType.Black && this.X == toPosition.X && this.Y > toPosition.Y)
+            {
+                return true;
+            }
+            if (this.Color == PieceType.Black && this.Y == toPosition.Y && this.X > toPosition.X)
+            {
+                return true;
+            }
+
 
             // To left and up.
             if (toPosition.X < this.X && toPosition.Y < this.Y)
