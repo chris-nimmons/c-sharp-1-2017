@@ -13,91 +13,91 @@ namespace Project6
             Letter = 'K';
         }
 
-        //public override List<Move> GetMoves()
-        //{
+        public override List<Move> GetMoves()
+        {
 
-        //    var allowedCursors = new List<Move>();
-        //    if (this.Color == PieceType.White)
-        //    {
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X + 1,
-        //            Y = Y
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X,
-        //            Y = Y + 1
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X + 1,
-        //            Y = Y + 1
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X - 1,
-        //            Y = Y
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X,
-        //            Y = Y - 1
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X + 1,
-        //            Y = Y
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X -1,
-        //            Y = Y+1
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X -1,
-        //            Y = Y - 1
-        //        });
+            var allowedMoves = new List<Move>();
+            if (this.Color == PieceType.White)
+            {
+                allowedMoves.Add(new Move
+                {
+                    X = X + 1,
+                    Y = Y
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X,
+                    Y = Y + 1
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X + 1,
+                    Y = Y + 1
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X - 1,
+                    Y = Y
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X,
+                    Y = Y - 1
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X + 1,
+                    Y = Y
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X - 1,
+                    Y = Y + 1
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X - 1,
+                    Y = Y - 1
+                });
 
-        //    }
-        //    else if (this.Color == PieceType.Black)
-        //    {
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X + 1,
-        //            Y = Y
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X,
-        //            Y = Y + 1
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X + 1,
-        //            Y = Y + 1
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X - 1,
-        //            Y = Y
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X,
-        //            Y = Y - 1
-        //        });
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X - 1,
-        //            Y = Y - 1
-        //        });
+            }
+            else if (this.Color == PieceType.Black)
+            {
+                allowedMoves.Add(new Move
+                {
+                    X = X + 1,
+                    Y = Y
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X,
+                    Y = Y + 1
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X + 1,
+                    Y = Y + 1
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X - 1,
+                    Y = Y
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X,
+                    Y = Y - 1
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X - 1,
+                    Y = Y - 1
+                });
 
-        //    }
-        //    return allowedCursors;
+            }
+            return allowedMoves;
 
-        //}
+        }
         public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
         {
 

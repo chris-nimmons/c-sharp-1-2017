@@ -15,32 +15,32 @@ namespace Project6
         }
 
 
-        //public override List<Move> GetMoves()
-        //{
+        public override List<Move> GetMoves()
+        {
 
-        //     var allowedCursors = new List<Move>();
+            var allowedMoves = new List<Move>();
 
 
-        //    if (this.Color == PieceType.White)
-        //    {
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X,
-        //            Y = Y + 1
-        //        });
-        //    }
-        //    else if (this.Color == PieceType.Black)
-        //    {
-        //        allowedCursors.Add(new Move
-        //        {
-        //            X = X,
-        //            Y = Y - 1
-        //        });
-        //    }
+            if (this.Color == PieceType.White)
+            {
+                allowedMoves.Add(new Move
+                {
+                    X = X,
+                    Y = Y + 1
+                });
+            }
+            else if (this.Color == PieceType.Black)
+            {
+                allowedMoves.Add(new Move
+                {
+                    X = X,
+                    Y = Y - 1
+                });
+            }
 
-        //    return allowedCursors;
+            return allowedMoves;
 
-        //}
+        }
 
         public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
         {

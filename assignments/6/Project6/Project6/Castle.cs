@@ -13,68 +13,68 @@ namespace Project6
             Letter = 'C';
         }
 
-        //public override List<Move> GetMoves()
-        //{
+        public override List<Move> GetMoves()
+        {
 
-        //    var allowedCursors = new List<Move>();
+            var allowedMoves = new List<Move>();
 
-        //    if (this.Color == PieceType.White)
-        //    {
-        //        for (int i = 0; i < 8; i++)
-        //        {
-        //            allowedCursors.Add(new Move
-        //            {
-        //                X = X,
-        //                Y = Y - i
-        //            });
-        //            allowedCursors.Add(new Move
-        //            {
-        //                X = X + i,
-        //                Y = Y
-        //            });
-        //            allowedCursors.Add(new Move
-        //            {
-        //                X = X,
-        //                Y = Y + i
-        //            });
-        //            allowedCursors.Add(new Move
-        //            {
-        //                X = X - i,
-        //                Y = Y
-        //            });
-        //        }
+            if (this.Color == PieceType.White)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    allowedMoves.Add(new Move
+                    {
+                        X = X,
+                        Y = Y - i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X + i,
+                        Y = Y
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X,
+                        Y = Y + i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X - i,
+                        Y = Y
+                    });
+                }
 
-        //    }
-        //    else if (this.Color == PieceType.Black)
-        //    {
-        //        for (int i = 0; i < 8; i++)
-        //        {
-        //            allowedCursors.Add(new Move
-        //            {
-        //                X = X,
-        //                Y = Y - i
-        //            });
-        //            allowedCursors.Add(new Move
-        //            {
-        //                X = X + i,
-        //                Y = Y
-        //            });
-        //            allowedCursors.Add(new Move
-        //            {
-        //                X = X,
-        //                Y = Y + i
-        //            });
-        //            allowedCursors.Add(new Move
-        //            {
-        //                X = X - i,
-        //                Y = Y
-        //            });
-        //        }
-        //    }
+            }
+            else if (this.Color == PieceType.Black)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    allowedMoves.Add(new Move
+                    {
+                        X = X,
+                        Y = Y - i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X + i,
+                        Y = Y
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X,
+                        Y = Y + i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X - i,
+                        Y = Y
+                    });
+                }
+            }
 
-        //    return allowedCursors;
+            return allowedMoves;
 
-        //}
+        }
 
         public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
         {
