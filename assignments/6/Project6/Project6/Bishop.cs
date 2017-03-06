@@ -13,17 +13,6 @@ namespace Project6
             Letter = 'B';
         }
 
-        public override PieceType Color { get; set; }
-
-        public override char Letter { get; set; }
-
-
-        public override bool Visible { get; set; }
-
-        public override int X { get; set; }
-
-        public override int Y { get; set; }
-
 
         //public override List<Move> GetMoves()
         //{

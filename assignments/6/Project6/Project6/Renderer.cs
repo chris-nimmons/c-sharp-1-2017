@@ -12,7 +12,7 @@ namespace Project6
         {
             Console.Clear();
         }
-        public void Render(List<Piece> pieces)
+        public void Render(List<Piece> pieces, List<Move> moves)
         {
             foreach ( Piece piece in pieces)
             {
@@ -21,12 +21,14 @@ namespace Project6
                     Console.SetCursorPosition(piece.X, piece.Y);
                     Console.Write(piece.Letter);
                 }
-                else
+                else if (piece.Letter == 'P')
                 {
-
+                    
                 }
 
             }
+
+            //TODO: go through each of the moves and write out a character to represent the move.  
 
         }
     }
