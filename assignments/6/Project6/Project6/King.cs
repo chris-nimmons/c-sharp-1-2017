@@ -112,17 +112,51 @@ namespace Project6
         //}
         public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
         {
+
+
             if (toPosition.X == this.X && toPosition.Y == this.Y)
+            {
+                return true;
+            }
+
+            if (toPosition.X == this.X + 1 && toPosition.Y == this.Y + 1)
+            {
+                return true;
+            }
+
+            if (toPosition.X == this.X - 1 && toPosition.Y == this.Y + 1)
+            {
+                return true;
+            }
+
+            if (toPosition.X == this.X + 1 && toPosition.Y == this.Y - 1)
+            {
+                return true;
+            }
+
+            if (toPosition.X == this.X - 1 && toPosition.Y == this.Y - 1)
             {
                 return true;
             }
 
             if ((this.X == toPosition.X) && (Math.Abs(this.Y - toPosition.Y) > 1))
             {
+                return false;
+            }
+
+
+            if ((this.Y == toPosition.Y) && (Math.Abs(this.X - toPosition.X) > 1))
+            {
+                return false;
+            }
+
+
+            if (this.Color == PieceType.White && this.Y == toPosition.Y && this.X < toPosition.X)
+            {
                 return true;
             }
 
-            if ((this.Y == toPosition.Y) && (Math.Abs(this.X - toPosition.X) > 1))
+            if (this.Color == PieceType.Black && this.X == toPosition.X && this.X > toPosition.X)
             {
                 return true;
             }

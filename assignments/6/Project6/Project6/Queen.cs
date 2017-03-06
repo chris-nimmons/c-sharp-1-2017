@@ -140,13 +140,11 @@ namespace Project6
 
                 tempCursor = direction(tempCursor);
 
-                // Match to position so move is good.
                 if (tempCursor.X == toPosition.X && tempCursor.Y == toPosition.Y)
                 {
                     return true;
                 }
 
-                // Partial match means move was not diagonal.
                 if (tempCursor.X == toPosition.X || tempCursor.Y == toPosition.Y)
                 {
                     return false;
@@ -158,7 +156,7 @@ namespace Project6
                     return false;
                 }
 
-                // Reached top edge.
+
                 if (tempCursor.X == edgeX || tempCursor.Y == edgeY)
                 {
                     break;
@@ -173,59 +171,78 @@ namespace Project6
         public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
         {
 
-            // Check if the piece did not move at all which is allowed. This will happen for all
-            // pieces.
+
             if (toPosition.X == this.X && toPosition.Y == this.Y)
             {
                 return true;
             }
 
-            // Check if bishop did a diagonal move of any type. A proper move for a diagonal line
-            // will have a to position were both the x and y are different when compared to the current
-            // piece position x and y.
+            //diagonal
             if (this.X == toPosition.X || this.Y == toPosition.Y)
             {
-                return false;
+                return true;
             }
 
-            // Now check general direction of the bishop by checking the to position to the
-            // pieces current position.
 
             var tempCursor = new Cursor();
 
-            if (toPosition.X == this.X && toPosition.Y == this.Y)
+
+
+            if (toPosition.X < this.X && toPosition.Y < this.Y)
             {
-                return true;
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X + 1;
+                    cursor.Y = cursor.Y;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
+
             }
 
-            if ((this.X == toPosition.X) && (Math.Abs(this.Y - toPosition.Y) > 1))
+            if (toPosition.X < this.X && toPosition.Y < this.Y)
             {
-                return true;
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X - 1;
+                    cursor.Y = cursor.Y;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
+
             }
 
-            if ((this.Y == toPosition.Y) && (Math.Abs(this.X - toPosition.X) > 1))
+            if (toPosition.X < this.X && toPosition.Y < this.Y)
             {
-                return true;
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X;
+                    cursor.Y = cursor.Y + 1;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
+
             }
 
-            if (this.Color == PieceType.White && this.X == toPosition.X && this.Y < toPosition.Y)
+            if (toPosition.X < this.X && toPosition.Y < this.Y)
             {
-                return true;
-            }
-            if (this.Color == PieceType.White && this.Y == toPosition.Y && this.X < toPosition.X)
-            {
-                return true;
-            }
 
-            if (this.Color == PieceType.Black && this.X == toPosition.X && this.Y > toPosition.Y)
-            {
-                return true;
-            }
-            if (this.Color == PieceType.Black && this.Y == toPosition.Y && this.X > toPosition.X)
-            {
-                return true;
-            }
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X;
+                    cursor.Y = cursor.Y - 1;
+                    return cursor;
+                });
 
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
+
+            }
 
             // To left and up.
             if (toPosition.X < this.X && toPosition.Y < this.Y)
@@ -241,6 +258,8 @@ namespace Project6
                 return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
 
             }
+
+
 
             // To left and down.
             if (toPosition.X < this.X && toPosition.Y > this.Y)
