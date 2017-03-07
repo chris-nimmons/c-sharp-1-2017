@@ -19,14 +19,13 @@ namespace Project6
             Board board = new Board();
 
             var pieces = board.GetPieces();
-         
-            List<Move> moves = new List<Move>();
-            
+
+            var moves = new List<Move>();
 
             ///DONE: pass blank list of moves in to Render
             renderer.Render(pieces, moves);
 
-            Piece selectedPiece = null; // RAS : Renamed this variable to better identify what this variable is doing in the code. This is the selected piece from the board.
+            Piece selectedPiece = null; 
 
             Console.SetCursorPosition(cursor.X, cursor.Y);
 
@@ -80,8 +79,9 @@ namespace Project6
                                 selectedPiece.Visible = false;
 
                                 //TODO: Get the list of moves from selectedPiece and store it in the moves variable.  
-                                selectedPiece.GetMoves();
+                                moves = selectedPiece.GetMoves();
                                 
+                               
                             }
                         }
                         else
@@ -98,6 +98,7 @@ namespace Project6
                                     selectedPiece.Y = cursor.Y;
                                     selectedPiece.Visible = true;
                                     selectedPiece = null;
+                                    moves.Clear();
                                 }
                             }
                         }

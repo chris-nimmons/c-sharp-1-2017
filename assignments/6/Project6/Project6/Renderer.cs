@@ -31,9 +31,18 @@ namespace Project6
                 //DONE: go through each of the moves and write out a character to represent the move.  
             foreach(var move in moves)
             {
+                
+                if ( move.X < 8 && move.Y < 8)
+                {
+                    if (move.X >= 0 && move.Y >= 0)
+                    {
+                        Console.SetCursorPosition(move.X, move.Y);
+                        Console.Write("X");
+                    }
 
-                Console.SetCursorPosition(move.X, move.Y);
-                Console.Write("X");
+                }
+                
+
             }
 
         }
