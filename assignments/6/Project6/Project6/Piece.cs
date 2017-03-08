@@ -15,21 +15,24 @@ namespace Project6
             Black = 1
         }
 
+
+        public abstract bool IsMoveAllowed(List<Piece> board, Cursor toPosition);
+
         public abstract List<Move> GetMoves();
 
-        public abstract int X { get; set; }
-        public abstract int Y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
 
-        public abstract char Letter { get; set; }
-        public abstract bool Visible { get; set; }
+        public char Letter { get; set; }
+        public bool Visible { get; set; }
 
-        public abstract PieceType Color { get; set; }
+        public PieceType Color { get; set; }
 
         public Piece()
         {
             Visible = true;
-
         }
+
 
     }
 }

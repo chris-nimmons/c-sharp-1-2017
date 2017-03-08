@@ -1,40 +1,20 @@
-﻿@model Transaction
+﻿@model Cart
 @{
     ViewBag.Title = "CheckoutDo";
 }
 
 <div class="row">
-    <a href="~/cart/clear" class="btn btn-danger pull-right">Clear</a>
+    <a href="~/cart/transactions" class="btn btn-danger pull-left">Transactions</a>
 
     <table class="table">
-        @{
-            decimal subTotal = 0;
-        }
-        @for (int i = 0;i < Model.Total; i++)
-        {
-            for (int j = 0; j < Model.Total; j++)
-            {
-                subTotal += order.Quantity * order.Product.Price;
             <tr>
                 <td>
-                    @order.Product.Name
-                </td>
-                <td>
-                    @order.Quantity ++
-                </td>
-                <td>
-                    @subTotal
+                    Thanks for shopping!
                 </td>
             </tr>
-            }
-        }
-        <tr>
-            <td><strong>Total</strong></td>
-            <td colspan="3"></td>
-            <td> @Model.Total</td>
-        </tr>
+        
     </table>
-
-    <a href="~/cart/checkout-do" class="btn btn-success">Checkout</a>
+    <a href="~/cart/Checkout" class="btn btn-primary">Checkout</a>
 
 </div>
+

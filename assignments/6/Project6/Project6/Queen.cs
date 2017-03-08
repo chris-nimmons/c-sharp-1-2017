@@ -12,96 +12,296 @@ namespace Project6
         {
             Letter = 'Q';
         }
-        public override PieceType Color { get; set; }
-
-        public override char Letter { get; set; }
-
-
-        public override bool Visible { get; set; }
-
-        public override int X { get; set; }
-
-        public override int Y { get; set; }
 
 
         public override List<Move> GetMoves()
         {
 
-            var allowedCursors = new List<Move>();
+            var allowedMoves = new List<Move>();
+
             if (this.Color == PieceType.White)
+            {
+                allowedMoves.Add(new Move
                 {
-                allowedCursors.Add(new Move
-                {
-                    X = X +1,
-                    Y = Y 
+                    X = X + 1,
+                    Y = Y
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X,
                     Y = Y + 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X + 1,
                     Y = Y + 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X - 1,
-                    Y = Y 
+                    Y = Y
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X,
                     Y = Y - 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X - 1,
                     Y = Y - 1
                 });
+                allowedMoves.Add(new Move
+                {
+                    X = X - 1,
+                    Y = Y + 1
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X + 1,
+                    Y = Y - 1
+                });
+
             }
+
+
             else if (this.Color == PieceType.Black)
             {
-                allowedCursors.Add(new Move
+                for (int i = 0; i < 8; i++)
                 {
-                    X = X + 1,
-                    Y = Y
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X,
-                    Y = Y + 1
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X + 1,
-                    Y = Y + 1
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X - 1,
-                    Y = Y
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X,
-                    Y = Y - 1
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X - 1,
-                    Y = Y - 1
-                });
-                allowedCursors.Add(new Move
-                {
-                    X = X + 1,
-                    Y = Y - 1
-                });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X + 1,
+                        Y = Y
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X,
+                        Y = Y + 1
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X + 1,
+                        Y = Y + 1
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X - 1,
+                        Y = Y
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X,
+                        Y = Y - 1
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X - 1,
+                        Y = Y - 1
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X + 1,
+                        Y = Y - 1
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X - i,
+                        Y = Y + i
+                    });
+                }
 
 
             }
-            return allowedCursors;
+            return allowedMoves;
+
+        }
+
+        private bool ValidateMove(
+                                Cursor tempCursor,
+                                Cursor toPosition,
+                                ref List<Piece> board,
+                                int edgeX,
+                                int edgeY,
+                                Func<Cursor, Cursor> direction)
+        {
+
+            tempCursor.X = this.X;
+            tempCursor.Y = this.Y;
+
+            while (true)
+            {
+
+                tempCursor = direction(tempCursor);
+
+                if (tempCursor.X == toPosition.X && tempCursor.Y == toPosition.Y)
+                {
+                    return true;
+                }
+
+                if (tempCursor.X == toPosition.X || tempCursor.Y == toPosition.Y)
+                {
+                    return false;
+                }
+
+                // Check if we have a piece in the way.
+                if (board.Where(p => p.X == tempCursor.X && p.Y == tempCursor.Y).Any())
+                {
+                    return false;
+                }
+
+
+                if (tempCursor.X == edgeX || tempCursor.Y == edgeY)
+                {
+                    break;
+                }
+
+            }
+
+            return false;
+
+        }
+
+        public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
+        {
+
+
+            if (toPosition.X == this.X && toPosition.Y == this.Y)
+            {
+                return true;
+            }
+
+            //diagonal
+            if (this.X == toPosition.X || this.Y == toPosition.Y)
+            {
+                return true;
+            }
+
+
+            var tempCursor = new Cursor();
+
+
+
+            if (toPosition.X < this.X && toPosition.Y < this.Y)
+            {
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X + 1;
+                    cursor.Y = cursor.Y;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
+
+            }
+
+            if (toPosition.X < this.X && toPosition.Y < this.Y)
+            {
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X - 1;
+                    cursor.Y = cursor.Y;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
+
+            }
+
+            if (toPosition.X < this.X && toPosition.Y < this.Y)
+            {
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X;
+                    cursor.Y = cursor.Y + 1;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
+
+            }
+
+            if (toPosition.X < this.X && toPosition.Y < this.Y)
+            {
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X;
+                    cursor.Y = cursor.Y - 1;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
+
+            }
+
+            // To left and up.
+            if (toPosition.X < this.X && toPosition.Y < this.Y)
+            {
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X - 1;
+                    cursor.Y = cursor.Y - 1;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 0, direction);
+
+            }
+
+
+
+            // To left and down.
+            if (toPosition.X < this.X && toPosition.Y > this.Y)
+            {
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X - 1;
+                    cursor.Y = cursor.Y + 1;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 0, 8, direction);
+
+            }
+
+            // To right and down.
+            if (toPosition.X > this.X && toPosition.Y > this.Y)
+            {
+
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X + 1;
+                    cursor.Y = cursor.Y + 1;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 8, 8, direction);
+
+            }
+
+            // To right and up.
+            if (toPosition.X > this.X && toPosition.Y < this.Y)
+            {
+
+                var direction = new Func<Cursor, Cursor>((cursor) =>
+                {
+                    cursor.X = cursor.X + 1;
+                    cursor.Y = cursor.Y - 1;
+                    return cursor;
+                });
+
+                return ValidateMove(tempCursor, toPosition, ref board, 8, 0, direction);
+
+            }
+
+            return false;
 
         }
     }

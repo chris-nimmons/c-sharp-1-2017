@@ -13,101 +13,158 @@ namespace Project6
             Letter = 'K';
         }
 
-        public override PieceType Color { get; set; }
-
-        public override char Letter { get; set; }
-
-
-        public override bool Visible { get; set; }
-
-        public override int X { get; set; }
-
-        public override int Y { get; set; }
-
-
         public override List<Move> GetMoves()
         {
 
-            var allowedCursors = new List<Move>();
+            var allowedMoves = new List<Move>();
             if (this.Color == PieceType.White)
             {
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X + 1,
                     Y = Y
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X,
                     Y = Y + 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X + 1,
                     Y = Y + 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X - 1,
                     Y = Y
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X,
                     Y = Y - 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X + 1,
                     Y = Y
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
-                    X = X -1,
-                    Y = Y+1
+                    X = X - 1,
+                    Y = Y + 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
-                    X = X -1,
+                    X = X - 1,
+                    Y = Y - 1
+                });
+                allowedMoves.Add(new Move
+                {
+                    X = X + 1,
                     Y = Y - 1
                 });
 
             }
             else if (this.Color == PieceType.Black)
             {
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X + 1,
                     Y = Y
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X,
                     Y = Y + 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X + 1,
                     Y = Y + 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X - 1,
                     Y = Y
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X,
                     Y = Y - 1
                 });
-                allowedCursors.Add(new Move
+                allowedMoves.Add(new Move
                 {
                     X = X - 1,
                     Y = Y - 1
                 });
 
             }
-            return allowedCursors;
+            return allowedMoves;
+
+        }
+        public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
+        {
+
+
+            if (toPosition.X == this.X && toPosition.Y == this.Y)
+            {
+                return true;
+            }
+
+            if (toPosition.X == this.X + 1 && toPosition.Y == this.Y + 1)
+            {
+                return true;
+            }
+
+            if (toPosition.X == this.X - 1 && toPosition.Y == this.Y + 1)
+            {
+                return true;
+            }
+
+            if (toPosition.X == this.X + 1 && toPosition.Y == this.Y - 1)
+            {
+                return true;
+            }
+
+            if (toPosition.X == this.X - 1 && toPosition.Y == this.Y - 1)
+            {
+                return true;
+            }
+
+            if ((this.X == toPosition.X) && (Math.Abs(this.Y - toPosition.Y) > 1))
+            {
+                return false;
+            }
+
+
+            if ((this.Y == toPosition.Y) && (Math.Abs(this.X - toPosition.X) > 1))
+            {
+                return false;
+            }
+
+
+            if (this.Color == PieceType.White && this.Y == toPosition.Y && this.X < toPosition.X)
+            {
+                return true;
+            }
+
+            if (this.Color == PieceType.Black && this.X == toPosition.X && this.X > toPosition.X)
+            {
+                return true;
+            }
+
+            if (this.Color == PieceType.White && this.X == toPosition.X && this.Y < toPosition.Y)
+            {
+                return true;
+            }
+
+            if (this.Color == PieceType.Black && this.X == toPosition.X && this.Y > toPosition.Y)
+            {
+                return true;
+            }
+
+            return false;
 
         }
     }

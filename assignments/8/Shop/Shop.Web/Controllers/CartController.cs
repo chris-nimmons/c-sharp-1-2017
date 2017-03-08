@@ -62,7 +62,7 @@ namespace Shop.Web.Models
             }
             else
             {
-                order = new Order() { Product = product, Quantity = 1 };
+                order = new Order() { Product = product, Price = product.Price, Quantity = 1};
                 cart.Orders.Add(order);
                 Context.SaveChanges();
             }
@@ -140,10 +140,19 @@ namespace Shop.Web.Models
                 .Include(q => q.Orders.Select(r => r.Product))
                 .First(q => q.Signature == signature);
 
+            var transaction = new Transaction() { Signature = Guid.NewGuid() };
 
+            foreach (var order in cart.Orders)
+            {
+                transaction.Orders.Add(order);
+            }
+            //TODO: Add transaction to context.  
+            Context.Transactions.Add(transaction);
+            //TODO: clear cart here.
+            cart.Orders.Clear();
+            Context.SaveChanges();
 
-            return RedirectToAction("transaction");
-
+            return RedirectToAction("checkout-do");
         }
 
         [Route("checkout-do")]
@@ -154,9 +163,21 @@ namespace Shop.Web.Models
 
 
         [Route("transactions")]
-        public ActionResult Transaction()
+        public ActionResult Transactions()
         {
-            return View();
+            var cookie = Request.Cookies["cart"];
+            var signature = Guid.Parse(cookie.Value);
+
+            var transactions = Context.Transactions
+                .Include(q => q.Orders)
+                .Include(q => q.Orders.Select(r => r.Product))
+                .ToList();
+
+
+
+
+
+            return View(transactions);
         }
     }
 }

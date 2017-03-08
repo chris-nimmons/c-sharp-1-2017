@@ -20,13 +20,15 @@ namespace Project6
 
             var pieces = board.GetPieces();
 
-            renderer.Render(pieces);
+            var moves = new List<Move>();
 
-            Piece selectedPiece = null; // RAS : Renamed this variable to better identify what this variable is doing in the code. This is the selected piece from the board.
+            ///DONE: pass blank list of moves in to Render
+            renderer.Render(pieces, moves);
+
+            Piece selectedPiece = null; 
 
             Console.SetCursorPosition(cursor.X, cursor.Y);
 
-            List<Move> moves = new List<Move>();
             bool running = true;
 
             while (running)
@@ -75,7 +77,11 @@ namespace Project6
                                 // Entering selection mode
                                 selectedPiece = highlightedPiece;
                                 selectedPiece.Visible = false;
+
+                                //TODO: Get the list of moves from selectedPiece and store it in the moves variable.  
                                 moves = selectedPiece.GetMoves();
+                                
+                               
                             }
                         }
                         else
@@ -92,6 +98,7 @@ namespace Project6
                                     selectedPiece.Y = cursor.Y;
                                     selectedPiece.Visible = true;
                                     selectedPiece = null;
+                                    moves.Clear();
                                 }
                             }
                         }
@@ -117,7 +124,8 @@ namespace Project6
                 }
 
                 renderer.Clear();
-                renderer.Render(pieces);
+                //TODO: Pass list of moves from the selected piece into Render method.
+                renderer.Render(pieces, moves);
 
                 Console.SetCursorPosition(cursor.X, cursor.Y);
             }
