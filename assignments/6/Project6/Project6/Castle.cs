@@ -75,47 +75,5 @@ namespace Project6
             return allowedMoves;
 
         }
-
-        public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
-        {
-
-            if (toPosition.X == this.X && toPosition.Y == this.Y)
-            {
-                return true;
-            }
-
-            if ((this.X == toPosition.X) && (Math.Abs(this.Y - toPosition.Y) > 1))
-            {
-                return true;
-            }
-
-            if ((this.Y == toPosition.Y) && (Math.Abs(this.X - toPosition.X) > 1))
-            {
-                return true;
-            }
-
-            if (this.Color == PieceType.White && this.X == toPosition.X && this.Y < toPosition.Y)
-            {
-                return true;
-            }
-            if (this.Color == PieceType.White && this.Y == toPosition.Y && this.X < toPosition.X)
-            {
-                return true;
-            }
-
-            if (this.Color == PieceType.Black && this.X == toPosition.X && this.Y > toPosition.Y)
-            {
-                return true;
-            }
-            if (this.Color == PieceType.Black && this.Y == toPosition.Y && this.X > toPosition.X)
-            {
-                return true;
-            }
-
-
-            return false;
-
-
-        }
     }
 }

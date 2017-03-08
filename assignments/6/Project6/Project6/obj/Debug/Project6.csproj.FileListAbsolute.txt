@@ -4,3 +4,9 @@ C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\bin\Debug\
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\obj\Debug\Project6.csprojResolveAssemblyReference.cache
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\obj\Debug\Project6.exe
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\obj\Debug\Project6.pdb
+C:\Users\chris.nimmons\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\bin\Debug\Project6.exe.config
+C:\Users\chris.nimmons\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\obj\Debug\Project6.exe
+C:\Users\chris.nimmons\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\obj\Debug\Project6.pdb
+C:\Users\chris.nimmons\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\obj\Debug\Project6.csprojResolveAssemblyReference.cache
+C:\Users\chris.nimmons\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\bin\Debug\Project6.exe
+C:\Users\chris.nimmons\Desktop\c-sharp-1-2017\assignments\6\Project6\Project6\bin\Debug\Project6.pdb

@@ -80,18 +80,16 @@ namespace Project6
 
                                 //TODO: Get the list of moves from selectedPiece and store it in the moves variable.  
                                 moves = selectedPiece.GetMoves();
-                                
-                               
                             }
                         }
                         else
                         {
                             if (selectedPiece != null)
                             {
+                                //TODO: check to see if move is allowed using the cursor and the moves.  
+                                bool isMoveAllowed = true;
 
-                                bool isMovedAllowed = board.IsMoveAllowed(selectedPiece, cursor);
-
-                                if (isMovedAllowed) //  You don't need the '== true' variable is a boolean.
+                                if (isMoveAllowed) //  You don't need the '== true' variable is a boolean.
                                 {
                                     //  Now update the selected piece cursor location.
                                     selectedPiece.X = cursor.X;
@@ -130,16 +128,10 @@ namespace Project6
                 Console.SetCursorPosition(cursor.X, cursor.Y);
             }
         }
-
     }
     public class Cursor
     {
         public int X { get; set; }
         public int Y { get; set; }
-
-        public static implicit operator Cursor(List<Cursor> v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

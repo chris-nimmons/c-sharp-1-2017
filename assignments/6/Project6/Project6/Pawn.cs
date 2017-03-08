@@ -14,7 +14,6 @@ namespace Project6
             Letter = 'P';
         }
 
-
         public override List<Move> GetMoves()
         {
 
@@ -39,33 +38,6 @@ namespace Project6
             }
 
             return allowedMoves;
-
-        }
-
-        public override bool IsMoveAllowed(List<Piece> board, Cursor toPosition)
-        {
-
-            if (toPosition.X == this.X && toPosition.Y == this.Y)
-            {
-                return true;
-            }
-
-            if ((this.X == toPosition.X) && (Math.Abs(this.Y - toPosition.Y) > 1))
-            {
-                return false;
-            }
-
-            if (this.Color == PieceType.White && this.X == toPosition.X && this.Y < toPosition.Y)
-            {
-                return true;
-            }
-
-            if (this.Color == PieceType.Black && this.X == toPosition.X && this.Y > toPosition.Y)
-            {
-                return true;
-            }
-
-            return false;
 
         }
     }

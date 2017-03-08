@@ -57,16 +57,6 @@ namespace Project6
         /// <returns>True if moved allowed for the piece, false means the piece does not move.</returns>
         /// 
 
-
-        public bool IsMoveAllowed(Piece selectedPiece, Cursor toPosition)
-        {
-
-            return selectedPiece.IsMoveAllowed(pieces, toPosition);
-
-
-
-
-        }
         /// <summary>
         /// Sets up chess board with the initial position for the black and white pieces.
         /// </summary>
