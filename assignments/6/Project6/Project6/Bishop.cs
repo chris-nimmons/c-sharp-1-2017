@@ -20,53 +20,58 @@ namespace Project6
             var allowedMoves = new List<Move>();
             if (this.Color == PieceType.White)
             {
-                allowedMoves.Add(new Move
+                for (int i = 0; i < 8; i++)
                 {
-                    X = X + 1,
-                    Y = Y + 1
-                });
-                allowedMoves.Add(new Move
-                {
-                    X = X - 1,
-                    Y = Y - 1
-                });
-                allowedMoves.Add(new Move
-                {
-                    X = X - 1,
-                    Y = Y + 1
-                });
-                allowedMoves.Add(new Move
-                {
-                    X = X + 1,
-                    Y = Y - 1
-                });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X + i,
+                        Y = Y + i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X - i,
+                        Y = Y - i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X - i,
+                        Y = Y + i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X + i,
+                        Y = Y - i
+                    });
+                }
             }
             else if (this.Color == PieceType.Black)
             {
-                allowedMoves.Add(new Move
+                for (int i = 0; i < 8; i++)
                 {
-                    X = X + 1,
-                    Y = Y + 1
-                });
-                allowedMoves.Add(new Move
-                {
-                    X = X - 1,
-                    Y = Y - 1
-                });
-                allowedMoves.Add(new Move
-                {
-                    X = X - 1,
-                    Y = Y + 1
-                });
-                allowedMoves.Add(new Move
-                {
-                    X = X + 1,
-                    Y = Y - 1
-                });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X + i,
+                        Y = Y + i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X - i,
+                        Y = Y - i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X - i,
+                        Y = Y + i
+                    });
+                    allowedMoves.Add(new Move
+                    {
+                        X = X + i,
+                        Y = Y - i
+                    });
 
+                }
             }
             return allowedMoves;
-
         }
 
         private bool ValidateMove(
