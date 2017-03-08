@@ -59,6 +59,11 @@ namespace Project6
                     X = X - 1,
                     Y = Y - 1
                 });
+                allowedMoves.Add(new Move
+                {
+                    X = X + 1,
+                    Y = Y - 1
+                });
 
             }
             else if (this.Color == PieceType.Black)
