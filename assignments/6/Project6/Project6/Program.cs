@@ -66,6 +66,7 @@ namespace Project6
                                 {
                                     selectedPiece.Visible = true;
                                     selectedPiece = null;
+                                    moves.Clear();
                                 }
                                 else
                                 {
@@ -86,8 +87,18 @@ namespace Project6
                         {
                             if (selectedPiece != null)
                             {
-                                //TODO: check to see if move is allowed using the cursor and the moves.  
-                                bool isMoveAllowed = true;
+                                //TODO: check to see if move is allowed using the cursor and the moves. 
+                                bool isMoveAllowed = false;
+                                foreach(var move in moves)
+                                {
+                                    if(move.X == cursor.X && move.Y == cursor.Y)
+                                    {
+                                        isMoveAllowed = true;
+
+                                    }
+                                }
+                                
+                                
 
                                 if (isMoveAllowed) //  You don't need the '== true' variable is a boolean.
                                 {

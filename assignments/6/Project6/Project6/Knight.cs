@@ -20,6 +20,13 @@ namespace Project6
             var allowedMoves = new List<Move>();
             if (this.Color == PieceType.White)
             {
+
+                allowedMoves.Add(new Move
+                {
+                    X = X,
+                    Y = Y
+                });
+
                 allowedMoves.Add(new Move
                 {
                     X = X + 1,
