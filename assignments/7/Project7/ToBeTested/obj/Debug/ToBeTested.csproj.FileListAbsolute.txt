@@ -4,3 +4,9 @@ C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\9\Project7\ToBeTested\bin\Debu
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\9\Project7\ToBeTested\obj\Debug\ToBeTested.csprojResolveAssemblyReference.cache
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\9\Project7\ToBeTested\obj\Debug\ToBeTested.dll
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\9\Project7\ToBeTested\obj\Debug\ToBeTested.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Project7\ToBeTested\bin\Debug\ToBeTested.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Project7\ToBeTested\bin\Debug\ToBeTested.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Project7\ToBeTested\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Project7\ToBeTested\obj\Debug\ToBeTested.csprojResolveAssemblyReference.cache
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Project7\ToBeTested\obj\Debug\ToBeTested.dll
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Project7\ToBeTested\obj\Debug\ToBeTested.pdb

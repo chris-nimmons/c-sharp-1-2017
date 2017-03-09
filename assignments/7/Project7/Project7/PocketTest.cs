@@ -103,6 +103,18 @@ namespace UnitTestProject
                 Assert.IsTrue(added);
                 Assert.IsTrue(bag.Check(content));
             }
+            [TestMethod]
+            public void Pocket_Should_Not_Be_Too_Heavy()
+            {
+                var bag = new Bag(30, 30, 30);
+                var volume = new Volume(20, 20, 20);
+                var content = new Content(30, 30, 30);
+                var pocket = new Pocket(2, 1, 1);
+                var added = bag.Add(content);
+
+                Assert.IsFalse(added);
+                Assert.IsFalse(bag.Check(content));
+            }
 
         }
 
