@@ -22,6 +22,7 @@ namespace Chessmoves
 
             for (int i = 0; i < X + Squares; i++)
             {
+                moves.Add(new Move() { X = X, Y = Y });
 
                 moves.Add(new Move() { X = X + Squares, Y = Y });
 

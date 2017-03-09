@@ -17,10 +17,12 @@ namespace Chessmoves
         public override List<Move> GetMoves()
         {
             var moves = new List<Move>();
-            moves.Add(new Move());
+
+            //moves.Add(new Move());
 
             for (int a = 0; a < Squares; a++)
             {
+
                 moves.Add(new Move() { X = X + a, Y = Y + a });
 
                 moves.Add(new Move() { X = X - a, Y = Y - a });
@@ -41,7 +43,7 @@ namespace Chessmoves
 
                         moves.Add(new Move() { X = X, Y = r });
                     }
-                }
+                }              
             }
             return moves;
         }

@@ -13,7 +13,6 @@ namespace Chessmoves
         public int Squares { get; set; }
         public char Index { get; set; }
         public bool Visible { get; set; }
-
         public abstract List<Move> GetMoves();
     }
 

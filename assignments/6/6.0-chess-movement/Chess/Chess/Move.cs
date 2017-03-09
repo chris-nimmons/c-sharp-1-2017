@@ -15,6 +15,7 @@ namespace Chessmoves
 
         public Move()
         {
+            
             Visible = true;
             Index = '#';
 

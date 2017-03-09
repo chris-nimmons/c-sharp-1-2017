@@ -17,7 +17,7 @@ namespace Chessmoves
         public override List<Move> GetMoves()
         {
             var moves = new List<Move>();
-            moves.Add(new Move());
+           //moves.Add(new Move());
 
             for (int c = 0; c < X + Squares; c++)
             {

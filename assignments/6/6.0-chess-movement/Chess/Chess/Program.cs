@@ -25,6 +25,7 @@ namespace Chessmoves
 
             foreach (var piece in board.Pieces)
             {
+
                 renderer.Render(piece);
             }
 
@@ -33,6 +34,7 @@ namespace Chessmoves
             bool running = true;
             while (running)
             {
+
                 var info = Console.ReadKey(true);
                 switch (info.Key)
                 {
@@ -59,6 +61,7 @@ namespace Chessmoves
                             if (cursor.X == piece.X && cursor.Y == piece.Y)
                             {
                                 highlighted = piece;
+
                             }
                         }
 
@@ -67,12 +70,13 @@ namespace Chessmoves
                         {
                             if (selection != null)
                             {
+
                                 if (highlighted == selection)
                                 {
-
                                     selection.Visible = true;
                                     //deselecting
                                     selection = null;
+
                                     moves.Clear();
                                 }
                                 else
@@ -84,9 +88,14 @@ namespace Chessmoves
                             {
                                 selection = highlighted;
                                 selection.Visible = false;
-                                selection.GetMoves();
-                                moves.AddRange(selection.GetMoves());
+                                moves = selection.GetMoves();
+                               
+
+                                //selection.GetMoves();
+                                //moves.AddRange(selection.GetMoves());
+
                             }
+
 
                         }
                         else
@@ -130,6 +139,7 @@ namespace Chessmoves
                 {
                     cursor.Y = 7;
                 }
+                Console.CursorVisible = false;
                 renderer.Clear();
 
                 foreach (var move in moves)
@@ -141,8 +151,10 @@ namespace Chessmoves
                 {
                     renderer.Render(piece);
                 }
-
                 Console.SetCursorPosition(cursor.X, cursor.Y);
+                Console.CursorVisible = true;
+
+
             }
         }
     }
