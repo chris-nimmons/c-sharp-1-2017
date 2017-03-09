@@ -18,7 +18,7 @@ namespace Chessmoves
         {
             var moves = new List<Move>();
 
-            //moves.Add(new Move());
+           
 
             moves.Add(new Move() { X = X, Y = Y });
 

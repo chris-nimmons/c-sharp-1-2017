@@ -18,7 +18,7 @@ namespace Chessmoves
         {
             var moves = new List<Move>();
 
-            moves.Add(new Move());
+            
 
             for (int i = 0; i < X + Squares; i++)
             {
@@ -41,6 +41,7 @@ namespace Chessmoves
                 moves.Add(new Move() { X = X - Squares, Y = Y - Squares });
 
             }
+
             return moves;
         }
     }

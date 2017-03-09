@@ -18,7 +18,7 @@ namespace Chessmoves
         {
             var moves = new List<Move>();
 
-            //moves.Add(new Move());
+          
 
             for (int a = 0; a < Squares; a++)
             {

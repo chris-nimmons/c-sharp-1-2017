@@ -14,11 +14,9 @@ namespace Chessmoves
         public char Index { get; set; }
 
         public Move()
-        {
-            
+        {         
             Visible = true;
             Index = '#';
-
         }
     }
 }
