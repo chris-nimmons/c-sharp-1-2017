@@ -39,23 +39,43 @@ namespace TestDrivenDesignLecture
         
         public bool Remove(Content content)
         {
-
-             Contents.Remove(content);
-             return true;
+            if (content == null)
+            {
+                return false;
+            }
+             else
+            {
+                Contents.Remove(content);
+                return true;
+            }
         }
 
         public bool Check(Content content)
         {
-            bool output = Contents.Contains(content);
-            return output;
+            if (content != null)
+            {
+                Contents.Contains(content);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
-        public List<Content> Dump()
+        public List<Content> Dump(Pocket pocket)
         {
-            var swapper = new List<Content>(Contents);
-            Contents.Clear();
-            return swapper;
+            if(pocket != null)
+            {
+                var swapper = new List<Content>(Contents);
+                Contents.Clear();
+                return swapper;
+            }
+            else
+            {
+                return false;
+            }
             
         }
 

@@ -21,9 +21,6 @@ namespace ChessMovement
 
             for (int i = 0; i < 8; i++)
             {
-                if (X - i >= 0)
-                {
-
                     var move = new Move() { X = X - i, Y = Y + i };
                     if (IsOnBoard(move))
                     {
@@ -48,8 +45,9 @@ namespace ChessMovement
                         moves.Add(move);
                     }
                 }
-            }
             return moves;
+            }
+
         }
     }
-}
+
