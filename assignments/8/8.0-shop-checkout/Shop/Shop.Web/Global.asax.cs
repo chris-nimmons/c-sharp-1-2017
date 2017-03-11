@@ -45,7 +45,6 @@ namespace Shop.Web
             {
                 var account = new Account() { Signature = Guid.NewGuid() };
 
-
             }
             else
             {
@@ -53,8 +52,6 @@ namespace Shop.Web
                 UserModel user = JsonConvert.DeserializeObject<UserModel>(input);
                 HttpContext.Current.User = new GenericPrincipal(new GenericIdentity(user.Name), user.Roles.ToArray());
             }
-
-
 
             var cookie = HttpContext.Current.Request.Cookies["cart"];
 
@@ -83,10 +80,8 @@ namespace Shop.Web
                     cart = new Cart() { Signature = Guid.NewGuid() };
                     HttpContext.Current.Response.Cookies.Add(new HttpCookie("cart", cart.Signature.ToString()));
 
-
                     context.Carts.Add(cart);
                     context.SaveChanges();
-
                 }
             }
 

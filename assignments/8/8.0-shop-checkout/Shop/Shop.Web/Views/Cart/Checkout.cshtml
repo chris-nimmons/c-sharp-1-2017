@@ -1,0 +1,70 @@
+﻿@model Cart
+
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="mt-3" style="text-shadow:10px 10px 5px">Checkout</h2>
+
+<img class="icon-sm" style="width:250px;height:200px" src="http://images5.fanpop.com/image/photos/31700000/I-m-Old-Gregg-old-gregg-31744749-600-338.jpg">
+<div class="media-body">
+    <h4 class="mt-3"> Sure you don't want to buy more? How about some Baileys?</h4>
+</div>
+
+@{decimal subTotal = 0; }
+@{ decimal orderTotal = 0;}
+@{ decimal itemTotal = 0;}
+
+<table class="table">
+    <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            subTotal += order.Quantity * order.Product.Price;
+            itemTotal = order.Quantity * order.Product.Price;
+            <tr>
+                <td>
+                    <img src="@order.Product.Image" class="icon-sm" style="width:100px;height:100px;border:0" />
+                </td>
+                <td>
+                    <p class="text-primary">@order.Product.Name</p>
+                </td>
+                <td>
+                    <p>Product Price: $@order.Product.Price</p>
+                </td>
+                <td>
+                    <p>Number Of Items: @order.Quantity</p>
+                </td>
+                <td>
+                    <p>Total Cost of Item: $@itemTotal</p>
+                </td>
+                <td>
+                    <p class="text-success">Subtotal: $@subTotal</p>
+                </td>
+            </tr>
+        }
+
+           @{orderTotal += subTotal + orderTotal; }
+
+    </tbody>
+</table>
+<table>
+    <tr>
+        <td>
+            <h3>
+            Forgetting Anything?
+            </h3>
+            <a class="btn btn-primary" href="http://localhost/shop/Products/Products">Back To Products &raquo;</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h3>
+             Ready to buy?
+            </h3>
+            <a class="btn btn-primary" href="http://localhost/shop/cart/checkout-do">Finalize Purchase &raquo;</a>
+        </td>
+    </tr>
+</table>
+
+    

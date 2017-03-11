@@ -1,0 +1,81 @@
+﻿
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Buy. Do it. Do it.</h2>
+
+@{decimal subTotal = 0; }
+@{ decimal orderTotal = 0;}
+@{ decimal itemTotal = 0;}
+
+<table class="table">
+    <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            subTotal += order.Quantity * order.Product.Price;
+            itemTotal = order.Quantity * order.Product.Price;
+            <tr>
+                <td>
+                    <img src="@order.Product.Image" class="icon-sm" style="width:100px;height:100px;border:0" />
+                </td>
+                <td>
+                    <p class="text-primary">@order.Product.Name</p>
+                </td>
+                <td>
+                    <p>Product Price: $@order.Product.Price</p>
+                </td>
+                <td>
+                    <p>Number Of Items: @order.Quantity</p>
+                </td>
+                <td>
+                    <p>Total Cost of Item: $@itemTotal</p>
+                </td>
+                <td>
+                    <p class="text-success">Subtotal: $@subTotal</p>
+                </td>
+                <td>
+                    <p> <a class="btn-sm btn-primary"href="http://localhost/shop/Cart/Add/@order.Product.Id?location=cart">  Add One More!</a>
+                     <a class="btn-sm btn-danger" href="http://localhost/shop/cart/remove/@order.Product.Id?location=cart">  Remove One</a></p>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@{orderTotal += subTotal + orderTotal; }
+<table class="table">
+    <tbody>
+        <tr>
+            <td class="text-right">
+                <a class="btn-sm btn-primary" href="http://localhost/shop/Cart/Clear">Clear All Items From Cart</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-right">            
+                <h3>Forgetting Anything?</h3>
+                <p> <a class="btn-sm btn-primary" href="http://localhost/shop/Products/Products">Back To Products &raquo;</a></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table class="table">
+    <tbody>
+        <tr>
+            <td class="text-right">
+                <h2>Checkout Time!</h2>
+                <p class="text-success">Order Total: $@orderTotal</p>
+                <p> </p>
+                <p><a class="btn btn-primary" href="http://localhost/shop/Cart/Checkout">Checkout &raquo;</a></p>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+   

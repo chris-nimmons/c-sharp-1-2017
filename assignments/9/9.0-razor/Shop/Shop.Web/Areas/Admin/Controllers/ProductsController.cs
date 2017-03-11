@@ -81,6 +81,14 @@ namespace Shop.Web.Areas.Admin.Controllers
             return View(product);
         }
 
+        [Route("transactions")]
+
+        public ActionResult Transactions()
+        {
+            var transactions = Context.Transactions.ToList();
+            return View(transactions);
+        }
+
 
 
     }

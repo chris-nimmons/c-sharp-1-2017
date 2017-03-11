@@ -277,6 +277,9 @@
     <Content Include="Views\Cart\Checkout.cshtml" />
     <Content Include="Views\Cart\CheckoutDo.cshtml" />
     <Content Include="Views\Accounts\Login.cshtml" />
+    <Content Include="Views\Accounts\Register.cshtml" />
+    <Content Include="Views\Accounts\LoginAccount.cshtml" />
+    <Content Include="Views\Accounts\RegisterAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

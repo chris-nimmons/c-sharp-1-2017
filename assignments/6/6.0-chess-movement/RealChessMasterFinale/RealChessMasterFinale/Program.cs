@@ -125,7 +125,6 @@ namespace RealChessMasterFinale
                                         selection.Visible = true;
                                         selection.X = cursor.X;
                                         selection.Y = cursor.Y;
-
                                         selection = null;
                                         moves.Clear();
                                         break;
