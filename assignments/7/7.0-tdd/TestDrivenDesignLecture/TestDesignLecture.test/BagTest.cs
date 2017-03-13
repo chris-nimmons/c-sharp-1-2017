@@ -14,46 +14,51 @@ namespace TestDesignLecture.test
             Bag bag = new Bag(6, 6, 6);
             var add = bag.Add(content);
 
+            Assert.IsTrue(add);
             Assert.IsTrue(bag.Check(content));
         }
 
         [TestMethod]
-        public void Content_Should_Not_Add_To_Bag()
+        public void Content_Should_Not_Add_To_Bag_Because_It_Doesnt_Fit()
         {
             Content content = new Content(6, 6, 6);
             Bag bag = new Bag(4, 4, 4);
             var add = bag.Add(content);
 
+            Assert.IsFalse(add);
             Assert.IsFalse(bag.Check(content));
         }
 
         [TestMethod]
-        public void Content_Should_Not_Add_To_Bag1()
+        public void Content_Should_Not_Add_To_Bag_Because_Its_Too_Long()
         {
             Content content = new Content(6, 3, 3);
             Bag bag = new Bag(4, 4, 4);
             var add = bag.Add(content);
 
+            Assert.IsFalse(add);
             Assert.IsFalse(bag.Check(content));
         }
 
         [TestMethod]
-        public void Content_Should_Not_Add_To_Bag2()
+        public void Content_Should_Not_Add_To_Bag_Because_Its_Too_Wide()
         {
             Content content = new Content(3, 6, 3);
             Bag bag = new Bag(4, 4, 4);
             var add = bag.Add(content);
 
+            Assert.IsFalse(add);
             Assert.IsFalse(bag.Check(content));
         }
 
         [TestMethod]
-        public void Content_Should_Not_Add_To_Bag3()
+        public void Content_Should_Not_Add_To_Bag_Because_Its_Too_Tall()
         {
             Content content = new Content(3, 3, 6);
             Bag bag = new Bag(4, 4, 4);
             var add = bag.Add(content);
 
+            Assert.IsFalse(add);
             Assert.IsFalse(bag.Check(content));
         }
 
@@ -65,11 +70,12 @@ namespace TestDesignLecture.test
             var add = bag.Add(content);
             var remove = bag.Remove(content);
 
+            Assert.IsTrue(remove);
             Assert.IsFalse(bag.Check(content));
         }
 
         [TestMethod]
-        public void Content_Should_Not_Remove_From_Bag()
+        public void Content_Should_Not_Remove_From_Bag_Because_Its_Empty()
         {
             Content content = new Content(4, 4, 4);
             Bag bag = new Bag(6, 6, 6);
@@ -78,51 +84,6 @@ namespace TestDesignLecture.test
             Assert.IsFalse(bag.Check(content));
         }
 
-        [TestMethod]
-        public void Content_Should_Be_In_Bag()
-        {
-            Content content = new Content(4, 4, 4);
-            Bag bag = new Bag(6, 6, 6);
-
-            bag.Check(content);
-            Assert.IsNotNull(bag);
-        }
-
-        [TestMethod]
-        public void Content_Should_Not_Be_In_Bag()
-        {
-            Content content = new Content(6, 6, 6);
-            Bag bag = new Bag(4, 4, 4);
-
-            Assert.IsFalse(bag.Check(content));
-        }
-
-        [TestMethod]
-        public void Content_Should_Not_Be_In_Bag1()
-        {
-            Content content = new Content(6, 3, 3);
-            Bag bag = new Bag(4, 4, 4);
-
-            Assert.IsFalse(bag.Check(content));
-        }
-
-        [TestMethod]
-        public void Content_Should_Not_Be_In_Bag2()
-        {
-            Content content = new Content(3, 6, 3);
-            Bag bag = new Bag(4, 4, 4);
-
-            Assert.IsFalse(bag.Check(content));
-        }
-
-        [TestMethod]
-        public void Content_Should_Not_Be_In_Bag3()
-        {
-            Content content = new Content(3, 3, 6);
-            Bag bag = new Bag(4, 4, 4);
-
-            Assert.IsFalse(bag.Check(content));
-        }
 
         [TestMethod]
         public void Content_Should_Dump_From_Bag()
@@ -130,65 +91,31 @@ namespace TestDesignLecture.test
             Content content = new Content(4, 4, 4);
             Bag bag = new Bag(6, 6, 6);
             var add = bag.Add(content);
-
-            Equals(bag.Dump());
-        }
-
-        [TestMethod]
-        public void Content_Should_Not_Dump_From_Bag()
-        {
-            Content content = new Content(6, 6, 6);
-            Bag bag = new Bag(4, 4, 4);
-            var add = bag.Add(content);
+            bag.Dump();
 
             Assert.IsFalse(bag.Check(content));
         }
 
-        //[TestMethod]
-        //public void Bag_Should_Have_A_Color()
-        //{
-        //    Bag bag = new Bag(5, 5, 5);
-        //    bag.Color = true;
+        [TestMethod]
 
-        //    Assert.IsTrue(bag.Color.Equals(true));
-        //}
+        public void Bag_Should_Add_Multiple_Content()
+        {
+            Content content = new Content(4, 4, 4);
+            Content content2 = new Content(2, 2, 2);
+            Bag bag = new Bag(8, 8, 8);
+            var add = bag.Added(content, content2);
 
-        //[TestMethod]
-        //public void Bag_Should_Not_Have_A_Color()
-        //{
-        //    Bag bag = new Bag(5, 5, 5);
-        //    bag.Color = false;
+            Assert.IsTrue(bag.Check(content)); 
+        }
 
-        //    Assert.IsFalse(bag.Color.Equals(true));
-        //}
+        public void Bag_Should_Not_Be_Able_To_Add_Content_Because_Its_Full()
+        {
+            Content content = new Content(4, 4, 4);
+            Content content2 = new Content(2, 2, 2);
+            Bag bag = new Bag(4, 4, 4);
+            var add = bag.Added(content, content2);
 
-        //[TestMethod]
-        //public void Bag_Should_Have_A_Weight()
-        //{
-        //    Bag bag = new Bag(5, 5, 5);
-        //    bag.Weight = 50;
-
-        //    Assert.IsNotNull(bag.Weight);
-        //}
-
-        //[TestMethod]
-        //public void Bag_Should_Be_In_Excellent_Condition()
-        //{
-        //    Bag bag = new Bag(4, 4, 4);
-        //    bag.Condition = Condition.Excellent;
-
-        //    Assert.AreEqual(bag.Condition, Condition.Excellent);
-        //}
-
-        //[TestMethod]
-        //public void Bag_Should_Not_Be_In_Excellent_Condition()
-        //{
-        //    Bag bag = new Bag(4, 4, 4);
-        //    bag.Condition = Condition.Poor;
-        //    bag.Condition = Condition.Excellent;
-
-        //    Assert.AreNotEqual(Condition.Poor, Condition.Excellent);
-        //}
-
+            Assert.IsFalse(bag.Check(content));
+        }
     }
 }

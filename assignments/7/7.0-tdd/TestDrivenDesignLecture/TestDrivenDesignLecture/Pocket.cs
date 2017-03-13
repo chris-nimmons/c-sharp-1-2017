@@ -36,46 +36,51 @@ namespace TestDrivenDesignLecture
 
         }
 
-        
-        public bool Remove(Content content)
+        public bool Added(Content content, Content content2)
         {
-            if (content == null)
+            if (content.Volume.Length < Volume.Length
+                && content.Volume.Width < Volume.Width &&
+                content.Volume.Height < Volume.Height)
+            {
+                if (content.Volume.Length + content2.Volume.Length > Volume.Length
+                    && content.Volume.Height + content2.Volume.Height > Volume.Height
+                    && content.Volume.Width + content2.Volume.Width > Volume.Height)
+                {
+                    Contents.Add(content);
+                    return false;
+                }
+                else
+                {
+                    Contents.Add(content);
+                    Contents.Add(content2);
+                    return true;
+                }
+            }
+            else
             {
                 return false;
             }
-             else
-            {
-                Contents.Remove(content);
-                return true;
-            }
+
+        }
+
+        public bool Remove(Content content)
+        {
+            bool output = Contents.Remove(content);
+            return output;
         }
 
         public bool Check(Content content)
         {
-            if (content != null)
-            {
-                Contents.Contains(content);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            bool output = Contents.Contains(content);
+            return output;
 
         }
 
-        public List<Content> Dump(Pocket pocket)
+        public List<Content> Dump()
         {
-            if(pocket != null)
-            {
                 var swapper = new List<Content>(Contents);
                 Contents.Clear();
                 return swapper;
-            }
-            else
-            {
-                return false;
-            }
             
         }
 

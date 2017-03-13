@@ -8,138 +8,112 @@ namespace TestDesignLecture.test
     public class PocketTest
     {
         [TestMethod]
-        public void Contents_Should_Add_To_Pocket()
+        public void Content_Should_Add_To_Pocket()
         {
-            Content content = new Content(1, 1, 1 );
-            Pocket pocket = new Pocket(2, 2, 2);
+            Content content = new Content(4, 4, 4);
+            Pocket pocket = new Pocket(6, 6, 6);
             var add = pocket.Add(content);
 
+            Assert.IsTrue(add);
             Assert.IsTrue(pocket.Check(content));
         }
 
         [TestMethod]
-        public void Contents_Should_Not_Add_To_Pocket_Bc_Content_Too_Big()
+        public void Content_Should_Not_Add_To_Pocket_Because_It_Doesnt_Fit()
         {
-            Content content = new Content(2, 2, 2);
-            Pocket pocket = new Pocket(1, 1, 1);
-            var add = pocket.Add(content);
-
-            Assert.IsFalse(pocket.Check(content));
-        }
-
-        [TestMethod]
-        public void Contents_Should_Not_Add_To_Pocket_Bc_Length_Too_Big()
-        {
-            Content content = new Content(3, 1, 1);
-            Pocket pocket = new Pocket(2, 2, 2);
-            var add = pocket.Add(content);
-
-            Assert.IsFalse(pocket.Check(content));
-        }
-
-        [TestMethod]
-        public void Contents_Should_Not_Add_To_Pocket_Bc_Width_Too_Big()
-        {
-            Content content = new Content(1, 3, 1);
-            Pocket pocket = new Pocket(2, 2, 2);
-            var add = pocket.Add(content);
-
-            Assert.IsFalse(pocket.Check(content));
-        }
-
-        [TestMethod]
-        public void Contents_Should_Not_Add_To_Pocket_Bc_Height_Too_Big()
-        {
-            Content content = new Content(1, 1, 3);
-            Pocket pocket = new Pocket(2, 2, 2);
-            var add = pocket.Add(content);
-
-            Assert.IsFalse(pocket.Check(content));
-        }
-
-        [TestMethod]
-        public void Contents_Should_Remove_From_Pocket()
-        {
-            Content content = new Content(1, 1, 1);
-            Pocket pocket = new Pocket(2, 2, 2);
-            var add = pocket.Add(content);
-            var remove = pocket.Remove(content);
-
-            Assert.IsFalse(pocket.Check(content));
-        }
-
-        [TestMethod]
-        public void Content_Should_Not_Remove_From_Pocket()
-        {
-            Content content = new Content(2, 2, 2);
+            Content content = new Content(8, 8, 8);
             Pocket pocket = new Pocket(4, 4, 4);
-            var remove = pocket.Remove(content);
+            var add = pocket.Add(content);
 
+            Assert.IsFalse(add);
             Assert.IsFalse(pocket.Check(content));
         }
 
         [TestMethod]
-        public void Content_Should_Be_In_Pocket()
+        public void Content_Should_Not_Add_To_Pocket_Because_Its_Too_Long()
         {
-            Content content = new Content(2, 2, 2);
+            Content content = new Content(6, 3, 3);
             Pocket pocket = new Pocket(4, 4, 4);
+            var add = pocket.Add(content);
 
-            pocket.Check(content);
-            Assert.IsNotNull(pocket);
+            Assert.IsFalse(add);
+            Assert.IsFalse(pocket.Check(content));
         }
 
         [TestMethod]
-        public void Content_Should_Not_Be_In_Pocket()
+        public void Content_Should_Not_Add_To_Pocket_Because_Its_Too_Wide()
+        {
+            Content content = new Content(3, 6, 3);
+            Pocket pocket = new Pocket(4, 4, 4);
+            var add = pocket.Add(content);
+
+            Assert.IsFalse(add);
+            Assert.IsFalse(pocket.Check(content));
+        }
+
+        [TestMethod]
+        public void Content_Should_Not_Add_To_Pocket_Because_Its_Too_Tall()
+        {
+            Content content = new Content(3, 3, 6);
+            Pocket pocket = new Pocket(4, 4, 4);
+            var add = pocket.Add(content);
+
+            Assert.IsFalse(add);
+            Assert.IsFalse(pocket.Check(content));
+        }
+
+        [TestMethod]
+        public void Content_Should_Remove_From_Bag()
         {
             Content content = new Content(4, 4, 4);
-            Pocket pocket = new Pocket(2, 2, 2);
+            Pocket pocket = new Pocket(6, 6, 6);
+            var add = pocket.Add(content);
+            var remove = pocket.Remove(content);
 
+            Assert.IsTrue(remove);
             Assert.IsFalse(pocket.Check(content));
         }
 
         [TestMethod]
-        public void Content_Should_Not_Be_In_Pocket1()
+        public void Content_Should_Not_Remove_From_Pocket_Because_Its_Empty()
         {
-            Content content = new Content(4, 1, 1);
-            Pocket pocket = new Pocket(2, 2, 2);
+            Content content = new Content(4, 4, 4);
+            Pocket pocket = new Pocket(6, 6, 6);
+            var remove = pocket.Remove(content);
 
             Assert.IsFalse(pocket.Check(content));
         }
 
-        [TestMethod]
-        public void Content_Should_Not_Be_In_Pocket2()
-        {
-            Content content = new Content(1, 4, 1);
-            Pocket pocket = new Pocket(2, 2, 2);
-
-            Assert.IsFalse(pocket.Check(content));
-        }
-
-        [TestMethod]
-        public void Content_Should_Not_Be_In_Pocket3()
-        {
-            Content content = new Content(1, 1, 4);
-            Pocket pocket = new Pocket(2, 2, 2);
-
-            Assert.IsFalse(pocket.Check(content));
-        }
 
         [TestMethod]
         public void Content_Should_Dump_From_Pocket()
         {
-            Content content = new Content(2, 2, 2);
-            Pocket pocket = new Pocket(4, 4, 4);
+            Content content = new Content(4, 4, 4);
+            Pocket pocket = new Pocket(6, 6, 6);
             var add = pocket.Add(content);
+            pocket.Dump();
 
-            Equals(pocket.Dump());
+            Assert.IsFalse(pocket.Check(content));
         }
 
         [TestMethod]
-        public void Content_Should_Not_Dump_From_Pocket()
+
+        public void Pocket_Should_Add_Multiple_Content()
         {
             Content content = new Content(4, 4, 4);
-            Pocket pocket = new Pocket(2, 2, 2);
-            var add = pocket.Add(content);
+            Content content2 = new Content(2, 2, 2);
+            Pocket pocket = new Pocket(8, 8, 8);
+            var add = pocket.Added(content, content2);
+
+            Assert.IsTrue(pocket.Check(content));
+        }
+
+        public void Pocket_Should_Not_Be_Able_To_Add_Content_Because_Its_Full()
+        {
+            Content content = new Content(4, 4, 4);
+            Content content2 = new Content(2, 2, 2);
+            Pocket pocket = new Pocket(4, 4, 4);
+            var add = pocket.Added(content, content2);
 
             Assert.IsFalse(pocket.Check(content));
         }

@@ -12,7 +12,7 @@ namespace TestDrivenDesignLecture
         public Volume Volume { get; set; }
         public float Weight { get; set; }
         public List<Pocket> Pockets { get; set; }
-        private List<Content> Contents { get; set; }        
+        private List<Content> Contents { get; set; }
         public Condition Condition { get; set; }
 
         public Bag(float length, float width, float height)
@@ -34,8 +34,35 @@ namespace TestDrivenDesignLecture
             else
             {
                 return false;
-            }      
-            
+            }
+
+        }
+
+        public bool Added(Content content, Content content2)
+        {
+            if (content.Volume.Length < Volume.Length
+                && content.Volume.Width < Volume.Width &&
+                content.Volume.Height < Volume.Height)
+            {
+                if (content.Volume.Length + content2.Volume.Length > Volume.Length
+                    && content.Volume.Height + content2.Volume.Height > Volume.Height
+                    && content.Volume.Width + content2.Volume.Width > Volume.Height)
+                {
+                    Contents.Add(content);
+                    return false;
+                }
+                else
+                {
+                    Contents.Add(content);
+                    Contents.Add(content2);
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         public bool Remove(Content content)
@@ -53,7 +80,9 @@ namespace TestDrivenDesignLecture
 
         public List<Content> Dump()
         {
-            return Contents;
+            var swapper = new List<Content>(Contents);
+            Contents.Clear();
+            return swapper;
         }
 
 
