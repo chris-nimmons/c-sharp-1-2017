@@ -10,3 +10,7 @@ C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Exercise1-31-17\Program\bin\
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Exercise1-31-17\Program\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Exercise1-31-17\Program\obj\Debug\Program.exe
 C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\Exercise1-31-17\Program\obj\Debug\Program.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\ClassRoom\Program\bin\Debug\Program.exe.config
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\ClassRoom\Program\obj\Debug\Program.exe
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\ClassRoom\Program\obj\Debug\Program.pdb
+C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\ClassRoom\Program\obj\Debug\Program.csprojResolveAssemblyReference.cache

@@ -1,5 +1,0 @@
-C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\UnitTestProject\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
-C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\UnitTestProject\UnitTestProject\bin\Debug\UnitTestProject.dll
-C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\UnitTestProject\UnitTestProject\bin\Debug\UnitTestProject.pdb
-C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\UnitTestProject\UnitTestProject\obj\Debug\UnitTestProject.dll
-C:\Users\Colby\Desktop\c-sharp-1-2017\assignments\7\UnitTestProject\UnitTestProject\obj\Debug\UnitTestProject.pdb

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-sm-6 col-sm-offset-3">
+    <form method="post" action="~/admin/products/add-do">
+
+        <div class="form-group">
+            <label class="control-label">
+                Name:
+            </label>
+            <input type="text" name="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">
+                Price:
+            </label>
+            <input type="text" name="Price" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">
+                Weight:
+            </label>
+            <input type="text" name="Weight" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">
+                Quantity:
+            </label>
+            <input type="text" name="Quantity" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+</div>

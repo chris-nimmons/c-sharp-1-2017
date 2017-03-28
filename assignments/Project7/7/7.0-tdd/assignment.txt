@@ -1,3 +1,0 @@
-Create a new Visual Studio Unit Test Project.  
-Make tests for all classes in the TestDrivenDesignLecture.  
-Make sure to test all cases that can occur.  Dont just look at the code.  Think about the cases in real life.  
