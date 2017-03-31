@@ -1,6 +1,0 @@
-C:\Users\Kyle\Desktop\ChessSet\ChessSet\bin\Debug\ChessSet.exe.config
-C:\Users\Kyle\Desktop\ChessSet\ChessSet\bin\Debug\ChessSet.exe
-C:\Users\Kyle\Desktop\ChessSet\ChessSet\bin\Debug\ChessSet.pdb
-C:\Users\Kyle\Desktop\ChessSet\ChessSet\obj\Debug\ChessSet.exe
-C:\Users\Kyle\Desktop\ChessSet\ChessSet\obj\Debug\ChessSet.pdb
-C:\Users\Kyle\Desktop\ChessSet\ChessSet\obj\Debug\ChessSet.csprojResolveAssemblyReference.cache

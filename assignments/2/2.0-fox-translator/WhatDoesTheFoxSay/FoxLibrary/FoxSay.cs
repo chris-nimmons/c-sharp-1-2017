@@ -11,7 +11,7 @@ namespace Library.Fox
         public void FoxTranslate()
         {
             string fox = "wa pow ring ding tchoff pa joff ho hatee tchoffo dingeringeding";
-
+            string humanSpeak = "";
             string[] sentenceArray = fox.Split(' ');
 
             foreach (string word in sentenceArray)
@@ -19,66 +19,68 @@ namespace Library.Fox
 
                 if (word == "wa")
                 {
-                    Console.WriteLine("you");
-                    Console.ReadLine();
+                    humanSpeak += "you";
+                    
                 }
                 else if (word == "pow")
                 {
-                    Console.WriteLine("owe");
-                    Console.ReadLine();
+                    humanSpeak += "owe";
+                   
                 }
                 else if (word == "tchoffo")
                 {
-                    Console.WriteLine("like");
-                    Console.ReadLine();
+                    humanSpeak += "like";
+                    
                 }
                 else if (word == "pa")
                 {
-                    Console.WriteLine("acorn");
-                    Console.ReadLine();
+                    humanSpeak += "acorn";
+                    
                 }
                 else if (word == "joff")
                 {
-                    Console.WriteLine("and");
-                    Console.ReadLine();
+                    humanSpeak += ("and");
+                   
                 }
                 else if (word == "ho")
                 {
-                    Console.WriteLine("I");
-                    Console.ReadLine();
+                    humanSpeak += "I";
+                    
                 }
                 else if (word == "ring")
                 {
-                    Console.WriteLine("me");
-                    Console.ReadLine();
+                    humanSpeak += "me";
+                    
                 }
                 else if (word == "hatee")
                 {
-                    Console.WriteLine("don't");
-                    Console.ReadLine();
+                    humanSpeak += ("don't");
+                    
                 }
                 else if (word == "ding")
                 {
-                    Console.WriteLine("a");
-                    Console.ReadLine();
+                    humanSpeak += "a";
+                   
                 }
                 else if (word == "dingeringeding")
                 {
-                    Console.WriteLine("squirrels");
-                    Console.ReadLine();
+                    humanSpeak += "squirrels";
+                   
                 }
                 else if (word == "tchoff")
                 {
-                    Console.WriteLine("new");
-                    Console.ReadLine();
+                    humanSpeak += "new";
                 }
                 else
                 {
                     Console.WriteLine("wololo");
                     Console.ReadLine();
-                }                
+                }
+                
+
 
             }
+            Console.ReadLine();
         }
     }
 }
