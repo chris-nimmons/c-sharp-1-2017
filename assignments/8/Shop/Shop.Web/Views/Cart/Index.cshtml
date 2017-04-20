@@ -21,7 +21,7 @@
                     @order.Quantity * @order.Price
                 </td>
                 <td>
-                    @subTotal
+                    @subTotal.ToString("C")
                 </td>
                 <td>
                     <a href="~/cart/remove/@order.Id" class="btn btn-danger btn-block">Remove</a>
@@ -31,7 +31,7 @@
         <tr>
             <td><strong>Total</strong></td>
             <td colspan="3"></td>
-            <td> @Model.Total</td>
+            <td> @Model.Total.ToString("C")</td>
         </tr>
     </table>
     <a href="~/cart/Checkout" class="btn btn-primary">Checkout</a>

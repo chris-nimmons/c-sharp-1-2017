@@ -7,13 +7,13 @@ namespace Shop.Web.Models
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class FixedMigration : IMigrationMetadata
+    public sealed partial class InitialMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FixedMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703151505440_FixedMigration"; }
+            get { return "201704041323213_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

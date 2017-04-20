@@ -51,22 +51,18 @@ namespace Shop.Web.Models
                 .First(q => q.Signature == signature);
 
 
-            var order = cart.Orders.FirstOrDefault(q => q.Id == product.Id);
+            var order = cart.Orders.FirstOrDefault(q => q.Product.Id == product.Id);
             if (order != null)
             {
-                if (order.Quantity < order.Quantity)
-                {
-                    order.Quantity++;
-                    Context.SaveChanges();
-                }
+                order.Quantity++;
+                Context.SaveChanges();
             }
             else
             {
-                order = new Order() { Product = order.Product, Price = product.Price, Quantity = 1};
+                order = new Order() { Product = product, Price = product.Price, Quantity = 1 };
                 cart.Orders.Add(order);
                 Context.SaveChanges();
             }
-
 
             return RedirectToAction("Product", "Home", new { id = product.Id });
         }

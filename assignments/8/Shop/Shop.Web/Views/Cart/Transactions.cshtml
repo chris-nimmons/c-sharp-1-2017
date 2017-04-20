@@ -9,9 +9,9 @@
         @foreach (var transaction in Model)
         {
             <tr>
-                <td>@transaction.Orders</td>
+                <td>@transaction.Signature</td>
                 <td><strong>Total</strong></td>
-                <td> @transaction.Total</td>
+                <td> @transaction.Total.ToString("C")</td>
             </tr>
         }
 
