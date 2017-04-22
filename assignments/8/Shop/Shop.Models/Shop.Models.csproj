@@ -51,13 +51,9 @@
   <ItemGroup>
     <Compile Include="Cart.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="Migrations\201704041323213_InitialMigration.cs" />
-    <Compile Include="Migrations\201704041323213_InitialMigration.Designer.cs">
-      <DependentUpon>201704041323213_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704201856158_NewMigration.cs" />
-    <Compile Include="Migrations\201704201856158_NewMigration.Designer.cs">
-      <DependentUpon>201704201856158_NewMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201704211944459_InitialMigration.cs" />
+    <Compile Include="Migrations\201704211944459_InitialMigration.Designer.cs">
+      <DependentUpon>201704211944459_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
@@ -73,11 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704041323213_InitialMigration.resx">
-      <DependentUpon>201704041323213_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704201856158_NewMigration.resx">
-      <DependentUpon>201704201856158_NewMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704211944459_InitialMigration.resx">
+      <DependentUpon>201704211944459_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

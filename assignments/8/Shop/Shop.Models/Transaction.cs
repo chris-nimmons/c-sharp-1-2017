@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace Shop.Models
 {
-    public class Transaction : Product
+    public class Transaction
     {
         public int Id { get; set; }
         public List<Order> Orders { get; set; }

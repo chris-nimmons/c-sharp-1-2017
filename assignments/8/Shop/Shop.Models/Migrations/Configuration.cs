@@ -1,36 +1,27 @@
-using System;
-using System.Linq;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using Shop.Web.Models;
-using Shop.Models;
-
-namespace Shop.Web.Models
+namespace Shop.Models.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<ShopContext>
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<Shop.Web.Models.ShopContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-
-
-        protected override void Seed(ShopContext context)
+        protected override void Seed(Shop.Web.Models.ShopContext context)
         {
-            if (!context.Products.Any())
-            {
 
-                var product = new Product() { Name = "Nerf  Gun", Price = 49, Quantity = 7, SKU = "00000", Weight = 10, Image = "http://d2rormqr1qwzpz.cloudfront.net/photos/2012/05/29/38134-maverick.jpg" };
-                context.Products.Add(product);
-                product = new Product() { Name = "Computer Monitor", Price = 10, Quantity = 20, SKU = "00110", Weight = 3, Image = "https://www.bhphotovideo.com/images/images2500x2500/acer_um_fg6aa_b01_gn246hl_bbid_24_3d_ready_1073477.jpg" };
-                context.Products.Add(product);
-                product = new Product() { Name = "Computer Mouse", Price = 5, Quantity = 3, SKU = "11110", Weight = 1, Image = "https://i.kinja-img.com/gawker-media/image/upload/s--Jo7sinAv--/c_scale,f_auto,fl_progressive,q_80,w_800/aoj4ajmkg11pq7jdwkm5.jpg" };
-                context.Products.Add(product);
+              context.Products.AddOrUpdate(
+                p => p.Name,
+                new Product { Id = 0020, Image = "http://d2rormqr1qwzpz.cloudfront.net/photos/2012/05/29/38134-maverick.jpg", Name = "Nerf Gun", Price = 22, Quantity = 1, SKU = "1033322", Weight = 20},
+                new Product { Id = 1100, Image = "https://fthmb.tqn.com/IGeUu5uA5QFjYrzQ_LRAZxUBdx0=/1000x819/filters:fill(auto,1)/about/dell-ultrasharp-u2412m-lcd-monitor-56a6f9cc3df78cf772913a70.jpg", Name = "Computer Moniter", Price = 22, Quantity = 1, SKU = "1033322", Weight = 20 },
+                new Product { Id = 2220, Image = "https://i.kinja-img.com/gawker-media/image/upload/s--Jo7sinAv--/c_scale,f_auto,fl_progressive,q_80,w_800/aoj4ajmkg11pq7jdwkm5.jpg", Name = "Computer Mouse", Price = 22, Quantity = 1, SKU = "1033322", Weight = 20 }
+              );
 
-                context.SaveChanges();
-            }
         }
-
     }
 }

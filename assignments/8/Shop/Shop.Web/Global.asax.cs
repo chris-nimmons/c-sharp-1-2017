@@ -54,7 +54,7 @@ namespace Shop.Web
                 else
                 {
                     cart = new Cart() { Signature = Guid.NewGuid() };
-                    HttpContext.Current.Response.Cookies.Add(new HttpCookie("cart", cart.Name.ToString()));
+                    HttpContext.Current.Response.Cookies.Add(new HttpCookie("cart", cart.Signature.ToString()));
                     context.Carts.Add(cart);
                     context.SaveChanges();
 

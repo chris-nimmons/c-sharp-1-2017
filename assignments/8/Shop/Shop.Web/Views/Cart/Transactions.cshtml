@@ -6,14 +6,25 @@
 <div class="row">
 
     <table class="table">
-        @foreach (var transaction in Model)
+
+
+        @foreach (Transaction transaction in Model)
         {
             <tr>
+                <td><strong>Orders</strong></td>
+                <td>
+                    @foreach (Order order in transaction.Orders)
+                    {
+                        @order.Product.Name <br />
+                    }
+                </td>
                 <td>@transaction.Signature</td>
                 <td><strong>Total</strong></td>
                 <td> @transaction.Total.ToString("C")</td>
             </tr>
         }
+
+
 
     </table>
 
