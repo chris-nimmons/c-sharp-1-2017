@@ -17,26 +17,14 @@ namespace TestDrivenDesignLecture
             Volume = new Volume(length, width, height);
         }
 
-        public bool Add(Content content, Content content2)
+        public bool Add(Content content)
         {
             if (content.Volume.Length < Volume.Length
                 && content.Volume.Width < Volume.Width &&
                 content.Volume.Height < Volume.Height)
             {
-                if (content.Volume.Length + content2.Volume.Length > Volume.Length
-                    && content.Volume.Width + content2.Volume.Width > Volume.Width
-                    && content.Volume.Height + content2.Volume.Height > Volume.Height)
-                {
-                    Contents.Add(content);
-                    return false;
-                }
-                else
-                {
-                    Contents.Add(content);
-                    Contents.Add(content2);
-                    return true;
-                }
-
+                Contents.Add(content);
+                return true;    
             }
             else
             {
