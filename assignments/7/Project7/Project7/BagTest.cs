@@ -118,7 +118,7 @@ namespace UnitTestProject
             [TestMethod]
             public void Bag_Must_Be_Closed_By_Default()
             {
-                var bag = new Pocket(2, 2, 2);
+                var bag = new Bag(2, 2, 2);
                 var content = new Content(1, 1, 1);
                 var opened = bag.Opened;
 
