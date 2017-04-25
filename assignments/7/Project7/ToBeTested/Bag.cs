@@ -8,8 +8,18 @@ namespace TestDrivenDesignLecture
 {
     public class Bag
     {
-        public string Color { get; set; }
+        private string name = "black";
+        public string Color { get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
         public Volume Volume { get; set; }
+        public bool Opened { get; set; }
         public float Weight { get; set; }
         public List<Pocket> Pockets { get; set; }
         private List<Content> Contents { get; set; }

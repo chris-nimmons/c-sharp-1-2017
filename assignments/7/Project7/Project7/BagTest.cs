@@ -38,11 +38,12 @@ namespace UnitTestProject
                 var content = new Content(3, 3, 3);
                 var bag = new Bag(4, 4, 4);
                 bag.Dump();
+                var dumped = bag.Dump();
 
                 Assert.IsFalse(bag.Check(content));
             }
             [TestMethod]
-            public void Bag_Should_Not_Add_Oversized_Content()
+            public void Bag_Should_Not_Overflow()
             {
                 var bag = new Bag(13, 17, 23);
                 var content = new Content(20, 20, 20);
@@ -52,81 +53,76 @@ namespace UnitTestProject
                 Assert.IsFalse(bag.Check(content));
             }
             [TestMethod]
-            public void One_Bag_Should_Exist_For_Contents()
+            public void Bag_Can_Not_Be_Equal_To_Content()
             {
-                var bag = new Bag(0, 0, 0);
-                var content = new Content(2, 2, 2);
-                var added = bag.Add(content);
+                var bag = new Bag(4, 4, 4);
+                var content = new Content(4, 4, 4);
 
-                Assert.IsFalse(added);
-                Assert.IsFalse(bag.Check(content));
-
+                Assert.IsFalse(bag.Equals(content));
             }
             [TestMethod]
-            public void Bag_Should_Have_Volume()
-            {
-                var bag = new Bag(1, 1, 1);
-                var volume = new Volume(0,0,0);
-                var content = new Content(1, 1, 1);
-                var added = bag.Add(content);
-
-                Assert.IsFalse(added);
-                Assert.IsFalse(bag.Check(content));
-            }
-            [TestMethod]
-            public void Bag_Volume_Should_Be_Greater_Or_Equal_To_Content()
-            {
-                var bag = new Bag(2, 2, 2);
-                var volume = new Volume(1, 1, 1);
-                var content = new Content(1, 1, 1);
-                var added = bag.Add(content);
-
-                Assert.IsTrue(added);
-                Assert.IsTrue(bag.Check(content));
-            }
-            [TestMethod]
-            public void Bag_Should_Be_As_Big_As_Volume()
-            {
-                var bag = new Bag(1, 1, 1);
-                var volume = new Volume(2, 2, 2);
-                var content = new Content(1, 1, 1);
-                var added = bag.Add(content);
-
-                Assert.IsFalse(added);
-                Assert.IsFalse(bag.Check(content));
-            }
-            [TestMethod]
-            public void Volume_Should_Not_Exist_Without_Bag()
-            {
-                var bag = new Bag(0, 0, 0);
-                var volume = new Volume(2, 2, 2);
-                var content = new Content(1, 1, 1);
-                var added = bag.Add(content);
-
-                Assert.IsFalse(added);
-                Assert.IsFalse(bag.Check(content));
-            }
-            [TestMethod]
-            public void Bag_Should_Not_Add_Excess_Volume()
+            public void Bag_Must_Be_Black_By_Default()
             {
                 var bag = new Bag(3, 3, 3);
-                var volume = new Volume(2, 2, 2);
-                var content = new Content(3, 3, 3);
-                var added = bag.Add(content);
+                var content = new Content(9, 9, 9);
+                var color = bag.Color;
 
-                Assert.IsFalse(added);
-                Assert.IsFalse(bag.Check(content));
+                Assert.IsTrue(color == "black");
+                Assert.IsFalse(color != "black");
             }
             [TestMethod]
-            public void Bag_Can_Be_Empty()
+            public void Bag_Must_Have_Volume()
             {
-                var bag = new Bag(1, 1, 1);
-                var volume = new Volume(0, 0, 0);
-                var content = new Content(0, 0, 0);
-                var added = bag.Add(content);
+                var bag = new Bag(3, 3, 3);
+                var content = new Content(2, 2, 2);
+                var volume = bag.Volume;
 
-                Assert.IsTrue(added);
-                Assert.IsTrue(bag.Check(content));
+                Assert.IsFalse(volume == null);
+                Assert.IsTrue(volume != null);
+            }
+            [TestMethod]
+            public void Bag_Can_Have_No_Pockets()
+            {
+                var bag = new Bag(3, 3, 3);
+                var count = bag.Pockets.Count;
+
+                Assert.IsTrue(count == 0);
+            }
+            [TestMethod]
+            public void Bag_Can_Have_Multiple_Pockets()
+            {
+                var bag = new Bag(2, 2, 2);
+                var count = bag.Pockets.Count;
+
+                count = 2;
+                Assert.IsTrue(count > 0);
+            }
+            [TestMethod]
+            public void Bag_Must_Have_Weight()
+            {
+                var bag = new Bag(2, 2, 2);
+                var weight = bag.Weight;
+
+                Assert.IsFalse(weight < 0);
+                Assert.IsTrue(weight >= 0);
+            }
+            [TestMethod]
+            public void Empty_Bag_Holds_Weight_Of_Zero()
+            {
+                var bag = new Bag(2, 2, 2);
+                var content = new Content(0,0,0);
+                var weight = bag.Weight;
+
+                Assert.IsTrue(weight == 0);
+            }
+            [TestMethod]
+            public void Bag_Must_Be_Closed_By_Default()
+            {
+                var bag = new Pocket(2, 2, 2);
+                var content = new Content(1, 1, 1);
+                var opened = bag.Opened;
+
+                Assert.IsFalse(opened);
             }
         }
 
