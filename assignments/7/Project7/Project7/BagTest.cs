@@ -77,7 +77,7 @@ namespace UnitTestProject
                 var content = new Content(2, 2, 2);
                 var volume = bag.Volume;
 
-                Assert.IsFalse(volume == null);
+                Assert.IsNotNull(volume);
                 Assert.IsTrue(volume != null);
             }
             [TestMethod]
