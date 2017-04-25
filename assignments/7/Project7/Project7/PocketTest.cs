@@ -73,7 +73,7 @@ namespace UnitTestProject
                 Assert.IsFalse(pocket.Check(content));
             }
             [TestMethod]
-            public void Pocket_Volume_Should_Be_Greater_Than_Or_Equal_To_Content()
+            public void Pocket_Volume_Should_Be_Greater_Or_Equal_To_Content()
             {
                 var pocket = new Pocket(2, 2, 2);
                 var volume = new Volume(1, 1, 1);
