@@ -74,10 +74,10 @@ namespace UnitTestProject
                 Assert.IsFalse(bag.Check(content));
             }
             [TestMethod]
-            public void Bag_Volume_Should_Be_More_Than_Content()
+            public void Bag_Volume_Should_Be_Greater_Or_Equal_To_Content()
             {
                 var bag = new Bag(2, 2, 2);
-                var volume = new Volume(2, 2, 2);
+                var volume = new Volume(1, 1, 1);
                 var content = new Content(1, 1, 1);
                 var added = bag.Add(content);
 
