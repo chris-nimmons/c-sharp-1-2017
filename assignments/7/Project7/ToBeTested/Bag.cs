@@ -9,7 +9,9 @@ namespace TestDrivenDesignLecture
     public class Bag
     {
         private string name = "black";
-        public string Color { get
+        public string Color
+        {
+            get
             {
                 return name;
             }

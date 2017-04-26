@@ -21,6 +21,33 @@ namespace UnitTestProject
                 Assert.IsTrue(pocket.Check(content));
             }
             [TestMethod]
+            public void Pocket_Should_Not_Add_More_Than_Length()
+            {
+                var pocket = new Pocket(2, 2, 2);
+                var content = new Content(3, 2, 2);
+                var added = pocket.Add(content);
+
+                Assert.IsFalse(added);
+            }
+            [TestMethod]
+            public void Pocket_Should_Not_Add_More_Than_Width()
+            {
+                var pocket = new Pocket(2, 2, 2);
+                var content = new Content(2, 3, 2);
+                var added = pocket.Add(content);
+
+                Assert.IsFalse(added);
+            }
+            [TestMethod]
+            public void Pocket_Should_Not_Add_More_Than_Height()
+            {
+                var pocket = new Pocket(2, 2, 2);
+                var content = new Content(2, 3, 2);
+                var added = pocket.Add(content);
+
+                Assert.IsFalse(added);
+            }
+            [TestMethod]
             public void Pocket_Should_Remove()
             {
                 var pocket = new Bag(3, 3, 3);
@@ -32,12 +59,38 @@ namespace UnitTestProject
                 Assert.IsFalse(pocket.Check(content));
             }
             [TestMethod]
+            public void Pocket_Should_Not_Remove_Excess_Content_Length()
+            {
+                var pocket = new Pocket(2, 2, 2);
+                var content = new Content(3, 2, 2);
+                var removed = pocket.Remove(content);
+
+                Assert.IsFalse(removed);
+            }
+            [TestMethod]
+            public void Bag_Should_Not_Remove_Excess_Content_Width()
+            {
+                var pocket = new Pocket(2, 2, 2);
+                var content = new Content(2, 3, 2);
+                var removed = pocket.Remove(content);
+
+                Assert.IsFalse(removed);
+            }
+            [TestMethod]
+            public void Bag_Should_Not_Remove_Excess_Content_Height()
+            {
+                var pocket = new Pocket(2, 2, 2);
+                var content = new Content(2, 2, 3);
+                var removed = pocket.Remove(content);
+
+                Assert.IsFalse(removed);
+            }
+            [TestMethod]
             public void Pocket_Should_Dump()
             {
                 var content = new Content(3, 3, 3);
                 var pocket = new Pocket(4, 4, 4);
                 pocket.Dump();
-                var dumped = pocket.Dump();
 
                 Assert.IsFalse(pocket.Check(content));
             }
@@ -56,10 +109,8 @@ namespace UnitTestProject
             {
                 var pocket = new Pocket(3, 3, 3);
                 var content = new Content(9, 9, 9);
-                var color = pocket.Color;
 
-                Assert.IsTrue(color == "black");
-                Assert.IsFalse(color != "black");
+                Assert.IsTrue(pocket.Color == "black");
             }
             [TestMethod]
             public void Pocket_Must_Have_Volume()
@@ -69,7 +120,6 @@ namespace UnitTestProject
                 var volume = pocket.Volume;
 
                 Assert.IsNotNull(volume);
-                Assert.IsTrue(volume != null);
             }
             [TestMethod]
             public void Pockets_Do_Not_Exist_By_Default()
@@ -78,7 +128,6 @@ namespace UnitTestProject
                 var count = bag.Pockets.Count;
 
                 Assert.IsTrue(count == 0);
-                Assert.IsFalse(count != 0);
             } 
             [TestMethod]
             public void Pocket_Must_Have_Weight()
@@ -115,7 +164,6 @@ namespace UnitTestProject
                 var condition = pocket.Condition;
 
                 Assert.IsTrue(pocket.Condition == 0);
-                Assert.IsFalse(pocket.Condition != 0);
             }
             [TestMethod]
             public void Pocket_With_Contents_Weighs_Zero_By_Default()
