@@ -53,6 +53,7 @@ namespace UnitTestProject
             {
                 var bag = new Bag(2, 2, 2);
                 var content = new Content(3, 2, 2);
+                bag.Add(content);
                 var removed = bag.Remove(content);
 
                 Assert.IsFalse(removed);
@@ -62,6 +63,7 @@ namespace UnitTestProject
             {
                 var bag = new Bag(2, 2, 2);
                 var content = new Content(2, 3, 2);
+                bag.Add(content);
                 var removed = bag.Remove(content);
 
                 Assert.IsFalse(removed);
@@ -71,6 +73,7 @@ namespace UnitTestProject
             {
                 var bag = new Bag(2, 2, 2);
                 var content = new Content(2, 2, 3);
+                bag.Add(content);
                 var removed = bag.Remove(content);
 
                 Assert.IsFalse(removed);

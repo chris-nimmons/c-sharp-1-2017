@@ -21,7 +21,7 @@ namespace UnitTestProject
                 Assert.IsTrue(pocket.Check(content));
             }
             [TestMethod]
-            public void Pocket_Should_Not_Add_More_Than_Length()
+            public void Pocket_Cannot_Add_Excess_Length()
             {
                 var pocket = new Pocket(2, 2, 2);
                 var content = new Content(3, 2, 2);
@@ -30,7 +30,7 @@ namespace UnitTestProject
                 Assert.IsFalse(added);
             }
             [TestMethod]
-            public void Pocket_Should_Not_Add_More_Than_Width()
+            public void Pocket_Cannot_Add_Excess_Width()
             {
                 var pocket = new Pocket(2, 2, 2);
                 var content = new Content(2, 3, 2);
@@ -39,7 +39,7 @@ namespace UnitTestProject
                 Assert.IsFalse(added);
             }
             [TestMethod]
-            public void Pocket_Should_Not_Add_More_Than_Height()
+            public void Pocket_Cannot_Add_Excess_Height()
             {
                 var pocket = new Pocket(2, 2, 2);
                 var content = new Content(2, 3, 2);
@@ -59,28 +59,31 @@ namespace UnitTestProject
                 Assert.IsFalse(pocket.Check(content));
             }
             [TestMethod]
-            public void Pocket_Should_Not_Remove_Excess_Content_Length()
+            public void Pocket_Should_Not_Remove_Excess_Length()
             {
                 var pocket = new Pocket(2, 2, 2);
                 var content = new Content(3, 2, 2);
+                pocket.Add(content);
                 var removed = pocket.Remove(content);
 
                 Assert.IsFalse(removed);
             }
             [TestMethod]
-            public void Bag_Should_Not_Remove_Excess_Content_Width()
+            public void Bag_Should_Not_Remove_Excess_Width()
             {
                 var pocket = new Pocket(2, 2, 2);
                 var content = new Content(2, 3, 2);
+                pocket.Add(content);
                 var removed = pocket.Remove(content);
 
                 Assert.IsFalse(removed);
             }
             [TestMethod]
-            public void Bag_Should_Not_Remove_Excess_Content_Height()
+            public void Bag_Should_Not_Remove_Excess_Height()
             {
                 var pocket = new Pocket(2, 2, 2);
                 var content = new Content(2, 2, 3);
+                pocket.Add(content);
                 var removed = pocket.Remove(content);
 
                 Assert.IsFalse(removed);
