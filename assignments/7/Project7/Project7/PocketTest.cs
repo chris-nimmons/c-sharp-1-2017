@@ -118,7 +118,7 @@ namespace UnitTestProject
                 Assert.IsFalse(pocket.Condition != 0);
             }
             [TestMethod]
-            public void Pocket_With_Contents_Weighs_Zero()
+            public void Pocket_With_Contents_Weighs_Zero_By_Default()
             {
                 var pocket = new Pocket(2, 2, 2);
                 var content = new Content(1, 1, 1);

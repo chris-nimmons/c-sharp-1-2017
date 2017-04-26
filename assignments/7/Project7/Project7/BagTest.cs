@@ -57,10 +57,9 @@ namespace UnitTestProject
             {
                 var bag = new Bag(3, 3, 3);
                 var content = new Content(9, 9, 9);
-                var color = bag.Color;
 
-                Assert.IsTrue(color == "black");
-                Assert.IsFalse(color != "black");
+                Assert.IsTrue(bag.Color == "black");
+                Assert.IsFalse(bag.Color != "black");
             }
             [TestMethod]
             public void Bag_Must_Have_Volume()
@@ -121,7 +120,7 @@ namespace UnitTestProject
                 Assert.IsFalse(bag.Condition != 0);
             }
             [TestMethod]
-            public void Bag_With_Contents_Weighs_Zero()
+            public void Bag_With_Contents_Weighs_Zero_By_Default()
             {
                 var bag = new Bag(2, 2, 2);
                 var content = new Content(1, 1, 1);
