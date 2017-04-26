@@ -71,9 +71,9 @@ namespace UnitTestProject
         public void Pocket_Which_Is_Empty_Can_Be_Dumped()
         {
             var pocket = new Pocket(3, 3, 3);
-            pocket.Dump();
+            var dumped = pocket.Dump();
 
-            Assert.IsTrue(true);
+            Assert.IsTrue(dumped.Count == 0);
         }
         [TestMethod]
         public void Pocket_Can_Exist_Without_Content()

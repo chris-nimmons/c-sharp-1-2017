@@ -63,7 +63,7 @@ namespace UnitTestProject
             var dumped = bag.Dump();
             
 
-            Assert.IsTrue();
+            Assert.IsTrue(dumped.Count == 0);
         }
         [TestMethod]
         public void Bag_Can_Exist_Unchanged()
