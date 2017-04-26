@@ -80,14 +80,14 @@ namespace UnitTestProject
                 Assert.IsTrue(volume != null);
             }
             [TestMethod]
-            public void Multiple_Pockets_Can_Exist()
+            public void Pockets_Do_Not_Exist_By_Default()
             {
                 var bag = new Bag(2, 2, 2);
                 var count = bag.Pockets.Count;
 
-                count = 2;
-                Assert.IsTrue(count > 0);
-            }
+                Assert.IsTrue(count == 0);
+                Assert.IsFalse(count != 0);
+            } 
             [TestMethod]
             public void Pocket_Must_Have_Weight()
             {
@@ -98,7 +98,7 @@ namespace UnitTestProject
                 Assert.IsTrue(weight >= 0);
             }
             [TestMethod]
-            public void Empty_Pocket_Holds_Weight_Of_Zero()
+            public void Pocket_Holds_Weight_Of_Zero_By_Default()
             {
                 var pocket = new Pocket(2, 2, 2);
                 var content = new Content(0, 0, 0);
@@ -114,6 +114,16 @@ namespace UnitTestProject
                 var opened = pocket.Opened;
 
                 Assert.IsFalse(opened);
+            }
+            [TestMethod]
+            public void Pocket_Condition_Is_Zero_By_Default()
+            {
+                var pocket = new Pocket(3, 3, 3);
+                var content = new Content(1, 1, 1);
+                var condition = pocket.Condition;
+
+                Assert.IsTrue(pocket.Condition == 0);
+                Assert.IsFalse(pocket.Condition != 0);
             }
         }
 

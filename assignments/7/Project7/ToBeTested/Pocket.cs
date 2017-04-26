@@ -12,6 +12,7 @@ namespace TestDrivenDesignLecture
         public Volume Volume { get; set; }
         public float Weight { get; set; }
         public bool Opened { get; set; }
+        public Condition Condition { get; set; }
         private string name = "black";
         public string Color
         {

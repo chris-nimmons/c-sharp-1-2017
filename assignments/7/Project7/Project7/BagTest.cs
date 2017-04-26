@@ -59,6 +59,7 @@ namespace UnitTestProject
                 var content = new Content(4, 4, 4);
 
                 Assert.IsFalse(bag.Equals(content));
+                Assert.IsTrue(bag.Equals(bag));
             }
             [TestMethod]
             public void Bag_Must_Be_Black_By_Default()
@@ -81,21 +82,13 @@ namespace UnitTestProject
                 Assert.IsTrue(volume != null);
             }
             [TestMethod]
-            public void Bag_Can_Have_No_Pockets()
+            public void Bag_Has_No_Pockets_By_Default()
             {
                 var bag = new Bag(3, 3, 3);
                 var count = bag.Pockets.Count;
 
                 Assert.IsTrue(count == 0);
-            }
-            [TestMethod]
-            public void Bag_Can_Have_Multiple_Pockets()
-            {
-                var bag = new Bag(2, 2, 2);
-                var count = bag.Pockets.Count;
-
-                count = 2;
-                Assert.IsTrue(count > 0);
+                Assert.IsFalse(count != 0);
             }
             [TestMethod]
             public void Bag_Must_Have_Weight()
@@ -107,13 +100,15 @@ namespace UnitTestProject
                 Assert.IsTrue(weight >= 0);
             }
             [TestMethod]
-            public void Empty_Bag_Holds_Weight_Of_Zero()
+            public void Bag_Holds_Weight_Of_Zero_By_Default()
             {
                 var bag = new Bag(2, 2, 2);
                 var content = new Content(0,0,0);
                 var weight = bag.Weight;
 
                 Assert.IsTrue(weight == 0);
+                Assert.IsFalse(weight > 0);
+                Assert.IsFalse(weight < 0);
             }
             [TestMethod]
             public void Bag_Must_Be_Closed_By_Default()
@@ -123,6 +118,16 @@ namespace UnitTestProject
                 var opened = bag.Opened;
 
                 Assert.IsFalse(opened);
+            }
+            [TestMethod]
+            public void Bag_Condition_Is_Zero_By_Default()
+            {
+                var bag = new Bag(3, 3, 3);
+                var content = new Content(1, 1, 1);
+                var condition = bag.Condition;
+
+                Assert.IsTrue(bag.Condition == 0);
+                Assert.IsFalse(bag.Condition != 0);
             }
         }
 
