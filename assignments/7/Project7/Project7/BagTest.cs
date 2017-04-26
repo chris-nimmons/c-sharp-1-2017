@@ -53,15 +53,6 @@ namespace UnitTestProject
                 Assert.IsFalse(bag.Check(content));
             }
             [TestMethod]
-            public void Bag_Can_Not_Be_Equal_To_Content()
-            {
-                var bag = new Bag(4, 4, 4);
-                var content = new Content(4, 4, 4);
-
-                Assert.IsFalse(bag.Equals(content));
-                Assert.IsTrue(bag.Equals(bag));
-            }
-            [TestMethod]
             public void Bag_Must_Be_Black_By_Default()
             {
                 var bag = new Bag(3, 3, 3);
@@ -128,6 +119,17 @@ namespace UnitTestProject
 
                 Assert.IsTrue(bag.Condition == 0);
                 Assert.IsFalse(bag.Condition != 0);
+            }
+            [TestMethod]
+            public void Bag_With_Contents_Weighs_Zero()
+            {
+                var bag = new Bag(2, 2, 2);
+                var content = new Content(1, 1, 1);
+                var added = bag.Add(content);
+                var weight = bag.Weight;
+
+
+                Assert.IsTrue(weight == 0);
             }
         }
 

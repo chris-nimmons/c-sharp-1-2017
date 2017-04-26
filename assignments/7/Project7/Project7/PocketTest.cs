@@ -52,14 +52,6 @@ namespace UnitTestProject
                 Assert.IsFalse(pocket.Check(content));
             }
             [TestMethod]
-            public void Pocket_Can_Not_Be_Equal_To_Content()
-            {
-                var pocket = new Pocket(4, 4, 4);
-                var content = new Content(4, 4, 4);
-
-                Assert.IsFalse(pocket.Equals(content));
-            }
-            [TestMethod]
             public void Pocket_Must_Be_Black_By_Default()
             {
                 var pocket = new Pocket(3, 3, 3);
@@ -124,6 +116,17 @@ namespace UnitTestProject
 
                 Assert.IsTrue(pocket.Condition == 0);
                 Assert.IsFalse(pocket.Condition != 0);
+            }
+            [TestMethod]
+            public void Pocket_With_Contents_Weighs_Zero()
+            {
+                var pocket = new Pocket(2, 2, 2);
+                var content = new Content(1, 1, 1);
+                var added = pocket.Add(content);
+                var weight = pocket.Weight;
+
+
+                Assert.IsTrue(weight == 0);
             }
         }
 
