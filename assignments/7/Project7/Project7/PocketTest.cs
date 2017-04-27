@@ -9,11 +9,11 @@ namespace UnitTestProject
     public class PocketTests
     {
         [TestMethod]
-        public void Bag_Is_A_Different_Hash_Code_Than_Volume()
+        public void Pocket_Is_A_Different_Hash_Code_Than_Volume()
         {
-            var bag = new Bag(2, 2, 2);
+            var pocket = new Pocket(2, 2, 2);
             var volume = new Volume(2, 2, 2);
-            var type = bag.GetHashCode();
+            var type = pocket.GetHashCode();
             var voltype = volume.GetHashCode();
 
             Assert.AreNotEqual(type, voltype);
