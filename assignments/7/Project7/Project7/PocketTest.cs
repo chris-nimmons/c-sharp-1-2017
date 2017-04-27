@@ -9,36 +9,12 @@ namespace UnitTestProject
     public class PocketTests
     {
         [TestMethod]
-        public void Pocket_Is_A_Different_Hash_Code_Than_Volume()
-        {
-            var pocket = new Pocket(2, 2, 2);
-            var volume = new Volume(2, 2, 2);
-            var type = pocket.GetHashCode();
-            var voltype = volume.GetHashCode();
-
-            Assert.AreNotEqual(type, voltype);
-
-        }
-        [TestMethod]
-        public void Pocket_Is_A_Different_Hash_Code_Than_Content()
-        {
-            var pocket = new Pocket(2, 2, 2);
-            var content = new Content(2, 2, 2);
-            var type = pocket.GetHashCode();
-            var contype = content.GetHashCode();
-
-            Assert.AreNotEqual(type, contype);
-
-        }
-        [TestMethod]
         public void Pocket_Is_A_Different_Type_Than_Content()
         {
             var pocket = new Pocket(2, 2, 2);
             var content = new Content(2, 2, 2);
-            var type = pocket.GetType();
-            var contype = content.GetType();
 
-            Assert.AreNotEqual(type, contype);
+            Assert.AreNotEqual(pocket.GetType(), content.GetType());
 
         }
         [TestMethod]
@@ -46,10 +22,8 @@ namespace UnitTestProject
         {
             var pocket = new Pocket(2, 2, 2);
             var volume = new Volume(2, 2, 2);
-            var type = pocket.GetType();
-            var voltype = volume.GetType();
 
-            Assert.AreNotEqual(type, voltype);
+            Assert.AreNotEqual(pocket.GetType(), volume.GetType());
 
         }
         [TestMethod]
@@ -200,10 +174,8 @@ namespace UnitTestProject
         public void Pocket_Holds_Weight_Of_Zero_By_Default()
         {
             var pocket = new Pocket(2, 2, 2);
-            var content = new Content(0, 0, 0);
-            var weight = pocket.Weight;
 
-            Assert.IsTrue(weight == 0);
+            Assert.IsTrue(pocket.Weight == 0);
         }
         [TestMethod]
         public void Pocket_Must_Be_Closed_By_Default()

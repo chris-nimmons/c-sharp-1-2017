@@ -10,35 +10,12 @@ namespace UnitTestProject
     public class BagTests
     {
         [TestMethod]
-        public void Bag_Is_A_Different_Hash_Code_Than_Volume()
-        {
-            var bag = new Bag(2, 2, 2);
-            var volume = new Volume(2, 2, 2);
-            var type = bag.GetHashCode();
-            var voltype = volume.GetHashCode();
-            
-            Assert.AreNotEqual(type, voltype);
-
-        }
-        [TestMethod]
-        public void Bag_Is_A_Different_Hash_Code_Than_Content()
-        {
-            var bag = new Bag(2, 2, 2);
-            var content = new Content(2, 2, 2);
-            var type = bag.GetHashCode();
-            var contype = content.GetHashCode();
-
-            Assert.AreNotEqual(type, contype);
-
-        }
-        [TestMethod]
         public void Bag_Is_A_Different_Type_Than_Content()
         {
             var bag = new Bag(2, 2, 2);
             var content = new Content(2, 2, 2);
-            var type = bag.GetType();
-            var contype = content.GetType();
-            Assert.AreNotEqual(type, contype);
+
+            Assert.AreNotEqual(bag.GetType(), content.GetType());
 
         }
         [TestMethod]
@@ -46,10 +23,9 @@ namespace UnitTestProject
         {
             var bag = new Bag(2, 2, 2);
             var volume = new Volume(2, 2, 2);
-            var type = bag.GetType();
-            var voltype = volume.GetType();
 
-            Assert.AreNotEqual(type, voltype);
+
+            Assert.AreNotEqual(bag.GetType(), volume.GetType());
 
         }
         [TestMethod]
@@ -193,15 +169,14 @@ namespace UnitTestProject
         public void Bag_Must_Have_Weight()
         {
             var bag = new Bag(2, 2, 2);
-            var weight = bag.Weight;
 
-            Assert.IsTrue(weight >= 0);
+
+            Assert.IsTrue(bag.Weight >= 0);
         }
         [TestMethod]
         public void Bag_Holds_Weight_Of_Zero_By_Default()
         {
             var bag = new Bag(2, 2, 2);
-            var content = new Content(0, 0, 0);
             var weight = bag.Weight;
 
             Assert.IsTrue(weight == 0);
