@@ -9,6 +9,67 @@ namespace UnitTestProject
     public class PocketTests
     {
         [TestMethod]
+        public void Bag_Is_A_Different_Hash_Code_Than_Volume()
+        {
+            var bag = new Bag(2, 2, 2);
+            var volume = new Volume(2, 2, 2);
+            var type = bag.GetHashCode();
+            var voltype = volume.GetHashCode();
+
+            Assert.AreNotEqual(type, voltype);
+
+        }
+        [TestMethod]
+        public void Pocket_Is_A_Different_Hash_Code_Than_Content()
+        {
+            var pocket = new Pocket(2, 2, 2);
+            var content = new Content(2, 2, 2);
+            var type = pocket.GetHashCode();
+            var contype = content.GetHashCode();
+
+            Assert.AreNotEqual(type, contype);
+
+        }
+        [TestMethod]
+        public void Pocket_Is_A_Different_Type_Than_Content()
+        {
+            var pocket = new Pocket(2, 2, 2);
+            var content = new Content(2, 2, 2);
+            var type = pocket.GetType();
+            var contype = content.GetType();
+
+            Assert.AreNotEqual(type, contype);
+
+        }
+        [TestMethod]
+        public void Pocket_Is_A_Different_Type_Than_Volume()
+        {
+            var pocket = new Pocket(2, 2, 2);
+            var volume = new Volume(2, 2, 2);
+            var type = pocket.GetType();
+            var voltype = volume.GetType();
+
+            Assert.AreNotEqual(type, voltype);
+
+        }
+        [TestMethod]
+        public void Pocket_With_Contents_Weighs_The_Same_As_Content()
+        {
+            var pocket = new Pocket(3,3,3);
+            var content = new Content(2, 2, 2);
+            pocket.Add(content);
+
+            Assert.IsTrue(pocket.Weight == content.Weight);
+        }
+        [TestMethod]
+        public void Pocket_And_Content_Volume_Are_Not_Equal_By_Default()
+        {
+            var pocket = new Pocket(2, 2, 2);
+            var content = new Content(2, 2, 2);
+
+            Assert.IsFalse(pocket.Volume == content.Volume);
+        }
+        [TestMethod]
         public void Pocket_Should_Add_Content()
         {
             var pocket = new Bag(2, 2, 2);
@@ -133,7 +194,6 @@ namespace UnitTestProject
             var pocket = new Pocket(2, 2, 2);
             var weight = pocket.Weight;
 
-            Assert.IsFalse(weight < 0);
             Assert.IsTrue(weight >= 0);
         }
         [TestMethod]
