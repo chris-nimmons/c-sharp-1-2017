@@ -77,20 +77,10 @@ namespace UnitTestProject
         public void Bag_Should_Not_Add_More_Than_Height()
         {
             var bag = new Bag(2, 2, 2);
-            var content = new Content(2, 3, 2);
+            var content = new Content(2, 2, 3);
             var added = bag.Add(content);
 
             Assert.IsFalse(added);
-        }
-        [TestMethod]
-        public void Bag_Cannot_Remove_Empty_Contents()
-        {
-            var bag = new Bag(3, 3, 3);
-            var content = new Content(0, 0, 0);
-            bag.Add(content);
-            var removed = bag.Remove(content);
-
-            Assert.IsFalse(bag.Check(content));
         }
         [TestMethod]
         public void Bag_Which_Is_Empty_Can_Be_Dumped()
@@ -120,6 +110,36 @@ namespace UnitTestProject
             Assert.IsFalse(bag.Check(content));
         }
         [TestMethod]
+        public void Bag_Should_Not_Remove_Excess_Length()
+        {
+            var bag = new Bag(3, 3, 3);
+            var content = new Content(4, 1, 1);
+            bag.Add(content);
+            var removed = bag.Remove(content);
+
+            Assert.IsFalse(removed);
+        }
+        [TestMethod]
+        public void Bag_Should_Not_Remove_Excess_Width()
+        {
+            var bag = new Bag(3, 3, 3);
+            var content = new Content(1, 4, 1);
+            bag.Add(content);
+            var removed = bag.Remove(content);
+
+            Assert.IsFalse(removed);
+        }
+        [TestMethod]
+        public void Bag_Should_Not_Remove_Excess_Height()
+        {
+            var bag = new Bag(3, 3, 3);
+            var content = new Content(1, 1, 4);
+            bag.Add(content);
+            var removed = bag.Remove(content);
+
+            Assert.IsFalse(removed);
+        }
+        [TestMethod]
         public void Bag_Should_Dump()
         {
             var content = new Content(3, 3, 3);
@@ -134,7 +154,37 @@ namespace UnitTestProject
         public void Bag_Should_Not_Overflow()
         {
             var bag = new Bag(13, 17, 23);
-            var content = new Content(20, 20, 20);
+            var content = new Content(20, 20, 24);
+            var added = bag.Add(content);
+
+            Assert.IsFalse(added);
+            Assert.IsFalse(bag.Check(content));
+        }
+        [TestMethod]
+        public void Bag_Length_Should_Not_Overflow()
+        {
+            var bag = new Bag(13, 17, 23);
+            var content = new Content(20, 12, 20);
+            var added = bag.Add(content);
+
+            Assert.IsFalse(added);
+            Assert.IsFalse(bag.Check(content));
+        }
+        [TestMethod]
+        public void Bag_Width_Should_Not_Overflow()
+        {
+            var bag = new Bag(13, 17, 23);
+            var content = new Content(11, 20, 20);
+            var added = bag.Add(content);
+
+            Assert.IsFalse(added);
+            Assert.IsFalse(bag.Check(content));
+        }
+        [TestMethod]
+        public void Bag_Height_Should_Not_Overflow()
+        {
+            var bag = new Bag(13, 17, 23);
+            var content = new Content(7, 5, 24);
             var added = bag.Add(content);
 
             Assert.IsFalse(added);

@@ -75,7 +75,7 @@ namespace UnitTestProject
         public void Pocket_Cannot_Add_Excess_Height()
         {
             var pocket = new Pocket(2, 2, 2);
-            var content = new Content(2, 3, 2);
+            var content = new Content(2, 2, 3);
             var added = pocket.Add(content);
 
             Assert.IsFalse(added);
@@ -92,15 +92,34 @@ namespace UnitTestProject
             Assert.IsFalse(pocket.Check(content));
         }
         [TestMethod]
-        public void Pocket_Cannot_Remove_Empty_Contents()
+        public void Pocket_Should_Not_Remove_Excess_Length()
         {
             var pocket = new Pocket(3, 3, 3);
-            var content = new Content(0, 0, 0);
+            var content = new Content(4, 1, 1);
             pocket.Add(content);
             var removed = pocket.Remove(content);
 
-            Assert.IsTrue(removed);
-            Assert.IsFalse(pocket.Check(content));
+            Assert.IsFalse(removed);
+        }
+        [TestMethod]
+        public void Pocket_Should_Not_Remove_Excess_Width()
+        {
+            var pocket = new Pocket(3, 3, 3);
+            var content = new Content(1, 4, 1);
+            pocket.Add(content);
+            var removed = pocket.Remove(content);
+
+            Assert.IsFalse(removed);
+        }
+        [TestMethod]
+        public void Pocket_Should_Not_Remove_Excess_Height()
+        {
+            var pocket = new Pocket(3, 3, 3);
+            var content = new Content(1, 1, 4);
+            pocket.Add(content);
+            var removed = pocket.Remove(content);
+
+            Assert.IsFalse(removed);
         }
         [TestMethod]
         public void Pocket_Which_Is_Empty_Can_Be_Dumped()
@@ -131,7 +150,37 @@ namespace UnitTestProject
         public void Pocket_Should_Not_Overflow()
         {
             var pocket = new Pocket(13, 17, 23);
-            var content = new Content(20, 20, 20);
+            var content = new Content(20, 20, 24);
+            var added = pocket.Add(content);
+
+            Assert.IsFalse(added);
+            Assert.IsFalse(pocket.Check(content));
+        }
+        [TestMethod]
+        public void Pocket_Length_Should_Not_Overflow()
+        {
+            var pocket = new Pocket(13, 17, 23);
+            var content = new Content(20, 12, 20);
+            var added = pocket.Add(content);
+
+            Assert.IsFalse(added);
+            Assert.IsFalse(pocket.Check(content));
+        }
+        [TestMethod]
+        public void Pocket_Width_Should_Not_Overflow()
+        {
+            var pocket = new Pocket(13, 17, 23);
+            var content = new Content(11, 20, 20);
+            var added = pocket.Add(content);
+
+            Assert.IsFalse(added);
+            Assert.IsFalse(pocket.Check(content));
+        }
+        [TestMethod]
+        public void Pocket_Height_Should_Not_Overflow()
+        {
+            var pocket = new Pocket(13, 17, 23);
+            var content = new Content(7, 5, 24);
             var added = pocket.Add(content);
 
             Assert.IsFalse(added);
