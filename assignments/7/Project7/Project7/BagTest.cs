@@ -10,6 +10,13 @@ namespace UnitTestProject
     public class BagTests
     {
         [TestMethod]
+        public void Bag_Can_Have_No_Content()
+        {
+            var bag = new Bag(2, 2, 2);
+
+            Assert.IsNotNull(bag);
+        }
+        [TestMethod]
         public void Bag_Should_Add_Content()
         {
             var bag = new Bag(2, 2, 2);

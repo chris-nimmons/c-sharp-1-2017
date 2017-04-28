@@ -9,6 +9,13 @@ namespace UnitTestProject
     public class PocketTests
     {
         [TestMethod]
+        public void Pocket_Can_Have_No_Content()
+        {
+            var pocket = new Pocket(2, 2, 2);
+
+            Assert.IsNotNull(pocket);
+        }
+        [TestMethod]
         public void Pocket_Should_Add_Content()
         {
             var pocket = new Pocket(2, 2, 2);
