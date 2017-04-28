@@ -88,10 +88,9 @@ namespace UnitTestProject
         {
             var pocket = new Pocket(2, 2, 2);
             var content = new Content(0, 0, 0);
-            var added = pocket.Add(content);
             var removed = pocket.Remove(content);
 
-            Assert.IsTrue(removed);
+            Assert.IsFalse(removed);
             Assert.IsFalse(pocket.Check(content));
         }
         [TestMethod]
