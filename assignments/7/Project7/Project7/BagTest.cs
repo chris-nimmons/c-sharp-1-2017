@@ -41,23 +41,14 @@ namespace UnitTestProject
             Assert.IsFalse(bag.Check(content));
         }
         [TestMethod]
-        public void Bag_Which_Is_Over_Filled_Can_Be_Dumped()
-        {
-            var bag = new Bag(3, 3, 3);
-            var content = new Content(4, 4, 4);
-            bag.Add(content);
-            bag.Dump();
-
-            Assert.IsFalse(bag.Check(content));
-        }
-        [TestMethod]
-        public void Bag_Should_Dump_Content()
+        public void Bag_Should_Dump_Added_Content()
         {
             var bag = new Bag(4, 4, 4);
             var content = new Content(3, 3, 3);
-            bag.Add(content);
+            var added = bag.Add(content);
             bag.Dump();
 
+            Assert.IsTrue(added);
             Assert.IsFalse(bag.Check(content));
         }
         [TestMethod]
@@ -72,20 +63,6 @@ namespace UnitTestProject
         }
 
         // New:
-        [TestMethod]
-        public void Bag_And_Contents_Added_Are_Not_Equal_Type()
-        {
-            var bag = new Bag(12, 12, 12);
-            var content = new Content(11, 1, 11);
-
-            var added = bag.Add(content);
-
-            var bagType = bag.GetType();
-            var contentType = content.GetType();
-
-            Assert.IsTrue(added);
-            Assert.AreNotEqual(bagType, contentType);
-        }
         [TestMethod]
         public void Contents_With_Same_Dimensions_As_Bag_Will_Not_Add_To_Bag()
         {
@@ -131,48 +108,51 @@ namespace UnitTestProject
             Assert.IsFalse(bag.Check(content));
         }
         [TestMethod]
-        public void Content_With_Oversized_Length_For_Bag_Will_Not_Add_To_Bag()
+        public void Bag_And_Content_Are_At_Different_In_Volume_At_Equal_Dimensions()
         {
-            var bag = new Bag(2, 2, 2);
-            var content = new Content(3, 2, 2);
-
-            var added = bag.Add(content);
-
-            Assert.IsFalse(added);
-            Assert.IsFalse(bag.Check(content));
-        }
-        [TestMethod]
-        public void Content_With_Oversized_Width_For_Bag_Will_Not_Add_To_Bag()
-        {
-            var bag = new Bag(2, 2, 2);
-            var content = new Content(2, 3, 2);
-
-            var added = bag.Add(content);
-
-            Assert.IsFalse(added);
-            Assert.IsFalse(bag.Check(content));
-        }
-        [TestMethod]
-        public void Content_With_Oversized_Height_For_Bag_Will_Not_Add_To_Bag()
-        {
-            var bag = new Bag(2, 2, 2);
-            var content = new Content(2, 2, 3);
-
-            var added = bag.Add(content);
-
-            Assert.IsFalse(added);
-            Assert.IsFalse(bag.Check(content));
-        }
-        [TestMethod]
-        public void Content_And_Bag_Do_Not_Have_Equal_Volume_Given_Same_Dimensions()
-        {
-            var bag = new Bag(2, 2, 2);
-            var content = new Content(2, 2, 2);
+            var bag = new Bag(1, 1, 1);
+            var content = new Content(1,1,1);
 
             var bagVolume = bag.Volume;
             var contentVolume = content.Volume;
-
+            
             Assert.AreNotEqual(bagVolume, contentVolume);
+        }
+        [TestMethod]
+        public void Bag_Must_Have_Length_To_Hold_Items()
+        {
+            var bag = new Bag(0, 2, 2);
+            var content = new Content(0, 1, 1);
+
+            var added = bag.Add(content);
+            var contentVolume = content.Volume;
+
+            Assert.IsFalse(added);
+            Assert.IsFalse(bag.Check(content));
+        }
+        [TestMethod]
+        public void Bag_Must_Have_Width_To_Hold_Items()
+        {
+            var bag = new Bag(2, 0, 2);
+            var content = new Content(1, 0, 1);
+
+            var added = bag.Add(content);
+            var contentVolume = content.Volume;
+
+            Assert.IsFalse(added);
+            Assert.IsFalse(bag.Check(content));
+        }
+        [TestMethod]
+        public void Bag_Must_Have_Height_To_Hold_Items()
+        {
+            var bag = new Bag(2, 2, 0);
+            var content = new Content(1, 1, 0);
+
+            var added = bag.Add(content);
+            var contentVolume = content.Volume;
+
+            Assert.IsFalse(added);
+            Assert.IsFalse(bag.Check(content));
         }
     }
 
