@@ -72,7 +72,7 @@ namespace TestDrivenDesignLecture
                 return false;
             }
         }
-
+         
         public bool Remove(Content content)
         {
             bool output = Contents.Remove(content);

@@ -9,7 +9,7 @@ namespace UnitTestProject
     public class PocketTests
     {
         [TestMethod]
-        public void Pocket_Can_Have_No_Content()
+        public void Pocket_Can_Have_Zero_Content()
         {
             var pocket = new Pocket(2, 2, 2);
 
@@ -134,7 +134,7 @@ namespace UnitTestProject
             Assert.IsFalse(pocket.Check(content));
         }
         [TestMethod]
-        public void Pocket_Should_Not_Have_Overflow_Content()
+        public void Pocket_Should_Not_Add_Oversized_Content()
         {
             var pocket = new Pocket(13, 17, 23);
             var content = new Content(20, 20, 24);
